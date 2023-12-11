@@ -1,0 +1,119 @@
+{
+  "project_info": {
+    "project_number": "678069758837",
+    "firebase_url": "https://animalfoodchileaplicacion-default-rtdb.firebaseio.com",
+    "project_id": "animalfoodchileaplicacion",
+    "storage_bucket": "animalfoodchileaplicacion.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:678069758837:android:842ce77d09982c7cad013c",
+        "android_client_info": {
+          "package_name": "com.mycompany.AnimalFoodApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "678069758837-m8k3n2lohd08dp19tfmsdr9lknqm72e7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLTb7_P9mfRiGwxzwjEAMBcFjg5Z7OiJA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "678069758837-m8k3n2lohd08dp19tfmsdr9lknqm72e7.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "678069758837-232m2neuukc9qr2kktt2hero0a4oqbdn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.AnimalFoodApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:678069758837:android:34db39c9c424b9e5ad013c",
+        "android_client_info": {
+          "package_name": "com.mycompany.AnimalFoodWeb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "678069758837-m8k3n2lohd08dp19tfmsdr9lknqm72e7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLTb7_P9mfRiGwxzwjEAMBcFjg5Z7OiJA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "678069758837-m8k3n2lohd08dp19tfmsdr9lknqm72e7.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "678069758837-232m2neuukc9qr2kktt2hero0a4oqbdn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.AnimalFoodApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:678069758837:android:3b8002f40b6206b4ad013c",
+        "android_client_info": {
+          "package_name": "com.mycompany.dashboardAnimalFoodWeb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "678069758837-m8k3n2lohd08dp19tfmsdr9lknqm72e7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLTb7_P9mfRiGwxzwjEAMBcFjg5Z7OiJA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "678069758837-m8k3n2lohd08dp19tfmsdr9lknqm72e7.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "678069758837-232m2neuukc9qr2kktt2hero0a4oqbdn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.AnimalFoodApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
