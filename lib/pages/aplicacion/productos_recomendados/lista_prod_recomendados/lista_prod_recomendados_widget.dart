@@ -1,11 +1,9 @@
 import '/backend/backend.dart';
-import '/components/top_escritorio_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/pages/componentes/top_escritorio/top_escritorio_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'lista_prod_recomendados_model.dart';
@@ -13,18 +11,17 @@ export 'lista_prod_recomendados_model.dart';
 
 class ListaProdRecomendadosWidget extends StatefulWidget {
   const ListaProdRecomendadosWidget({
-    Key? key,
+    super.key,
     Color? colorInicio,
     String? nombre,
   })  : this.colorInicio = colorInicio ?? const Color(0xFFE6A5E5),
-        this.nombre = nombre ?? 'Inicio',
-        super(key: key);
+        this.nombre = nombre ?? 'Inicio';
 
   final Color colorInicio;
   final String nombre;
 
   @override
-  _ListaProdRecomendadosWidgetState createState() =>
+  State<ListaProdRecomendadosWidget> createState() =>
       _ListaProdRecomendadosWidgetState();
 }
 
@@ -51,17 +48,6 @@ class _ListaProdRecomendadosWidgetState
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
-    context.watch<FFAppState>();
-
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -69,154 +55,148 @@ class _ListaProdRecomendadosWidgetState
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        body: Column(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Flexible(
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  wrapWithModel(
-                    model: _model.topEscritorioModel,
-                    updateCallback: () => setState(() {}),
-                    child: TopEscritorioWidget(),
-                  ),
-                  Row(
+        body: SafeArea(
+          top: true,
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Flexible(
+                  child: Column(
                     mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Flexible(
-                        child: Align(
-                          alignment: AlignmentDirectional(-1.00, -1.00),
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                20.0, 20.0, 0.0, 10.0),
-                            child: InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                context.safePop();
-                              },
-                              child: Material(
-                                color: Colors.transparent,
-                                elevation: 4.0,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                child: Container(
-                                  width: 60.0,
-                                  height: 60.0,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    borderRadius: BorderRadius.circular(10.0),
-                                  ),
-                                  child: Icon(
-                                    Icons.chevron_left,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    size: 40.0,
+                      wrapWithModel(
+                        model: _model.topEscritorioModel,
+                        updateCallback: () => setState(() {}),
+                        child: TopEscritorioWidget(),
+                      ),
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Flexible(
+                            child: Align(
+                              alignment: AlignmentDirectional(-1.0, -1.0),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    20.0, 20.0, 0.0, 10.0),
+                                child: InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context.safePop();
+                                  },
+                                  child: Material(
+                                    color: Colors.transparent,
+                                    elevation: 4.0,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10.0),
+                                    ),
+                                    child: Container(
+                                      width: 60.0,
+                                      height: 60.0,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      child: Icon(
+                                        Icons.chevron_left,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        size: 40.0,
+                                      ),
+                                    ),
                                   ),
                                 ),
                               ),
                             ),
                           ),
-                        ),
-                      ),
-                      Expanded(
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Align(
-                              alignment: AlignmentDirectional(0.00, 0.00),
-                              child: FFButtonWidget(
-                                onPressed: () async {
-                                  context.pushNamed(
-                                    'agregarProdRecomendado',
-                                    extra: <String, dynamic>{
-                                      kTransitionInfoKey: TransitionInfo(
-                                        hasTransition: true,
-                                        transitionType: PageTransitionType.fade,
-                                      ),
+                          Expanded(
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: FFButtonWidget(
+                                    onPressed: () async {
+                                      context.pushNamed(
+                                        'agregarProdRecomendado',
+                                        extra: <String, dynamic>{
+                                          kTransitionInfoKey: TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.fade,
+                                          ),
+                                        },
+                                      );
                                     },
-                                  );
-                                },
-                                text: 'Agregar',
-                                options: FFButtonOptions(
-                                  height: 40.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
-                                  color: Color(0xFFFF8159),
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .override(
-                                        fontFamily: 'Readex Pro',
-                                        color: Colors.white,
+                                    text: 'Agregar',
+                                    options: FFButtonOptions(
+                                      height: 40.0,
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          24.0, 0.0, 24.0, 0.0),
+                                      iconPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 0.0, 0.0, 0.0),
+                                      color: Color(0xFFFF8159),
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            fontFamily: 'Readex Pro',
+                                            color: Colors.white,
+                                            letterSpacing: 0.0,
+                                          ),
+                                      elevation: 3.0,
+                                      borderSide: BorderSide(
+                                        color: Colors.transparent,
+                                        width: 1.0,
                                       ),
-                                  elevation: 3.0,
-                                  borderSide: BorderSide(
-                                    color: Colors.transparent,
-                                    width: 1.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                  Flexible(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(),
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                10.0, 10.0, 10.0, 10.0),
-                            child: StreamBuilder<List<RecomendadoRecord>>(
-                              stream: queryRecomendadoRecord(),
-                              builder: (context, snapshot) {
-                                // Customize what your widget looks like when it's loading.
-                                if (!snapshot.hasData) {
-                                  return Center(
-                                    child: SizedBox(
-                                      width: 50.0,
-                                      height: 50.0,
-                                      child: CircularProgressIndicator(
-                                        valueColor:
-                                            AlwaysStoppedAnimation<Color>(
-                                          FlutterFlowTheme.of(context).primary,
-                                        ),
-                                      ),
+                                      borderRadius: BorderRadius.circular(8.0),
                                     ),
-                                  );
-                                }
-                                List<RecomendadoRecord>
-                                    staggeredViewRecomendadoRecordList =
-                                    snapshot.data!;
-                                return MasonryGridView.builder(
-                                  physics: const NeverScrollableScrollPhysics(),
-                                  gridDelegate:
-                                      SliverSimpleGridDelegateWithFixedCrossAxisCount(
-                                    crossAxisCount: 4,
                                   ),
-                                  crossAxisSpacing: 10.0,
-                                  mainAxisSpacing: 10.0,
-                                  itemCount:
-                                      staggeredViewRecomendadoRecordList.length,
-                                  shrinkWrap: true,
-                                  itemBuilder: (context, staggeredViewIndex) {
-                                    final staggeredViewRecomendadoRecord =
-                                        staggeredViewRecomendadoRecordList[
-                                            staggeredViewIndex];
-                                    return Material(
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                      Padding(
+                        padding: EdgeInsets.all(10.0),
+                        child: StreamBuilder<List<RecomendadoRecord>>(
+                          stream: queryRecomendadoRecord(),
+                          builder: (context, snapshot) {
+                            // Customize what your widget looks like when it's loading.
+                            if (!snapshot.hasData) {
+                              return Center(
+                                child: SizedBox(
+                                  width: 50.0,
+                                  height: 50.0,
+                                  child: CircularProgressIndicator(
+                                    valueColor: AlwaysStoppedAnimation<Color>(
+                                      Color(0xFF00AC67),
+                                    ),
+                                  ),
+                                ),
+                              );
+                            }
+                            List<RecomendadoRecord>
+                                columnRecomendadoRecordList = snapshot.data!;
+                            return SingleChildScrollView(
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: List.generate(
+                                    columnRecomendadoRecordList.length,
+                                    (columnIndex) {
+                                  final columnRecomendadoRecord =
+                                      columnRecomendadoRecordList[columnIndex];
+                                  return Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 10.0),
+                                    child: Material(
                                       color: Colors.transparent,
                                       elevation: 4.0,
                                       shape: RoundedRectangleBorder(
@@ -250,7 +230,7 @@ class _ListaProdRecomendadosWidgetState
                                                   image: DecorationImage(
                                                     fit: BoxFit.cover,
                                                     image: Image.network(
-                                                      staggeredViewRecomendadoRecord
+                                                      columnRecomendadoRecord
                                                           .imagen,
                                                     ).image,
                                                   ),
@@ -258,15 +238,16 @@ class _ListaProdRecomendadosWidgetState
                                                     BoxShadow(
                                                       blurRadius: 10.0,
                                                       color: Color(0x33FFFFFF),
-                                                      offset: Offset(0.0, 0.0),
+                                                      offset: Offset(
+                                                        0.0,
+                                                        0.0,
+                                                      ),
                                                     )
                                                   ],
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        10.0, 10.0, 10.0, 10.0),
+                                                padding: EdgeInsets.all(10.0),
                                                 child: Column(
                                                   mainAxisSize:
                                                       MainAxisSize.min,
@@ -278,7 +259,7 @@ class _ListaProdRecomendadosWidgetState
                                                         Align(
                                                           alignment:
                                                               AlignmentDirectional(
-                                                                  -1.00, 0.00),
+                                                                  -1.0, 0.0),
                                                           child: Material(
                                                             color: Colors
                                                                 .transparent,
@@ -319,6 +300,8 @@ class _ListaProdRecomendadosWidgetState
                                                                             'Outfit',
                                                                         fontSize:
                                                                             12.0,
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                       ),
                                                                 ),
                                                               ),
@@ -330,7 +313,7 @@ class _ListaProdRecomendadosWidgetState
                                                     Align(
                                                       alignment:
                                                           AlignmentDirectional(
-                                                              -1.00, 0.00),
+                                                              -1.0, 0.0),
                                                       child: Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
@@ -340,7 +323,7 @@ class _ListaProdRecomendadosWidgetState
                                                                     0.0,
                                                                     0.0),
                                                         child: Text(
-                                                          staggeredViewRecomendadoRecord
+                                                          columnRecomendadoRecord
                                                               .titulo,
                                                           style: FlutterFlowTheme
                                                                   .of(context)
@@ -349,6 +332,8 @@ class _ListaProdRecomendadosWidgetState
                                                                 fontFamily:
                                                                     'Outfit',
                                                                 fontSize: 20.0,
+                                                                letterSpacing:
+                                                                    0.0,
                                                               ),
                                                         ),
                                                       ),
@@ -356,7 +341,7 @@ class _ListaProdRecomendadosWidgetState
                                                     Align(
                                                       alignment:
                                                           AlignmentDirectional(
-                                                              -1.00, 0.00),
+                                                              -1.0, 0.0),
                                                       child: Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
@@ -366,7 +351,7 @@ class _ListaProdRecomendadosWidgetState
                                                                     0.0,
                                                                     0.0),
                                                         child: Text(
-                                                          staggeredViewRecomendadoRecord
+                                                          columnRecomendadoRecord
                                                               .subtitulo,
                                                           style: FlutterFlowTheme
                                                                   .of(context)
@@ -375,6 +360,8 @@ class _ListaProdRecomendadosWidgetState
                                                                 fontFamily:
                                                                     'Outfit',
                                                                 fontSize: 14.0,
+                                                                letterSpacing:
+                                                                    0.0,
                                                               ),
                                                         ),
                                                       ),
@@ -398,8 +385,7 @@ class _ListaProdRecomendadosWidgetState
                                                           child: Align(
                                                             alignment:
                                                                 AlignmentDirectional(
-                                                                    -1.00,
-                                                                    0.00),
+                                                                    -1.0, 0.0),
                                                             child: Padding(
                                                               padding:
                                                                   EdgeInsetsDirectional
@@ -420,6 +406,8 @@ class _ListaProdRecomendadosWidgetState
                                                                           .white,
                                                                       fontSize:
                                                                           14.0,
+                                                                      letterSpacing:
+                                                                          0.0,
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w500,
@@ -435,7 +423,7 @@ class _ListaProdRecomendadosWidgetState
                                               ),
                                               Align(
                                                 alignment: AlignmentDirectional(
-                                                    1.00, -1.00),
+                                                    1.0, -1.0),
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(0.0, 10.0, 10.0,
@@ -483,7 +471,7 @@ class _ListaProdRecomendadosWidgetState
                                                               ) ??
                                                               false;
                                                       if (confirmDialogResponse) {
-                                                        await staggeredViewRecomendadoRecord
+                                                        await columnRecomendadoRecord
                                                             .reference
                                                             .delete();
                                                       }
@@ -526,20 +514,20 @@ class _ListaProdRecomendadosWidgetState
                                           ),
                                         ),
                                       ),
-                                    );
-                                  },
-                                );
-                              },
-                            ),
-                          ),
+                                    ),
+                                  );
+                                }),
+                              ),
+                            );
+                          },
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );

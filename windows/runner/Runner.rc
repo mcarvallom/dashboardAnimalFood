@@ -93,7 +93,7 @@ BEGIN
             VALUE "FileDescription", "A new Flutter project." "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "DashboardAnimalFood" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2022 DashboardAnimalFood. All rights reserved." "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2024 DashboardAnimalFood. All rights reserved." "\0"
             VALUE "OriginalFilename", "dashboard_animal_food.exe" "\0"
             VALUE "ProductName", "DashboardAnimalFood" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"

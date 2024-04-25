@@ -2,18 +2,18 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'iniciar_sesion_model.dart';
 export 'iniciar_sesion_model.dart';
 
 class IniciarSesionWidget extends StatefulWidget {
-  const IniciarSesionWidget({Key? key}) : super(key: key);
+  const IniciarSesionWidget({super.key});
 
   @override
-  _IniciarSesionWidgetState createState() => _IniciarSesionWidgetState();
+  State<IniciarSesionWidget> createState() => _IniciarSesionWidgetState();
 }
 
 class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
@@ -26,10 +26,10 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
     super.initState();
     _model = createModel(context, () => IniciarSesionModel());
 
-    _model.emailAddressLoginnController ??= TextEditingController();
+    _model.emailAddressLoginnTextController ??= TextEditingController();
     _model.emailAddressLoginnFocusNode ??= FocusNode();
 
-    _model.passwordLoginnController ??= TextEditingController();
+    _model.passwordLoginnTextController ??= TextEditingController();
     _model.passwordLoginnFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -44,17 +44,6 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
-    context.watch<FFAppState>();
-
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -69,7 +58,7 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
             color: Colors.white,
             image: DecorationImage(
               fit: BoxFit.cover,
-              alignment: AlignmentDirectional(0.00, 0.60),
+              alignment: AlignmentDirectional(0.0, 0.6),
               image: Image.network(
                 'https://images.unsplash.com/photo-1529472119196-cb724127a98e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxfHxkb2dzfGVufDB8fHx8MTcwMDQ1MDYwNXww&ixlib=rb-4.0.3&q=85',
               ).image,
@@ -79,7 +68,7 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
             width: 100.0,
             height: MediaQuery.sizeOf(context).height * 1.0,
             decoration: BoxDecoration(
-              color: Color(0x84C9C9C9),
+              color: Color(0x4E5CFFBD),
             ),
             child: Column(
               mainAxisSize: MainAxisSize.max,
@@ -105,6 +94,7 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                                       fontFamily: 'Readex Pro',
                                       color: Colors.white,
                                       fontSize: 26.0,
+                                      letterSpacing: 0.0,
                                       fontWeight: FontWeight.w600,
                                     ),
                               ),
@@ -128,7 +118,7 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                                         ),
                                         child: TextFormField(
                                           controller: _model
-                                              .emailAddressLoginnController,
+                                              .emailAddressLoginnTextController,
                                           focusNode: _model
                                               .emailAddressLoginnFocusNode,
                                           obscureText: false,
@@ -141,22 +131,25 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                                                       fontFamily: 'Lexend Deca',
                                                       color: Colors.black,
                                                       fontSize: 14.0,
+                                                      letterSpacing: 0.0,
                                                       fontWeight:
                                                           FontWeight.normal,
                                                     ),
-                                            hintStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      fontFamily: 'Lexend Deca',
-                                                      color: Color(0xFF95A1AC),
-                                                      fontSize: 14.0,
-                                                      fontWeight:
-                                                          FontWeight.normal,
-                                                    ),
+                                            hintStyle: FlutterFlowTheme.of(
+                                                    context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Lexend Deca',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  fontSize: 14.0,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.normal,
+                                                ),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
-                                                color: Color(0xFFFF59FC),
+                                                color: Color(0xFF00AC67),
                                                 width: 1.0,
                                               ),
                                               borderRadius:
@@ -164,7 +157,7 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                                             ),
                                             focusedBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
-                                                color: Color(0x00000000),
+                                                color: Color(0xFF00AC67),
                                                 width: 1.0,
                                               ),
                                               borderRadius:
@@ -172,7 +165,9 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                                             ),
                                             errorBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
-                                                color: Color(0x00000000),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .error,
                                                 width: 1.0,
                                               ),
                                               borderRadius:
@@ -181,7 +176,9 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                                             focusedErrorBorder:
                                                 OutlineInputBorder(
                                               borderSide: BorderSide(
-                                                color: Color(0x00000000),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .error,
                                                 width: 1.0,
                                               ),
                                               borderRadius:
@@ -198,12 +195,13 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                                               .override(
                                                 fontFamily: 'Readex Pro',
                                                 color: Colors.black,
+                                                letterSpacing: 0.0,
                                                 fontWeight: FontWeight.normal,
                                               ),
                                           keyboardType:
                                               TextInputType.emailAddress,
                                           validator: _model
-                                              .emailAddressLoginnControllerValidator
+                                              .emailAddressLoginnTextControllerValidator
                                               .asValidator(context),
                                         ),
                                       ),
@@ -225,10 +223,47 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                                               BorderRadius.circular(8.0),
                                         ),
                                         child: TextFormField(
-                                          controller:
-                                              _model.passwordLoginnController,
+                                          controller: _model
+                                              .passwordLoginnTextController,
                                           focusNode:
                                               _model.passwordLoginnFocusNode,
+                                          onFieldSubmitted: (_) async {
+                                            GoRouter.of(context)
+                                                .prepareAuthEvent();
+
+                                            final user = await authManager
+                                                .signInWithEmail(
+                                              context,
+                                              _model
+                                                  .emailAddressLoginnTextController
+                                                  .text,
+                                              _model
+                                                  .passwordLoginnTextController
+                                                  .text,
+                                            );
+                                            if (user == null) {
+                                              return;
+                                            }
+
+                                            await actions.onesignalLogin(
+                                              currentUserUid,
+                                            );
+
+                                            context.goNamedAuth(
+                                              'conosininiciosesion',
+                                              context.mounted,
+                                              extra: <String, dynamic>{
+                                                kTransitionInfoKey:
+                                                    TransitionInfo(
+                                                  hasTransition: true,
+                                                  transitionType:
+                                                      PageTransitionType.fade,
+                                                  duration:
+                                                      Duration(milliseconds: 0),
+                                                ),
+                                              },
+                                            );
+                                          },
                                           obscureText:
                                               !_model.passwordLoginnVisibility,
                                           decoration: InputDecoration(
@@ -240,22 +275,25 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                                                       fontFamily: 'Lexend Deca',
                                                       color: Colors.black,
                                                       fontSize: 14.0,
+                                                      letterSpacing: 0.0,
                                                       fontWeight:
                                                           FontWeight.normal,
                                                     ),
-                                            hintStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      fontFamily: 'Lexend Deca',
-                                                      color: Color(0xFF95A1AC),
-                                                      fontSize: 14.0,
-                                                      fontWeight:
-                                                          FontWeight.normal,
-                                                    ),
+                                            hintStyle: FlutterFlowTheme.of(
+                                                    context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Lexend Deca',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  fontSize: 14.0,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.normal,
+                                                ),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
-                                                color: Color(0xFFFF59FC),
+                                                color: Color(0xFF00AC67),
                                                 width: 1.0,
                                               ),
                                               borderRadius:
@@ -263,7 +301,7 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                                             ),
                                             focusedBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
-                                                color: Color(0x00000000),
+                                                color: Color(0xFF00AC67),
                                                 width: 1.0,
                                               ),
                                               borderRadius:
@@ -271,7 +309,9 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                                             ),
                                             errorBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
-                                                color: Color(0x00000000),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .error,
                                                 width: 1.0,
                                               ),
                                               borderRadius:
@@ -280,7 +320,9 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                                             focusedErrorBorder:
                                                 OutlineInputBorder(
                                               borderSide: BorderSide(
-                                                color: Color(0x00000000),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .error,
                                                 width: 1.0,
                                               ),
                                               borderRadius:
@@ -315,10 +357,11 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                                               .override(
                                                 fontFamily: 'Readex Pro',
                                                 color: Colors.black,
+                                                letterSpacing: 0.0,
                                               ),
                                           minLines: 1,
                                           validator: _model
-                                              .passwordLoginnControllerValidator
+                                              .passwordLoginnTextControllerValidator
                                               .asValidator(context),
                                         ),
                                       ),
@@ -334,13 +377,19 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                                         final user =
                                             await authManager.signInWithEmail(
                                           context,
-                                          _model.emailAddressLoginnController
+                                          _model
+                                              .emailAddressLoginnTextController
                                               .text,
-                                          _model.passwordLoginnController.text,
+                                          _model.passwordLoginnTextController
+                                              .text,
                                         );
                                         if (user == null) {
                                           return;
                                         }
+
+                                        await actions.onesignalLogin(
+                                          currentUserUid,
+                                        );
 
                                         context.goNamedAuth(
                                           'conosininiciosesion',
@@ -361,10 +410,8 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                                         height: 40.0,
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             20.0, 10.0, 20.0, 10.0),
-                                        iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                10.0, 10.0, 10.0, 10.0),
-                                        color: Color(0xFFFF59FC),
+                                        iconPadding: EdgeInsets.all(10.0),
+                                        color: Color(0xFF00AC67),
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
@@ -373,6 +420,7 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBtnText,
                                               fontSize: 20.0,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.normal,
                                             ),
                                         elevation: 10.0,
@@ -414,6 +462,7 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                                                         fontFamily:
                                                             'Readex Pro',
                                                         color: Colors.white,
+                                                        letterSpacing: 0.0,
                                                       ),
                                               elevation: 0.0,
                                               borderSide: BorderSide(
@@ -434,7 +483,7 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                                                   Colors.transparent,
                                               onTap: () async {
                                                 if (_model
-                                                    .emailAddressLoginnController
+                                                    .emailAddressLoginnTextController
                                                     .text
                                                     .isEmpty) {
                                                   ScaffoldMessenger.of(context)
@@ -449,7 +498,7 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                                                 }
                                                 await authManager.resetPassword(
                                                   email: _model
-                                                      .emailAddressLoginnController
+                                                      .emailAddressLoginnTextController
                                                       .text,
                                                   context: context,
                                                 );
@@ -466,6 +515,7 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                                                                   .of(context)
                                                               .primaryBackground,
                                                           fontSize: 18.0,
+                                                          letterSpacing: 0.0,
                                                         ),
                                               ),
                                             ),

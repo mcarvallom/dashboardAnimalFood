@@ -2,9 +2,9 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/custom_code/actions/index.dart' as actions;
 import 'iniciar_sesion_widget.dart' show IniciarSesionWidget;
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -14,31 +14,28 @@ class IniciarSesionModel extends FlutterFlowModel<IniciarSesionWidget> {
   final unfocusNode = FocusNode();
   // State field(s) for emailAddress_Loginn widget.
   FocusNode? emailAddressLoginnFocusNode;
-  TextEditingController? emailAddressLoginnController;
+  TextEditingController? emailAddressLoginnTextController;
   String? Function(BuildContext, String?)?
-      emailAddressLoginnControllerValidator;
+      emailAddressLoginnTextControllerValidator;
   // State field(s) for password_Loginn widget.
   FocusNode? passwordLoginnFocusNode;
-  TextEditingController? passwordLoginnController;
+  TextEditingController? passwordLoginnTextController;
   late bool passwordLoginnVisibility;
-  String? Function(BuildContext, String?)? passwordLoginnControllerValidator;
+  String? Function(BuildContext, String?)?
+      passwordLoginnTextControllerValidator;
 
-  /// Initialization and disposal methods.
-
+  @override
   void initState(BuildContext context) {
     passwordLoginnVisibility = false;
   }
 
+  @override
   void dispose() {
     unfocusNode.dispose();
     emailAddressLoginnFocusNode?.dispose();
-    emailAddressLoginnController?.dispose();
+    emailAddressLoginnTextController?.dispose();
 
     passwordLoginnFocusNode?.dispose();
-    passwordLoginnController?.dispose();
+    passwordLoginnTextController?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

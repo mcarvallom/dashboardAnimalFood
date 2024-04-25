@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:typed_data';
+import '../schema/structs/index.dart';
 
 import '/flutter_flow/flutter_flow_util.dart';
 import 'api_manager.dart';
@@ -48,11 +49,48 @@ class ReembolsoCall {
       encodeBodyUtf8: true,
       decodeUtf8: true,
       cache: false,
+      alwaysAllowBody: false,
     );
   }
 }
 
 /// End GetNet Group Code
+
+class EmailsCall {
+  static Future<ApiCallResponse> call({
+    String? email = '',
+    String? plantilla = '',
+    String? titulo = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "app_id": "a60882a0-3d89-49bf-a503-33b15024a6c9",
+  "email_subject": "${titulo}",
+  "template_id": "${plantilla}",
+  "include_email_tokens": [
+    "${email}"
+  ]
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'Emails',
+      apiUrl: 'https://onesignal.com/api/v1/notifications',
+      callType: ApiCallType.POST,
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+        'Authorization':
+            'Basic NTc0MDI3NjUtYmExMy00YjA0LWE4MGItNjYwN2IyODU5NGMw',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
 
 class ApiPagingParams {
   int nextPageNumber = 0;

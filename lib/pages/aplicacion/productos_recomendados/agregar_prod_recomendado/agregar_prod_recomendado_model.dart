@@ -1,19 +1,18 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
-import '/components/top_escritorio_widget.dart';
 import '/flutter_flow/flutter_flow_autocomplete_options_list.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
+import '/pages/componentes/top_escritorio/top_escritorio_widget.dart';
 import 'agregar_prod_recomendado_widget.dart' show AgregarProdRecomendadoWidget;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:text_search/text_search.dart';
@@ -31,9 +30,9 @@ class AgregarProdRecomendadoModel
   late TopEscritorioModel topEscritorioModel1;
   // State field(s) for titulo widget.
   FocusNode? tituloFocusNode;
-  TextEditingController? tituloController;
-  String? Function(BuildContext, String?)? tituloControllerValidator;
-  String? _tituloControllerValidator(BuildContext context, String? val) {
+  TextEditingController? tituloTextController;
+  String? Function(BuildContext, String?)? tituloTextControllerValidator;
+  String? _tituloTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return 'Campo requerido';
     }
@@ -43,9 +42,9 @@ class AgregarProdRecomendadoModel
 
   // State field(s) for subtitulo widget.
   FocusNode? subtituloFocusNode;
-  TextEditingController? subtituloController;
-  String? Function(BuildContext, String?)? subtituloControllerValidator;
-  String? _subtituloControllerValidator(BuildContext context, String? val) {
+  TextEditingController? subtituloTextController;
+  String? Function(BuildContext, String?)? subtituloTextControllerValidator;
+  String? _subtituloTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return 'Campo requerido';
     }
@@ -56,9 +55,9 @@ class AgregarProdRecomendadoModel
   // State field(s) for buscar widget.
   final buscarKey = GlobalKey();
   FocusNode? buscarFocusNode;
-  TextEditingController? buscarController;
+  TextEditingController? buscarTextController;
   String? buscarSelectedOption;
-  String? Function(BuildContext, String?)? buscarControllerValidator;
+  String? Function(BuildContext, String?)? buscarTextControllerValidator;
   List<ProductoRecord> simpleSearchResults1 = [];
   bool isDataUploading1 = false;
   FFUploadedFile uploadedLocalFile1 =
@@ -69,9 +68,10 @@ class AgregarProdRecomendadoModel
   late TopEscritorioModel topEscritorioModel2;
   // State field(s) for titulomovil widget.
   FocusNode? titulomovilFocusNode;
-  TextEditingController? titulomovilController;
-  String? Function(BuildContext, String?)? titulomovilControllerValidator;
-  String? _titulomovilControllerValidator(BuildContext context, String? val) {
+  TextEditingController? titulomovilTextController;
+  String? Function(BuildContext, String?)? titulomovilTextControllerValidator;
+  String? _titulomovilTextControllerValidator(
+      BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return 'Campo requerido';
     }
@@ -81,9 +81,10 @@ class AgregarProdRecomendadoModel
 
   // State field(s) for subtituloMovil widget.
   FocusNode? subtituloMovilFocusNode;
-  TextEditingController? subtituloMovilController;
-  String? Function(BuildContext, String?)? subtituloMovilControllerValidator;
-  String? _subtituloMovilControllerValidator(
+  TextEditingController? subtituloMovilTextController;
+  String? Function(BuildContext, String?)?
+      subtituloMovilTextControllerValidator;
+  String? _subtituloMovilTextControllerValidator(
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return 'Campo requerido';
@@ -95,48 +96,45 @@ class AgregarProdRecomendadoModel
   // State field(s) for buscarMovil widget.
   final buscarMovilKey = GlobalKey();
   FocusNode? buscarMovilFocusNode;
-  TextEditingController? buscarMovilController;
+  TextEditingController? buscarMovilTextController;
   String? buscarMovilSelectedOption;
-  String? Function(BuildContext, String?)? buscarMovilControllerValidator;
+  String? Function(BuildContext, String?)? buscarMovilTextControllerValidator;
   List<ProductoRecord> simpleSearchResults2 = [];
   bool isDataUploading2 = false;
   FFUploadedFile uploadedLocalFile2 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
   String uploadedFileUrl2 = '';
 
-  /// Initialization and disposal methods.
-
+  @override
   void initState(BuildContext context) {
     topEscritorioModel1 = createModel(context, () => TopEscritorioModel());
-    tituloControllerValidator = _tituloControllerValidator;
-    subtituloControllerValidator = _subtituloControllerValidator;
+    tituloTextControllerValidator = _tituloTextControllerValidator;
+    subtituloTextControllerValidator = _subtituloTextControllerValidator;
     topEscritorioModel2 = createModel(context, () => TopEscritorioModel());
-    titulomovilControllerValidator = _titulomovilControllerValidator;
-    subtituloMovilControllerValidator = _subtituloMovilControllerValidator;
+    titulomovilTextControllerValidator = _titulomovilTextControllerValidator;
+    subtituloMovilTextControllerValidator =
+        _subtituloMovilTextControllerValidator;
   }
 
+  @override
   void dispose() {
     unfocusNode.dispose();
     topEscritorioModel1.dispose();
     tituloFocusNode?.dispose();
-    tituloController?.dispose();
+    tituloTextController?.dispose();
 
     subtituloFocusNode?.dispose();
-    subtituloController?.dispose();
+    subtituloTextController?.dispose();
 
     buscarFocusNode?.dispose();
 
     topEscritorioModel2.dispose();
     titulomovilFocusNode?.dispose();
-    titulomovilController?.dispose();
+    titulomovilTextController?.dispose();
 
     subtituloMovilFocusNode?.dispose();
-    subtituloMovilController?.dispose();
+    subtituloMovilTextController?.dispose();
 
     buscarMovilFocusNode?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

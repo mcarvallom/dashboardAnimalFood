@@ -8,11 +8,14 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
+import '/pages/componentes/crear_variacion/crear_variacion_widget.dart';
+import '/pages/componentes/modificar_variacion/modificar_variacion_widget.dart';
 import 'editar_productos_widget.dart' show EditarProductosWidget;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
@@ -22,53 +25,69 @@ class EditarProductosModel extends FlutterFlowModel<EditarProductosWidget> {
 
   // State field(s) for txtNombre widget.
   FocusNode? txtNombreFocusNode;
-  TextEditingController? txtNombreController;
-  String? Function(BuildContext, String?)? txtNombreControllerValidator;
+  TextEditingController? txtNombreTextController;
+  String? Function(BuildContext, String?)? txtNombreTextControllerValidator;
   // State field(s) for txtDescripcion widget.
   FocusNode? txtDescripcionFocusNode;
-  TextEditingController? txtDescripcionController;
-  String? Function(BuildContext, String?)? txtDescripcionControllerValidator;
+  TextEditingController? txtDescripcionTextController;
+  String? Function(BuildContext, String?)?
+      txtDescripcionTextControllerValidator;
+  // State field(s) for txtCodeBarra widget.
+  FocusNode? txtCodeBarraFocusNode;
+  TextEditingController? txtCodeBarraTextController;
+  String? Function(BuildContext, String?)? txtCodeBarraTextControllerValidator;
+  var escanearP = '';
+  // State field(s) for txtTamanio widget.
+  FocusNode? txtTamanioFocusNode;
+  TextEditingController? txtTamanioTextController;
+  String? Function(BuildContext, String?)? txtTamanioTextControllerValidator;
+  // State field(s) for DropDown widget.
+  String? dropDownValue1;
+  FormFieldController<String>? dropDownValueController1;
   // State field(s) for txtIndicacionesyContraindicaciones widget.
   FocusNode? txtIndicacionesyContraindicacionesFocusNode;
-  TextEditingController? txtIndicacionesyContraindicacionesController;
+  TextEditingController? txtIndicacionesyContraindicacionesTextController;
   String? Function(BuildContext, String?)?
-      txtIndicacionesyContraindicacionesControllerValidator;
+      txtIndicacionesyContraindicacionesTextControllerValidator;
   // State field(s) for txtMododeuso widget.
   FocusNode? txtMododeusoFocusNode;
-  TextEditingController? txtMododeusoController;
-  String? Function(BuildContext, String?)? txtMododeusoControllerValidator;
+  TextEditingController? txtMododeusoTextController;
+  String? Function(BuildContext, String?)? txtMododeusoTextControllerValidator;
   // State field(s) for txtDosificacion widget.
   FocusNode? txtDosificacionFocusNode;
-  TextEditingController? txtDosificacionController;
-  String? Function(BuildContext, String?)? txtDosificacionControllerValidator;
+  TextEditingController? txtDosificacionTextController;
+  String? Function(BuildContext, String?)?
+      txtDosificacionTextControllerValidator;
   // State field(s) for txtPrecauciones widget.
   FocusNode? txtPrecaucionesFocusNode;
-  TextEditingController? txtPrecaucionesController;
-  String? Function(BuildContext, String?)? txtPrecaucionesControllerValidator;
+  TextEditingController? txtPrecaucionesTextController;
+  String? Function(BuildContext, String?)?
+      txtPrecaucionesTextControllerValidator;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode1;
-  TextEditingController? textController7;
-  String? Function(BuildContext, String?)? textController7Validator;
-  // State field(s) for txtIngredientes widget.
-  FocusNode? txtIngredientesFocusNode;
-  TextEditingController? txtIngredientesController;
-  String? Function(BuildContext, String?)? txtIngredientesControllerValidator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode2;
   TextEditingController? textController9;
   String? Function(BuildContext, String?)? textController9Validator;
+  // State field(s) for txtIngredientes widget.
+  FocusNode? txtIngredientesFocusNode;
+  TextEditingController? txtIngredientesTextController;
+  String? Function(BuildContext, String?)?
+      txtIngredientesTextControllerValidator;
   // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode3;
-  TextEditingController? textController10;
-  String? Function(BuildContext, String?)? textController10Validator;
+  FocusNode? textFieldFocusNode2;
+  TextEditingController? textController11;
+  String? Function(BuildContext, String?)? textController11Validator;
+  // State field(s) for TxtRebaja widget.
+  FocusNode? txtRebajaFocusNode;
+  TextEditingController? txtRebajaTextController;
+  String? Function(BuildContext, String?)? txtRebajaTextControllerValidator;
   // State field(s) for txtMarca widget.
   FocusNode? txtMarcaFocusNode;
-  TextEditingController? txtMarcaController;
-  String? Function(BuildContext, String?)? txtMarcaControllerValidator;
+  TextEditingController? txtMarcaTextController;
+  String? Function(BuildContext, String?)? txtMarcaTextControllerValidator;
   // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode4;
-  TextEditingController? textController12;
-  String? Function(BuildContext, String?)? textController12Validator;
+  FocusNode? textFieldFocusNode3;
+  TextEditingController? textController14;
+  String? Function(BuildContext, String?)? textController14Validator;
   // State field(s) for Switch widget.
   bool? switchValue1;
   // State field(s) for Switch widget.
@@ -79,59 +98,62 @@ class EditarProductosModel extends FlutterFlowModel<EditarProductosWidget> {
   String uploadedFileUrl = '';
 
   // State field(s) for DropDown widget.
-  String? dropDownValue;
-  FormFieldController<String>? dropDownValueController;
+  String? dropDownValue2;
+  FormFieldController<String>? dropDownValueController2;
   // State field(s) for etiquetaProducto widget.
   FocusNode? etiquetaProductoFocusNode;
-  TextEditingController? etiquetaProductoController;
-  String? Function(BuildContext, String?)? etiquetaProductoControllerValidator;
+  TextEditingController? etiquetaProductoTextController;
+  String? Function(BuildContext, String?)?
+      etiquetaProductoTextControllerValidator;
 
-  /// Initialization and disposal methods.
-
+  @override
   void initState(BuildContext context) {}
 
+  @override
   void dispose() {
     txtNombreFocusNode?.dispose();
-    txtNombreController?.dispose();
+    txtNombreTextController?.dispose();
 
     txtDescripcionFocusNode?.dispose();
-    txtDescripcionController?.dispose();
+    txtDescripcionTextController?.dispose();
+
+    txtCodeBarraFocusNode?.dispose();
+    txtCodeBarraTextController?.dispose();
+
+    txtTamanioFocusNode?.dispose();
+    txtTamanioTextController?.dispose();
 
     txtIndicacionesyContraindicacionesFocusNode?.dispose();
-    txtIndicacionesyContraindicacionesController?.dispose();
+    txtIndicacionesyContraindicacionesTextController?.dispose();
 
     txtMododeusoFocusNode?.dispose();
-    txtMododeusoController?.dispose();
+    txtMododeusoTextController?.dispose();
 
     txtDosificacionFocusNode?.dispose();
-    txtDosificacionController?.dispose();
+    txtDosificacionTextController?.dispose();
 
     txtPrecaucionesFocusNode?.dispose();
-    txtPrecaucionesController?.dispose();
+    txtPrecaucionesTextController?.dispose();
 
     textFieldFocusNode1?.dispose();
-    textController7?.dispose();
-
-    txtIngredientesFocusNode?.dispose();
-    txtIngredientesController?.dispose();
-
-    textFieldFocusNode2?.dispose();
     textController9?.dispose();
 
-    textFieldFocusNode3?.dispose();
-    textController10?.dispose();
+    txtIngredientesFocusNode?.dispose();
+    txtIngredientesTextController?.dispose();
+
+    textFieldFocusNode2?.dispose();
+    textController11?.dispose();
+
+    txtRebajaFocusNode?.dispose();
+    txtRebajaTextController?.dispose();
 
     txtMarcaFocusNode?.dispose();
-    txtMarcaController?.dispose();
+    txtMarcaTextController?.dispose();
 
-    textFieldFocusNode4?.dispose();
-    textController12?.dispose();
+    textFieldFocusNode3?.dispose();
+    textController14?.dispose();
 
     etiquetaProductoFocusNode?.dispose();
-    etiquetaProductoController?.dispose();
+    etiquetaProductoTextController?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

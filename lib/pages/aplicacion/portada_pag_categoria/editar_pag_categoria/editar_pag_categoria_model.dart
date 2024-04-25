@@ -1,15 +1,14 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
-import '/components/top_escritorio_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
+import '/pages/componentes/top_escritorio/top_escritorio_widget.dart';
 import 'editar_pag_categoria_widget.dart' show EditarPagCategoriaWidget;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -25,18 +24,14 @@ class EditarPagCategoriaModel
       FFUploadedFile(bytes: Uint8List.fromList([]));
   String uploadedFileUrl = '';
 
-  /// Initialization and disposal methods.
-
+  @override
   void initState(BuildContext context) {
     topEscritorioModel = createModel(context, () => TopEscritorioModel());
   }
 
+  @override
   void dispose() {
     unfocusNode.dispose();
     topEscritorioModel.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

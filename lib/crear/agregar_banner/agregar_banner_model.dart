@@ -1,11 +1,10 @@
-import '/components/menu_escritorio_widget.dart';
-import '/components/top_escritorio_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/pages/componentes/menu_escritorio/menu_escritorio_widget.dart';
+import '/pages/componentes/top_escritorio/top_escritorio_widget.dart';
 import 'agregar_banner_widget.dart' show AgregarBannerWidget;
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -18,20 +17,16 @@ class AgregarBannerModel extends FlutterFlowModel<AgregarBannerWidget> {
   // Model for TopEscritorio component.
   late TopEscritorioModel topEscritorioModel;
 
-  /// Initialization and disposal methods.
-
+  @override
   void initState(BuildContext context) {
     menuEscritorioModel = createModel(context, () => MenuEscritorioModel());
     topEscritorioModel = createModel(context, () => TopEscritorioModel());
   }
 
+  @override
   void dispose() {
     unfocusNode.dispose();
     menuEscritorioModel.dispose();
     topEscritorioModel.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

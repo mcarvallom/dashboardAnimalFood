@@ -23,9 +23,12 @@ import 'schema/comentario_producto_record.dart';
 import 'schema/evidencia_entrega_record.dart';
 import 'schema/evidencia_entrega_fallida_record.dart';
 import 'schema/preguntas_frecuentes_record.dart';
+import 'schema/variacion_record.dart';
+import 'schema/notificaciones_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart';
+export 'package:firebase_core/firebase_core.dart';
 export 'schema/index.dart';
 export 'schema/util/firestore_util.dart';
 export 'schema/util/schema_util.dart';
@@ -48,6 +51,8 @@ export 'schema/comentario_producto_record.dart';
 export 'schema/evidencia_entrega_record.dart';
 export 'schema/evidencia_entrega_fallida_record.dart';
 export 'schema/preguntas_frecuentes_record.dart';
+export 'schema/variacion_record.dart';
+export 'schema/notificaciones_record.dart';
 
 /// Functions to query TiendaRecords (as a Stream and as a Future).
 Future<int> queryTiendaRecordCount({
@@ -716,6 +721,83 @@ Future<List<PreguntasFrecuentesRecord>> queryPreguntasFrecuentesRecordOnce({
       singleRecord: singleRecord,
     );
 
+/// Functions to query VariacionRecords (as a Stream and as a Future).
+Future<int> queryVariacionRecordCount({
+  DocumentReference? parent,
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      VariacionRecord.collection(parent),
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<VariacionRecord>> queryVariacionRecord({
+  DocumentReference? parent,
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      VariacionRecord.collection(parent),
+      VariacionRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<VariacionRecord>> queryVariacionRecordOnce({
+  DocumentReference? parent,
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      VariacionRecord.collection(parent),
+      VariacionRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query NotificacionesRecords (as a Stream and as a Future).
+Future<int> queryNotificacionesRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      NotificacionesRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<NotificacionesRecord>> queryNotificacionesRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      NotificacionesRecord.collection,
+      NotificacionesRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<NotificacionesRecord>> queryNotificacionesRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      NotificacionesRecord.collection,
+      NotificacionesRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
 Future<int> queryCollectionCount(
   Query collection, {
   Query Function(Query)? queryBuilder,
@@ -729,7 +811,7 @@ Future<int> queryCollectionCount(
 
   return query.count().get().catchError((err) {
     print('Error querying $collection: $err');
-  }).then((value) => value.count);
+  }).then((value) => value.count!);
 }
 
 Stream<List<T>> queryCollection<T>(
@@ -781,6 +863,15 @@ Future<List<T>> queryCollectionOnce<T>(
       .map((d) => d!)
       .toList());
 }
+
+Filter filterIn(String field, List? list) => (list?.isEmpty ?? true)
+    ? Filter(field, whereIn: null)
+    : Filter(field, whereIn: list);
+
+Filter filterArrayContainsAny(String field, List? list) =>
+    (list?.isEmpty ?? true)
+        ? Filter(field, arrayContainsAny: null)
+        : Filter(field, arrayContainsAny: list);
 
 extension QueryExtension on Query {
   Query whereIn(String field, List? list) => (list?.isEmpty ?? true)

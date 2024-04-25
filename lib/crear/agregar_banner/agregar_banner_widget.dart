@@ -1,10 +1,9 @@
-import '/components/menu_escritorio_widget.dart';
-import '/components/top_escritorio_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/pages/componentes/menu_escritorio/menu_escritorio_widget.dart';
+import '/pages/componentes/top_escritorio/top_escritorio_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'agregar_banner_model.dart';
@@ -12,7 +11,7 @@ export 'agregar_banner_model.dart';
 
 class AgregarBannerWidget extends StatefulWidget {
   const AgregarBannerWidget({
-    Key? key,
+    super.key,
     this.colorInicio,
     this.colorOrdenes,
     this.colorProductos,
@@ -21,8 +20,7 @@ class AgregarBannerWidget extends StatefulWidget {
     Color? colorBanner,
     this.colorAjustes,
     this.colorCategorias,
-  })  : this.colorBanner = colorBanner ?? const Color(0xFF39A3EF),
-        super(key: key);
+  }) : this.colorBanner = colorBanner ?? const Color(0xFF39A3EF);
 
   final Color? colorInicio;
   final Color? colorOrdenes;
@@ -34,7 +32,7 @@ class AgregarBannerWidget extends StatefulWidget {
   final Color? colorCategorias;
 
   @override
-  _AgregarBannerWidgetState createState() => _AgregarBannerWidgetState();
+  State<AgregarBannerWidget> createState() => _AgregarBannerWidgetState();
 }
 
 class _AgregarBannerWidgetState extends State<AgregarBannerWidget> {
@@ -59,17 +57,6 @@ class _AgregarBannerWidgetState extends State<AgregarBannerWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
-    context.watch<FFAppState>();
-
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -139,7 +126,7 @@ class _AgregarBannerWidgetState extends State<AgregarBannerWidget> {
                                           children: [
                                             Align(
                                               alignment: AlignmentDirectional(
-                                                  -1.00, -1.00),
+                                                  -1.0, -1.0),
                                               child: Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
@@ -153,6 +140,7 @@ class _AgregarBannerWidgetState extends State<AgregarBannerWidget> {
                                                         fontFamily:
                                                             'Readex Pro',
                                                         fontSize: 20.0,
+                                                        letterSpacing: 0.0,
                                                       ),
                                                 ),
                                               ),
@@ -212,6 +200,8 @@ class _AgregarBannerWidgetState extends State<AgregarBannerWidget> {
                                                                     'Readex Pro',
                                                                 color: Colors
                                                                     .white,
+                                                                letterSpacing:
+                                                                    0.0,
                                                               ),
                                                       elevation: 3.0,
                                                       borderSide: BorderSide(
@@ -275,6 +265,8 @@ class _AgregarBannerWidgetState extends State<AgregarBannerWidget> {
                                                                     'Readex Pro',
                                                                 color: Colors
                                                                     .white,
+                                                                letterSpacing:
+                                                                    0.0,
                                                               ),
                                                       elevation: 3.0,
                                                       borderSide: BorderSide(

@@ -10,6 +10,7 @@ import 'place.dart';
 import 'uploaded_file.dart';
 import '/backend/backend.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import '/backend/schema/structs/index.dart';
 import '/auth/firebase_auth/auth_util.dart';
 
 int porcentajepedidosEnProceso(
@@ -76,4 +77,24 @@ String seed() {
       "${now.year}-${now.month}-${now.day}T${now.hour - 2}:${now.minute}:${now.second}-05:00";
 
   return seed;
+}
+
+int? numeroWSP(int? numero) {
+  // ultimos 8 numeros de una cadena
+  if (numero == null) {
+    return null;
+  }
+  String numeroString = numero.toString();
+  if (numeroString.length < 8) {
+    return null;
+  }
+  return int.parse(numeroString.substring(numeroString.length - 8));
+}
+
+double subtotalItem(
+  int qty,
+  double precio,
+) {
+  // Add your function code here!
+  return qty * precio;
 }

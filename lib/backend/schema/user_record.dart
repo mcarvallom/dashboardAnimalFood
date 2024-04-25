@@ -111,6 +111,16 @@ class UserRecord extends FirestoreRecord {
   bool get isInventario => _isInventario ?? false;
   bool hasIsInventario() => _isInventario != null;
 
+  // "apellido" field.
+  String? _apellido;
+  String get apellido => _apellido ?? '';
+  bool hasApellido() => _apellido != null;
+
+  // "numeroTelefono" field.
+  int? _numeroTelefono;
+  int get numeroTelefono => _numeroTelefono ?? 0;
+  bool hasNumeroTelefono() => _numeroTelefono != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
@@ -131,6 +141,8 @@ class UserRecord extends FirestoreRecord {
     _sector = snapshotData['Sector'] as String?;
     _dv = snapshotData['dv'] as String?;
     _isInventario = snapshotData['isInventario'] as bool?;
+    _apellido = snapshotData['apellido'] as String?;
+    _numeroTelefono = castToType<int>(snapshotData['numeroTelefono']);
   }
 
   static CollectionReference get collection =>
@@ -186,6 +198,8 @@ Map<String, dynamic> createUserRecordData({
   String? sector,
   String? dv,
   bool? isInventario,
+  String? apellido,
+  int? numeroTelefono,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -208,6 +222,8 @@ Map<String, dynamic> createUserRecordData({
       'Sector': sector,
       'dv': dv,
       'isInventario': isInventario,
+      'apellido': apellido,
+      'numeroTelefono': numeroTelefono,
     }.withoutNulls,
   );
 
@@ -237,7 +253,9 @@ class UserRecordDocumentEquality implements Equality<UserRecord> {
         e1?.region == e2?.region &&
         e1?.sector == e2?.sector &&
         e1?.dv == e2?.dv &&
-        e1?.isInventario == e2?.isInventario;
+        e1?.isInventario == e2?.isInventario &&
+        e1?.apellido == e2?.apellido &&
+        e1?.numeroTelefono == e2?.numeroTelefono;
   }
 
   @override
@@ -260,7 +278,9 @@ class UserRecordDocumentEquality implements Equality<UserRecord> {
         e?.region,
         e?.sector,
         e?.dv,
-        e?.isInventario
+        e?.isInventario,
+        e?.apellido,
+        e?.numeroTelefono
       ]);
 
   @override

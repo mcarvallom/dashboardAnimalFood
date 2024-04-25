@@ -1,11 +1,10 @@
 import '/backend/backend.dart';
-import '/components/top_escritorio_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/pages/componentes/top_escritorio/top_escritorio_widget.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -14,18 +13,17 @@ export 'sitio_web_model.dart';
 
 class SitioWebWidget extends StatefulWidget {
   const SitioWebWidget({
-    Key? key,
+    super.key,
     Color? colorInicio,
     String? nombre,
   })  : this.colorInicio = colorInicio ?? const Color(0xFFE6A5E5),
-        this.nombre = nombre ?? 'Inicio',
-        super(key: key);
+        this.nombre = nombre ?? 'Inicio';
 
   final Color colorInicio;
   final String nombre;
 
   @override
-  _SitioWebWidgetState createState() => _SitioWebWidgetState();
+  State<SitioWebWidget> createState() => _SitioWebWidgetState();
 }
 
 class _SitioWebWidgetState extends State<SitioWebWidget> {
@@ -50,17 +48,6 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
-    context.watch<FFAppState>();
-
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -105,7 +92,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                             Flexible(
                                               child: Align(
                                                 alignment: AlignmentDirectional(
-                                                    0.00, 0.00),
+                                                    0.0, 0.0),
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(0.0, 20.0, 10.0,
@@ -206,7 +193,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                               CircularProgressIndicator(
                                                                             valueColor:
                                                                                 AlwaysStoppedAnimation<Color>(
-                                                                              FlutterFlowTheme.of(context).primary,
+                                                                              Color(0xFF00AC67),
                                                                             ),
                                                                           ),
                                                                         ),
@@ -238,7 +225,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                           child:
                                                                               Align(
                                                                             alignment:
-                                                                                AlignmentDirectional(0.00, 0.00),
+                                                                                AlignmentDirectional(0.0, 0.0),
                                                                             child:
                                                                                 Icon(
                                                                               Icons.shopping_bag,
@@ -258,8 +245,10 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                             'Órdenes',
                                                                             textAlign:
                                                                                 TextAlign.center,
-                                                                            style:
-                                                                                FlutterFlowTheme.of(context).bodyMedium,
+                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                  fontFamily: 'Readex Pro',
+                                                                                  letterSpacing: 0.0,
+                                                                                ),
                                                                             minFontSize:
                                                                                 14.0,
                                                                           ),
@@ -278,6 +267,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Readex Pro',
                                                                                   color: Color(0xFF8E8E8E),
+                                                                                  letterSpacing: 0.0,
                                                                                 ),
                                                                             minFontSize:
                                                                                 14.0,
@@ -375,7 +365,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                               CircularProgressIndicator(
                                                                             valueColor:
                                                                                 AlwaysStoppedAnimation<Color>(
-                                                                              FlutterFlowTheme.of(context).primary,
+                                                                              Color(0xFF00AC67),
                                                                             ),
                                                                           ),
                                                                         ),
@@ -407,7 +397,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                           child:
                                                                               Align(
                                                                             alignment:
-                                                                                AlignmentDirectional(0.00, 0.00),
+                                                                                AlignmentDirectional(0.0, 0.0),
                                                                             child:
                                                                                 FaIcon(
                                                                               FontAwesomeIcons.boxOpen,
@@ -427,8 +417,10 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                             'Productos',
                                                                             textAlign:
                                                                                 TextAlign.center,
-                                                                            style:
-                                                                                FlutterFlowTheme.of(context).bodyMedium,
+                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                  fontFamily: 'Readex Pro',
+                                                                                  letterSpacing: 0.0,
+                                                                                ),
                                                                             minFontSize:
                                                                                 14.0,
                                                                           ),
@@ -447,6 +439,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Readex Pro',
                                                                                   color: Color(0xFF8E8E8E),
+                                                                                  letterSpacing: 0.0,
                                                                                 ),
                                                                             minFontSize:
                                                                                 14.0,
@@ -480,7 +473,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                               .transparent,
                                                           onTap: () async {
                                                             context.pushNamed(
-                                                              'categorias',
+                                                              'Sub-categorias',
                                                               extra: <String,
                                                                   dynamic>{
                                                                 kTransitionInfoKey:
@@ -544,7 +537,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                               CircularProgressIndicator(
                                                                             valueColor:
                                                                                 AlwaysStoppedAnimation<Color>(
-                                                                              FlutterFlowTheme.of(context).primary,
+                                                                              Color(0xFF00AC67),
                                                                             ),
                                                                           ),
                                                                         ),
@@ -576,7 +569,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                           child:
                                                                               Align(
                                                                             alignment:
-                                                                                AlignmentDirectional(0.00, 0.00),
+                                                                                AlignmentDirectional(0.0, 0.0),
                                                                             child:
                                                                                 Icon(
                                                                               Icons.list,
@@ -596,8 +589,10 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                             'Categorías',
                                                                             textAlign:
                                                                                 TextAlign.center,
-                                                                            style:
-                                                                                FlutterFlowTheme.of(context).bodyMedium,
+                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                  fontFamily: 'Readex Pro',
+                                                                                  letterSpacing: 0.0,
+                                                                                ),
                                                                             minFontSize:
                                                                                 14.0,
                                                                           ),
@@ -616,6 +611,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Readex Pro',
                                                                                   color: Color(0xFF8E8E8E),
+                                                                                  letterSpacing: 0.0,
                                                                                 ),
                                                                             minFontSize:
                                                                                 14.0,
@@ -713,7 +709,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                               CircularProgressIndicator(
                                                                             valueColor:
                                                                                 AlwaysStoppedAnimation<Color>(
-                                                                              FlutterFlowTheme.of(context).primary,
+                                                                              Color(0xFF00AC67),
                                                                             ),
                                                                           ),
                                                                         ),
@@ -745,7 +741,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                           child:
                                                                               Align(
                                                                             alignment:
-                                                                                AlignmentDirectional(0.00, 0.00),
+                                                                                AlignmentDirectional(0.0, 0.0),
                                                                             child:
                                                                                 FaIcon(
                                                                               FontAwesomeIcons.dog,
@@ -765,8 +761,10 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                             'Marcas',
                                                                             textAlign:
                                                                                 TextAlign.center,
-                                                                            style:
-                                                                                FlutterFlowTheme.of(context).bodyMedium,
+                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                  fontFamily: 'Readex Pro',
+                                                                                  letterSpacing: 0.0,
+                                                                                ),
                                                                             minFontSize:
                                                                                 14.0,
                                                                           ),
@@ -785,6 +783,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Readex Pro',
                                                                                   color: Color(0xFF8E8E8E),
+                                                                                  letterSpacing: 0.0,
                                                                                 ),
                                                                             minFontSize:
                                                                                 14.0,
@@ -890,7 +889,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                               CircularProgressIndicator(
                                                                             valueColor:
                                                                                 AlwaysStoppedAnimation<Color>(
-                                                                              FlutterFlowTheme.of(context).primary,
+                                                                              Color(0xFF00AC67),
                                                                             ),
                                                                           ),
                                                                         ),
@@ -922,7 +921,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                           child:
                                                                               Align(
                                                                             alignment:
-                                                                                AlignmentDirectional(0.00, 0.00),
+                                                                                AlignmentDirectional(0.0, 0.0),
                                                                             child:
                                                                                 Icon(
                                                                               Icons.group,
@@ -942,8 +941,10 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                             'Empleados',
                                                                             textAlign:
                                                                                 TextAlign.center,
-                                                                            style:
-                                                                                FlutterFlowTheme.of(context).bodyMedium,
+                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                  fontFamily: 'Readex Pro',
+                                                                                  letterSpacing: 0.0,
+                                                                                ),
                                                                             minFontSize:
                                                                                 14.0,
                                                                           ),
@@ -962,6 +963,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Readex Pro',
                                                                                   color: Color(0xFF8E8E8E),
+                                                                                  letterSpacing: 0.0,
                                                                                 ),
                                                                             minFontSize:
                                                                                 14.0,
@@ -1081,7 +1083,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                               CircularProgressIndicator(
                                                                             valueColor:
                                                                                 AlwaysStoppedAnimation<Color>(
-                                                                              FlutterFlowTheme.of(context).primary,
+                                                                              Color(0xFF00AC67),
                                                                             ),
                                                                           ),
                                                                         ),
@@ -1113,7 +1115,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                           child:
                                                                               Align(
                                                                             alignment:
-                                                                                AlignmentDirectional(0.00, 0.00),
+                                                                                AlignmentDirectional(0.0, 0.0),
                                                                             child:
                                                                                 Icon(
                                                                               Icons.groups_2,
@@ -1133,8 +1135,10 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                             'Clientes',
                                                                             textAlign:
                                                                                 TextAlign.center,
-                                                                            style:
-                                                                                FlutterFlowTheme.of(context).bodyMedium,
+                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                  fontFamily: 'Readex Pro',
+                                                                                  letterSpacing: 0.0,
+                                                                                ),
                                                                             minFontSize:
                                                                                 14.0,
                                                                           ),
@@ -1153,6 +1157,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Readex Pro',
                                                                                   color: Color(0xFF8E8E8E),
+                                                                                  letterSpacing: 0.0,
                                                                                 ),
                                                                             minFontSize:
                                                                                 14.0,
@@ -1252,8 +1257,8 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                       child:
                                                                           Align(
                                                                         alignment: AlignmentDirectional(
-                                                                            0.00,
-                                                                            0.00),
+                                                                            0.0,
+                                                                            0.0),
                                                                         child:
                                                                             Icon(
                                                                           Icons
@@ -1277,7 +1282,11 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                         textAlign:
                                                                             TextAlign.center,
                                                                         style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium,
+                                                                            .bodyMedium
+                                                                            .override(
+                                                                              fontFamily: 'Readex Pro',
+                                                                              letterSpacing: 0.0,
+                                                                            ),
                                                                         minFontSize:
                                                                             14.0,
                                                                       ),
@@ -1348,9 +1357,10 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                     ),
                                                                     child:
                                                                         Align(
-                                                                      alignment: AlignmentDirectional(
-                                                                          0.00,
-                                                                          0.00),
+                                                                      alignment:
+                                                                          AlignmentDirectional(
+                                                                              0.0,
+                                                                              0.0),
                                                                       child:
                                                                           FaIcon(
                                                                         FontAwesomeIcons
@@ -1377,7 +1387,13 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                               .center,
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .bodyMedium,
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Readex Pro',
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                          ),
                                                                       minFontSize:
                                                                           14.0,
                                                                     ),
@@ -1447,9 +1463,10 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                     ),
                                                                     child:
                                                                         Align(
-                                                                      alignment: AlignmentDirectional(
-                                                                          0.00,
-                                                                          0.00),
+                                                                      alignment:
+                                                                          AlignmentDirectional(
+                                                                              0.0,
+                                                                              0.0),
                                                                       child:
                                                                           Icon(
                                                                         Icons
@@ -1476,7 +1493,13 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                               .center,
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .bodyMedium,
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Readex Pro',
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                          ),
                                                                       minFontSize:
                                                                           14.0,
                                                                     ),
@@ -1546,9 +1569,10 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                     ),
                                                                     child:
                                                                         Align(
-                                                                      alignment: AlignmentDirectional(
-                                                                          0.00,
-                                                                          0.00),
+                                                                      alignment:
+                                                                          AlignmentDirectional(
+                                                                              0.0,
+                                                                              0.0),
                                                                       child:
                                                                           Icon(
                                                                         Icons
@@ -1575,7 +1599,13 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                               .center,
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .bodyMedium,
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Readex Pro',
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                          ),
                                                                       minFontSize:
                                                                           14.0,
                                                                     ),

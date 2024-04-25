@@ -66,6 +66,11 @@ class SelectedItemsRecord extends FirestoreRecord {
   DocumentReference? get creator => _creator;
   bool hasCreator() => _creator != null;
 
+  // "variacion" field.
+  DocumentReference? _variacion;
+  DocumentReference? get variacion => _variacion;
+  bool hasVariacion() => _variacion != null;
+
   void _initializeFields() {
     _name = snapshotData['name'] as String?;
     _description = snapshotData['description'] as String?;
@@ -77,6 +82,7 @@ class SelectedItemsRecord extends FirestoreRecord {
     _producto = snapshotData['producto'] as DocumentReference?;
     _ordenAsociada = snapshotData['ordenAsociada'] as DocumentReference?;
     _creator = snapshotData['creator'] as DocumentReference?;
+    _variacion = snapshotData['variacion'] as DocumentReference?;
   }
 
   static CollectionReference get collection =>
@@ -124,6 +130,7 @@ Map<String, dynamic> createSelectedItemsRecordData({
   DocumentReference? producto,
   DocumentReference? ordenAsociada,
   DocumentReference? creator,
+  DocumentReference? variacion,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -137,6 +144,7 @@ Map<String, dynamic> createSelectedItemsRecordData({
       'producto': producto,
       'ordenAsociada': ordenAsociada,
       'creator': creator,
+      'variacion': variacion,
     }.withoutNulls,
   );
 
@@ -158,7 +166,8 @@ class SelectedItemsRecordDocumentEquality
         e1?.cart == e2?.cart &&
         e1?.producto == e2?.producto &&
         e1?.ordenAsociada == e2?.ordenAsociada &&
-        e1?.creator == e2?.creator;
+        e1?.creator == e2?.creator &&
+        e1?.variacion == e2?.variacion;
   }
 
   @override
@@ -172,7 +181,8 @@ class SelectedItemsRecordDocumentEquality
         e?.cart,
         e?.producto,
         e?.ordenAsociada,
-        e?.creator
+        e?.creator,
+        e?.variacion
       ]);
 
   @override

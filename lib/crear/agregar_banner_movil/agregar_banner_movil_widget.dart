@@ -1,17 +1,16 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
-import '/components/menu_escritorio_widget.dart';
-import '/components/top_escritorio_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
+import '/pages/componentes/menu_escritorio/menu_escritorio_widget.dart';
+import '/pages/componentes/top_escritorio/top_escritorio_widget.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'agregar_banner_movil_model.dart';
@@ -19,7 +18,7 @@ export 'agregar_banner_movil_model.dart';
 
 class AgregarBannerMovilWidget extends StatefulWidget {
   const AgregarBannerMovilWidget({
-    Key? key,
+    super.key,
     this.colorInicio,
     this.colorOrdenes,
     this.colorProductos,
@@ -28,8 +27,7 @@ class AgregarBannerMovilWidget extends StatefulWidget {
     Color? colorBanner,
     this.colorAjustes,
     this.colorCategorias,
-  })  : this.colorBanner = colorBanner ?? const Color(0xFF39A3EF),
-        super(key: key);
+  }) : this.colorBanner = colorBanner ?? const Color(0xFF39A3EF);
 
   final Color? colorInicio;
   final Color? colorOrdenes;
@@ -41,7 +39,7 @@ class AgregarBannerMovilWidget extends StatefulWidget {
   final Color? colorCategorias;
 
   @override
-  _AgregarBannerMovilWidgetState createState() =>
+  State<AgregarBannerMovilWidget> createState() =>
       _AgregarBannerMovilWidgetState();
 }
 
@@ -67,17 +65,6 @@ class _AgregarBannerMovilWidgetState extends State<AgregarBannerMovilWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
-    context.watch<FFAppState>();
-
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -171,9 +158,7 @@ class _AgregarBannerMovilWidgetState extends State<AgregarBannerMovilWidget> {
                                                           valueColor:
                                                               AlwaysStoppedAnimation<
                                                                   Color>(
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
+                                                            Color(0xFF00AC67),
                                                           ),
                                                         ),
                                                       ),
@@ -198,7 +183,7 @@ class _AgregarBannerMovilWidgetState extends State<AgregarBannerMovilWidget> {
                                                         return Align(
                                                           alignment:
                                                               AlignmentDirectional(
-                                                                  0.00, 0.00),
+                                                                  0.0, 0.0),
                                                           child: Container(
                                                             width: 500.0,
                                                             child: Stack(
@@ -224,7 +209,7 @@ class _AgregarBannerMovilWidgetState extends State<AgregarBannerMovilWidget> {
                                                                   alignment:
                                                                       AlignmentDirectional(
                                                                           0.95,
-                                                                          -0.90),
+                                                                          -0.9),
                                                                   child:
                                                                       FlutterFlowIconButton(
                                                                     borderRadius:
@@ -301,7 +286,7 @@ class _AgregarBannerMovilWidgetState extends State<AgregarBannerMovilWidget> {
                                             ),
                                             Align(
                                               alignment: AlignmentDirectional(
-                                                  -1.00, -1.00),
+                                                  -1.0, -1.0),
                                               child: Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
@@ -315,6 +300,7 @@ class _AgregarBannerMovilWidgetState extends State<AgregarBannerMovilWidget> {
                                                         fontFamily:
                                                             'Readex Pro',
                                                         fontSize: 20.0,
+                                                        letterSpacing: 0.0,
                                                       ),
                                                 ),
                                               ),
@@ -423,6 +409,7 @@ class _AgregarBannerMovilWidgetState extends State<AgregarBannerMovilWidget> {
                                                             fontFamily:
                                                                 'Readex Pro',
                                                             color: Colors.white,
+                                                            letterSpacing: 0.0,
                                                           ),
                                                   elevation: 3.0,
                                                   borderSide: BorderSide(
@@ -497,9 +484,7 @@ class _AgregarBannerMovilWidgetState extends State<AgregarBannerMovilWidget> {
                                                     valueColor:
                                                         AlwaysStoppedAnimation<
                                                             Color>(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primary,
+                                                      Color(0xFF00AC67),
                                                     ),
                                                   ),
                                                 ),
@@ -542,7 +527,7 @@ class _AgregarBannerMovilWidgetState extends State<AgregarBannerMovilWidget> {
                                                       child: Align(
                                                         alignment:
                                                             AlignmentDirectional(
-                                                                -1.00, -1.00),
+                                                                -1.0, -1.0),
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
@@ -561,6 +546,8 @@ class _AgregarBannerMovilWidgetState extends State<AgregarBannerMovilWidget> {
                                                                       'Readex Pro',
                                                                   fontSize:
                                                                       20.0,
+                                                                  letterSpacing:
+                                                                      0.0,
                                                                 ),
                                                           ),
                                                         ),
@@ -610,6 +597,7 @@ class _AgregarBannerMovilWidgetState extends State<AgregarBannerMovilWidget> {
                                                           fontFamily:
                                                               'Readex Pro',
                                                           color: Colors.white,
+                                                          letterSpacing: 0.0,
                                                         ),
                                                     elevation: 3.0,
                                                     borderSide: BorderSide(

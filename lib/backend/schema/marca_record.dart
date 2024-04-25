@@ -36,11 +36,29 @@ class MarcaRecord extends FirestoreRecord {
   bool get destacado => _destacado ?? false;
   bool hasDestacado() => _destacado != null;
 
+  // "carrusel" field.
+  List<String>? _carrusel;
+  List<String> get carrusel => _carrusel ?? const [];
+  bool hasCarrusel() => _carrusel != null;
+
+  // "imagenDetalle" field.
+  String? _imagenDetalle;
+  String get imagenDetalle => _imagenDetalle ?? '';
+  bool hasImagenDetalle() => _imagenDetalle != null;
+
+  // "sobrelaMarca" field.
+  String? _sobrelaMarca;
+  String get sobrelaMarca => _sobrelaMarca ?? '';
+  bool hasSobrelaMarca() => _sobrelaMarca != null;
+
   void _initializeFields() {
     _categoria = getDataList(snapshotData['categoria']);
     _imagen = snapshotData['imagen'] as String?;
     _nombreMarca = snapshotData['nombreMarca'] as String?;
     _destacado = snapshotData['destacado'] as bool?;
+    _carrusel = getDataList(snapshotData['carrusel']);
+    _imagenDetalle = snapshotData['imagenDetalle'] as String?;
+    _sobrelaMarca = snapshotData['sobrelaMarca'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -80,12 +98,16 @@ Map<String, dynamic> createMarcaRecordData({
   String? imagen,
   String? nombreMarca,
   bool? destacado,
+  String? imagenDetalle,
+  String? sobrelaMarca,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'imagen': imagen,
       'nombreMarca': nombreMarca,
       'destacado': destacado,
+      'imagenDetalle': imagenDetalle,
+      'sobrelaMarca': sobrelaMarca,
     }.withoutNulls,
   );
 
@@ -101,12 +123,22 @@ class MarcaRecordDocumentEquality implements Equality<MarcaRecord> {
     return listEquality.equals(e1?.categoria, e2?.categoria) &&
         e1?.imagen == e2?.imagen &&
         e1?.nombreMarca == e2?.nombreMarca &&
-        e1?.destacado == e2?.destacado;
+        e1?.destacado == e2?.destacado &&
+        listEquality.equals(e1?.carrusel, e2?.carrusel) &&
+        e1?.imagenDetalle == e2?.imagenDetalle &&
+        e1?.sobrelaMarca == e2?.sobrelaMarca;
   }
 
   @override
-  int hash(MarcaRecord? e) => const ListEquality()
-      .hash([e?.categoria, e?.imagen, e?.nombreMarca, e?.destacado]);
+  int hash(MarcaRecord? e) => const ListEquality().hash([
+        e?.categoria,
+        e?.imagen,
+        e?.nombreMarca,
+        e?.destacado,
+        e?.carrusel,
+        e?.imagenDetalle,
+        e?.sobrelaMarca
+      ]);
 
   @override
   bool isValidKey(Object? o) => o is MarcaRecord;

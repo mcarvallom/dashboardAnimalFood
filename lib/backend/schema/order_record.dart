@@ -156,6 +156,68 @@ class OrderRecord extends FirestoreRecord {
   String get idPago => _idPago ?? '';
   bool hasIdPago() => _idPago != null;
 
+  // "comprobantePagoTransferencia" field.
+  String? _comprobantePagoTransferencia;
+  String get comprobantePagoTransferencia =>
+      _comprobantePagoTransferencia ?? '';
+  bool hasComprobantePagoTransferencia() =>
+      _comprobantePagoTransferencia != null;
+
+  // "observacion" field.
+  String? _observacion;
+  String get observacion => _observacion ?? '';
+  bool hasObservacion() => _observacion != null;
+
+  // "numeroTelefono" field.
+  int? _numeroTelefono;
+  int get numeroTelefono => _numeroTelefono ?? 0;
+  bool hasNumeroTelefono() => _numeroTelefono != null;
+
+  // "numeroTelefonoEnvio" field.
+  int? _numeroTelefonoEnvio;
+  int get numeroTelefonoEnvio => _numeroTelefonoEnvio ?? 0;
+  bool hasNumeroTelefonoEnvio() => _numeroTelefonoEnvio != null;
+
+  // "tipoEntrega" field.
+  String? _tipoEntrega;
+  String get tipoEntrega => _tipoEntrega ?? '';
+  bool hasTipoEntrega() => _tipoEntrega != null;
+
+  // "email" field.
+  String? _email;
+  String get email => _email ?? '';
+  bool hasEmail() => _email != null;
+
+  // "emailEnvio" field.
+  String? _emailEnvio;
+  String get emailEnvio => _emailEnvio ?? '';
+  bool hasEmailEnvio() => _emailEnvio != null;
+
+  // "variacion" field.
+  DocumentReference? _variacion;
+  DocumentReference? get variacion => _variacion;
+  bool hasVariacion() => _variacion != null;
+
+  // "boletaOfactura" field.
+  String? _boletaOfactura;
+  String get boletaOfactura => _boletaOfactura ?? '';
+  bool hasBoletaOfactura() => _boletaOfactura != null;
+
+  // "diaEntrega" field.
+  String? _diaEntrega;
+  String get diaEntrega => _diaEntrega ?? '';
+  bool hasDiaEntrega() => _diaEntrega != null;
+
+  // "fechaEntregaCliente" field.
+  DateTime? _fechaEntregaCliente;
+  DateTime? get fechaEntregaCliente => _fechaEntregaCliente;
+  bool hasFechaEntregaCliente() => _fechaEntregaCliente != null;
+
+  // "isPagado" field.
+  bool? _isPagado;
+  bool get isPagado => _isPagado ?? false;
+  bool hasIsPagado() => _isPagado != null;
+
   void _initializeFields() {
     _name = snapshotData['name'] as String?;
     _amount = castToType<double>(snapshotData['amount']);
@@ -185,6 +247,19 @@ class OrderRecord extends FirestoreRecord {
     _repartidor = snapshotData['repartidor'] as DocumentReference?;
     _codigoOrden = castToType<int>(snapshotData['codigoOrden']);
     _idPago = snapshotData['idPago'] as String?;
+    _comprobantePagoTransferencia =
+        snapshotData['comprobantePagoTransferencia'] as String?;
+    _observacion = snapshotData['observacion'] as String?;
+    _numeroTelefono = castToType<int>(snapshotData['numeroTelefono']);
+    _numeroTelefonoEnvio = castToType<int>(snapshotData['numeroTelefonoEnvio']);
+    _tipoEntrega = snapshotData['tipoEntrega'] as String?;
+    _email = snapshotData['email'] as String?;
+    _emailEnvio = snapshotData['emailEnvio'] as String?;
+    _variacion = snapshotData['variacion'] as DocumentReference?;
+    _boletaOfactura = snapshotData['boletaOfactura'] as String?;
+    _diaEntrega = snapshotData['diaEntrega'] as String?;
+    _fechaEntregaCliente = snapshotData['fechaEntregaCliente'] as DateTime?;
+    _isPagado = snapshotData['isPagado'] as bool?;
   }
 
   static CollectionReference get collection =>
@@ -248,6 +323,18 @@ Map<String, dynamic> createOrderRecordData({
   DocumentReference? repartidor,
   int? codigoOrden,
   String? idPago,
+  String? comprobantePagoTransferencia,
+  String? observacion,
+  int? numeroTelefono,
+  int? numeroTelefonoEnvio,
+  String? tipoEntrega,
+  String? email,
+  String? emailEnvio,
+  DocumentReference? variacion,
+  String? boletaOfactura,
+  String? diaEntrega,
+  DateTime? fechaEntregaCliente,
+  bool? isPagado,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -278,6 +365,18 @@ Map<String, dynamic> createOrderRecordData({
       'repartidor': repartidor,
       'codigoOrden': codigoOrden,
       'idPago': idPago,
+      'comprobantePagoTransferencia': comprobantePagoTransferencia,
+      'observacion': observacion,
+      'numeroTelefono': numeroTelefono,
+      'numeroTelefonoEnvio': numeroTelefonoEnvio,
+      'tipoEntrega': tipoEntrega,
+      'email': email,
+      'emailEnvio': emailEnvio,
+      'variacion': variacion,
+      'boletaOfactura': boletaOfactura,
+      'diaEntrega': diaEntrega,
+      'fechaEntregaCliente': fechaEntregaCliente,
+      'isPagado': isPagado,
     }.withoutNulls,
   );
 
@@ -317,7 +416,19 @@ class OrderRecordDocumentEquality implements Equality<OrderRecord> {
         e1?.mediodepago == e2?.mediodepago &&
         e1?.repartidor == e2?.repartidor &&
         e1?.codigoOrden == e2?.codigoOrden &&
-        e1?.idPago == e2?.idPago;
+        e1?.idPago == e2?.idPago &&
+        e1?.comprobantePagoTransferencia == e2?.comprobantePagoTransferencia &&
+        e1?.observacion == e2?.observacion &&
+        e1?.numeroTelefono == e2?.numeroTelefono &&
+        e1?.numeroTelefonoEnvio == e2?.numeroTelefonoEnvio &&
+        e1?.tipoEntrega == e2?.tipoEntrega &&
+        e1?.email == e2?.email &&
+        e1?.emailEnvio == e2?.emailEnvio &&
+        e1?.variacion == e2?.variacion &&
+        e1?.boletaOfactura == e2?.boletaOfactura &&
+        e1?.diaEntrega == e2?.diaEntrega &&
+        e1?.fechaEntregaCliente == e2?.fechaEntregaCliente &&
+        e1?.isPagado == e2?.isPagado;
   }
 
   @override
@@ -349,7 +460,19 @@ class OrderRecordDocumentEquality implements Equality<OrderRecord> {
         e?.mediodepago,
         e?.repartidor,
         e?.codigoOrden,
-        e?.idPago
+        e?.idPago,
+        e?.comprobantePagoTransferencia,
+        e?.observacion,
+        e?.numeroTelefono,
+        e?.numeroTelefonoEnvio,
+        e?.tipoEntrega,
+        e?.email,
+        e?.emailEnvio,
+        e?.variacion,
+        e?.boletaOfactura,
+        e?.diaEntrega,
+        e?.fechaEntregaCliente,
+        e?.isPagado
       ]);
 
   @override

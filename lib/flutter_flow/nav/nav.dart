@@ -5,9 +5,12 @@ import 'package:go_router/go_router.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import '/backend/backend.dart';
+import '/backend/schema/structs/index.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
+import '/backend/push_notifications/push_notifications_handler.dart'
+    show PushNotificationsHandler;
 import '/index.dart';
 import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -93,16 +96,28 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Inicio',
           path: '/inicio',
           builder: (context, params) => InicioWidget(
-            colorInicio: params.getParam('colorInicio', ParamType.Color),
-            nombre: params.getParam('nombre', ParamType.String),
+            colorInicio: params.getParam(
+              'colorInicio',
+              ParamType.Color,
+            ),
+            nombre: params.getParam(
+              'nombre',
+              ParamType.String,
+            ),
           ),
         ),
         FFRoute(
           name: 'ordenes',
           path: '/ordenes',
           builder: (context, params) => OrdenesWidget(
-            colorOrdenes: params.getParam('colorOrdenes', ParamType.Color),
-            nombre: params.getParam('nombre', ParamType.String),
+            colorOrdenes: params.getParam(
+              'colorOrdenes',
+              ParamType.Color,
+            ),
+            nombre: params.getParam(
+              'nombre',
+              ParamType.String,
+            ),
           ),
         ),
         FFRoute(
@@ -119,62 +134,142 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'productos',
           path: '/productos',
           builder: (context, params) => ProductosWidget(
-            colorProductos: params.getParam('colorProductos', ParamType.Color),
-            nombre: params.getParam('nombre', ParamType.String),
+            colorProductos: params.getParam(
+              'colorProductos',
+              ParamType.Color,
+            ),
+            nombre: params.getParam(
+              'nombre',
+              ParamType.String,
+            ),
           ),
         ),
         FFRoute(
-          name: 'categorias',
-          path: '/categorias',
-          builder: (context, params) => CategoriasWidget(
-            colorCategorias:
-                params.getParam('colorCategorias', ParamType.Color),
-            nombre: params.getParam('nombre', ParamType.String),
+          name: 'Sub-categorias',
+          path: '/subCategorias',
+          builder: (context, params) => SubCategoriasWidget(
+            colorCategorias: params.getParam(
+              'colorCategorias',
+              ParamType.Color,
+            ),
+            nombre: params.getParam(
+              'nombre',
+              ParamType.String,
+            ),
           ),
         ),
         FFRoute(
           name: 'agregarProducto',
           path: '/agregarProducto',
           builder: (context, params) => AgregarProductoWidget(
-            colorInicio: params.getParam('colorInicio', ParamType.Color),
-            colorOrdenes: params.getParam('colorOrdenes', ParamType.Color),
-            colorProductos: params.getParam('colorProductos', ParamType.Color),
-            colorAnalisis: params.getParam('colorAnalisis', ParamType.Color),
-            colorEmpleados: params.getParam('colorEmpleados', ParamType.Color),
-            colorBanner: params.getParam('colorBanner', ParamType.Color),
-            colorAjustes: params.getParam('colorAjustes', ParamType.Color),
-            colorCategorias:
-                params.getParam('colorCategorias', ParamType.Color),
+            colorInicio: params.getParam(
+              'colorInicio',
+              ParamType.Color,
+            ),
+            colorOrdenes: params.getParam(
+              'colorOrdenes',
+              ParamType.Color,
+            ),
+            colorProductos: params.getParam(
+              'colorProductos',
+              ParamType.Color,
+            ),
+            colorAnalisis: params.getParam(
+              'colorAnalisis',
+              ParamType.Color,
+            ),
+            colorEmpleados: params.getParam(
+              'colorEmpleados',
+              ParamType.Color,
+            ),
+            colorBanner: params.getParam(
+              'colorBanner',
+              ParamType.Color,
+            ),
+            colorAjustes: params.getParam(
+              'colorAjustes',
+              ParamType.Color,
+            ),
+            colorCategorias: params.getParam(
+              'colorCategorias',
+              ParamType.Color,
+            ),
           ),
         ),
         FFRoute(
           name: 'agregarCategoria',
           path: '/agregarCategoria',
           builder: (context, params) => AgregarCategoriaWidget(
-            colorInicio: params.getParam('colorInicio', ParamType.Color),
-            colorOrdenes: params.getParam('colorOrdenes', ParamType.Color),
-            colorProductos: params.getParam('colorProductos', ParamType.Color),
-            colorAnalisis: params.getParam('colorAnalisis', ParamType.Color),
-            colorEmpleados: params.getParam('colorEmpleados', ParamType.Color),
-            colorBanner: params.getParam('colorBanner', ParamType.Color),
-            colorAjustes: params.getParam('colorAjustes', ParamType.Color),
-            colorCategorias:
-                params.getParam('colorCategorias', ParamType.Color),
+            colorInicio: params.getParam(
+              'colorInicio',
+              ParamType.Color,
+            ),
+            colorOrdenes: params.getParam(
+              'colorOrdenes',
+              ParamType.Color,
+            ),
+            colorProductos: params.getParam(
+              'colorProductos',
+              ParamType.Color,
+            ),
+            colorAnalisis: params.getParam(
+              'colorAnalisis',
+              ParamType.Color,
+            ),
+            colorEmpleados: params.getParam(
+              'colorEmpleados',
+              ParamType.Color,
+            ),
+            colorBanner: params.getParam(
+              'colorBanner',
+              ParamType.Color,
+            ),
+            colorAjustes: params.getParam(
+              'colorAjustes',
+              ParamType.Color,
+            ),
+            colorCategorias: params.getParam(
+              'colorCategorias',
+              ParamType.Color,
+            ),
           ),
         ),
         FFRoute(
           name: 'agregarBanner',
           path: '/agregarBanner',
           builder: (context, params) => AgregarBannerWidget(
-            colorInicio: params.getParam('colorInicio', ParamType.Color),
-            colorOrdenes: params.getParam('colorOrdenes', ParamType.Color),
-            colorProductos: params.getParam('colorProductos', ParamType.Color),
-            colorAnalisis: params.getParam('colorAnalisis', ParamType.Color),
-            colorEmpleados: params.getParam('colorEmpleados', ParamType.Color),
-            colorBanner: params.getParam('colorBanner', ParamType.Color),
-            colorAjustes: params.getParam('colorAjustes', ParamType.Color),
-            colorCategorias:
-                params.getParam('colorCategorias', ParamType.Color),
+            colorInicio: params.getParam(
+              'colorInicio',
+              ParamType.Color,
+            ),
+            colorOrdenes: params.getParam(
+              'colorOrdenes',
+              ParamType.Color,
+            ),
+            colorProductos: params.getParam(
+              'colorProductos',
+              ParamType.Color,
+            ),
+            colorAnalisis: params.getParam(
+              'colorAnalisis',
+              ParamType.Color,
+            ),
+            colorEmpleados: params.getParam(
+              'colorEmpleados',
+              ParamType.Color,
+            ),
+            colorBanner: params.getParam(
+              'colorBanner',
+              ParamType.Color,
+            ),
+            colorAjustes: params.getParam(
+              'colorAjustes',
+              ParamType.Color,
+            ),
+            colorCategorias: params.getParam(
+              'colorCategorias',
+              ParamType.Color,
+            ),
           ),
         ),
         FFRoute(
@@ -184,90 +279,201 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             'detalleOrden': getDoc(['order'], OrderRecord.fromSnapshot),
           },
           builder: (context, params) => DetalleOrdenWidget(
-            detalleOrden: params.getParam('detalleOrden', ParamType.Document),
-            listaProducto: params.getParam<DocumentReference>('listaProducto',
-                ParamType.DocumentReference, true, ['selectedItems']),
+            detalleOrden: params.getParam(
+              'detalleOrden',
+              ParamType.Document,
+            ),
+            listaProducto: params.getParam<DocumentReference>(
+              'listaProducto',
+              ParamType.DocumentReference,
+              true,
+              ['selectedItems'],
+            ),
           ),
         ),
         FFRoute(
           name: 'empleados',
           path: '/empleados',
           builder: (context, params) => EmpleadosWidget(
-            colorEmpleados: params.getParam('colorEmpleados', ParamType.Color),
-            nombre: params.getParam('nombre', ParamType.String),
+            colorEmpleados: params.getParam(
+              'colorEmpleados',
+              ParamType.Color,
+            ),
+            nombre: params.getParam(
+              'nombre',
+              ParamType.String,
+            ),
           ),
         ),
         FFRoute(
           name: 'clientes',
           path: '/clientes',
           builder: (context, params) => ClientesWidget(
-            colorClientes: params.getParam('colorClientes', ParamType.Color),
-            nombre: params.getParam('nombre', ParamType.String),
+            colorClientes: params.getParam(
+              'colorClientes',
+              ParamType.Color,
+            ),
+            nombre: params.getParam(
+              'nombre',
+              ParamType.String,
+            ),
           ),
         ),
         FFRoute(
           name: 'agregarBannerMovil',
           path: '/agregarBannerMovil',
           builder: (context, params) => AgregarBannerMovilWidget(
-            colorInicio: params.getParam('colorInicio', ParamType.Color),
-            colorOrdenes: params.getParam('colorOrdenes', ParamType.Color),
-            colorProductos: params.getParam('colorProductos', ParamType.Color),
-            colorAnalisis: params.getParam('colorAnalisis', ParamType.Color),
-            colorEmpleados: params.getParam('colorEmpleados', ParamType.Color),
-            colorBanner: params.getParam('colorBanner', ParamType.Color),
-            colorAjustes: params.getParam('colorAjustes', ParamType.Color),
-            colorCategorias:
-                params.getParam('colorCategorias', ParamType.Color),
+            colorInicio: params.getParam(
+              'colorInicio',
+              ParamType.Color,
+            ),
+            colorOrdenes: params.getParam(
+              'colorOrdenes',
+              ParamType.Color,
+            ),
+            colorProductos: params.getParam(
+              'colorProductos',
+              ParamType.Color,
+            ),
+            colorAnalisis: params.getParam(
+              'colorAnalisis',
+              ParamType.Color,
+            ),
+            colorEmpleados: params.getParam(
+              'colorEmpleados',
+              ParamType.Color,
+            ),
+            colorBanner: params.getParam(
+              'colorBanner',
+              ParamType.Color,
+            ),
+            colorAjustes: params.getParam(
+              'colorAjustes',
+              ParamType.Color,
+            ),
+            colorCategorias: params.getParam(
+              'colorCategorias',
+              ParamType.Color,
+            ),
           ),
         ),
         FFRoute(
           name: 'agregarBannerPC',
           path: '/agregarBannerPC',
           builder: (context, params) => AgregarBannerPCWidget(
-            colorInicio: params.getParam('colorInicio', ParamType.Color),
-            colorOrdenes: params.getParam('colorOrdenes', ParamType.Color),
-            colorProductos: params.getParam('colorProductos', ParamType.Color),
-            colorAnalisis: params.getParam('colorAnalisis', ParamType.Color),
-            colorEmpleados: params.getParam('colorEmpleados', ParamType.Color),
-            colorBanner: params.getParam('colorBanner', ParamType.Color),
-            colorAjustes: params.getParam('colorAjustes', ParamType.Color),
-            colorCategorias:
-                params.getParam('colorCategorias', ParamType.Color),
+            colorInicio: params.getParam(
+              'colorInicio',
+              ParamType.Color,
+            ),
+            colorOrdenes: params.getParam(
+              'colorOrdenes',
+              ParamType.Color,
+            ),
+            colorProductos: params.getParam(
+              'colorProductos',
+              ParamType.Color,
+            ),
+            colorAnalisis: params.getParam(
+              'colorAnalisis',
+              ParamType.Color,
+            ),
+            colorEmpleados: params.getParam(
+              'colorEmpleados',
+              ParamType.Color,
+            ),
+            colorBanner: params.getParam(
+              'colorBanner',
+              ParamType.Color,
+            ),
+            colorAjustes: params.getParam(
+              'colorAjustes',
+              ParamType.Color,
+            ),
+            colorCategorias: params.getParam(
+              'colorCategorias',
+              ParamType.Color,
+            ),
           ),
         ),
         FFRoute(
           name: 'agregarCategoriaPadre',
           path: '/agregarCategoriaPadre',
           builder: (context, params) => AgregarCategoriaPadreWidget(
-            colorInicio: params.getParam('colorInicio', ParamType.Color),
-            colorOrdenes: params.getParam('colorOrdenes', ParamType.Color),
-            colorProductos: params.getParam('colorProductos', ParamType.Color),
-            colorAnalisis: params.getParam('colorAnalisis', ParamType.Color),
-            colorEmpleados: params.getParam('colorEmpleados', ParamType.Color),
-            colorBanner: params.getParam('colorBanner', ParamType.Color),
-            colorAjustes: params.getParam('colorAjustes', ParamType.Color),
-            colorCategorias:
-                params.getParam('colorCategorias', ParamType.Color),
+            colorInicio: params.getParam(
+              'colorInicio',
+              ParamType.Color,
+            ),
+            colorOrdenes: params.getParam(
+              'colorOrdenes',
+              ParamType.Color,
+            ),
+            colorProductos: params.getParam(
+              'colorProductos',
+              ParamType.Color,
+            ),
+            colorAnalisis: params.getParam(
+              'colorAnalisis',
+              ParamType.Color,
+            ),
+            colorEmpleados: params.getParam(
+              'colorEmpleados',
+              ParamType.Color,
+            ),
+            colorBanner: params.getParam(
+              'colorBanner',
+              ParamType.Color,
+            ),
+            colorAjustes: params.getParam(
+              'colorAjustes',
+              ParamType.Color,
+            ),
+            colorCategorias: params.getParam(
+              'colorCategorias',
+              ParamType.Color,
+            ),
           ),
         ),
         FFRoute(
-          name: 'notificaciones',
-          path: '/notificaciones',
-          builder: (context, params) => NotificacionesWidget(),
+          name: 'notificacionesAUsuario',
+          path: '/notificacionesAUsuario',
+          builder: (context, params) => NotificacionesAUsuarioWidget(),
         ),
         FFRoute(
           name: 'agregarMarca',
           path: '/agregarMarca',
           builder: (context, params) => AgregarMarcaWidget(
-            colorInicio: params.getParam('colorInicio', ParamType.Color),
-            colorOrdenes: params.getParam('colorOrdenes', ParamType.Color),
-            colorProductos: params.getParam('colorProductos', ParamType.Color),
-            colorAnalisis: params.getParam('colorAnalisis', ParamType.Color),
-            colorEmpleados: params.getParam('colorEmpleados', ParamType.Color),
-            colorBanner: params.getParam('colorBanner', ParamType.Color),
-            colorAjustes: params.getParam('colorAjustes', ParamType.Color),
-            colorCategorias:
-                params.getParam('colorCategorias', ParamType.Color),
+            colorInicio: params.getParam(
+              'colorInicio',
+              ParamType.Color,
+            ),
+            colorOrdenes: params.getParam(
+              'colorOrdenes',
+              ParamType.Color,
+            ),
+            colorProductos: params.getParam(
+              'colorProductos',
+              ParamType.Color,
+            ),
+            colorAnalisis: params.getParam(
+              'colorAnalisis',
+              ParamType.Color,
+            ),
+            colorEmpleados: params.getParam(
+              'colorEmpleados',
+              ParamType.Color,
+            ),
+            colorBanner: params.getParam(
+              'colorBanner',
+              ParamType.Color,
+            ),
+            colorAjustes: params.getParam(
+              'colorAjustes',
+              ParamType.Color,
+            ),
+            colorCategorias: params.getParam(
+              'colorCategorias',
+              ParamType.Color,
+            ),
           ),
         ),
         FFRoute(
@@ -279,48 +485,82 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Aplicacion',
           path: '/aplicacion',
           builder: (context, params) => AplicacionWidget(
-            colorInicio: params.getParam('colorInicio', ParamType.Color),
-            nombre: params.getParam('nombre', ParamType.String),
+            colorInicio: params.getParam(
+              'colorInicio',
+              ParamType.Color,
+            ),
+            nombre: params.getParam(
+              'nombre',
+              ParamType.String,
+            ),
           ),
         ),
         FFRoute(
           name: 'SitioWeb',
           path: '/sitioWeb',
           builder: (context, params) => SitioWebWidget(
-            colorInicio: params.getParam('colorInicio', ParamType.Color),
-            nombre: params.getParam('nombre', ParamType.String),
+            colorInicio: params.getParam(
+              'colorInicio',
+              ParamType.Color,
+            ),
+            nombre: params.getParam(
+              'nombre',
+              ParamType.String,
+            ),
           ),
         ),
         FFRoute(
           name: 'ListaProdRecomendados',
           path: '/listaProdRecomendados',
           builder: (context, params) => ListaProdRecomendadosWidget(
-            colorInicio: params.getParam('colorInicio', ParamType.Color),
-            nombre: params.getParam('nombre', ParamType.String),
+            colorInicio: params.getParam(
+              'colorInicio',
+              ParamType.Color,
+            ),
+            nombre: params.getParam(
+              'nombre',
+              ParamType.String,
+            ),
           ),
         ),
         FFRoute(
           name: 'agregarProdRecomendado',
           path: '/agregarProdRecomendado',
           builder: (context, params) => AgregarProdRecomendadoWidget(
-            colorInicio: params.getParam('colorInicio', ParamType.Color),
-            nombre: params.getParam('nombre', ParamType.String),
+            colorInicio: params.getParam(
+              'colorInicio',
+              ParamType.Color,
+            ),
+            nombre: params.getParam(
+              'nombre',
+              ParamType.String,
+            ),
           ),
         ),
         FFRoute(
           name: 'ListaCategorias',
           path: '/listaCategorias',
           builder: (context, params) => ListaCategoriasWidget(
-            colorInicio: params.getParam('colorInicio', ParamType.Color),
-            nombre: params.getParam('nombre', ParamType.String),
+            colorInicio: params.getParam(
+              'colorInicio',
+              ParamType.Color,
+            ),
+            nombre: params.getParam(
+              'nombre',
+              ParamType.String,
+            ),
           ),
         ),
         FFRoute(
           name: 'EditarCategoria',
           path: '/editarCategoria',
           builder: (context, params) => EditarCategoriaWidget(
-            categoria: params.getParam('categoria', ParamType.DocumentReference,
-                false, ['categoriaPadre']),
+            categoria: params.getParam(
+              'categoria',
+              ParamType.DocumentReference,
+              false,
+              ['categoriaPadre'],
+            ),
           ),
         ),
         FFRoute(
@@ -340,49 +580,207 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             'detalleOrden': getDoc(['order'], OrderRecord.fromSnapshot),
           },
           builder: (context, params) => EvidenciaEntregaFallidaWidget(
-            detalleOrden: params.getParam('detalleOrden', ParamType.Document),
+            detalleOrden: params.getParam(
+              'detalleOrden',
+              ParamType.Document,
+            ),
             usuario: params.getParam(
-                'usuario', ParamType.DocumentReference, false, ['user']),
+              'usuario',
+              ParamType.DocumentReference,
+              false,
+              ['user'],
+            ),
           ),
         ),
         FFRoute(
           name: 'Stock',
           path: '/stock',
           builder: (context, params) => StockWidget(
-            colorProductos: params.getParam('colorProductos', ParamType.Color),
-            nombre: params.getParam('nombre', ParamType.String),
+            colorProductos: params.getParam(
+              'colorProductos',
+              ParamType.Color,
+            ),
+            nombre: params.getParam(
+              'nombre',
+              ParamType.String,
+            ),
           ),
         ),
         FFRoute(
           name: 'StockVendedor',
           path: '/stockVendedor',
           builder: (context, params) => StockVendedorWidget(
-            colorProductos: params.getParam('colorProductos', ParamType.Color),
-            nombre: params.getParam('nombre', ParamType.String),
+            colorProductos: params.getParam(
+              'colorProductos',
+              ParamType.Color,
+            ),
+            nombre: params.getParam(
+              'nombre',
+              ParamType.String,
+            ),
           ),
         ),
         FFRoute(
           name: 'Reembolso',
           path: '/reembolso',
           builder: (context, params) => ReembolsoWidget(
-            colorInicio: params.getParam('colorInicio', ParamType.Color),
-            colorOrdenes: params.getParam('colorOrdenes', ParamType.Color),
-            colorProductos: params.getParam('colorProductos', ParamType.Color),
-            colorAnalisis: params.getParam('colorAnalisis', ParamType.Color),
-            colorEmpleados: params.getParam('colorEmpleados', ParamType.Color),
-            colorBanner: params.getParam('colorBanner', ParamType.Color),
-            colorAjustes: params.getParam('colorAjustes', ParamType.Color),
-            colorCategorias:
-                params.getParam('colorCategorias', ParamType.Color),
+            colorInicio: params.getParam(
+              'colorInicio',
+              ParamType.Color,
+            ),
+            colorOrdenes: params.getParam(
+              'colorOrdenes',
+              ParamType.Color,
+            ),
+            colorProductos: params.getParam(
+              'colorProductos',
+              ParamType.Color,
+            ),
+            colorAnalisis: params.getParam(
+              'colorAnalisis',
+              ParamType.Color,
+            ),
+            colorEmpleados: params.getParam(
+              'colorEmpleados',
+              ParamType.Color,
+            ),
+            colorBanner: params.getParam(
+              'colorBanner',
+              ParamType.Color,
+            ),
+            colorAjustes: params.getParam(
+              'colorAjustes',
+              ParamType.Color,
+            ),
+            colorCategorias: params.getParam(
+              'colorCategorias',
+              ParamType.Color,
+            ),
           ),
         ),
         FFRoute(
           name: 'productosInventario',
           path: '/productosInventario',
           builder: (context, params) => ProductosInventarioWidget(
-            colorProductos: params.getParam('colorProductos', ParamType.Color),
-            nombre: params.getParam('nombre', ParamType.String),
+            colorProductos: params.getParam(
+              'colorProductos',
+              ParamType.Color,
+            ),
+            nombre: params.getParam(
+              'nombre',
+              ParamType.String,
+            ),
           ),
+        ),
+        FFRoute(
+          name: 'notificacionesATodos',
+          path: '/notificacionesATodos',
+          builder: (context, params) => NotificacionesATodosWidget(),
+        ),
+        FFRoute(
+          name: 'Categorias',
+          path: '/categorias',
+          builder: (context, params) => CategoriasWidget(
+            colorCategorias: params.getParam(
+              'colorCategorias',
+              ParamType.Color,
+            ),
+            nombre: params.getParam(
+              'nombre',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'tipoCategoria',
+          path: '/tipoCategoria',
+          builder: (context, params) => TipoCategoriaWidget(
+            colorInicio: params.getParam(
+              'colorInicio',
+              ParamType.Color,
+            ),
+            nombre: params.getParam(
+              'nombre',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'Marcas',
+          path: '/marcas',
+          builder: (context, params) => MarcasWidget(
+            colorInicio: params.getParam(
+              'colorInicio',
+              ParamType.Color,
+            ),
+            colorOrdenes: params.getParam(
+              'colorOrdenes',
+              ParamType.Color,
+            ),
+            colorProductos: params.getParam(
+              'colorProductos',
+              ParamType.Color,
+            ),
+            colorAnalisis: params.getParam(
+              'colorAnalisis',
+              ParamType.Color,
+            ),
+            colorEmpleados: params.getParam(
+              'colorEmpleados',
+              ParamType.Color,
+            ),
+            colorBanner: params.getParam(
+              'colorBanner',
+              ParamType.Color,
+            ),
+            colorAjustes: params.getParam(
+              'colorAjustes',
+              ParamType.Color,
+            ),
+            colorCategorias: params.getParam(
+              'colorCategorias',
+              ParamType.Color,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'pedidosDelivery',
+          path: '/pedidosDelivery',
+          builder: (context, params) => PedidosDeliveryWidget(),
+        ),
+        FFRoute(
+          name: 'infoPerfil',
+          path: '/infoPerfil',
+          builder: (context, params) => InfoPerfilWidget(
+            perfil: params.getParam(
+              'perfil',
+              ParamType.DocumentReference,
+              false,
+              ['user'],
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'editarMarca',
+          path: '/editarMarca',
+          builder: (context, params) => EditarMarcaWidget(
+            marca: params.getParam(
+              'marca',
+              ParamType.DocumentReference,
+              false,
+              ['marca'],
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'marcarEntradaSalida',
+          path: '/marcarEntradaSalida',
+          builder: (context, params) => MarcarEntradaSalidaWidget(),
+        ),
+        FFRoute(
+          name: 'crearOrden',
+          path: '/crearOrden',
+          builder: (context, params) => CrearOrdenWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -459,7 +857,7 @@ extension _GoRouterStateExtensions on GoRouterState {
       extra != null ? extra as Map<String, dynamic> : {};
   Map<String, dynamic> get allParams => <String, dynamic>{}
     ..addAll(pathParameters)
-    ..addAll(queryParameters)
+    ..addAll(uri.queryParameters)
     ..addAll(extraMap);
   TransitionInfo get transitionInfo => extraMap.containsKey(kTransitionInfoKey)
       ? extraMap[kTransitionInfoKey] as TransitionInfo
@@ -502,6 +900,7 @@ class FFParameters {
     ParamType type, [
     bool isList = false,
     List<String>? collectionNamePath,
+    StructBuilder<T>? structBuilder,
   ]) {
     if (futureParamValues.containsKey(paramName)) {
       return futureParamValues[paramName];
@@ -515,8 +914,13 @@ class FFParameters {
       return param;
     }
     // Return serialized value.
-    return deserializeParam<T>(param, type, isList,
-        collectionNamePath: collectionNamePath);
+    return deserializeParam<T>(
+      param,
+      type,
+      isList,
+      collectionNamePath: collectionNamePath,
+      structBuilder: structBuilder,
+    );
   }
 }
 
@@ -548,12 +952,13 @@ class FFRoute {
           }
 
           if (requireAuth && !appStateNotifier.loggedIn) {
-            appStateNotifier.setRedirectLocationIfUnset(state.location);
+            appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
             return '/iniciarSesion';
           }
           return null;
         },
         pageBuilder: (context, state) {
+          fixStatusBarOniOS16AndBelow(context);
           final ffParams = FFParameters(state, asyncParams);
           final page = ffParams.hasFutures
               ? FutureBuilder(
@@ -572,7 +977,7 @@ class FFRoute {
                     ),
                   ),
                 )
-              : page;
+              : PushNotificationsHandler(child: page);
 
           final transitionInfo = state.transitionInfo;
           return transitionInfo.hasTransition
@@ -580,13 +985,20 @@ class FFRoute {
                   key: state.pageKey,
                   child: child,
                   transitionDuration: transitionInfo.duration,
-                  transitionsBuilder: PageTransition(
+                  transitionsBuilder:
+                      (context, animation, secondaryAnimation, child) =>
+                          PageTransition(
                     type: transitionInfo.transitionType,
                     duration: transitionInfo.duration,
                     reverseDuration: transitionInfo.duration,
                     alignment: transitionInfo.alignment,
                     child: child,
-                  ).transitionsBuilder,
+                  ).buildTransitions(
+                    context,
+                    animation,
+                    secondaryAnimation,
+                    child,
+                  ),
                 )
               : MaterialPage(key: state.pageKey, child: child);
         },
@@ -618,7 +1030,7 @@ class RootPageContext {
   static bool isInactiveRootPage(BuildContext context) {
     final rootPageContext = context.read<RootPageContext?>();
     final isRootPage = rootPageContext?.isRootPage ?? false;
-    final location = GoRouter.of(context).location;
+    final location = GoRouterState.of(context).uri.toString();
     return isRootPage &&
         location != '/' &&
         location != rootPageContext?.errorRoute;

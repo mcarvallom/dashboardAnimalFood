@@ -1,17 +1,16 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
-import '/components/menu_escritorio_widget.dart';
-import '/components/top_escritorio_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
+import '/pages/componentes/menu_escritorio/menu_escritorio_widget.dart';
+import '/pages/componentes/top_escritorio/top_escritorio_widget.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'agregar_banner_p_c_model.dart';
@@ -19,7 +18,7 @@ export 'agregar_banner_p_c_model.dart';
 
 class AgregarBannerPCWidget extends StatefulWidget {
   const AgregarBannerPCWidget({
-    Key? key,
+    super.key,
     this.colorInicio,
     this.colorOrdenes,
     this.colorProductos,
@@ -28,8 +27,7 @@ class AgregarBannerPCWidget extends StatefulWidget {
     Color? colorBanner,
     this.colorAjustes,
     this.colorCategorias,
-  })  : this.colorBanner = colorBanner ?? const Color(0xFF39A3EF),
-        super(key: key);
+  }) : this.colorBanner = colorBanner ?? const Color(0xFF39A3EF);
 
   final Color? colorInicio;
   final Color? colorOrdenes;
@@ -41,7 +39,7 @@ class AgregarBannerPCWidget extends StatefulWidget {
   final Color? colorCategorias;
 
   @override
-  _AgregarBannerPCWidgetState createState() => _AgregarBannerPCWidgetState();
+  State<AgregarBannerPCWidget> createState() => _AgregarBannerPCWidgetState();
 }
 
 class _AgregarBannerPCWidgetState extends State<AgregarBannerPCWidget> {
@@ -66,17 +64,6 @@ class _AgregarBannerPCWidgetState extends State<AgregarBannerPCWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
-    context.watch<FFAppState>();
-
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -170,9 +157,7 @@ class _AgregarBannerPCWidgetState extends State<AgregarBannerPCWidget> {
                                                           valueColor:
                                                               AlwaysStoppedAnimation<
                                                                   Color>(
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
+                                                            Color(0xFF00AC67),
                                                           ),
                                                         ),
                                                       ),
@@ -197,7 +182,7 @@ class _AgregarBannerPCWidgetState extends State<AgregarBannerPCWidget> {
                                                         return Align(
                                                           alignment:
                                                               AlignmentDirectional(
-                                                                  0.00, 0.00),
+                                                                  0.0, 0.0),
                                                           child: Stack(
                                                             children: [
                                                               ClipRRect(
@@ -222,7 +207,7 @@ class _AgregarBannerPCWidgetState extends State<AgregarBannerPCWidget> {
                                                                 alignment:
                                                                     AlignmentDirectional(
                                                                         0.95,
-                                                                        -0.90),
+                                                                        -0.9),
                                                                 child:
                                                                     FlutterFlowIconButton(
                                                                   borderRadius:
@@ -297,7 +282,7 @@ class _AgregarBannerPCWidgetState extends State<AgregarBannerPCWidget> {
                                             ),
                                             Align(
                                               alignment: AlignmentDirectional(
-                                                  -1.00, -1.00),
+                                                  -1.0, -1.0),
                                               child: Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
@@ -311,6 +296,7 @@ class _AgregarBannerPCWidgetState extends State<AgregarBannerPCWidget> {
                                                         fontFamily:
                                                             'Readex Pro',
                                                         fontSize: 20.0,
+                                                        letterSpacing: 0.0,
                                                       ),
                                                 ),
                                               ),
@@ -419,6 +405,7 @@ class _AgregarBannerPCWidgetState extends State<AgregarBannerPCWidget> {
                                                             fontFamily:
                                                                 'Readex Pro',
                                                             color: Colors.white,
+                                                            letterSpacing: 0.0,
                                                           ),
                                                   elevation: 3.0,
                                                   borderSide: BorderSide(
@@ -493,9 +480,7 @@ class _AgregarBannerPCWidgetState extends State<AgregarBannerPCWidget> {
                                                     valueColor:
                                                         AlwaysStoppedAnimation<
                                                             Color>(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primary,
+                                                      Color(0xFF00AC67),
                                                     ),
                                                   ),
                                                 ),
@@ -538,7 +523,7 @@ class _AgregarBannerPCWidgetState extends State<AgregarBannerPCWidget> {
                                                       child: Align(
                                                         alignment:
                                                             AlignmentDirectional(
-                                                                -1.00, -1.00),
+                                                                -1.0, -1.0),
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
@@ -557,6 +542,8 @@ class _AgregarBannerPCWidgetState extends State<AgregarBannerPCWidget> {
                                                                       'Readex Pro',
                                                                   fontSize:
                                                                       20.0,
+                                                                  letterSpacing:
+                                                                      0.0,
                                                                 ),
                                                           ),
                                                         ),
@@ -606,6 +593,7 @@ class _AgregarBannerPCWidgetState extends State<AgregarBannerPCWidget> {
                                                           fontFamily:
                                                               'Readex Pro',
                                                           color: Colors.white,
+                                                          letterSpacing: 0.0,
                                                         ),
                                                     elevation: 3.0,
                                                     borderSide: BorderSide(

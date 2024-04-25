@@ -103,6 +103,26 @@ class ProductoRecord extends FirestoreRecord {
   String get ingredientes => _ingredientes ?? '';
   bool hasIngredientes() => _ingredientes != null;
 
+  // "avisarStock" field.
+  List<DocumentReference>? _avisarStock;
+  List<DocumentReference> get avisarStock => _avisarStock ?? const [];
+  bool hasAvisarStock() => _avisarStock != null;
+
+  // "prodAsociado" field.
+  List<DocumentReference>? _prodAsociado;
+  List<DocumentReference> get prodAsociado => _prodAsociado ?? const [];
+  bool hasProdAsociado() => _prodAsociado != null;
+
+  // "codigoBarras" field.
+  String? _codigoBarras;
+  String get codigoBarras => _codigoBarras ?? '';
+  bool hasCodigoBarras() => _codigoBarras != null;
+
+  // "tamanio" field.
+  String? _tamanio;
+  String get tamanio => _tamanio ?? '';
+  bool hasTamanio() => _tamanio != null;
+
   void _initializeFields() {
     _name = snapshotData['name'] as String?;
     _description = snapshotData['description'] as String?;
@@ -122,6 +142,10 @@ class ProductoRecord extends FirestoreRecord {
     _precauciones = snapshotData['precauciones'] as String?;
     _analisis = snapshotData['analisis'] as String?;
     _ingredientes = snapshotData['ingredientes'] as String?;
+    _avisarStock = getDataList(snapshotData['avisarStock']);
+    _prodAsociado = getDataList(snapshotData['prodAsociado']);
+    _codigoBarras = snapshotData['codigoBarras'] as String?;
+    _tamanio = snapshotData['tamanio'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -174,6 +198,8 @@ Map<String, dynamic> createProductoRecordData({
   String? precauciones,
   String? analisis,
   String? ingredientes,
+  String? codigoBarras,
+  String? tamanio,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -192,6 +218,8 @@ Map<String, dynamic> createProductoRecordData({
       'precauciones': precauciones,
       'analisis': analisis,
       'ingredientes': ingredientes,
+      'codigoBarras': codigoBarras,
+      'tamanio': tamanio,
     }.withoutNulls,
   );
 
@@ -221,7 +249,11 @@ class ProductoRecordDocumentEquality implements Equality<ProductoRecord> {
         e1?.dosificacion == e2?.dosificacion &&
         e1?.precauciones == e2?.precauciones &&
         e1?.analisis == e2?.analisis &&
-        e1?.ingredientes == e2?.ingredientes;
+        e1?.ingredientes == e2?.ingredientes &&
+        listEquality.equals(e1?.avisarStock, e2?.avisarStock) &&
+        listEquality.equals(e1?.prodAsociado, e2?.prodAsociado) &&
+        e1?.codigoBarras == e2?.codigoBarras &&
+        e1?.tamanio == e2?.tamanio;
   }
 
   @override
@@ -242,7 +274,11 @@ class ProductoRecordDocumentEquality implements Equality<ProductoRecord> {
         e?.dosificacion,
         e?.precauciones,
         e?.analisis,
-        e?.ingredientes
+        e?.ingredientes,
+        e?.avisarStock,
+        e?.prodAsociado,
+        e?.codigoBarras,
+        e?.tamanio
       ]);
 
   @override
