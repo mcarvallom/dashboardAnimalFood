@@ -1,7 +1,6 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/componentes/opcion_empleados_movil/opcion_empleados_movil_widget.dart';
 import '/pages/componentes/top_movil/top_movil_widget.dart';
 import 'package:auto_size_text/auto_size_text.dart';
@@ -9,8 +8,6 @@ import 'package:data_table_2/data_table_2.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:text_search/text_search.dart';
 import 'clientes_model.dart';
 export 'clientes_model.dart';
@@ -20,7 +17,7 @@ class ClientesWidget extends StatefulWidget {
     super.key,
     Color? colorClientes,
     this.nombre,
-  }) : this.colorClientes = colorClientes ?? const Color(0xFFE6A5E5);
+  }) : colorClientes = colorClientes ?? const Color(0xFFE6A5E5);
 
   final Color colorClientes;
   final String? nombre;
@@ -76,7 +73,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
               builder: (context, snapshot) {
                 // Customize what your widget looks like when it's loading.
                 if (!snapshot.hasData) {
-                  return Center(
+                  return const Center(
                     child: SizedBox(
                       width: 50.0,
                       height: 50.0,
@@ -98,16 +95,16 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Expanded(
                               child: Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 30.0, 0.0, 20.0),
                                   child: Image.asset(
                                     'assets/images/logo_animalfood.png',
@@ -121,7 +118,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 30.0, 0.0, 10.0),
                         child: Text(
                           'Menú',
@@ -133,7 +130,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -148,7 +145,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                               'Inicio',
                               queryParameters: {
                                 'colorInicio': serializeParam(
-                                  Color(0xFFE6A5E5),
+                                  const Color(0xFFE6A5E5),
                                   ParamType.Color,
                                 ),
                                 'nombre': serializeParam(
@@ -157,7 +154,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                 ),
                               }.withoutNulls,
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                 ),
@@ -171,7 +168,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -183,7 +180,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                     size: 24.0,
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Inicio',
@@ -204,7 +201,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -216,7 +213,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                               'ordenes',
                               queryParameters: {
                                 'colorOrdenes': serializeParam(
-                                  Color(0xFFE6A5E5),
+                                  const Color(0xFFE6A5E5),
                                   ParamType.Color,
                                 ),
                                 'nombre': serializeParam(
@@ -225,7 +222,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                 ),
                               }.withoutNulls,
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                 ),
@@ -239,7 +236,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -251,7 +248,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                     size: 24.0,
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Órdenes',
@@ -272,7 +269,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -284,7 +281,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                               'productos',
                               queryParameters: {
                                 'colorProductos': serializeParam(
-                                  Color(0xFFE6A5E5),
+                                  const Color(0xFFE6A5E5),
                                   ParamType.Color,
                                 ),
                                 'nombre': serializeParam(
@@ -293,7 +290,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                 ),
                               }.withoutNulls,
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                 ),
@@ -307,7 +304,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -319,7 +316,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                     size: 24.0,
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Productos',
@@ -340,7 +337,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -351,7 +348,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                             context.pushNamed(
                               'tipoCategoria',
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                 ),
@@ -365,7 +362,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -377,7 +374,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                     size: 24.0,
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Categorías',
@@ -398,7 +395,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -409,7 +406,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                             context.pushNamed(
                               'Marcas',
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                 ),
@@ -423,7 +420,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -435,7 +432,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                     size: 24.0,
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Marcas',
@@ -456,7 +453,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -473,7 +470,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                 ),
                               }.withoutNulls,
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                 ),
@@ -487,7 +484,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -499,7 +496,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                     size: 24.0,
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Empleados',
@@ -520,7 +517,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -532,7 +529,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                               'clientes',
                               queryParameters: {
                                 'colorClientes': serializeParam(
-                                  Color(0xFFE6A5E5),
+                                  const Color(0xFFE6A5E5),
                                   ParamType.Color,
                                 ),
                                 'nombre': serializeParam(
@@ -556,18 +553,18 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
-                                    Icon(
+                                    const Icon(
                                       Icons.group,
                                       color: Colors.white,
                                       size: 24.0,
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         'Clientes',
@@ -590,7 +587,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: Container(
                           width: MediaQuery.sizeOf(context).width * 1.0,
@@ -599,7 +596,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 0.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -611,7 +608,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                   size: 24.0,
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     'Ajustes de la tienda',
@@ -630,7 +627,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                           ),
                         ),
                       ),
-                    ].addToStart(SizedBox(height: 70.0)),
+                    ].addToStart(const SizedBox(height: 70.0)),
                   ),
                 );
               },
@@ -655,7 +652,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                       wrapWithModel(
                         model: _model.topMovilModel,
                         updateCallback: () => setState(() {}),
-                        child: TopMovilWidget(),
+                        child: const TopMovilWidget(),
                       ),
                       Row(
                         mainAxisSize: MainAxisSize.max,
@@ -668,7 +665,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsets.all(20.0),
+                                    padding: const EdgeInsets.all(20.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
@@ -685,7 +682,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                             builder: (context, snapshot) {
                                               // Customize what your widget looks like when it's loading.
                                               if (!snapshot.hasData) {
-                                                return Center(
+                                                return const Center(
                                                   child: SizedBox(
                                                     width: 50.0,
                                                     height: 50.0,
@@ -704,7 +701,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                   containerUserRecordList =
                                                   snapshot.data!;
                                               return Container(
-                                                decoration: BoxDecoration(),
+                                                decoration: const BoxDecoration(),
                                                 child: TextFormField(
                                                   controller:
                                                       _model.textController,
@@ -713,7 +710,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                   onChanged: (_) =>
                                                       EasyDebounce.debounce(
                                                     '_model.textController',
-                                                    Duration(
+                                                    const Duration(
                                                         milliseconds: 2000),
                                                     () async {
                                                       safeSetState(() {
@@ -727,7 +724,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                                             record,
                                                                             [
                                                                       record
-                                                                          .displayName!
+                                                                          .displayName
                                                                     ]),
                                                               )
                                                               .toList(),
@@ -738,7 +735,6 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                                 .map((r) =>
                                                                     r.object)
                                                                 .toList();
-                                                        ;
                                                       });
                                                       setState(() {
                                                         FFAppState()
@@ -776,7 +772,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                         ),
                                                     enabledBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: BorderSide(
+                                                      borderSide: const BorderSide(
                                                         color:
                                                             Color(0xFF00AC67),
                                                         width: 1.0,
@@ -787,7 +783,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                     ),
                                                     focusedBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: BorderSide(
+                                                      borderSide: const BorderSide(
                                                         color:
                                                             Color(0xFF00AC67),
                                                         width: 1.0,
@@ -877,7 +873,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                             builder: (context, snapshot) {
                               // Customize what your widget looks like when it's loading.
                               if (!snapshot.hasData) {
-                                return Center(
+                                return const Center(
                                   child: SizedBox(
                                     width: 50.0,
                                     height: 50.0,
@@ -891,7 +887,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                               }
                               List<UserRecord> dataTableUserRecordList =
                                   snapshot.data!;
-                              return Container(
+                              return SizedBox(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: MediaQuery.sizeOf(context).height * 0.7,
                                 child: DataTable2(
@@ -901,7 +897,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                         softWrap: true,
                                         child: Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Text(
                                             'Cliente',
                                             style: FlutterFlowTheme.of(context)
@@ -922,7 +918,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                         softWrap: true,
                                         child: Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Text(
                                             'Rut',
                                             style: FlutterFlowTheme.of(context)
@@ -943,7 +939,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                         softWrap: true,
                                         child: Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Text(
                                             'Opciones',
                                             style: FlutterFlowTheme.of(context)
@@ -965,10 +961,10 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                               dataTableUserRecord) =>
                                           [
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 10.0, 0.0, 10.0),
                                                 child: InkWell(
@@ -994,7 +990,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                       }.withoutNulls,
                                                       extra: <String, dynamic>{
                                                         kTransitionInfoKey:
-                                                            TransitionInfo(
+                                                            const TransitionInfo(
                                                           hasTransition: true,
                                                           transitionType:
                                                               PageTransitionType
@@ -1018,10 +1014,10 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                               ),
                                             ),
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 10.0, 0.0, 10.0),
                                                 child: InkWell(
@@ -1047,7 +1043,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                       }.withoutNulls,
                                                       extra: <String, dynamic>{
                                                         kTransitionInfoKey:
-                                                            TransitionInfo(
+                                                            const TransitionInfo(
                                                           hasTransition: true,
                                                           transitionType:
                                                               PageTransitionType
@@ -1077,10 +1073,10 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                               ),
                                             ),
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         5.0, 0.0, 5.0, 0.0),
                                                 child: InkWell(
@@ -1157,7 +1153,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                             BorderRadius
                                                                 .circular(5.0),
                                                       ),
-                                                      child: Align(
+                                                      child: const Align(
                                                         alignment:
                                                             AlignmentDirectional(
                                                                 0.0, 0.0),
@@ -1184,7 +1180,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                         .primaryBackground,
                                   ),
                                   dataRowHeight: 60.0,
-                                  border: TableBorder(
+                                  border: const TableBorder(
                                     borderRadius: BorderRadius.only(
                                       bottomLeft: Radius.circular(0.0),
                                       bottomRight: Radius.circular(0.0),
@@ -1213,7 +1209,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
               ))
                 Flexible(
                   child: Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8.0),
                       child: Image.asset(

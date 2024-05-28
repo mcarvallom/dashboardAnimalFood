@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -6,9 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import '/pages/componentes/top_escritorio/top_escritorio_widget.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'editar_pag_categoria_model.dart';
 export 'editar_pag_categoria_model.dart';
@@ -64,12 +61,12 @@ class _EditarPagCategoriaWidgetState extends State<EditarPagCategoriaWidget> {
                     wrapWithModel(
                       model: _model.topEscritorioModel,
                       updateCallback: () => setState(() {}),
-                      child: TopEscritorioWidget(),
+                      child: const TopEscritorioWidget(),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(-1.0, -1.0),
+                      alignment: const AlignmentDirectional(-1.0, -1.0),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             20.0, 20.0, 0.0, 10.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -105,7 +102,7 @@ class _EditarPagCategoriaWidgetState extends State<EditarPagCategoriaWidget> {
                     ),
                     Expanded(
                       child: Padding(
-                        padding: EdgeInsets.all(20.0),
+                        padding: const EdgeInsets.all(20.0),
                         child: StreamBuilder<List<TiendaRecord>>(
                           stream: queryTiendaRecord(
                             singleRecord: true,
@@ -113,7 +110,7 @@ class _EditarPagCategoriaWidgetState extends State<EditarPagCategoriaWidget> {
                           builder: (context, snapshot) {
                             // Customize what your widget looks like when it's loading.
                             if (!snapshot.hasData) {
-                              return Center(
+                              return const Center(
                                 child: SizedBox(
                                   width: 50.0,
                                   height: 50.0,
@@ -133,7 +130,7 @@ class _EditarPagCategoriaWidgetState extends State<EditarPagCategoriaWidget> {
                                     : null;
                             return Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
-                              decoration: BoxDecoration(),
+                              decoration: const BoxDecoration(),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -144,7 +141,7 @@ class _EditarPagCategoriaWidgetState extends State<EditarPagCategoriaWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 5.0, 10.0, 5.0),
                                           child: Material(
                                             color: Colors.transparent,
@@ -186,7 +183,7 @@ class _EditarPagCategoriaWidgetState extends State<EditarPagCategoriaWidget> {
                                                                     .width *
                                                                 1.0,
                                                         fit: BoxFit.cover,
-                                                        alignment: Alignment(
+                                                        alignment: const Alignment(
                                                             0.0, -1.0),
                                                       ),
                                                     ),
@@ -198,7 +195,7 @@ class _EditarPagCategoriaWidgetState extends State<EditarPagCategoriaWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 20.0, 0.0, 20.0),
                                           child: FFButtonWidget(
                                             onPressed: () async {
@@ -285,12 +282,12 @@ class _EditarPagCategoriaWidgetState extends State<EditarPagCategoriaWidget> {
                                             text: 'Subir imagen',
                                             options: FFButtonOptions(
                                               height: 40.0,
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: EdgeInsetsDirectional
+                                              iconPadding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color: Color(0xFF00AC67),
+                                              color: const Color(0xFF00AC67),
                                               textStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmall
@@ -301,7 +298,7 @@ class _EditarPagCategoriaWidgetState extends State<EditarPagCategoriaWidget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                               elevation: 3.0,
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Colors.transparent,
                                                 width: 1.0,
                                               ),
@@ -312,7 +309,7 @@ class _EditarPagCategoriaWidgetState extends State<EditarPagCategoriaWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 40.0, 0.0, 20.0),
                                           child: FFButtonWidget(
                                             onPressed: () async {
@@ -324,7 +321,7 @@ class _EditarPagCategoriaWidgetState extends State<EditarPagCategoriaWidget> {
                                                         .isImagenSubida
                                                     ? FFAppState().imagenSubida
                                                     : containerTiendaRecord
-                                                        ?.portadaPagCategoria,
+                                                        .portadaPagCategoria,
                                               ));
                                               setState(() {
                                                 FFAppState().imagenSubida = '';
@@ -336,12 +333,12 @@ class _EditarPagCategoriaWidgetState extends State<EditarPagCategoriaWidget> {
                                             text: 'Publicar',
                                             options: FFButtonOptions(
                                               height: 40.0,
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: EdgeInsetsDirectional
+                                              iconPadding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color: Color(0xFF00AC67),
+                                              color: const Color(0xFF00AC67),
                                               textStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmall
@@ -352,7 +349,7 @@ class _EditarPagCategoriaWidgetState extends State<EditarPagCategoriaWidget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                               elevation: 3.0,
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Colors.transparent,
                                                 width: 1.0,
                                               ),
@@ -380,7 +377,7 @@ class _EditarPagCategoriaWidgetState extends State<EditarPagCategoriaWidget> {
                 tablet: false,
               ))
                 Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(8.0),
                     child: Image.asset(

@@ -1,14 +1,11 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:sticky_headers/sticky_headers.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:text_search/text_search.dart';
 import 'crear_producto_orden_model.dart';
@@ -60,9 +57,9 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
     context.watch<FFAppState>();
 
     return Align(
-      alignment: AlignmentDirectional(0.0, 0.0),
+      alignment: const AlignmentDirectional(0.0, 0.0),
       child: Container(
-        decoration: BoxDecoration(),
+        decoration: const BoxDecoration(),
         child: Container(
           width: MediaQuery.sizeOf(context).width * 1.0,
           height: MediaQuery.sizeOf(context).height * 1.0,
@@ -81,13 +78,13 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                   ),
                   child: Padding(
-                    padding: EdgeInsets.all(10.0),
+                    padding: const EdgeInsets.all(10.0),
                     child: SingleChildScrollView(
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Align(
-                            alignment: AlignmentDirectional(-1.0, -1.0),
+                            alignment: const AlignmentDirectional(-1.0, -1.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
                               focusColor: Colors.transparent,
@@ -119,17 +116,17 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                               header: Container(
                                 width: double.infinity,
                                 height: 50.0,
-                                decoration: BoxDecoration(),
-                                alignment: AlignmentDirectional(-1.0, 0.0),
+                                decoration: const BoxDecoration(),
+                                alignment: const AlignmentDirectional(-1.0, 0.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: TextFormField(
                                     controller: _model.textController1,
                                     focusNode: _model.textFieldFocusNode1,
                                     onChanged: (_) => EasyDebounce.debounce(
                                       '_model.textController1',
-                                      Duration(milliseconds: 2000),
+                                      const Duration(milliseconds: 2000),
                                       () async {
                                         await queryProductoRecordOnce()
                                             .then(
@@ -140,7 +137,7 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                                                     .map(
                                                       (record) => TextSearchItem
                                                           .fromTerms(record,
-                                                              [record.name!]),
+                                                              [record.name]),
                                                     )
                                                     .toList(),
                                               )
@@ -224,14 +221,14 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                                 ),
                               ),
                               content: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 0.0),
                                 child: Builder(
                                   builder: (context) {
                                     final productos =
                                         _model.simpleSearchResults.toList();
                                     return ListView.separated(
-                                      padding: EdgeInsets.fromLTRB(
+                                      padding: const EdgeInsets.fromLTRB(
                                         0,
                                         30.0,
                                         0,
@@ -242,7 +239,7 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                                       scrollDirection: Axis.vertical,
                                       itemCount: productos.length,
                                       separatorBuilder: (_, __) =>
-                                          SizedBox(height: 10.0),
+                                          const SizedBox(height: 10.0),
                                       itemBuilder: (context, productosIndex) {
                                         final productosItem =
                                             productos[productosIndex];
@@ -265,10 +262,10 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                                                   BorderRadius.circular(10.0),
                                             ),
                                             child: Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 10.0, 0.0, 10.0),
                                                 child: InkWell(
@@ -327,7 +324,7 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsets.all(10.0),
+                                      padding: const EdgeInsets.all(10.0),
                                       child:
                                           StreamBuilder<List<VariacionRecord>>(
                                         stream: queryVariacionRecord(
@@ -337,7 +334,7 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                                         builder: (context, snapshot) {
                                           // Customize what your widget looks like when it's loading.
                                           if (!snapshot.hasData) {
-                                            return Center(
+                                            return const Center(
                                               child: SizedBox(
                                                 width: 50.0,
                                                 height: 50.0,
@@ -391,7 +388,7 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       10.0,
@@ -410,7 +407,7 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                                                               // Customize what your widget looks like when it's loading.
                                                               if (!snapshot
                                                                   .hasData) {
-                                                                return Center(
+                                                                return const Center(
                                                                   child:
                                                                       SizedBox(
                                                                     width: 50.0,
@@ -487,20 +484,20 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                                                                           decoration:
                                                                               BoxDecoration(
                                                                             color: rowVariacionRecord.reference == FFAppState().variacionCrearOrden
-                                                                                ? Color(0xFF22E128)
-                                                                                : Color(0xFF00AC67),
+                                                                                ? const Color(0xFF22E128)
+                                                                                : const Color(0xFF00AC67),
                                                                             borderRadius:
                                                                                 BorderRadius.circular(10.0),
                                                                             border:
                                                                                 Border.all(
-                                                                              color: rowVariacionRecord.reference == FFAppState().variacionCrearOrden ? Color(0xFF00AC67) : Color(0xFF00AC67),
+                                                                              color: rowVariacionRecord.reference == FFAppState().variacionCrearOrden ? const Color(0xFF00AC67) : const Color(0xFF00AC67),
                                                                               width: 1.0,
                                                                             ),
                                                                           ),
                                                                           child:
                                                                               Align(
                                                                             alignment:
-                                                                                AlignmentDirectional(0.0, 0.0),
+                                                                                const AlignmentDirectional(0.0, 0.0),
                                                                             child:
                                                                                 Text(
                                                                               rowVariacionRecord.tamanio,
@@ -515,7 +512,7 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                                                                       ),
                                                                     );
                                                                   }).divide(
-                                                                      SizedBox(
+                                                                      const SizedBox(
                                                                           width:
                                                                               10.0)),
                                                                 ),
@@ -526,7 +523,7 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                                                       ],
                                                     );
                                                   } else {
-                                                    return Row(
+                                                    return const Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
                                                       children: [],
@@ -535,14 +532,14 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                                                 },
                                               ),
                                             ]
-                                                .divide(SizedBox(height: 20.0))
-                                                .around(SizedBox(height: 20.0)),
+                                                .divide(const SizedBox(height: 20.0))
+                                                .around(const SizedBox(height: 20.0)),
                                           );
                                         },
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 20.0, 0.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -558,14 +555,14 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                                           ),
                                           Expanded(
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(8.0, 0.0, 8.0, 0.0),
                                               child: TextFormField(
                                                 controller:
                                                     _model.textController2,
                                                 focusNode:
                                                     _model.textFieldFocusNode2,
-                                                autofocus: true,
+                                                autofocus: false,
                                                 obscureText: false,
                                                 decoration: InputDecoration(
                                                   labelText: 'Cantidad...',
@@ -661,7 +658,7 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                                     ),
                                     if (_model.producto != null)
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 10.0, 0.0, 0.0),
                                         child: FutureBuilder<ProductoRecord>(
                                           future:
@@ -670,7 +667,7 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                                           builder: (context, snapshot) {
                                             // Customize what your widget looks like when it's loading.
                                             if (!snapshot.hasData) {
-                                              return Center(
+                                              return const Center(
                                                 child: SizedBox(
                                                   width: 50.0,
                                                   height: 50.0,
@@ -722,7 +719,7 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                                                         (context, snapshot) {
                                                       // Customize what your widget looks like when it's loading.
                                                       if (!snapshot.hasData) {
-                                                        return Center(
+                                                        return const Center(
                                                           child: SizedBox(
                                                             width: 50.0,
                                                             height: 50.0,
@@ -762,7 +759,7 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                                         ),
                                       ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 10.0, 0.0, 0.0),
                                       child: FFButtonWidget(
                                         onPressed: () async {
@@ -825,9 +822,7 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                                                     : _model
                                                         .productoRead?.price),
                                             producto: _model.producto,
-                                            variacion: _model.variacion != null
-                                                ? _model.variacion
-                                                : null,
+                                            variacion: _model.variacion,
                                           ));
                                           _model.selectedItemss = SelectedItemsRecord
                                               .getDocumentFromData(
@@ -891,9 +886,7 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                                                                 ?.price),
                                                     producto: _model.producto,
                                                     variacion:
-                                                        _model.variacion != null
-                                                            ? _model.variacion
-                                                            : null,
+                                                        _model.variacion,
                                                   ),
                                                   selectedItemsRecordReference);
                                           setState(() {
@@ -910,10 +903,10 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                                         options: FFButtonOptions(
                                           height: 40.0,
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   24.0, 0.0, 24.0, 0.0),
                                           iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .verdeApp,
@@ -926,7 +919,7 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                                                     letterSpacing: 0.0,
                                                   ),
                                           elevation: 3.0,
-                                          borderSide: BorderSide(
+                                          borderSide: const BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -940,8 +933,8 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                               ),
                             ),
                         ]
-                            .divide(SizedBox(height: 20.0))
-                            .around(SizedBox(height: 20.0)),
+                            .divide(const SizedBox(height: 20.0))
+                            .around(const SizedBox(height: 20.0)),
                       ),
                     ),
                   ),
@@ -963,7 +956,7 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsets.all(10.0),
+                          padding: const EdgeInsets.all(10.0),
                           child: StreamBuilder<List<VariacionRecord>>(
                             stream: queryVariacionRecord(
                               parent: _model.producto,
@@ -972,7 +965,7 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                             builder: (context, snapshot) {
                               // Customize what your widget looks like when it's loading.
                               if (!snapshot.hasData) {
-                                return Center(
+                                return const Center(
                                   child: SizedBox(
                                     width: 50.0,
                                     height: 50.0,
@@ -1016,7 +1009,7 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                                                       ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 10.0, 0.0, 0.0),
                                               child: StreamBuilder<
@@ -1027,7 +1020,7 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                                                 builder: (context, snapshot) {
                                                   // Customize what your widget looks like when it's loading.
                                                   if (!snapshot.hasData) {
-                                                    return Center(
+                                                    return const Center(
                                                       child: SizedBox(
                                                         width: 50.0,
                                                         height: 50.0,
@@ -1094,9 +1087,9 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                                                                             .reference ==
                                                                         FFAppState()
                                                                             .variacionCrearOrden
-                                                                    ? Color(
+                                                                    ? const Color(
                                                                         0xFF22E128)
-                                                                    : Color(
+                                                                    : const Color(
                                                                         0xFF00AC67),
                                                                 borderRadius:
                                                                     BorderRadius
@@ -1108,16 +1101,16 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                                                                               .reference ==
                                                                           FFAppState()
                                                                               .variacionCrearOrden
-                                                                      ? Color(
+                                                                      ? const Color(
                                                                           0xFF00AC67)
-                                                                      : Color(
+                                                                      : const Color(
                                                                           0xFF00AC67),
                                                                   width: 1.0,
                                                                 ),
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         0.0,
                                                                         0.0),
                                                                 child: Text(
@@ -1139,7 +1132,7 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                                                             ),
                                                           ),
                                                         );
-                                                      }).divide(SizedBox(
+                                                      }).divide(const SizedBox(
                                                           width: 10.0)),
                                                     ),
                                                   );
@@ -1149,7 +1142,7 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                                           ],
                                         );
                                       } else {
-                                        return Row(
+                                        return const Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [],
                                         );
@@ -1157,14 +1150,14 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                                     },
                                   ),
                                 ]
-                                    .divide(SizedBox(height: 20.0))
-                                    .around(SizedBox(height: 20.0)),
+                                    .divide(const SizedBox(height: 20.0))
+                                    .around(const SizedBox(height: 20.0)),
                               );
                             },
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 20.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -1180,7 +1173,7 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                               ),
                               Expanded(
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: TextFormField(
                                     controller: _model.textController3,
@@ -1255,7 +1248,7 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                         ),
                         if (_model.producto != null)
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: FutureBuilder<ProductoRecord>(
                               future: ProductoRecord.getDocumentOnce(
@@ -1263,7 +1256,7 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                               builder: (context, snapshot) {
                                 // Customize what your widget looks like when it's loading.
                                 if (!snapshot.hasData) {
-                                  return Center(
+                                  return const Center(
                                     child: SizedBox(
                                       width: 50.0,
                                       height: 50.0,
@@ -1305,7 +1298,7 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                                         builder: (context, snapshot) {
                                           // Customize what your widget looks like when it's loading.
                                           if (!snapshot.hasData) {
-                                            return Center(
+                                            return const Center(
                                               child: SizedBox(
                                                 width: 50.0,
                                                 height: 50.0,
@@ -1339,7 +1332,7 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                             ),
                           ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () async {
@@ -1377,9 +1370,7 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                                         ? _model.productoReadd?.rebaja
                                         : _model.productoReadd?.price),
                                 producto: _model.producto,
-                                variacion: _model.variacion != null
-                                    ? _model.variacion
-                                    : null,
+                                variacion: _model.variacion,
                               ));
                               _model.selectedItems =
                                   SelectedItemsRecord.getDocumentFromData(
@@ -1417,9 +1408,7 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                                                 ? _model.productoReadd?.rebaja
                                                 : _model.productoReadd?.price),
                                         producto: _model.producto,
-                                        variacion: _model.variacion != null
-                                            ? _model.variacion
-                                            : null,
+                                        variacion: _model.variacion,
                                       ),
                                       selectedItemsRecordReference);
                               setState(() {
@@ -1433,9 +1422,9 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                             text: 'Agregar',
                             options: FFButtonOptions(
                               height: 40.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   24.0, 0.0, 24.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).verdeApp,
                               textStyle: FlutterFlowTheme.of(context)
@@ -1446,7 +1435,7 @@ class _CrearProductoOrdenWidgetState extends State<CrearProductoOrdenWidget> {
                                     letterSpacing: 0.0,
                                   ),
                               elevation: 3.0,
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.transparent,
                                 width: 1.0,
                               ),

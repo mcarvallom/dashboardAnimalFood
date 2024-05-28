@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_autocomplete_options_list.dart';
@@ -7,12 +6,9 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import '/pages/componentes/top_escritorio/top_escritorio_widget.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:collection/collection.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:text_search/text_search.dart';
 import 'agregar_prod_recomendado_model.dart';
@@ -23,8 +19,8 @@ class AgregarProdRecomendadoWidget extends StatefulWidget {
     super.key,
     Color? colorInicio,
     String? nombre,
-  })  : this.colorInicio = colorInicio ?? const Color(0xFFE6A5E5),
-        this.nombre = nombre ?? 'Inicio';
+  })  : colorInicio = colorInicio ?? const Color(0xFFE6A5E5),
+        nombre = nombre ?? 'Inicio';
 
   final Color colorInicio;
   final String nombre;
@@ -106,12 +102,12 @@ class _AgregarProdRecomendadoWidgetState
                       wrapWithModel(
                         model: _model.topEscritorioModel1,
                         updateCallback: () => setState(() {}),
-                        child: TopEscritorioWidget(),
+                        child: const TopEscritorioWidget(),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(-1.0, -1.0),
+                        alignment: const AlignmentDirectional(-1.0, -1.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               20.0, 20.0, 0.0, 10.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -148,17 +144,17 @@ class _AgregarProdRecomendadoWidgetState
                       ),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.all(20.0),
+                          padding: const EdgeInsets.all(20.0),
                           child: Container(
                             width: MediaQuery.sizeOf(context).width * 1.0,
-                            decoration: BoxDecoration(),
+                            decoration: const BoxDecoration(),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Flexible(
                                   child: Container(
-                                    decoration: BoxDecoration(),
+                                    decoration: const BoxDecoration(),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.min,
                                       crossAxisAlignment:
@@ -172,7 +168,7 @@ class _AgregarProdRecomendadoWidgetState
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 10.0),
                                                 child: TextFormField(
@@ -183,7 +179,7 @@ class _AgregarProdRecomendadoWidgetState
                                                   onChanged: (_) =>
                                                       EasyDebounce.debounce(
                                                     '_model.tituloTextController',
-                                                    Duration(milliseconds: 200),
+                                                    const Duration(milliseconds: 200),
                                                     () => setState(() {}),
                                                   ),
                                                   autofocus: true,
@@ -214,7 +210,7 @@ class _AgregarProdRecomendadoWidgetState
                                                         ),
                                                     enabledBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: BorderSide(
+                                                      borderSide: const BorderSide(
                                                         color:
                                                             Color(0xFFFF59FC),
                                                         width: 1.0,
@@ -225,7 +221,7 @@ class _AgregarProdRecomendadoWidgetState
                                                     ),
                                                     focusedBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: BorderSide(
+                                                      borderSide: const BorderSide(
                                                         color:
                                                             Color(0xFFFF59FC),
                                                         width: 1.0,
@@ -279,7 +275,7 @@ class _AgregarProdRecomendadoWidgetState
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 10.0),
                                                 child: TextFormField(
@@ -290,7 +286,7 @@ class _AgregarProdRecomendadoWidgetState
                                                   onChanged: (_) =>
                                                       EasyDebounce.debounce(
                                                     '_model.subtituloTextController',
-                                                    Duration(milliseconds: 200),
+                                                    const Duration(milliseconds: 200),
                                                     () => setState(() {}),
                                                   ),
                                                   autofocus: true,
@@ -322,7 +318,7 @@ class _AgregarProdRecomendadoWidgetState
                                                         ),
                                                     enabledBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: BorderSide(
+                                                      borderSide: const BorderSide(
                                                         color:
                                                             Color(0xFFFF59FC),
                                                         width: 1.0,
@@ -333,7 +329,7 @@ class _AgregarProdRecomendadoWidgetState
                                                     ),
                                                     focusedBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: BorderSide(
+                                                      borderSide: const BorderSide(
                                                         color:
                                                             Color(0xFFFF59FC),
                                                         width: 1.0,
@@ -396,7 +392,7 @@ class _AgregarProdRecomendadoWidgetState
                                             builder: (context, snapshot) {
                                               // Customize what your widget looks like when it's loading.
                                               if (!snapshot.hasData) {
-                                                return Center(
+                                                return const Center(
                                                   child: SizedBox(
                                                     width: 50.0,
                                                     height: 50.0,
@@ -415,10 +411,10 @@ class _AgregarProdRecomendadoWidgetState
                                                   containerProductoRecordList =
                                                   snapshot.data!;
                                               return Container(
-                                                decoration: BoxDecoration(),
+                                                decoration: const BoxDecoration(),
                                                 child: Autocomplete<String>(
                                                   initialValue:
-                                                      TextEditingValue(),
+                                                      const TextEditingValue(),
                                                   optionsBuilder:
                                                       (textEditingValue) {
                                                     if (textEditingValue.text ==
@@ -459,7 +455,7 @@ class _AgregarProdRecomendadoWidgetState
                                                                     0.0,
                                                               ),
                                                       textHighlightStyle:
-                                                          TextStyle(),
+                                                          const TextStyle(),
                                                       elevation: 4.0,
                                                       optionBackgroundColor:
                                                           FlutterFlowTheme.of(
@@ -517,7 +513,7 @@ class _AgregarProdRecomendadoWidgetState
                                                       onChanged: (_) =>
                                                           EasyDebounce.debounce(
                                                         '_model.buscarTextController',
-                                                        Duration(
+                                                        const Duration(
                                                             milliseconds: 2000),
                                                         () async {
                                                           safeSetState(() {
@@ -530,7 +526,7 @@ class _AgregarProdRecomendadoWidgetState
                                                                             record,
                                                                             [
                                                                           record
-                                                                              .name!
+                                                                              .name
                                                                         ]),
                                                                   )
                                                                   .toList(),
@@ -541,7 +537,6 @@ class _AgregarProdRecomendadoWidgetState
                                                                     .map((r) =>
                                                                         r.object)
                                                                     .toList();
-                                                            ;
                                                           });
                                                           setState(() {
                                                             FFAppState()
@@ -599,7 +594,7 @@ class _AgregarProdRecomendadoWidgetState
                                                         enabledBorder:
                                                             OutlineInputBorder(
                                                           borderSide:
-                                                              BorderSide(
+                                                              const BorderSide(
                                                             color: Color(
                                                                 0xFFFF59FC),
                                                             width: 1.0,
@@ -612,7 +607,7 @@ class _AgregarProdRecomendadoWidgetState
                                                         focusedBorder:
                                                             OutlineInputBorder(
                                                           borderSide:
-                                                              BorderSide(
+                                                              const BorderSide(
                                                             color: Color(
                                                                 0xFFFF59FC),
                                                             width: 1.0,
@@ -681,7 +676,7 @@ class _AgregarProdRecomendadoWidgetState
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 20.0, 0.0, 0.0),
                                           child: Text(
                                             _model.buscarTextController.text,
@@ -693,7 +688,7 @@ class _AgregarProdRecomendadoWidgetState
                                                 ),
                                           ),
                                         ),
-                                      ].addToEnd(SizedBox(height: 20.0)),
+                                      ].addToEnd(const SizedBox(height: 20.0)),
                                     ),
                                   ),
                                 ),
@@ -739,7 +734,7 @@ class _AgregarProdRecomendadoWidgetState
                                                         _model.uploadedFileUrl1,
                                                       ).image,
                                                     ),
-                                                    boxShadow: [
+                                                    boxShadow: const [
                                                       BoxShadow(
                                                         blurRadius: 10.0,
                                                         color:
@@ -753,7 +748,7 @@ class _AgregarProdRecomendadoWidgetState
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsets.all(10.0),
+                                                  padding: const EdgeInsets.all(10.0),
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.min,
@@ -764,7 +759,7 @@ class _AgregarProdRecomendadoWidgetState
                                                         children: [
                                                           Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     -1.0, 0.0),
                                                             child: Material(
                                                               color: Colors
@@ -789,7 +784,7 @@ class _AgregarProdRecomendadoWidgetState
                                                                               10.0),
                                                                 ),
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           8.0,
                                                                           5.0,
@@ -819,11 +814,11 @@ class _AgregarProdRecomendadoWidgetState
                                                       ),
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 -1.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       10.0,
@@ -852,11 +847,11 @@ class _AgregarProdRecomendadoWidgetState
                                                       ),
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 -1.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       10.0,
@@ -893,7 +888,7 @@ class _AgregarProdRecomendadoWidgetState
                                                           Container(
                                                             decoration:
                                                                 BoxDecoration(
-                                                              color: Color(
+                                                              color: const Color(
                                                                   0xFFF98831),
                                                               borderRadius:
                                                                   BorderRadius
@@ -902,12 +897,12 @@ class _AgregarProdRecomendadoWidgetState
                                                             ),
                                                             child: Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       -1.0,
                                                                       0.0),
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             8.0,
                                                                             5.0,
@@ -945,7 +940,7 @@ class _AgregarProdRecomendadoWidgetState
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 20.0, 0.0, 20.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
@@ -1024,12 +1019,12 @@ class _AgregarProdRecomendadoWidgetState
                                           options: FFButtonOptions(
                                             height: 40.0,
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     24.0, 0.0, 24.0, 0.0),
                                             iconPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
-                                            color: Color(0xFFFF8159),
+                                            color: const Color(0xFFFF8159),
                                             textStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
@@ -1039,7 +1034,7 @@ class _AgregarProdRecomendadoWidgetState
                                                       letterSpacing: 0.0,
                                                     ),
                                             elevation: 3.0,
-                                            borderSide: BorderSide(
+                                            borderSide: const BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
@@ -1049,7 +1044,7 @@ class _AgregarProdRecomendadoWidgetState
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 40.0, 0.0, 20.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
@@ -1083,12 +1078,12 @@ class _AgregarProdRecomendadoWidgetState
                                           options: FFButtonOptions(
                                             height: 40.0,
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     24.0, 0.0, 24.0, 0.0),
                                             iconPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
-                                            color: Color(0xFFFF8159),
+                                            color: const Color(0xFFFF8159),
                                             textStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
@@ -1098,7 +1093,7 @@ class _AgregarProdRecomendadoWidgetState
                                                       letterSpacing: 0.0,
                                                     ),
                                             elevation: 3.0,
-                                            borderSide: BorderSide(
+                                            borderSide: const BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
@@ -1130,12 +1125,12 @@ class _AgregarProdRecomendadoWidgetState
                       wrapWithModel(
                         model: _model.topEscritorioModel2,
                         updateCallback: () => setState(() {}),
-                        child: TopEscritorioWidget(),
+                        child: const TopEscritorioWidget(),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(-1.0, -1.0),
+                        alignment: const AlignmentDirectional(-1.0, -1.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               20.0, 20.0, 0.0, 10.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -1172,17 +1167,17 @@ class _AgregarProdRecomendadoWidgetState
                       ),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.all(20.0),
+                          padding: const EdgeInsets.all(20.0),
                           child: Container(
                             width: MediaQuery.sizeOf(context).width * 1.0,
-                            decoration: BoxDecoration(),
+                            decoration: const BoxDecoration(),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Flexible(
                                   child: Container(
-                                    decoration: BoxDecoration(),
+                                    decoration: const BoxDecoration(),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.min,
                                       crossAxisAlignment:
@@ -1196,7 +1191,7 @@ class _AgregarProdRecomendadoWidgetState
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 10.0),
                                                 child: TextFormField(
@@ -1207,7 +1202,7 @@ class _AgregarProdRecomendadoWidgetState
                                                   onChanged: (_) =>
                                                       EasyDebounce.debounce(
                                                     '_model.titulomovilTextController',
-                                                    Duration(milliseconds: 200),
+                                                    const Duration(milliseconds: 200),
                                                     () => setState(() {}),
                                                   ),
                                                   autofocus: true,
@@ -1238,7 +1233,7 @@ class _AgregarProdRecomendadoWidgetState
                                                         ),
                                                     enabledBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: BorderSide(
+                                                      borderSide: const BorderSide(
                                                         color:
                                                             Color(0xFF00AC67),
                                                         width: 1.0,
@@ -1249,7 +1244,7 @@ class _AgregarProdRecomendadoWidgetState
                                                     ),
                                                     focusedBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: BorderSide(
+                                                      borderSide: const BorderSide(
                                                         color:
                                                             Color(0xFF00AC67),
                                                         width: 1.0,
@@ -1303,7 +1298,7 @@ class _AgregarProdRecomendadoWidgetState
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 10.0),
                                                 child: TextFormField(
@@ -1314,7 +1309,7 @@ class _AgregarProdRecomendadoWidgetState
                                                   onChanged: (_) =>
                                                       EasyDebounce.debounce(
                                                     '_model.subtituloMovilTextController',
-                                                    Duration(milliseconds: 200),
+                                                    const Duration(milliseconds: 200),
                                                     () => setState(() {}),
                                                   ),
                                                   autofocus: true,
@@ -1346,7 +1341,7 @@ class _AgregarProdRecomendadoWidgetState
                                                         ),
                                                     enabledBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: BorderSide(
+                                                      borderSide: const BorderSide(
                                                         color:
                                                             Color(0xFF00AC67),
                                                         width: 1.0,
@@ -1357,7 +1352,7 @@ class _AgregarProdRecomendadoWidgetState
                                                     ),
                                                     focusedBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: BorderSide(
+                                                      borderSide: const BorderSide(
                                                         color:
                                                             Color(0xFF00AC67),
                                                         width: 1.0,
@@ -1420,7 +1415,7 @@ class _AgregarProdRecomendadoWidgetState
                                             builder: (context, snapshot) {
                                               // Customize what your widget looks like when it's loading.
                                               if (!snapshot.hasData) {
-                                                return Center(
+                                                return const Center(
                                                   child: SizedBox(
                                                     width: 50.0,
                                                     height: 50.0,
@@ -1439,10 +1434,10 @@ class _AgregarProdRecomendadoWidgetState
                                                   containerProductoRecordList =
                                                   snapshot.data!;
                                               return Container(
-                                                decoration: BoxDecoration(),
+                                                decoration: const BoxDecoration(),
                                                 child: Autocomplete<String>(
                                                   initialValue:
-                                                      TextEditingValue(),
+                                                      const TextEditingValue(),
                                                   optionsBuilder:
                                                       (textEditingValue) {
                                                     if (textEditingValue.text ==
@@ -1483,7 +1478,7 @@ class _AgregarProdRecomendadoWidgetState
                                                                     0.0,
                                                               ),
                                                       textHighlightStyle:
-                                                          TextStyle(),
+                                                          const TextStyle(),
                                                       elevation: 4.0,
                                                       optionBackgroundColor:
                                                           FlutterFlowTheme.of(
@@ -1543,7 +1538,7 @@ class _AgregarProdRecomendadoWidgetState
                                                       onChanged: (_) =>
                                                           EasyDebounce.debounce(
                                                         '_model.buscarMovilTextController',
-                                                        Duration(
+                                                        const Duration(
                                                             milliseconds: 2000),
                                                         () async {
                                                           safeSetState(() {
@@ -1556,7 +1551,7 @@ class _AgregarProdRecomendadoWidgetState
                                                                             record,
                                                                             [
                                                                           record
-                                                                              .name!
+                                                                              .name
                                                                         ]),
                                                                   )
                                                                   .toList(),
@@ -1567,7 +1562,6 @@ class _AgregarProdRecomendadoWidgetState
                                                                     .map((r) =>
                                                                         r.object)
                                                                     .toList();
-                                                            ;
                                                           });
                                                           setState(() {
                                                             FFAppState()
@@ -1625,7 +1619,7 @@ class _AgregarProdRecomendadoWidgetState
                                                         enabledBorder:
                                                             OutlineInputBorder(
                                                           borderSide:
-                                                              BorderSide(
+                                                              const BorderSide(
                                                             color: Color(
                                                                 0xFF00AC67),
                                                             width: 1.0,
@@ -1638,7 +1632,7 @@ class _AgregarProdRecomendadoWidgetState
                                                         focusedBorder:
                                                             OutlineInputBorder(
                                                           borderSide:
-                                                              BorderSide(
+                                                              const BorderSide(
                                                             color: Color(
                                                                 0xFF00AC67),
                                                             width: 1.0,
@@ -1707,7 +1701,7 @@ class _AgregarProdRecomendadoWidgetState
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 20.0, 0.0, 0.0),
                                           child: Text(
                                             _model
@@ -1722,7 +1716,7 @@ class _AgregarProdRecomendadoWidgetState
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 20.0, 0.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -1774,7 +1768,7 @@ class _AgregarProdRecomendadoWidgetState
                                                                     .uploadedFileUrl2,
                                                               ).image,
                                                             ),
-                                                            boxShadow: [
+                                                            boxShadow: const [
                                                               BoxShadow(
                                                                 blurRadius:
                                                                     10.0,
@@ -1790,7 +1784,7 @@ class _AgregarProdRecomendadoWidgetState
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsets.all(
+                                                              const EdgeInsets.all(
                                                                   10.0),
                                                           child: Column(
                                                             mainAxisSize:
@@ -1804,7 +1798,7 @@ class _AgregarProdRecomendadoWidgetState
                                                                 children: [
                                                                   Align(
                                                                     alignment:
-                                                                        AlignmentDirectional(
+                                                                        const AlignmentDirectional(
                                                                             -1.0,
                                                                             0.0),
                                                                     child:
@@ -1829,7 +1823,7 @@ class _AgregarProdRecomendadoWidgetState
                                                                         ),
                                                                         child:
                                                                             Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               8.0,
                                                                               5.0,
                                                                               8.0,
@@ -1852,11 +1846,11 @@ class _AgregarProdRecomendadoWidgetState
                                                               ),
                                                               Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         -1.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           10.0,
@@ -1884,11 +1878,11 @@ class _AgregarProdRecomendadoWidgetState
                                                               ),
                                                               Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         -1.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           10.0,
@@ -1925,7 +1919,7 @@ class _AgregarProdRecomendadoWidgetState
                                                                   Container(
                                                                     decoration:
                                                                         BoxDecoration(
-                                                                      color: Color(
+                                                                      color: const Color(
                                                                           0xFFF98831),
                                                                       borderRadius:
                                                                           BorderRadius.circular(
@@ -1934,12 +1928,12 @@ class _AgregarProdRecomendadoWidgetState
                                                                     child:
                                                                         Align(
                                                                       alignment:
-                                                                          AlignmentDirectional(
+                                                                          const AlignmentDirectional(
                                                                               -1.0,
                                                                               0.0),
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             8.0,
                                                                             5.0,
                                                                             8.0,
@@ -1971,7 +1965,7 @@ class _AgregarProdRecomendadoWidgetState
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 20.0, 0.0, 20.0),
                                                 child: FFButtonWidget(
@@ -2060,14 +2054,14 @@ class _AgregarProdRecomendadoWidgetState
                                                   options: FFButtonOptions(
                                                     height: 40.0,
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(24.0, 0.0,
                                                                 24.0, 0.0),
                                                     iconPadding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
-                                                    color: Color(0xFF00AC67),
+                                                    color: const Color(0xFF00AC67),
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .titleSmall
@@ -2078,7 +2072,7 @@ class _AgregarProdRecomendadoWidgetState
                                                           letterSpacing: 0.0,
                                                         ),
                                                     elevation: 3.0,
-                                                    borderSide: BorderSide(
+                                                    borderSide: const BorderSide(
                                                       color: Colors.transparent,
                                                       width: 1.0,
                                                     ),
@@ -2089,7 +2083,7 @@ class _AgregarProdRecomendadoWidgetState
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 40.0, 0.0, 20.0),
                                                 child: FFButtonWidget(
@@ -2128,14 +2122,14 @@ class _AgregarProdRecomendadoWidgetState
                                                   options: FFButtonOptions(
                                                     height: 40.0,
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(24.0, 0.0,
                                                                 24.0, 0.0),
                                                     iconPadding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
-                                                    color: Color(0xFF00AC67),
+                                                    color: const Color(0xFF00AC67),
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .titleSmall
@@ -2146,7 +2140,7 @@ class _AgregarProdRecomendadoWidgetState
                                                           letterSpacing: 0.0,
                                                         ),
                                                     elevation: 3.0,
-                                                    borderSide: BorderSide(
+                                                    borderSide: const BorderSide(
                                                       color: Colors.transparent,
                                                       width: 1.0,
                                                     ),
@@ -2159,7 +2153,7 @@ class _AgregarProdRecomendadoWidgetState
                                             ],
                                           ),
                                         ),
-                                      ].addToEnd(SizedBox(height: 20.0)),
+                                      ].addToEnd(const SizedBox(height: 20.0)),
                                     ),
                                   ),
                                 ),

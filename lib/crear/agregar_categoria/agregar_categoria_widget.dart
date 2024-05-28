@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_checkbox_group.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -6,11 +5,8 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/pages/componentes/top_movil/top_movil_widget.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'agregar_categoria_model.dart';
 export 'agregar_categoria_model.dart';
 
@@ -25,7 +21,7 @@ class AgregarCategoriaWidget extends StatefulWidget {
     this.colorBanner,
     this.colorAjustes,
     Color? colorCategorias,
-  }) : this.colorCategorias = colorCategorias ?? const Color(0xFF39A3EF);
+  }) : colorCategorias = colorCategorias ?? const Color(0xFF39A3EF);
 
   final Color? colorInicio;
   final Color? colorOrdenes;
@@ -87,7 +83,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
               builder: (context, snapshot) {
                 // Customize what your widget looks like when it's loading.
                 if (!snapshot.hasData) {
-                  return Center(
+                  return const Center(
                     child: SizedBox(
                       width: 50.0,
                       height: 50.0,
@@ -109,16 +105,16 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Expanded(
                               child: Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 30.0, 0.0, 20.0),
                                   child: Image.asset(
                                     'assets/images/logo_animalfood.png',
@@ -132,7 +128,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 30.0, 0.0, 10.0),
                         child: Text(
                           'Menú',
@@ -144,7 +140,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -159,7 +155,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                               'Inicio',
                               queryParameters: {
                                 'colorInicio': serializeParam(
-                                  Color(0xFFE6A5E5),
+                                  const Color(0xFFE6A5E5),
                                   ParamType.Color,
                                 ),
                                 'nombre': serializeParam(
@@ -168,7 +164,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                                 ),
                               }.withoutNulls,
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                 ),
@@ -182,7 +178,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -194,7 +190,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                                     size: 24.0,
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Inicio',
@@ -215,7 +211,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -227,7 +223,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                               'ordenes',
                               queryParameters: {
                                 'colorOrdenes': serializeParam(
-                                  Color(0xFFE6A5E5),
+                                  const Color(0xFFE6A5E5),
                                   ParamType.Color,
                                 ),
                                 'nombre': serializeParam(
@@ -236,7 +232,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                                 ),
                               }.withoutNulls,
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                 ),
@@ -250,7 +246,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -262,7 +258,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                                     size: 24.0,
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Órdenes',
@@ -283,7 +279,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -295,7 +291,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                               'productos',
                               queryParameters: {
                                 'colorProductos': serializeParam(
-                                  Color(0xFFE6A5E5),
+                                  const Color(0xFFE6A5E5),
                                   ParamType.Color,
                                 ),
                                 'nombre': serializeParam(
@@ -304,7 +300,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                                 ),
                               }.withoutNulls,
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                 ),
@@ -318,7 +314,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -330,7 +326,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                                     size: 24.0,
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Productos',
@@ -351,7 +347,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -362,7 +358,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                             context.pushNamed(
                               'tipoCategoria',
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                 ),
@@ -383,18 +379,18 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
-                                    Icon(
+                                    const Icon(
                                       Icons.list,
                                       color: Colors.white,
                                       size: 24.0,
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         'Categorías',
@@ -417,7 +413,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -428,7 +424,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                             context.pushNamed(
                               'Marcas',
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                 ),
@@ -442,7 +438,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -454,7 +450,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                                     size: 24.0,
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Marcas',
@@ -475,7 +471,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -492,7 +488,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                                 ),
                               }.withoutNulls,
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                 ),
@@ -506,7 +502,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -518,7 +514,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                                     size: 24.0,
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Empleados',
@@ -539,7 +535,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -556,7 +552,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                                 ),
                               }.withoutNulls,
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                 ),
@@ -570,7 +566,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -582,7 +578,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                                     size: 24.0,
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Clientes',
@@ -605,7 +601,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: Container(
                           width: MediaQuery.sizeOf(context).width * 1.0,
@@ -614,7 +610,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 0.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -626,7 +622,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                                   size: 24.0,
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     'Ajustes de la tienda',
@@ -671,13 +667,13 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                         wrapWithModel(
                           model: _model.topMovilModel,
                           updateCallback: () => setState(() {}),
-                          child: TopMovilWidget(),
+                          child: const TopMovilWidget(),
                         ),
                         Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 20.0, 10.0, 20.0),
                               child: SingleChildScrollView(
                                 primary: false,
@@ -685,7 +681,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 20.0),
                                       child: StreamBuilder<
                                           List<CategoriaPadreRecord>>(
@@ -693,7 +689,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                                         builder: (context, snapshot) {
                                           // Customize what your widget looks like when it's loading.
                                           if (!snapshot.hasData) {
-                                            return Center(
+                                            return const Center(
                                               child: SizedBox(
                                                 width: 50.0,
                                                 height: 50.0,
@@ -733,11 +729,11 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                                                 children: [
                                                   Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             -1.0, -1.0),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   20.0,
                                                                   20.0,
@@ -769,7 +765,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       20.0,
                                                                       0.0,
@@ -884,11 +880,11 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                                                         ),
                                                         Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   -1.0, 0.0),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         20.0,
                                                                         20.0,
@@ -912,7 +908,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       20.0,
                                                                       10.0,
@@ -982,13 +978,13 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 20.0, 20.0, 20.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 20.0),
                                     child: Material(
                                       color: Colors.transparent,
@@ -1014,7 +1010,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                                           builder: (context, snapshot) {
                                             // Customize what your widget looks like when it's loading.
                                             if (!snapshot.hasData) {
-                                              return Center(
+                                              return const Center(
                                                 child: SizedBox(
                                                   width: 50.0,
                                                   height: 50.0,
@@ -1047,7 +1043,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   20.0,
                                                                   0.0,
@@ -1064,11 +1060,11 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                                                     ),
                                                     Align(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               -1.0, -1.0),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     10.0,
                                                                     20.0,
@@ -1134,7 +1130,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                                                                 .primaryText,
                                                           ),
                                                         ),
-                                                        duration: Duration(
+                                                        duration: const Duration(
                                                             milliseconds: 4000),
                                                         backgroundColor:
                                                             FlutterFlowTheme.of(
@@ -1147,14 +1143,14 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                                                   options: FFButtonOptions(
                                                     height: 40.0,
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(24.0, 0.0,
                                                                 24.0, 0.0),
                                                     iconPadding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
-                                                    color: Color(0xFF00AC67),
+                                                    color: const Color(0xFF00AC67),
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .titleSmall
@@ -1165,7 +1161,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                                                           letterSpacing: 0.0,
                                                         ),
                                                     elevation: 3.0,
-                                                    borderSide: BorderSide(
+                                                    borderSide: const BorderSide(
                                                       color: Colors.transparent,
                                                       width: 1.0,
                                                     ),
@@ -1197,7 +1193,7 @@ class _AgregarCategoriaWidgetState extends State<AgregarCategoriaWidget> {
                 tablet: false,
               ))
                 Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(8.0),
                     child: Image.asset(

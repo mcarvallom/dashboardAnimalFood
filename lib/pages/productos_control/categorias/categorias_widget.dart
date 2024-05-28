@@ -7,8 +7,6 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'categorias_model.dart';
 export 'categorias_model.dart';
 
@@ -17,7 +15,7 @@ class CategoriasWidget extends StatefulWidget {
     super.key,
     Color? colorCategorias,
     this.nombre,
-  }) : this.colorCategorias = colorCategorias ?? const Color(0xFFE6A5E5);
+  }) : colorCategorias = colorCategorias ?? const Color(0xFFE6A5E5);
 
   final Color colorCategorias;
   final String? nombre;
@@ -70,7 +68,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
               builder: (context, snapshot) {
                 // Customize what your widget looks like when it's loading.
                 if (!snapshot.hasData) {
-                  return Center(
+                  return const Center(
                     child: SizedBox(
                       width: 50.0,
                       height: 50.0,
@@ -92,16 +90,16 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Expanded(
                               child: Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 30.0, 0.0, 20.0),
                                   child: Image.asset(
                                     'assets/images/logo_animalfood.png',
@@ -115,7 +113,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 30.0, 0.0, 10.0),
                         child: Text(
                           'Menú',
@@ -127,7 +125,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -142,7 +140,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                               'Inicio',
                               queryParameters: {
                                 'colorInicio': serializeParam(
-                                  Color(0xFFE6A5E5),
+                                  const Color(0xFFE6A5E5),
                                   ParamType.Color,
                                 ),
                                 'nombre': serializeParam(
@@ -151,7 +149,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                                 ),
                               }.withoutNulls,
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                 ),
@@ -165,7 +163,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -177,7 +175,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                                     size: 24.0,
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Inicio',
@@ -198,7 +196,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -210,7 +208,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                               'ordenes',
                               queryParameters: {
                                 'colorOrdenes': serializeParam(
-                                  Color(0xFFE6A5E5),
+                                  const Color(0xFFE6A5E5),
                                   ParamType.Color,
                                 ),
                                 'nombre': serializeParam(
@@ -219,7 +217,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                                 ),
                               }.withoutNulls,
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                 ),
@@ -233,7 +231,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -245,7 +243,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                                     size: 24.0,
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Órdenes',
@@ -266,7 +264,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -278,7 +276,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                               'productos',
                               queryParameters: {
                                 'colorProductos': serializeParam(
-                                  Color(0xFFE6A5E5),
+                                  const Color(0xFFE6A5E5),
                                   ParamType.Color,
                                 ),
                                 'nombre': serializeParam(
@@ -287,7 +285,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                                 ),
                               }.withoutNulls,
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                 ),
@@ -301,7 +299,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -313,7 +311,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                                     size: 24.0,
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Productos',
@@ -334,7 +332,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -345,7 +343,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                             context.pushNamed(
                               'tipoCategoria',
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                 ),
@@ -366,18 +364,18 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
-                                    Icon(
+                                    const Icon(
                                       Icons.list,
                                       color: Colors.white,
                                       size: 24.0,
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         'Categorías',
@@ -400,7 +398,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -411,7 +409,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                             context.pushNamed(
                               'Marcas',
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                 ),
@@ -425,7 +423,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -437,7 +435,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                                     size: 24.0,
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Marcas',
@@ -458,7 +456,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -470,7 +468,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                               'empleados',
                               queryParameters: {
                                 'colorEmpleados': serializeParam(
-                                  Color(0xFFE6A5E5),
+                                  const Color(0xFFE6A5E5),
                                   ParamType.Color,
                                 ),
                                 'nombre': serializeParam(
@@ -479,7 +477,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                                 ),
                               }.withoutNulls,
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                 ),
@@ -493,7 +491,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -505,7 +503,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                                     size: 24.0,
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Empleados',
@@ -526,7 +524,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -538,7 +536,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                               'clientes',
                               queryParameters: {
                                 'colorClientes': serializeParam(
-                                  Color(0xFFE6A5E5),
+                                  const Color(0xFFE6A5E5),
                                   ParamType.Color,
                                 ),
                                 'nombre': serializeParam(
@@ -547,7 +545,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                                 ),
                               }.withoutNulls,
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                 ),
@@ -561,7 +559,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -573,7 +571,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                                     size: 24.0,
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Clientes',
@@ -596,7 +594,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: Container(
                           width: MediaQuery.sizeOf(context).width * 1.0,
@@ -605,7 +603,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 0.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -617,7 +615,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                                   size: 24.0,
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     'Ajustes de la tienda',
@@ -636,7 +634,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                           ),
                         ),
                       ),
-                    ].addToStart(SizedBox(height: 70.0)),
+                    ].addToStart(const SizedBox(height: 70.0)),
                   ),
                 );
               },
@@ -656,10 +654,10 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                       wrapWithModel(
                         model: _model.topMovilModel,
                         updateCallback: () => setState(() {}),
-                        child: TopMovilWidget(),
+                        child: const TopMovilWidget(),
                       ),
                       Padding(
-                        padding: EdgeInsets.all(10.0),
+                        padding: const EdgeInsets.all(10.0),
                         child: SingleChildScrollView(
                           scrollDirection: Axis.horizontal,
                           child: Row(
@@ -667,7 +665,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 10.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -678,7 +676,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                                     context.pushNamed(
                                       'agregarCategoriaPadre',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
+                                        kTransitionInfoKey: const TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.fade,
@@ -691,16 +689,16 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                                     child: Container(
                                       height: 50.0,
                                       decoration: BoxDecoration(
-                                        color: Color(0xFF00AC67),
+                                        color: const Color(0xFF00AC67),
                                         borderRadius:
                                             BorderRadius.circular(10.0),
                                       ),
                                       child: Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 10.0, 0.0),
                                           child: Text(
                                             'Agregar Categoría Padre',
@@ -734,7 +732,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                             builder: (context, snapshot) {
                               // Customize what your widget looks like when it's loading.
                               if (!snapshot.hasData) {
-                                return Center(
+                                return const Center(
                                   child: SizedBox(
                                     width: 50.0,
                                     height: 50.0,
@@ -749,7 +747,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                               List<CategoriaPadreRecord>
                                   dataTableCategoriaPadreRecordList =
                                   snapshot.data!;
-                              return Container(
+                              return SizedBox(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: MediaQuery.sizeOf(context).height * 0.7,
                                 child: DataTable2(
@@ -759,7 +757,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                                         softWrap: true,
                                         child: Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Text(
                                             'Categoría',
                                             style: FlutterFlowTheme.of(context)
@@ -780,7 +778,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                                         softWrap: true,
                                         child: Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Text(
                                             'Acción',
                                             style: FlutterFlowTheme.of(context)
@@ -802,10 +800,10 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                                               dataTableCategoriaPadreRecord) =>
                                           [
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 10.0, 0.0, 10.0),
                                                 child: AutoSizeText(
@@ -823,10 +821,10 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                                               ),
                                             ),
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 10.0),
                                                 child: FFButtonWidget(
@@ -837,21 +835,21 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                                                               builder:
                                                                   (alertDialogContext) {
                                                                 return AlertDialog(
-                                                                  content: Text(
+                                                                  content: const Text(
                                                                       '¿Desea eliminar esta categoría?'),
                                                                   actions: [
                                                                     TextButton(
                                                                       onPressed: () => Navigator.pop(
                                                                           alertDialogContext,
                                                                           false),
-                                                                      child: Text(
+                                                                      child: const Text(
                                                                           'Cancelar'),
                                                                     ),
                                                                     TextButton(
                                                                       onPressed: () => Navigator.pop(
                                                                           alertDialogContext,
                                                                           true),
-                                                                      child: Text(
+                                                                      child: const Text(
                                                                           'Confirmar'),
                                                                     ),
                                                                   ],
@@ -871,11 +869,11 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                                                   options: FFButtonOptions(
                                                     height: 30.0,
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(24.0, 0.0,
                                                                 24.0, 0.0),
                                                     iconPadding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     color: FlutterFlowTheme.of(
@@ -891,7 +889,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                                                           letterSpacing: 0.0,
                                                         ),
                                                     elevation: 3.0,
-                                                    borderSide: BorderSide(
+                                                    borderSide: const BorderSide(
                                                       color: Colors.transparent,
                                                       width: 1.0,
                                                     ),
@@ -914,7 +912,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                                         .primaryBackground,
                                   ),
                                   dataRowHeight: 60.0,
-                                  border: TableBorder(
+                                  border: const TableBorder(
                                     borderRadius: BorderRadius.only(
                                       bottomLeft: Radius.circular(0.0),
                                       bottomRight: Radius.circular(0.0),
@@ -931,7 +929,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
                           ),
                         ],
                       ),
-                    ].addToEnd(SizedBox(height: 40.0)),
+                    ].addToEnd(const SizedBox(height: 40.0)),
                   ),
                 ),
               ),
@@ -942,7 +940,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget> {
               ))
                 Flexible(
                   child: Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8.0),
                       child: Image.asset(

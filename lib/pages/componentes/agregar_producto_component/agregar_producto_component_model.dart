@@ -1,26 +1,9 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/backend/firebase_storage/storage.dart';
-import '/backend/schema/structs/index.dart';
-import '/flutter_flow/flutter_flow_button_tabbar.dart';
-import '/flutter_flow/flutter_flow_drop_down.dart';
-import '/flutter_flow/flutter_flow_expanded_image_view.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import '/flutter_flow/upload_data.dart';
-import '/pages/componentes/agregar_variacion/agregar_variacion_widget.dart';
 import 'agregar_producto_component_widget.dart'
     show AgregarProductoComponentWidget;
-import 'package:auto_size_text/auto_size_text.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:page_transition/page_transition.dart';
-import 'package:provider/provider.dart';
 
 class AgregarProductoComponentModel
     extends FlutterFlowModel<AgregarProductoComponentWidget> {
@@ -28,6 +11,11 @@ class AgregarProductoComponentModel
 
   final formKey1 = GlobalKey<FormState>();
   final formKey2 = GlobalKey<FormState>();
+  bool isDataUploading = false;
+  FFUploadedFile uploadedLocalFile =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl = '';
+
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode1;
   TextEditingController? textController1;
@@ -58,13 +46,6 @@ class AgregarProductoComponentModel
   String? Function(BuildContext, String?)?
       txtCodigoBarrasTextControllerValidator;
   var escanear = '';
-  // State field(s) for TxtTamanio widget.
-  FocusNode? txtTamanioFocusNode;
-  TextEditingController? txtTamanioTextController;
-  String? Function(BuildContext, String?)? txtTamanioTextControllerValidator;
-  // State field(s) for DropDown widget.
-  String? dropDownValue;
-  FormFieldController<String>? dropDownValueController;
   // State field(s) for IndicacionesyContraindicaciones widget.
   FocusNode? indicacionesyContraindicacionesFocusNode;
   TextEditingController? indicacionesyContraindicacionesTextController;
@@ -90,11 +71,6 @@ class AgregarProductoComponentModel
   FocusNode? ingredientesFocusNode;
   TextEditingController? ingredientesTextController;
   String? Function(BuildContext, String?)? ingredientesTextControllerValidator;
-  // State field(s) for TabBar widget.
-  TabController? tabBarController;
-  int get tabBarCurrentIndex =>
-      tabBarController != null ? tabBarController!.index : 0;
-
   // State field(s) for precioOriginal widget.
   FocusNode? precioOriginalFocusNode;
   TextEditingController? precioOriginalTextController;
@@ -105,6 +81,18 @@ class AgregarProductoComponentModel
   TextEditingController? precioDescuentoTextController;
   String? Function(BuildContext, String?)?
       precioDescuentoTextControllerValidator;
+  // State field(s) for txtStock widget.
+  FocusNode? txtStockFocusNode;
+  TextEditingController? txtStockTextController;
+  String? Function(BuildContext, String?)? txtStockTextControllerValidator;
+  String? _txtStockTextControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Stock requerido';
+    }
+
+    return null;
+  }
+
   // State field(s) for marcaProducto widget.
   FocusNode? marcaProductoFocusNode;
   TextEditingController? marcaProductoTextController;
@@ -112,7 +100,7 @@ class AgregarProductoComponentModel
   String? _marcaProductoTextControllerValidator(
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Campo requerido';
+      return 'Marca requerida';
     }
 
     return null;
@@ -130,15 +118,6 @@ class AgregarProductoComponentModel
   TextEditingController? etiquetaProductoTextController;
   String? Function(BuildContext, String?)?
       etiquetaProductoTextControllerValidator;
-  // State field(s) for txtStock widget.
-  FocusNode? txtStockFocusNode;
-  TextEditingController? txtStockTextController;
-  String? Function(BuildContext, String?)? txtStockTextControllerValidator;
-  bool isDataUploading = false;
-  FFUploadedFile uploadedLocalFile =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl = '';
-
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   ProductoRecord? producto;
 
@@ -146,6 +125,7 @@ class AgregarProductoComponentModel
   void initState(BuildContext context) {
     textController1Validator = _textController1Validator;
     textController2Validator = _textController2Validator;
+    txtStockTextControllerValidator = _txtStockTextControllerValidator;
     marcaProductoTextControllerValidator =
         _marcaProductoTextControllerValidator;
   }
@@ -160,9 +140,6 @@ class AgregarProductoComponentModel
 
     txtCodigoBarrasFocusNode?.dispose();
     txtCodigoBarrasTextController?.dispose();
-
-    txtTamanioFocusNode?.dispose();
-    txtTamanioTextController?.dispose();
 
     indicacionesyContraindicacionesFocusNode?.dispose();
     indicacionesyContraindicacionesTextController?.dispose();
@@ -182,20 +159,19 @@ class AgregarProductoComponentModel
     ingredientesFocusNode?.dispose();
     ingredientesTextController?.dispose();
 
-    tabBarController?.dispose();
     precioOriginalFocusNode?.dispose();
     precioOriginalTextController?.dispose();
 
     precioDescuentoFocusNode?.dispose();
     precioDescuentoTextController?.dispose();
 
+    txtStockFocusNode?.dispose();
+    txtStockTextController?.dispose();
+
     marcaProductoFocusNode?.dispose();
     marcaProductoTextController?.dispose();
 
     etiquetaProductoFocusNode?.dispose();
     etiquetaProductoTextController?.dispose();
-
-    txtStockFocusNode?.dispose();
-    txtStockTextController?.dispose();
   }
 }

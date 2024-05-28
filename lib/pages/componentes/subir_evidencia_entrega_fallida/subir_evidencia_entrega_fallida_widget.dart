@@ -7,10 +7,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import '/custom_code/actions/index.dart' as actions;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'subir_evidencia_entrega_fallida_model.dart';
 export 'subir_evidencia_entrega_fallida_model.dart';
 
@@ -63,7 +60,7 @@ class _SubirEvidenciaEntregaFallidaWidgetState
             builder: (context, snapshot) {
               // Customize what your widget looks like when it's loading.
               if (!snapshot.hasData) {
-                return Center(
+                return const Center(
                   child: SizedBox(
                     width: 50.0,
                     height: 50.0,
@@ -80,7 +77,7 @@ class _SubirEvidenciaEntregaFallidaWidgetState
                 width: MediaQuery.sizeOf(context).width * 1.0,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     bottomLeft: Radius.circular(0.0),
                     bottomRight: Radius.circular(0.0),
                     topLeft: Radius.circular(30.0),
@@ -92,7 +89,7 @@ class _SubirEvidenciaEntregaFallidaWidgetState
                   builder: (context, snapshot) {
                     // Customize what your widget looks like when it's loading.
                     if (!snapshot.hasData) {
-                      return Center(
+                      return const Center(
                         child: SizedBox(
                           width: 50.0,
                           height: 50.0,
@@ -106,9 +103,9 @@ class _SubirEvidenciaEntregaFallidaWidgetState
                     }
                     final containerUserRecord = snapshot.data!;
                     return Container(
-                      decoration: BoxDecoration(),
+                      decoration: const BoxDecoration(),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             20.0, 30.0, 20.0, 50.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
@@ -117,7 +114,7 @@ class _SubirEvidenciaEntregaFallidaWidgetState
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 20.0, 0.0, 0.0),
                                   child: Text(
                                     'Subir evidencia domicilio cliente',
@@ -133,7 +130,7 @@ class _SubirEvidenciaEntregaFallidaWidgetState
                                 ),
                                 if (_model.isDataUploading1)
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 10.0, 0.0, 0.0),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(8.0),
@@ -149,7 +146,7 @@ class _SubirEvidenciaEntregaFallidaWidgetState
                                   key: _model.formKey1,
                                   autovalidateMode: AutovalidateMode.disabled,
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 10.0, 0.0, 20.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
@@ -219,12 +216,12 @@ class _SubirEvidenciaEntregaFallidaWidgetState
                                             MediaQuery.sizeOf(context).width *
                                                 0.5,
                                         height: 40.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             24.0, 0.0, 24.0, 0.0),
                                         iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
-                                        color: Color(0xFF00AC67),
+                                        color: const Color(0xFF00AC67),
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
@@ -234,7 +231,7 @@ class _SubirEvidenciaEntregaFallidaWidgetState
                                               fontWeight: FontWeight.w500,
                                             ),
                                         elevation: 3.0,
-                                        borderSide: BorderSide(
+                                        borderSide: const BorderSide(
                                           color: Colors.transparent,
                                           width: 1.0,
                                         ),
@@ -250,7 +247,7 @@ class _SubirEvidenciaEntregaFallidaWidgetState
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 20.0, 0.0, 0.0),
                                   child: Text(
                                     'Subir evidencia conversación cliente',
@@ -266,7 +263,7 @@ class _SubirEvidenciaEntregaFallidaWidgetState
                                 ),
                                 if (_model.isDataUploading2)
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 10.0, 0.0, 0.0),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(8.0),
@@ -282,7 +279,7 @@ class _SubirEvidenciaEntregaFallidaWidgetState
                                   key: _model.formKey2,
                                   autovalidateMode: AutovalidateMode.disabled,
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 10.0, 0.0, 20.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
@@ -352,12 +349,12 @@ class _SubirEvidenciaEntregaFallidaWidgetState
                                             MediaQuery.sizeOf(context).width *
                                                 0.5,
                                         height: 40.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             24.0, 0.0, 24.0, 0.0),
                                         iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
-                                        color: Color(0xFF00AC67),
+                                        color: const Color(0xFF00AC67),
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
@@ -367,7 +364,7 @@ class _SubirEvidenciaEntregaFallidaWidgetState
                                               fontWeight: FontWeight.w500,
                                             ),
                                         elevation: 3.0,
-                                        borderSide: BorderSide(
+                                        borderSide: const BorderSide(
                                           color: Colors.transparent,
                                           width: 1.0,
                                         ),
@@ -385,19 +382,18 @@ class _SubirEvidenciaEntregaFallidaWidgetState
                                     !_model.formKey1.currentState!.validate()) {
                                   return;
                                 }
-                                if (_model.uploadedFileUrl1 == null ||
-                                    _model.uploadedFileUrl1.isEmpty) {
+                                if (_model.uploadedFileUrl1.isEmpty) {
                                   await showDialog(
                                     context: context,
                                     builder: (alertDialogContext) {
                                       return AlertDialog(
-                                        content: Text(
+                                        content: const Text(
                                             'Debes subir una imagen del domicilio'),
                                         actions: [
                                           TextButton(
                                             onPressed: () => Navigator.pop(
                                                 alertDialogContext),
-                                            child: Text('Ok'),
+                                            child: const Text('Ok'),
                                           ),
                                         ],
                                       );
@@ -409,19 +405,18 @@ class _SubirEvidenciaEntregaFallidaWidgetState
                                     !_model.formKey2.currentState!.validate()) {
                                   return;
                                 }
-                                if (_model.uploadedFileUrl2 == null ||
-                                    _model.uploadedFileUrl2.isEmpty) {
+                                if (_model.uploadedFileUrl2.isEmpty) {
                                   await showDialog(
                                     context: context,
                                     builder: (alertDialogContext) {
                                       return AlertDialog(
-                                        content: Text(
+                                        content: const Text(
                                             'Debes subir una imagen de la conversación'),
                                         actions: [
                                           TextButton(
                                             onPressed: () => Navigator.pop(
                                                 alertDialogContext),
-                                            child: Text('Ok'),
+                                            child: const Text('Ok'),
                                           ),
                                         ],
                                       );
@@ -467,11 +462,11 @@ class _SubirEvidenciaEntregaFallidaWidgetState
                               options: FFButtonOptions(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 40.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: Color(0xFF00AC67),
+                                color: const Color(0xFF00AC67),
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -481,7 +476,7 @@ class _SubirEvidenciaEntregaFallidaWidgetState
                                       fontWeight: FontWeight.w500,
                                     ),
                                 elevation: 3.0,
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),

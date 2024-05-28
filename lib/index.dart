@@ -68,3 +68,22 @@ export '/pages/marcar_entrada_salida/marcar_entrada_salida_widget.dart'
     show MarcarEntradaSalidaWidget;
 export '/pages/pedidos/crear_orden/crear_orden_widget.dart'
     show CrearOrdenWidget;
+export '/pages/blog/blog_widget.dart' show BlogWidget;
+export '/pages/crear_blog/crear_blog_widget.dart' show CrearBlogWidget;
+export '/pages/pantalla_apple/soporte/soporte_widget.dart' show SoporteWidget;
+export '/pages/pantalla_apple/pantalla/pantalla_widget.dart'
+    show PantallaWidget;
+export '/pages/pantalla_apple/lista_de_mensajes/lista_de_mensajes_widget.dart'
+    show ListaDeMensajesWidget;
+export '/pages/pantalla_apple/ver_ticket/ver_ticket_widget.dart'
+    show VerTicketWidget;
+export '/pages/pantalla_apple/mis_tickets/mis_tickets_widget.dart'
+    show MisTicketsWidget;
+export '/pages/pantalla_apple/ver_mi_ticket/ver_mi_ticket_widget.dart'
+    show VerMiTicketWidget;
+export '/pages/reportes_ganancias/registrar_ventas/registrar_ventas_widget.dart'
+    show RegistrarVentasWidget;
+export '/pages/reportes_ganancias/ventas_diarias/ventas_diarias_widget.dart'
+    show VentasDiariasWidget;
+export '/pages/reportes_ganancias/detalle_reporte_venta/detalle_reporte_venta_widget.dart'
+    show DetalleReporteVentaWidget;

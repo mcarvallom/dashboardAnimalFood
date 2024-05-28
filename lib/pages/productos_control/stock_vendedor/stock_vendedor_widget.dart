@@ -2,14 +2,12 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/componentes/stock_page/stock_page_widget.dart';
 import '/pages/componentes/top_movil_vendedor/top_movil_vendedor_widget.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'stock_vendedor_model.dart';
 export 'stock_vendedor_model.dart';
@@ -19,7 +17,7 @@ class StockVendedorWidget extends StatefulWidget {
     super.key,
     Color? colorProductos,
     this.nombre,
-  }) : this.colorProductos = colorProductos ?? const Color(0xFFE6A5E5);
+  }) : colorProductos = colorProductos ?? const Color(0xFFE6A5E5);
 
   final Color colorProductos;
   final String? nombre;
@@ -84,7 +82,7 @@ class _StockVendedorWidgetState extends State<StockVendedorWidget> {
               builder: (context, snapshot) {
                 // Customize what your widget looks like when it's loading.
                 if (!snapshot.hasData) {
-                  return Center(
+                  return const Center(
                     child: SizedBox(
                       width: 50.0,
                       height: 50.0,
@@ -106,16 +104,16 @@ class _StockVendedorWidgetState extends State<StockVendedorWidget> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Expanded(
                               child: Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 30.0, 0.0, 20.0),
                                   child: Image.asset(
                                     'assets/images/logo_animalfood.png',
@@ -129,7 +127,7 @@ class _StockVendedorWidgetState extends State<StockVendedorWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 30.0, 0.0, 10.0),
                         child: Text(
                           'Menú',
@@ -141,7 +139,7 @@ class _StockVendedorWidgetState extends State<StockVendedorWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -158,7 +156,7 @@ class _StockVendedorWidgetState extends State<StockVendedorWidget> {
                                 ),
                               }.withoutNulls,
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                 ),
@@ -175,22 +173,22 @@ class _StockVendedorWidgetState extends State<StockVendedorWidget> {
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 60.0,
                               decoration: BoxDecoration(
-                                color: Color(0xFFEAC04A),
+                                color: const Color(0xFFEAC04A),
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
-                                    FaIcon(
+                                    const FaIcon(
                                       FontAwesomeIcons.shoppingBag,
                                       color: Colors.white,
                                       size: 24.0,
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         'Órdenes',
@@ -212,7 +210,7 @@ class _StockVendedorWidgetState extends State<StockVendedorWidget> {
                           ),
                         ),
                       ),
-                    ].addToStart(SizedBox(height: 70.0)),
+                    ].addToStart(const SizedBox(height: 70.0)),
                   ),
                 );
               },
@@ -226,10 +224,8 @@ class _StockVendedorWidgetState extends State<StockVendedorWidget> {
             children: [
               Flexible(
                 child: Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
-                  child: Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 80.0),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  child: SafeArea(
                     child: Container(
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: MediaQuery.sizeOf(context).height * 1.0,
@@ -242,12 +238,12 @@ class _StockVendedorWidgetState extends State<StockVendedorWidget> {
                           wrapWithModel(
                             model: _model.topMovilVendedorModel,
                             updateCallback: () => setState(() {}),
-                            child: TopMovilVendedorWidget(),
+                            child: const TopMovilVendedorWidget(),
                           ),
                           wrapWithModel(
                             model: _model.stockPageModel,
                             updateCallback: () => setState(() {}),
-                            child: StockPageWidget(),
+                            child: const StockPageWidget(),
                           ),
                         ],
                       ),
@@ -262,7 +258,7 @@ class _StockVendedorWidgetState extends State<StockVendedorWidget> {
               ))
                 Flexible(
                   child: Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8.0),
                       child: Image.asset(

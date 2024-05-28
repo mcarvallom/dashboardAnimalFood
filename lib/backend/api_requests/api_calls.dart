@@ -1,8 +1,7 @@
 import 'dart:convert';
-import 'dart:typed_data';
-import '../schema/structs/index.dart';
 
-import '/flutter_flow/flutter_flow_util.dart';
+import 'package:flutter/foundation.dart';
+
 import 'api_manager.dart';
 
 export 'api_manager.dart' show ApiCallResponse;
@@ -12,7 +11,7 @@ const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 /// Start GetNet Group Code
 
 class GetNetGroup {
-  static String baseUrl = 'https://checkout.test.getnet.cl';
+  static String getBaseUrl() => 'https://checkout.test.getnet.cl';
   static Map<String, String> headers = {};
   static ReembolsoCall reembolsoCall = ReembolsoCall();
 }
@@ -25,19 +24,21 @@ class ReembolsoCall {
     String? seed = '',
     String? internalReference = '',
   }) async {
+    final baseUrl = GetNetGroup.getBaseUrl();
+
     final ffApiRequestBody = '''
 {
   "auth": {
-    "login": "${login}",
-    "tranKey": "${tranKey}",
-    "nonce": "${nonce}",
-    "seed": "${seed}"
+    "login": "$login",
+    "tranKey": "$tranKey",
+    "nonce": "$nonce",
+    "seed": "$seed"
   },
-  "internalReference": "${internalReference}"
+  "internalReference": "$internalReference"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Reembolso',
-      apiUrl: '${GetNetGroup.baseUrl}/api/reverse',
+      apiUrl: '$baseUrl/api/reverse',
       callType: ApiCallType.POST,
       headers: {
         'Content-Type': 'application/json',
@@ -65,10 +66,10 @@ class EmailsCall {
     final ffApiRequestBody = '''
 {
   "app_id": "a60882a0-3d89-49bf-a503-33b15024a6c9",
-  "email_subject": "${titulo}",
-  "template_id": "${plantilla}",
+  "email_subject": "$titulo",
+  "template_id": "$plantilla",
   "include_email_tokens": [
-    "${email}"
+    "$email"
   ]
 }''';
     return ApiManager.instance.makeApiCall(
@@ -80,6 +81,65 @@ class EmailsCall {
         'Authorization':
             'Basic NTc0MDI3NjUtYmExMy00YjA0LWE4MGItNjYwN2IyODU5NGMw',
       },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class SimpleFacturaCall {
+  static Future<ApiCallResponse> call({
+    dynamic productosJson,
+  }) async {
+    final productos = _serializeJson(productosJson, true);
+    final ffApiRequestBody = '''
+{
+  "credenciales": {
+    "rutEmisor": "76269769-6",
+    "rutContribuyente": "10422710-4",
+    "nombreSucursal": "Casa Matriz"
+  },
+  "dte": {
+    "codigoTipoDte": 52,
+    "indicadorMontosNetos": false,
+    "formaPago": 1,
+    "descuentoGlobal": 0,
+    "fechaEmision": "2023-04-10",
+    "diasVencimiento": 30,
+    "tieneIvaTerceros": false,
+    "ivaTerceros": 0,
+    "ivaPropio": 0,
+    "productos": [
+      $productos
+    ],
+    "tieneReferencias": false,
+    "referencias": [
+      {
+        "codigoTipoDteReferencia": "33",
+        "folioReferencia": "1",
+        "fechaDteReferenciado": "2022-10-24",
+        "razonReferencia": "test1"
+      }
+    ],
+    "rutTransporte": "17432554-5",
+    "patente": "ad6546",
+    "rutChofer": "17432554-5",
+    "nombreChofer": "Alex Roman",
+    "tipoTraslado": 1,
+    "tipoDespacho": 1
+  }
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'SimpleFactura',
+      apiUrl: 'https://api.simplefactura.cl/invoice',
+      callType: ApiCallType.POST,
+      headers: {},
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
@@ -113,6 +173,9 @@ String _serializeList(List? list) {
   try {
     return json.encode(list);
   } catch (_) {
+    if (kDebugMode) {
+      print("List serialization failed. Returning empty list.");
+    }
     return '[]';
   }
 }
@@ -122,6 +185,9 @@ String _serializeJson(dynamic jsonVar, [bool isList = false]) {
   try {
     return json.encode(jsonVar);
   } catch (_) {
+    if (kDebugMode) {
+      print("Json serialization failed. Returning empty json.");
+    }
     return isList ? '[]' : '{}';
   }
 }

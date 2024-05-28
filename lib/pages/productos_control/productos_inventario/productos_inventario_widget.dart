@@ -1,7 +1,6 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/componentes/opcion_producto/opcion_producto_widget.dart';
 import '/pages/componentes/top_escritorio/top_escritorio_widget.dart';
 import '/pages/componentes/top_movil_vendedor/top_movil_vendedor_widget.dart';
@@ -11,7 +10,6 @@ import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:text_search/text_search.dart';
 import 'productos_inventario_model.dart';
@@ -22,7 +20,7 @@ class ProductosInventarioWidget extends StatefulWidget {
     super.key,
     Color? colorProductos,
     this.nombre,
-  }) : this.colorProductos = colorProductos ?? const Color(0xFFE6A5E5);
+  }) : colorProductos = colorProductos ?? const Color(0xFFE6A5E5);
 
   final Color colorProductos;
   final String? nombre;
@@ -102,7 +100,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                             wrapWithModel(
                               model: _model.topEscritorioModel,
                               updateCallback: () => setState(() {}),
-                              child: TopEscritorioWidget(),
+                              child: const TopEscritorioWidget(),
                             ),
                             Expanded(
                               child: Row(
@@ -117,7 +115,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Padding(
-                                            padding: EdgeInsets.all(20.0),
+                                            padding: const EdgeInsets.all(20.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
@@ -130,7 +128,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                         (context, snapshot) {
                                                       // Customize what your widget looks like when it's loading.
                                                       if (!snapshot.hasData) {
-                                                        return Center(
+                                                        return const Center(
                                                           child: SizedBox(
                                                             width: 50.0,
                                                             height: 50.0,
@@ -151,10 +149,10 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                           snapshot.data!;
                                                       return Container(
                                                         decoration:
-                                                            BoxDecoration(),
+                                                            const BoxDecoration(),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -169,7 +167,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                                 EasyDebounce
                                                                     .debounce(
                                                               '_model.textController1',
-                                                              Duration(
+                                                              const Duration(
                                                                   milliseconds:
                                                                       2000),
                                                               () async {
@@ -182,7 +180,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                                           (record) => TextSearchItem.fromTerms(
                                                                               record,
                                                                               [
-                                                                                record.name!
+                                                                                record.name
                                                                               ]),
                                                                         )
                                                                         .toList(),
@@ -193,7 +191,6 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                                           .map((r) =>
                                                                               r.object)
                                                                           .toList();
-                                                                  ;
                                                                 });
                                                                 setState(() {
                                                                   FFAppState()
@@ -316,7 +313,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           10.0, 0.0, 10.0, 0.0),
                                                   child: InkWell(
@@ -334,7 +331,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                         extra: <String,
                                                             dynamic>{
                                                           kTransitionInfoKey:
-                                                              TransitionInfo(
+                                                              const TransitionInfo(
                                                             hasTransition: true,
                                                             transitionType:
                                                                 PageTransitionType
@@ -352,7 +349,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                         decoration:
                                                             BoxDecoration(
                                                           color:
-                                                              Color(0xFFE6A5E5),
+                                                              const Color(0xFFE6A5E5),
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
@@ -360,11 +357,11 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                         ),
                                                         child: Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         10.0,
                                                                         0.0,
@@ -402,7 +399,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                               false)
                                             Flexible(
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         20.0, 0.0, 20.0, 20.0),
                                                 child: StreamBuilder<
@@ -411,7 +408,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                   builder: (context, snapshot) {
                                                     // Customize what your widget looks like when it's loading.
                                                     if (!snapshot.hasData) {
-                                                      return Center(
+                                                      return const Center(
                                                         child: SizedBox(
                                                           width: 40.0,
                                                           height: 40.0,
@@ -432,7 +429,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                     return MasonryGridView
                                                         .builder(
                                                       gridDelegate:
-                                                          SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                                                          const SliverSimpleGridDelegateWithFixedCrossAxisCount(
                                                         crossAxisCount: 4,
                                                       ),
                                                       crossAxisSpacing: 10.0,
@@ -446,7 +443,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                         final staggeredViewProductoRecord =
                                                             staggeredViewProductoRecordList[
                                                                 staggeredViewIndex];
-                                                        return Container(
+                                                        return SizedBox(
                                                           width: 150.0,
                                                           child: Stack(
                                                             children: [
@@ -479,7 +476,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                                   ),
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -509,7 +506,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                                           ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               10.0,
                                                                               0.0,
@@ -532,7 +529,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                                           ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               5.0,
                                                                               0.0,
@@ -556,7 +553,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                                           ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               5.0,
                                                                               0.0,
@@ -575,7 +572,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                                         Flexible(
                                                                           child:
                                                                               Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 5.0,
                                                                                 0.0,
                                                                                 5.0,
@@ -589,7 +586,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                                                   children: List.generate(categoria.length, (categoriaIndex) {
                                                                                     final categoriaItem = categoria[categoriaIndex];
                                                                                     return Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                       child: AutoSizeText(
                                                                                         categoriaItem,
                                                                                         style: FlutterFlowTheme.of(context).headlineSmall.override(
@@ -613,14 +610,14 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                               ),
                                                               Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         1.0,
                                                                         -1.0),
                                                                 child: Builder(
                                                                   builder:
                                                                       (context) =>
                                                                           Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             10.0,
@@ -650,9 +647,9 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                                           avoidOverflow:
                                                                               false,
                                                                           targetAnchor:
-                                                                              AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                              const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                           followerAnchor:
-                                                                              AlignmentDirectional(0.0, -1.0).resolve(Directionality.of(context)),
+                                                                              const AlignmentDirectional(0.0, -1.0).resolve(Directionality.of(context)),
                                                                           builder:
                                                                               (dialogContext) {
                                                                             return Material(
@@ -693,7 +690,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                                                 BorderRadius.circular(8.0),
                                                                           ),
                                                                           child:
-                                                                              Icon(
+                                                                              const Icon(
                                                                             Icons.more_vert,
                                                                             color:
                                                                                 Colors.black,
@@ -719,7 +716,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                               true)
                                             Flexible(
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         20.0, 0.0, 20.0, 20.0),
                                                 child: Column(
@@ -737,7 +734,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                         return MasonryGridView
                                                             .builder(
                                                           gridDelegate:
-                                                              SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                                                              const SliverSimpleGridDelegateWithFixedCrossAxisCount(
                                                             crossAxisCount: 4,
                                                           ),
                                                           crossAxisSpacing:
@@ -752,7 +749,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                             final productoBusquedaItem =
                                                                 productoBusqueda[
                                                                     productoBusquedaIndex];
-                                                            return Container(
+                                                            return SizedBox(
                                                               width: 150.0,
                                                               child: Stack(
                                                                 children: [
@@ -783,7 +780,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                                       ),
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
@@ -803,7 +800,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                                               ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 productoBusquedaItem.name.maybeHandleOverflow(
                                                                                   maxChars: 20,
@@ -819,7 +816,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                                               ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 productoBusquedaItem.rebaja > 0
                                                                                     ? formatNumber(
@@ -843,7 +840,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                                               ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 'Stock: ${productoBusquedaItem.stock.toString()}',
                                                                                 textAlign: TextAlign.center,
@@ -861,7 +858,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                                                   children: List.generate(categoria.length, (categoriaIndex) {
                                                                                     final categoriaItem = categoria[categoriaIndex];
                                                                                     return Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                       child: AutoSizeText(
                                                                                         categoriaItem,
                                                                                         style: FlutterFlowTheme.of(context).headlineSmall.override(
@@ -883,7 +880,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                                   ),
                                                                   Align(
                                                                     alignment:
-                                                                        AlignmentDirectional(
+                                                                        const AlignmentDirectional(
                                                                             1.0,
                                                                             -1.0),
                                                                     child:
@@ -891,7 +888,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                                       builder:
                                                                           (context) =>
                                                                               Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             10.0,
                                                                             10.0,
@@ -912,8 +909,8 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                                               context: context,
                                                                               isGlobal: false,
                                                                               avoidOverflow: false,
-                                                                              targetAnchor: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                              followerAnchor: AlignmentDirectional(0.0, -1.0).resolve(Directionality.of(context)),
+                                                                              targetAnchor: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                              followerAnchor: const AlignmentDirectional(0.0, -1.0).resolve(Directionality.of(context)),
                                                                               builder: (dialogContext) {
                                                                                 return Material(
                                                                                   color: Colors.transparent,
@@ -946,7 +943,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                                                 color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                 borderRadius: BorderRadius.circular(8.0),
                                                                               ),
-                                                                              child: Icon(
+                                                                              child: const Icon(
                                                                                 Icons.more_vert,
                                                                                 color: Colors.black,
                                                                                 size: 26.0,
@@ -999,13 +996,13 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                         wrapWithModel(
                           model: _model.topMovilVendedorModel,
                           updateCallback: () => setState(() {}),
-                          child: TopMovilVendedorWidget(),
+                          child: const TopMovilVendedorWidget(),
                         ),
                         Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Padding(
-                              padding: EdgeInsets.all(10.0),
+                              padding: const EdgeInsets.all(10.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -1015,7 +1012,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                       builder: (context, snapshot) {
                                         // Customize what your widget looks like when it's loading.
                                         if (!snapshot.hasData) {
-                                          return Center(
+                                          return const Center(
                                             child: SizedBox(
                                               width: 50.0,
                                               height: 50.0,
@@ -1033,7 +1030,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                             containerProductoRecordList =
                                             snapshot.data!;
                                         return Container(
-                                          decoration: BoxDecoration(),
+                                          decoration: const BoxDecoration(),
                                           child: TextFormField(
                                             controller: _model.textController2,
                                             focusNode:
@@ -1041,7 +1038,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                             onChanged: (_) =>
                                                 EasyDebounce.debounce(
                                               '_model.textController2',
-                                              Duration(milliseconds: 2000),
+                                              const Duration(milliseconds: 2000),
                                               () async {
                                                 safeSetState(() {
                                                   _model.simpleSearchResults2 =
@@ -1052,7 +1049,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                               TextSearchItem
                                                                   .fromTerms(
                                                                       record, [
-                                                            record.name!
+                                                            record.name
                                                           ]),
                                                         )
                                                         .toList(),
@@ -1062,7 +1059,6 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                               .text)
                                                           .map((r) => r.object)
                                                           .toList();
-                                                  ;
                                                 });
                                                 setState(() {
                                                   FFAppState().busquedaActiva =
@@ -1157,7 +1153,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -1168,7 +1164,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                         context.pushNamed(
                                           'agregarProducto',
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: TransitionInfo(
+                                            kTransitionInfoKey: const TransitionInfo(
                                               hasTransition: true,
                                               transitionType:
                                                   PageTransitionType.fade,
@@ -1182,15 +1178,15 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                         child: Container(
                                           height: 50.0,
                                           decoration: BoxDecoration(
-                                            color: Color(0xFF00AC67),
+                                            color: const Color(0xFF00AC67),
                                             borderRadius:
                                                 BorderRadius.circular(10.0),
                                           ),
                                           child: Align(
                                             alignment:
-                                                AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(0.0, 0.0),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 10.0, 0.0),
                                               child: Text(
@@ -1221,10 +1217,10 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 10.0, 0.0),
                                   child: Container(
-                                    decoration: BoxDecoration(),
+                                    decoration: const BoxDecoration(),
                                     child: StreamBuilder<List<ProductoRecord>>(
                                       stream: queryProductoRecord(
                                         queryBuilder: (productoRecord) =>
@@ -1237,7 +1233,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                       builder: (context, snapshot) {
                                         // Customize what your widget looks like when it's loading.
                                         if (!snapshot.hasData) {
-                                          return Center(
+                                          return const Center(
                                             child: SizedBox(
                                               width: 50.0,
                                               height: 50.0,
@@ -1258,7 +1254,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                           physics:
                                               const NeverScrollableScrollPhysics(),
                                           gridDelegate:
-                                              SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                                              const SliverSimpleGridDelegateWithFixedCrossAxisCount(
                                             crossAxisCount: 2,
                                           ),
                                           crossAxisSpacing: 10.0,
@@ -1272,7 +1268,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                             final staggeredViewProductoRecord =
                                                 staggeredViewProductoRecordList[
                                                     staggeredViewIndex];
-                                            return Container(
+                                            return SizedBox(
                                               width: 150.0,
                                               child: Stack(
                                                 children: [
@@ -1301,7 +1297,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -1328,7 +1324,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           10.0,
@@ -1361,7 +1357,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           5.0,
@@ -1408,7 +1404,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           5.0,
@@ -1451,7 +1447,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                                         categoria[
                                                                             categoriaIndex];
                                                                     return Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           5.0,
@@ -1480,11 +1476,11 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                   ),
                                                   Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             1.0, -1.0),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   10.0,
@@ -1561,7 +1557,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                                       .circular(
                                                                           8.0),
                                                             ),
-                                                            child: Icon(
+                                                            child: const Icon(
                                                               Icons.more_vert,
                                                               color:
                                                                   Colors.black,
@@ -1585,7 +1581,7 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                             ),
                           ],
                         ),
-                      ].addToEnd(SizedBox(height: 100.0)),
+                      ].addToEnd(const SizedBox(height: 100.0)),
                     ),
                   ),
                 ),

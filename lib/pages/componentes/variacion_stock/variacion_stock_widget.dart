@@ -1,13 +1,9 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_count_controller.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'variacion_stock_model.dart';
 export 'variacion_stock_model.dart';
 
@@ -74,7 +70,7 @@ class _VariacionStockWidgetState extends State<VariacionStockWidget> {
         incrementIconBuilder: (enabled) => FaIcon(
           FontAwesomeIcons.plus,
           color: enabled
-              ? Color(0xFFFF8159)
+              ? const Color(0xFFFF8159)
               : FlutterFlowTheme.of(context).alternate,
           size: 20.0,
         ),

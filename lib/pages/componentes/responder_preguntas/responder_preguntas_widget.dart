@@ -1,13 +1,9 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'responder_preguntas_model.dart';
 export 'responder_preguntas_model.dart';
 
@@ -56,14 +52,14 @@ class _ResponderPreguntasWidgetState extends State<ResponderPreguntasWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(),
+      decoration: const BoxDecoration(),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Expanded(
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
               child: TextFormField(
                 controller: _model.textController,
                 focusNode: _model.textFieldFocusNode,
@@ -82,14 +78,14 @@ class _ResponderPreguntasWidgetState extends State<ResponderPreguntasWidget> {
                         letterSpacing: 0.0,
                       ),
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
+                    borderSide: const BorderSide(
                       color: Color(0xFF00AC67),
                       width: 1.0,
                     ),
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
+                    borderSide: const BorderSide(
                       color: Color(0xFF00AC67),
                       width: 1.0,
                     ),
@@ -123,14 +119,14 @@ class _ResponderPreguntasWidgetState extends State<ResponderPreguntasWidget> {
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
             child: FlutterFlowIconButton(
-              borderColor: Color(0xFF00AC67),
+              borderColor: const Color(0xFF00AC67),
               borderRadius: 20.0,
               borderWidth: 1.0,
               buttonSize: 40.0,
               fillColor: Colors.white,
-              icon: FaIcon(
+              icon: const FaIcon(
                 FontAwesomeIcons.pen,
                 color: Color(0xFF00AC67),
                 size: 20.0,

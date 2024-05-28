@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
-import 'backend/api_requests/api_manager.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:csv/csv.dart';
 import 'package:synchronized/synchronized.dart';
@@ -21,9 +19,23 @@ class FFAppState extends ChangeNotifier {
   }
 
   Future initializePersistedState() async {
-    secureStorage = FlutterSecureStorage();
+    secureStorage = const FlutterSecureStorage();
     await _safeInitAsync(() async {
       _token = await secureStorage.getString('ff_token') ?? _token;
+    });
+    await _safeInitAsync(() async {
+      _reportes = (await secureStorage.getStringList('ff_reportes'))
+              ?.map((x) {
+                try {
+                  return VentasDiariasStruct.fromSerializableMap(jsonDecode(x));
+                } catch (e) {
+                  print("Can't decode persisted data type. Error: $e.");
+                  return null;
+                }
+              })
+              .withoutNulls
+              .toList() ??
+          _reportes;
     });
   }
 
@@ -36,103 +48,103 @@ class FFAppState extends ChangeNotifier {
 
   String _estadoPedido = 'Completado';
   String get estadoPedido => _estadoPedido;
-  set estadoPedido(String _value) {
-    _estadoPedido = _value;
+  set estadoPedido(String value) {
+    _estadoPedido = value;
   }
 
   List<String> _variasImagenesProducto = [];
   List<String> get variasImagenesProducto => _variasImagenesProducto;
-  set variasImagenesProducto(List<String> _value) {
-    _variasImagenesProducto = _value;
+  set variasImagenesProducto(List<String> value) {
+    _variasImagenesProducto = value;
   }
 
-  void addToVariasImagenesProducto(String _value) {
-    _variasImagenesProducto.add(_value);
+  void addToVariasImagenesProducto(String value) {
+    _variasImagenesProducto.add(value);
   }
 
-  void removeFromVariasImagenesProducto(String _value) {
-    _variasImagenesProducto.remove(_value);
+  void removeFromVariasImagenesProducto(String value) {
+    _variasImagenesProducto.remove(value);
   }
 
-  void removeAtIndexFromVariasImagenesProducto(int _index) {
-    _variasImagenesProducto.removeAt(_index);
+  void removeAtIndexFromVariasImagenesProducto(int index) {
+    _variasImagenesProducto.removeAt(index);
   }
 
   void updateVariasImagenesProductoAtIndex(
-    int _index,
+    int index,
     String Function(String) updateFn,
   ) {
-    _variasImagenesProducto[_index] = updateFn(_variasImagenesProducto[_index]);
+    _variasImagenesProducto[index] = updateFn(_variasImagenesProducto[index]);
   }
 
-  void insertAtIndexInVariasImagenesProducto(int _index, String _value) {
-    _variasImagenesProducto.insert(_index, _value);
+  void insertAtIndexInVariasImagenesProducto(int index, String value) {
+    _variasImagenesProducto.insert(index, value);
   }
 
   String _imagenProducto = '';
   String get imagenProducto => _imagenProducto;
-  set imagenProducto(String _value) {
-    _imagenProducto = _value;
+  set imagenProducto(String value) {
+    _imagenProducto = value;
   }
 
   List<String> _etiquetaProducto = [];
   List<String> get etiquetaProducto => _etiquetaProducto;
-  set etiquetaProducto(List<String> _value) {
-    _etiquetaProducto = _value;
+  set etiquetaProducto(List<String> value) {
+    _etiquetaProducto = value;
   }
 
-  void addToEtiquetaProducto(String _value) {
-    _etiquetaProducto.add(_value);
+  void addToEtiquetaProducto(String value) {
+    _etiquetaProducto.add(value);
   }
 
-  void removeFromEtiquetaProducto(String _value) {
-    _etiquetaProducto.remove(_value);
+  void removeFromEtiquetaProducto(String value) {
+    _etiquetaProducto.remove(value);
   }
 
-  void removeAtIndexFromEtiquetaProducto(int _index) {
-    _etiquetaProducto.removeAt(_index);
+  void removeAtIndexFromEtiquetaProducto(int index) {
+    _etiquetaProducto.removeAt(index);
   }
 
   void updateEtiquetaProductoAtIndex(
-    int _index,
+    int index,
     String Function(String) updateFn,
   ) {
-    _etiquetaProducto[_index] = updateFn(_etiquetaProducto[_index]);
+    _etiquetaProducto[index] = updateFn(_etiquetaProducto[index]);
   }
 
-  void insertAtIndexInEtiquetaProducto(int _index, String _value) {
-    _etiquetaProducto.insert(_index, _value);
+  void insertAtIndexInEtiquetaProducto(int index, String value) {
+    _etiquetaProducto.insert(index, value);
   }
 
   bool _busquedaActiva = false;
   bool get busquedaActiva => _busquedaActiva;
-  set busquedaActiva(bool _value) {
-    _busquedaActiva = _value;
+  set busquedaActiva(bool value) {
+    _busquedaActiva = value;
   }
 
   DocumentReference? _producto;
   DocumentReference? get producto => _producto;
-  set producto(DocumentReference? _value) {
-    _producto = _value;
+  set producto(DocumentReference? value) {
+    _producto = value;
   }
 
   String _imagenSubida = '';
   String get imagenSubida => _imagenSubida;
-  set imagenSubida(String _value) {
-    _imagenSubida = _value;
+  set imagenSubida(String value) {
+    _imagenSubida = value;
   }
 
   bool _isImagenSubida = false;
   bool get isImagenSubida => _isImagenSubida;
-  set isImagenSubida(bool _value) {
-    _isImagenSubida = _value;
+  set isImagenSubida(bool value) {
+    _isImagenSubida = value;
   }
 
   String _token = '';
   String get token => _token;
-  set token(String _value) {
-    _token = _value;
-    secureStorage.setString('ff_token', _value);
+  set token(String value) {
+    _token = value;
+    secureStorage.setString('ff_token', value);
   }
 
   void deleteToken() {
@@ -141,184 +153,251 @@ class FFAppState extends ChangeNotifier {
 
   String _seed = '';
   String get seed => _seed;
-  set seed(String _value) {
-    _seed = _value;
+  set seed(String value) {
+    _seed = value;
   }
 
   int _nonce = 0;
   int get nonce => _nonce;
-  set nonce(int _value) {
-    _nonce = _value;
+  set nonce(int value) {
+    _nonce = value;
   }
 
   List<DocumentReference> _prodAsociado = [];
   List<DocumentReference> get prodAsociado => _prodAsociado;
-  set prodAsociado(List<DocumentReference> _value) {
-    _prodAsociado = _value;
+  set prodAsociado(List<DocumentReference> value) {
+    _prodAsociado = value;
   }
 
-  void addToProdAsociado(DocumentReference _value) {
-    _prodAsociado.add(_value);
+  void addToProdAsociado(DocumentReference value) {
+    _prodAsociado.add(value);
   }
 
-  void removeFromProdAsociado(DocumentReference _value) {
-    _prodAsociado.remove(_value);
+  void removeFromProdAsociado(DocumentReference value) {
+    _prodAsociado.remove(value);
   }
 
-  void removeAtIndexFromProdAsociado(int _index) {
-    _prodAsociado.removeAt(_index);
+  void removeAtIndexFromProdAsociado(int index) {
+    _prodAsociado.removeAt(index);
   }
 
   void updateProdAsociadoAtIndex(
-    int _index,
+    int index,
     DocumentReference Function(DocumentReference) updateFn,
   ) {
-    _prodAsociado[_index] = updateFn(_prodAsociado[_index]);
+    _prodAsociado[index] = updateFn(_prodAsociado[index]);
   }
 
-  void insertAtIndexInProdAsociado(int _index, DocumentReference _value) {
-    _prodAsociado.insert(_index, _value);
+  void insertAtIndexInProdAsociado(int index, DocumentReference value) {
+    _prodAsociado.insert(index, value);
   }
 
   List<VariacionStruct> _variacion = [];
   List<VariacionStruct> get variacion => _variacion;
-  set variacion(List<VariacionStruct> _value) {
-    _variacion = _value;
+  set variacion(List<VariacionStruct> value) {
+    _variacion = value;
   }
 
-  void addToVariacion(VariacionStruct _value) {
-    _variacion.add(_value);
+  void addToVariacion(VariacionStruct value) {
+    _variacion.add(value);
   }
 
-  void removeFromVariacion(VariacionStruct _value) {
-    _variacion.remove(_value);
+  void removeFromVariacion(VariacionStruct value) {
+    _variacion.remove(value);
   }
 
-  void removeAtIndexFromVariacion(int _index) {
-    _variacion.removeAt(_index);
+  void removeAtIndexFromVariacion(int index) {
+    _variacion.removeAt(index);
   }
 
   void updateVariacionAtIndex(
-    int _index,
+    int index,
     VariacionStruct Function(VariacionStruct) updateFn,
   ) {
-    _variacion[_index] = updateFn(_variacion[_index]);
+    _variacion[index] = updateFn(_variacion[index]);
   }
 
-  void insertAtIndexInVariacion(int _index, VariacionStruct _value) {
-    _variacion.insert(_index, _value);
+  void insertAtIndexInVariacion(int index, VariacionStruct value) {
+    _variacion.insert(index, value);
   }
 
   List<DocumentReference> _variacionesStock = [];
   List<DocumentReference> get variacionesStock => _variacionesStock;
-  set variacionesStock(List<DocumentReference> _value) {
-    _variacionesStock = _value;
+  set variacionesStock(List<DocumentReference> value) {
+    _variacionesStock = value;
   }
 
-  void addToVariacionesStock(DocumentReference _value) {
-    _variacionesStock.add(_value);
+  void addToVariacionesStock(DocumentReference value) {
+    _variacionesStock.add(value);
   }
 
-  void removeFromVariacionesStock(DocumentReference _value) {
-    _variacionesStock.remove(_value);
+  void removeFromVariacionesStock(DocumentReference value) {
+    _variacionesStock.remove(value);
   }
 
-  void removeAtIndexFromVariacionesStock(int _index) {
-    _variacionesStock.removeAt(_index);
+  void removeAtIndexFromVariacionesStock(int index) {
+    _variacionesStock.removeAt(index);
   }
 
   void updateVariacionesStockAtIndex(
-    int _index,
+    int index,
     DocumentReference Function(DocumentReference) updateFn,
   ) {
-    _variacionesStock[_index] = updateFn(_variacionesStock[_index]);
+    _variacionesStock[index] = updateFn(_variacionesStock[index]);
   }
 
-  void insertAtIndexInVariacionesStock(int _index, DocumentReference _value) {
-    _variacionesStock.insert(_index, _value);
+  void insertAtIndexInVariacionesStock(int index, DocumentReference value) {
+    _variacionesStock.insert(index, value);
   }
 
   DocumentReference? _variacionStock;
   DocumentReference? get variacionStock => _variacionStock;
-  set variacionStock(DocumentReference? _value) {
-    _variacionStock = _value;
+  set variacionStock(DocumentReference? value) {
+    _variacionStock = value;
   }
 
   DocumentReference? _productoStock;
   DocumentReference? get productoStock => _productoStock;
-  set productoStock(DocumentReference? _value) {
-    _productoStock = _value;
+  set productoStock(DocumentReference? value) {
+    _productoStock = value;
   }
 
   String _imagenMarca = '';
   String get imagenMarca => _imagenMarca;
-  set imagenMarca(String _value) {
-    _imagenMarca = _value;
+  set imagenMarca(String value) {
+    _imagenMarca = value;
   }
 
   List<String> _carruselMarca = [];
   List<String> get carruselMarca => _carruselMarca;
-  set carruselMarca(List<String> _value) {
-    _carruselMarca = _value;
+  set carruselMarca(List<String> value) {
+    _carruselMarca = value;
   }
 
-  void addToCarruselMarca(String _value) {
-    _carruselMarca.add(_value);
+  void addToCarruselMarca(String value) {
+    _carruselMarca.add(value);
   }
 
-  void removeFromCarruselMarca(String _value) {
-    _carruselMarca.remove(_value);
+  void removeFromCarruselMarca(String value) {
+    _carruselMarca.remove(value);
   }
 
-  void removeAtIndexFromCarruselMarca(int _index) {
-    _carruselMarca.removeAt(_index);
+  void removeAtIndexFromCarruselMarca(int index) {
+    _carruselMarca.removeAt(index);
   }
 
   void updateCarruselMarcaAtIndex(
-    int _index,
+    int index,
     String Function(String) updateFn,
   ) {
-    _carruselMarca[_index] = updateFn(_carruselMarca[_index]);
+    _carruselMarca[index] = updateFn(_carruselMarca[index]);
   }
 
-  void insertAtIndexInCarruselMarca(int _index, String _value) {
-    _carruselMarca.insert(_index, _value);
+  void insertAtIndexInCarruselMarca(int index, String value) {
+    _carruselMarca.insert(index, value);
   }
 
   DocumentReference? _variacionCrearOrden;
   DocumentReference? get variacionCrearOrden => _variacionCrearOrden;
-  set variacionCrearOrden(DocumentReference? _value) {
-    _variacionCrearOrden = _value;
+  set variacionCrearOrden(DocumentReference? value) {
+    _variacionCrearOrden = value;
   }
 
   List<DocumentReference> _selectedItemCrearOrden = [];
   List<DocumentReference> get selectedItemCrearOrden => _selectedItemCrearOrden;
-  set selectedItemCrearOrden(List<DocumentReference> _value) {
-    _selectedItemCrearOrden = _value;
+  set selectedItemCrearOrden(List<DocumentReference> value) {
+    _selectedItemCrearOrden = value;
   }
 
-  void addToSelectedItemCrearOrden(DocumentReference _value) {
-    _selectedItemCrearOrden.add(_value);
+  void addToSelectedItemCrearOrden(DocumentReference value) {
+    _selectedItemCrearOrden.add(value);
   }
 
-  void removeFromSelectedItemCrearOrden(DocumentReference _value) {
-    _selectedItemCrearOrden.remove(_value);
+  void removeFromSelectedItemCrearOrden(DocumentReference value) {
+    _selectedItemCrearOrden.remove(value);
   }
 
-  void removeAtIndexFromSelectedItemCrearOrden(int _index) {
-    _selectedItemCrearOrden.removeAt(_index);
+  void removeAtIndexFromSelectedItemCrearOrden(int index) {
+    _selectedItemCrearOrden.removeAt(index);
   }
 
   void updateSelectedItemCrearOrdenAtIndex(
-    int _index,
+    int index,
     DocumentReference Function(DocumentReference) updateFn,
   ) {
-    _selectedItemCrearOrden[_index] = updateFn(_selectedItemCrearOrden[_index]);
+    _selectedItemCrearOrden[index] = updateFn(_selectedItemCrearOrden[index]);
   }
 
   void insertAtIndexInSelectedItemCrearOrden(
-      int _index, DocumentReference _value) {
-    _selectedItemCrearOrden.insert(_index, _value);
+      int index, DocumentReference value) {
+    _selectedItemCrearOrden.insert(index, value);
+  }
+
+  BlogStruct _blog = BlogStruct();
+  BlogStruct get blog => _blog;
+  set blog(BlogStruct value) {
+    _blog = value;
+  }
+
+  void updateBlogStruct(Function(BlogStruct) updateFn) {
+    updateFn(_blog);
+  }
+
+  DocumentReference? _usuario;
+  DocumentReference? get usuario => _usuario;
+  set usuario(DocumentReference? value) {
+    _usuario = value;
+  }
+
+  String _evidenciaSoporte = '';
+  String get evidenciaSoporte => _evidenciaSoporte;
+  set evidenciaSoporte(String value) {
+    _evidenciaSoporte = value;
+  }
+
+  List<VentasDiariasStruct> _reportes = [];
+  List<VentasDiariasStruct> get reportes => _reportes;
+  set reportes(List<VentasDiariasStruct> value) {
+    _reportes = value;
+    secureStorage.setStringList(
+        'ff_reportes', value.map((x) => x.serialize()).toList());
+  }
+
+  void deleteReportes() {
+    secureStorage.delete(key: 'ff_reportes');
+  }
+
+  void addToReportes(VentasDiariasStruct value) {
+    _reportes.add(value);
+    secureStorage.setStringList(
+        'ff_reportes', _reportes.map((x) => x.serialize()).toList());
+  }
+
+  void removeFromReportes(VentasDiariasStruct value) {
+    _reportes.remove(value);
+    secureStorage.setStringList(
+        'ff_reportes', _reportes.map((x) => x.serialize()).toList());
+  }
+
+  void removeAtIndexFromReportes(int index) {
+    _reportes.removeAt(index);
+    secureStorage.setStringList(
+        'ff_reportes', _reportes.map((x) => x.serialize()).toList());
+  }
+
+  void updateReportesAtIndex(
+    int index,
+    VentasDiariasStruct Function(VentasDiariasStruct) updateFn,
+  ) {
+    _reportes[index] = updateFn(_reportes[index]);
+    secureStorage.setStringList(
+        'ff_reportes', _reportes.map((x) => x.serialize()).toList());
+  }
+
+  void insertAtIndexInReportes(int index, VentasDiariasStruct value) {
+    _reportes.insert(index, value);
+    secureStorage.setStringList(
+        'ff_reportes', _reportes.map((x) => x.serialize()).toList());
   }
 }
 
@@ -367,12 +446,12 @@ extension FlutterSecureStorageExtensions on FlutterSecureStorage {
         if (result == null || result.isEmpty) {
           return null;
         }
-        return CsvToListConverter()
+        return const CsvToListConverter()
             .convert(result)
             .first
             .map((e) => e.toString())
             .toList();
       });
   Future<void> setStringList(String key, List<String> value) async =>
-      await writeSync(key: key, value: ListToCsvConverter().convert([value]));
+      await writeSync(key: key, value: const ListToCsvConverter().convert([value]));
 }

@@ -1,15 +1,12 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/componentes/opciones_marca/opciones_marca_widget.dart';
 import '/pages/componentes/top_movil/top_movil_widget.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'marcas_model.dart';
 export 'marcas_model.dart';
 
@@ -24,7 +21,7 @@ class MarcasWidget extends StatefulWidget {
     this.colorBanner,
     this.colorAjustes,
     Color? colorCategorias,
-  }) : this.colorCategorias = colorCategorias ?? const Color(0xFF39A3EF);
+  }) : colorCategorias = colorCategorias ?? const Color(0xFF39A3EF);
 
   final Color? colorInicio;
   final Color? colorOrdenes;
@@ -83,7 +80,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
               builder: (context, snapshot) {
                 // Customize what your widget looks like when it's loading.
                 if (!snapshot.hasData) {
-                  return Center(
+                  return const Center(
                     child: SizedBox(
                       width: 50.0,
                       height: 50.0,
@@ -105,16 +102,16 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Expanded(
                               child: Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 30.0, 0.0, 20.0),
                                   child: Image.asset(
                                     'assets/images/logo_animalfood.png',
@@ -128,7 +125,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 30.0, 0.0, 10.0),
                         child: Text(
                           'Menú',
@@ -140,7 +137,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -155,7 +152,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                               'Inicio',
                               queryParameters: {
                                 'colorInicio': serializeParam(
-                                  Color(0xFFE6A5E5),
+                                  const Color(0xFFE6A5E5),
                                   ParamType.Color,
                                 ),
                                 'nombre': serializeParam(
@@ -164,7 +161,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                                 ),
                               }.withoutNulls,
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                 ),
@@ -178,7 +175,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -190,7 +187,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                                     size: 24.0,
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Inicio',
@@ -211,7 +208,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -223,7 +220,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                               'ordenes',
                               queryParameters: {
                                 'colorOrdenes': serializeParam(
-                                  Color(0xFFE6A5E5),
+                                  const Color(0xFFE6A5E5),
                                   ParamType.Color,
                                 ),
                                 'nombre': serializeParam(
@@ -232,7 +229,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                                 ),
                               }.withoutNulls,
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                 ),
@@ -246,7 +243,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -258,7 +255,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                                     size: 24.0,
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Órdenes',
@@ -279,7 +276,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -291,7 +288,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                               'productos',
                               queryParameters: {
                                 'colorProductos': serializeParam(
-                                  Color(0xFFE6A5E5),
+                                  const Color(0xFFE6A5E5),
                                   ParamType.Color,
                                 ),
                                 'nombre': serializeParam(
@@ -300,7 +297,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                                 ),
                               }.withoutNulls,
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                 ),
@@ -314,7 +311,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -326,7 +323,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                                     size: 24.0,
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Productos',
@@ -347,7 +344,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -358,7 +355,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                             context.pushNamed(
                               'tipoCategoria',
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                 ),
@@ -372,7 +369,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -384,7 +381,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                                     size: 24.0,
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Categorías',
@@ -407,7 +404,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -418,7 +415,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                             context.pushNamed(
                               'Marcas',
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                 ),
@@ -439,18 +436,18 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
-                                    FaIcon(
+                                    const FaIcon(
                                       FontAwesomeIcons.dog,
                                       color: Colors.white,
                                       size: 24.0,
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         'Marcas',
@@ -473,7 +470,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -490,7 +487,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                                 ),
                               }.withoutNulls,
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                 ),
@@ -504,7 +501,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -516,7 +513,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                                     size: 24.0,
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Empleados',
@@ -537,7 +534,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -554,7 +551,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                                 ),
                               }.withoutNulls,
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                 ),
@@ -568,7 +565,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -580,7 +577,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                                     size: 24.0,
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Clientes',
@@ -603,7 +600,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: Container(
                           width: MediaQuery.sizeOf(context).width * 1.0,
@@ -612,7 +609,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 0.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -624,7 +621,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                                   size: 24.0,
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     'Ajustes de la tienda',
@@ -643,7 +640,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                           ),
                         ),
                       ),
-                    ].addToStart(SizedBox(height: 70.0)),
+                    ].addToStart(const SizedBox(height: 70.0)),
                   ),
                 );
               },
@@ -670,7 +667,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                           child: wrapWithModel(
                             model: _model.topMovilModel,
                             updateCallback: () => setState(() {}),
-                            child: TopMovilWidget(),
+                            child: const TopMovilWidget(),
                           ),
                         ),
                         Flexible(
@@ -678,7 +675,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 10.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -689,7 +686,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                                     context.pushNamed(
                                       'agregarMarca',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
+                                        kTransitionInfoKey: const TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.fade,
@@ -702,16 +699,16 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                                     child: Container(
                                       height: 50.0,
                                       decoration: BoxDecoration(
-                                        color: Color(0xFF00AC67),
+                                        color: const Color(0xFF00AC67),
                                         borderRadius:
                                             BorderRadius.circular(10.0),
                                       ),
                                       child: Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 10.0, 0.0),
                                           child: Text(
                                             'Agregar Marca',
@@ -732,7 +729,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     10.0, 20.0, 10.0, 20.0),
                                 child: SingleChildScrollView(
                                   primary: false,
@@ -753,7 +750,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                                             builder: (context, snapshot) {
                                               // Customize what your widget looks like when it's loading.
                                               if (!snapshot.hasData) {
-                                                return Center(
+                                                return const Center(
                                                   child: SizedBox(
                                                     width: 50.0,
                                                     height: 50.0,
@@ -771,7 +768,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                                               List<MarcaRecord>
                                                   dataTableMarcaRecordList =
                                                   snapshot.data!;
-                                              return Container(
+                                              return SizedBox(
                                                 height:
                                                     MediaQuery.sizeOf(context)
                                                             .height *
@@ -784,7 +781,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                                                         softWrap: true,
                                                         child: Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Text(
                                                             'Nombre',
@@ -807,7 +804,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                                                         softWrap: true,
                                                         child: Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Text(
                                                             'Opciones',
@@ -831,7 +828,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                                                           [
                                                             Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               child:
                                                                   AutoSizeText(
@@ -855,7 +852,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                                                             ),
                                                             Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               child: InkWell(
                                                                 splashColor: Colors
@@ -994,7 +991,7 @@ class _MarcasWidgetState extends State<MarcasWidget> {
               ))
                 Flexible(
                   child: Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8.0),
                       child: Image.asset(

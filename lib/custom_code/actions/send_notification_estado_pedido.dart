@@ -21,7 +21,7 @@ Future<void> sendNotificationEstadoPedido(
     "app_id": "a60882a0-3d89-49bf-a503-33b15024a6c9",
     "contents": {"en": mensaje, "es": mensaje},
     "headings": {"en": titulo, "es": titulo},
-    "app_url": "animalfoodapp://animalfoodapp.com/listaPedidos",
+    "app_url": "app://animalfoodchile.cl/listaPedidos",
     "target_channel": "push",
     "include_aliases": {
       "external_id": [externalid]

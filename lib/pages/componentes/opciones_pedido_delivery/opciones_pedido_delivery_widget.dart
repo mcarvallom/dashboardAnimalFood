@@ -7,10 +7,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/componentes/status_pedido/status_pedido_widget.dart';
 import '/pages/componentes/subir_evidencia_entrega_fallida/subir_evidencia_entrega_fallida_widget.dart';
 import '/custom_code/actions/index.dart' as actions;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'opciones_pedido_delivery_model.dart';
 export 'opciones_pedido_delivery_model.dart';
 
@@ -64,7 +61,7 @@ class _OpcionesPedidoDeliveryWidgetState
           builder: (context, snapshot) {
             // Customize what your widget looks like when it's loading.
             if (!snapshot.hasData) {
-              return Center(
+              return const Center(
                 child: SizedBox(
                   width: 50.0,
                   height: 50.0,
@@ -81,7 +78,7 @@ class _OpcionesPedidoDeliveryWidgetState
               width: MediaQuery.sizeOf(context).width * 1.0,
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   bottomLeft: Radius.circular(0.0),
                   bottomRight: Radius.circular(0.0),
                   topLeft: Radius.circular(30.0),
@@ -89,7 +86,7 @@ class _OpcionesPedidoDeliveryWidgetState
                 ),
               ),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(20.0, 30.0, 20.0, 50.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(20.0, 30.0, 20.0, 50.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -103,7 +100,7 @@ class _OpcionesPedidoDeliveryWidgetState
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -125,7 +122,7 @@ class _OpcionesPedidoDeliveryWidgetState
                             builder: (context, snapshot) {
                               // Customize what your widget looks like when it's loading.
                               if (!snapshot.hasData) {
-                                return Center(
+                                return const Center(
                                   child: SizedBox(
                                     width: 50.0,
                                     height: 50.0,
@@ -139,12 +136,12 @@ class _OpcionesPedidoDeliveryWidgetState
                               }
                               final iconButtonUserRecord = snapshot.data!;
                               return FlutterFlowIconButton(
-                                borderColor: Color(0xFFEE8B60),
+                                borderColor: const Color(0xFFEE8B60),
                                 borderRadius: 20.0,
                                 borderWidth: 1.0,
                                 buttonSize: 40.0,
-                                fillColor: Color(0xFFFFADFD),
-                                icon: Icon(
+                                fillColor: const Color(0xFFFFADFD),
+                                icon: const Icon(
                                   Icons.check,
                                   color: Colors.white,
                                   size: 24.0,
@@ -155,18 +152,18 @@ class _OpcionesPedidoDeliveryWidgetState
                                         context: context,
                                         builder: (alertDialogContext) {
                                           return AlertDialog(
-                                            title: Text('Confirmación'),
-                                            content: Text('¿Pedido entregado?'),
+                                            title: const Text('Confirmación'),
+                                            content: const Text('¿Pedido entregado?'),
                                             actions: [
                                               TextButton(
                                                 onPressed: () => Navigator.pop(
                                                     alertDialogContext, false),
-                                                child: Text('No'),
+                                                child: const Text('No'),
                                               ),
                                               TextButton(
                                                 onPressed: () => Navigator.pop(
                                                     alertDialogContext, true),
-                                                child: Text('Sí'),
+                                                child: const Text('Sí'),
                                               ),
                                             ],
                                           );
@@ -207,7 +204,7 @@ class _OpcionesPedidoDeliveryWidgetState
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -224,12 +221,12 @@ class _OpcionesPedidoDeliveryWidgetState
                                 ),
                           ),
                           FlutterFlowIconButton(
-                            borderColor: Color(0xFFEE8B60),
+                            borderColor: const Color(0xFFEE8B60),
                             borderRadius: 20.0,
                             borderWidth: 1.0,
                             buttonSize: 40.0,
-                            fillColor: Color(0xFFFF444F),
-                            icon: Icon(
+                            fillColor: const Color(0xFFFF444F),
+                            icon: const Icon(
                               Icons.close,
                               color: Colors.white,
                               size: 24.0,

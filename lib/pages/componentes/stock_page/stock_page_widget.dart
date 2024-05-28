@@ -1,17 +1,13 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/componentes/control_stock_movil/control_stock_movil_widget.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:data_table_2/data_table_2.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:text_search/text_search.dart';
 import 'stock_page_model.dart';
 export 'stock_page_model.dart';
@@ -57,7 +53,7 @@ class _StockPageWidgetState extends State<StockPageWidget> {
         mainAxisSize: MainAxisSize.max,
         children: [
           Padding(
-            padding: EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(10.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               children: [
@@ -67,7 +63,7 @@ class _StockPageWidgetState extends State<StockPageWidget> {
                     builder: (context, snapshot) {
                       // Customize what your widget looks like when it's loading.
                       if (!snapshot.hasData) {
-                        return Center(
+                        return const Center(
                           child: SizedBox(
                             width: 50.0,
                             height: 50.0,
@@ -82,7 +78,7 @@ class _StockPageWidgetState extends State<StockPageWidget> {
                       List<ProductoRecord> containerProductoRecordList =
                           snapshot.data!;
                       return Container(
-                        decoration: BoxDecoration(),
+                        decoration: const BoxDecoration(),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -92,7 +88,7 @@ class _StockPageWidgetState extends State<StockPageWidget> {
                                 focusNode: _model.buscarProductoFocusNode,
                                 onChanged: (_) => EasyDebounce.debounce(
                                   '_model.buscarProductoTextController',
-                                  Duration(milliseconds: 2000),
+                                  const Duration(milliseconds: 2000),
                                   () async {
                                     safeSetState(() {
                                       _model.simpleSearchResults = TextSearch(
@@ -101,8 +97,8 @@ class _StockPageWidgetState extends State<StockPageWidget> {
                                               (record) =>
                                                   TextSearchItem.fromTerms(
                                                       record, [
-                                                record.name!,
-                                                record.codigoBarras!
+                                                record.name,
+                                                record.codigoBarras
                                               ]),
                                             )
                                             .toList(),
@@ -112,11 +108,66 @@ class _StockPageWidgetState extends State<StockPageWidget> {
                                               .text)
                                           .map((r) => r.object)
                                           .toList();
-                                      ;
                                     });
-                                    setState(() {
-                                      FFAppState().busquedaActiva = true;
-                                    });
+                                    _model.productos =
+                                        await queryProductoRecordOnce(
+                                      queryBuilder: (productoRecord) =>
+                                          productoRecord.where(
+                                        'codigoBarras',
+                                        isEqualTo: _model.escanear,
+                                      ),
+                                      singleRecord: true,
+                                    ).then((s) => s.firstOrNull);
+                                    _model.variaciones =
+                                        await queryVariacionRecordOnce(
+                                      queryBuilder: (variacionRecord) =>
+                                          variacionRecord.where(
+                                        'codigoBarra',
+                                        isEqualTo: _model.escanear,
+                                      ),
+                                      singleRecord: true,
+                                    ).then((s) => s.firstOrNull);
+                                    if (_model.simpleSearchResults.first
+                                            .codigoBarras ==
+                                        _model.productos?.codigoBarras) {
+                                      setState(() {
+                                        _model.buscarProductoTextController
+                                            ?.text = _model.productos!.name;
+                                      });
+                                    } else if (_model.simpleSearchResults.first
+                                            .codigoBarras ==
+                                        _model.variaciones?.codigoBarra) {
+                                      setState(() {
+                                        _model.buscarProductoTextController
+                                            ?.text = _model.productos!.name;
+                                      });
+                                    } else if (_model
+                                            .simpleSearchResults.first.name ==
+                                        _model.productos?.name) {
+                                      setState(() {
+                                        _model.buscarProductoTextController
+                                            ?.text = _model.productos!.name;
+                                      });
+                                    } else {
+                                      await showDialog(
+                                        context: context,
+                                        builder: (alertDialogContext) {
+                                          return AlertDialog(
+                                            content:
+                                                const Text('Producto no encontrado'),
+                                            actions: [
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext),
+                                                child: const Text('Ok'),
+                                              ),
+                                            ],
+                                          );
+                                        },
+                                      );
+                                    }
+
+                                    setState(() {});
                                   },
                                 ),
                                 autofocus: false,
@@ -140,14 +191,14 @@ class _StockPageWidgetState extends State<StockPageWidget> {
                                         letterSpacing: 0.0,
                                       ),
                                   enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       color: Color(0xFF00AC67),
                                       width: 2.0,
                                     ),
                                     borderRadius: BorderRadius.circular(10.0),
                                   ),
                                   focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       color: Color(0xFF00AC67),
                                       width: 2.0,
                                     ),
@@ -185,7 +236,7 @@ class _StockPageWidgetState extends State<StockPageWidget> {
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
@@ -267,12 +318,12 @@ class _StockPageWidgetState extends State<StockPageWidget> {
                                       builder: (alertDialogContext) {
                                         return AlertDialog(
                                           content:
-                                              Text('Producto no encontrado'),
+                                              const Text('Producto no encontrado'),
                                           actions: [
                                             TextButton(
                                               onPressed: () => Navigator.pop(
                                                   alertDialogContext),
-                                              child: Text('Ok'),
+                                              child: const Text('Ok'),
                                             ),
                                           ],
                                         );
@@ -298,7 +349,7 @@ class _StockPageWidgetState extends State<StockPageWidget> {
                                         size: 24.0,
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 5.0, 0.0, 0.0),
                                         child: Text(
                                           'Escanear',
@@ -315,7 +366,7 @@ class _StockPageWidgetState extends State<StockPageWidget> {
                                 ),
                               ),
                             ),
-                          ].divide(SizedBox(width: 10.0)),
+                          ].divide(const SizedBox(width: 10.0)),
                         ),
                       );
                     },
@@ -339,7 +390,7 @@ class _StockPageWidgetState extends State<StockPageWidget> {
                   builder: (context, snapshot) {
                     // Customize what your widget looks like when it's loading.
                     if (!snapshot.hasData) {
-                      return Center(
+                      return const Center(
                         child: SizedBox(
                           width: 50.0,
                           height: 50.0,
@@ -353,7 +404,7 @@ class _StockPageWidgetState extends State<StockPageWidget> {
                     }
                     List<ProductoRecord> dataTableProductoRecordList =
                         snapshot.data!;
-                    return Container(
+                    return SizedBox(
                       height: MediaQuery.sizeOf(context).height * 0.7,
                       child: DataTable2(
                         columns: [
@@ -361,7 +412,7 @@ class _StockPageWidgetState extends State<StockPageWidget> {
                             label: DefaultTextStyle.merge(
                               softWrap: true,
                               child: Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Text(
                                   'Nombre',
                                   style: FlutterFlowTheme.of(context)
@@ -378,7 +429,7 @@ class _StockPageWidgetState extends State<StockPageWidget> {
                             label: DefaultTextStyle.merge(
                               softWrap: true,
                               child: Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Text(
                                   'Control stock',
                                   style: FlutterFlowTheme.of(context)
@@ -397,7 +448,7 @@ class _StockPageWidgetState extends State<StockPageWidget> {
                                     dataTableProductoRecord) =>
                                 [
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Text(
                                       dataTableProductoRecord.name,
                                       style: FlutterFlowTheme.of(context)
@@ -409,7 +460,7 @@ class _StockPageWidgetState extends State<StockPageWidget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
                                       focusColor: Colors.transparent,
@@ -484,7 +535,7 @@ class _StockPageWidgetState extends State<StockPageWidget> {
               ],
             ),
           ),
-        ],
+        ].addToEnd(const SizedBox(height: 30.0)),
       ),
     );
   }

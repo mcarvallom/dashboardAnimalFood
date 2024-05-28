@@ -1,12 +1,8 @@
-import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'conosininiciosesion_model.dart';
 export 'conosininiciosesion_model.dart';
 
@@ -32,14 +28,13 @@ class _ConosininiciosesionWidgetState extends State<ConosininiciosesionWidget> {
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       if (loggedIn) {
         if (valueOrDefault<bool>(currentUserDocument?.isAdmin, false)) {
-          context.goNamedAuth('Inicio', context.mounted);
+          context.goNamed('Inicio');
         } else if (valueOrDefault<bool>(
             currentUserDocument?.isVendedor, false)) {
-          context.goNamedAuth(
+          context.goNamed(
             'StockVendedor',
-            context.mounted,
             extra: <String, dynamic>{
-              kTransitionInfoKey: TransitionInfo(
+              kTransitionInfoKey: const TransitionInfo(
                 hasTransition: true,
                 transitionType: PageTransitionType.fade,
               ),
@@ -47,11 +42,10 @@ class _ConosininiciosesionWidgetState extends State<ConosininiciosesionWidget> {
           );
         } else if (valueOrDefault<bool>(
             currentUserDocument?.isInventario, false)) {
-          context.goNamedAuth(
+          context.goNamed(
             'productosInventario',
-            context.mounted,
             extra: <String, dynamic>{
-              kTransitionInfoKey: TransitionInfo(
+              kTransitionInfoKey: const TransitionInfo(
                 hasTransition: true,
                 transitionType: PageTransitionType.fade,
               ),
@@ -59,41 +53,20 @@ class _ConosininiciosesionWidgetState extends State<ConosininiciosesionWidget> {
           );
         } else if (valueOrDefault<bool>(
             currentUserDocument?.isDelivery, false)) {
-          context.goNamedAuth(
+          context.goNamed(
             'pedidosDelivery',
-            context.mounted,
             extra: <String, dynamic>{
-              kTransitionInfoKey: TransitionInfo(
+              kTransitionInfoKey: const TransitionInfo(
                 hasTransition: true,
                 transitionType: PageTransitionType.fade,
               ),
             },
           );
         } else {
-          await showDialog(
-            context: context,
-            builder: (alertDialogContext) {
-              return AlertDialog(
-                title: Text('¡Alerta!'),
-                content: Text('Usted no tiene permisos para entrar'),
-                actions: [
-                  TextButton(
-                    onPressed: () => Navigator.pop(alertDialogContext),
-                    child: Text('Ok'),
-                  ),
-                ],
-              );
-            },
-          );
-          GoRouter.of(context).prepareAuthEvent();
-          await authManager.signOut();
-          GoRouter.of(context).clearRedirectLocation();
-
-          context.goNamedAuth(
-            'iniciarSesion',
-            context.mounted,
+          context.goNamed(
+            'pantalla',
             extra: <String, dynamic>{
-              kTransitionInfoKey: TransitionInfo(
+              kTransitionInfoKey: const TransitionInfo(
                 hasTransition: true,
                 transitionType: PageTransitionType.fade,
               ),
@@ -101,7 +74,7 @@ class _ConosininiciosesionWidgetState extends State<ConosininiciosesionWidget> {
           );
         }
       } else {
-        context.pushNamedAuth('iniciarSesion', context.mounted);
+        context.pushNamed('iniciarSesion');
       }
     });
 
@@ -124,7 +97,7 @@ class _ConosininiciosesionWidgetState extends State<ConosininiciosesionWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        body: SafeArea(
+        body: const SafeArea(
           top: true,
           child: Column(
             mainAxisSize: MainAxisSize.max,

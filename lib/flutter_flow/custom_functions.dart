@@ -98,3 +98,32 @@ double subtotalItem(
   // Add your function code here!
   return qty * precio;
 }
+
+int? sumaVentas(List<int> ventas) {
+  // quiero sumar los numeros de la lista
+  int total = 0;
+  for (int venta in ventas) {
+    total += venta;
+  }
+  return total;
+}
+
+int? sumaGastos(
+  List<int>? gastos,
+  int? petroleo,
+  int? peaje,
+) {
+  // sumar los gastos, el petroleo y el peaje
+  if (gastos == null || petroleo == null || peaje == null) {
+    return null;
+  }
+  int totalGastos = gastos.fold(0, (a, b) => a + b);
+  return totalGastos + petroleo + peaje;
+}
+
+int sumarTotales(
+  int? monto1,
+  int? monto2,
+) {
+  return monto1! + monto2!;
+}

@@ -4,8 +4,6 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/componentes/menu_escritorio/menu_escritorio_widget.dart';
 import '/pages/componentes/top_escritorio/top_escritorio_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'agregar_banner_model.dart';
 export 'agregar_banner_model.dart';
 
@@ -20,7 +18,7 @@ class AgregarBannerWidget extends StatefulWidget {
     Color? colorBanner,
     this.colorAjustes,
     this.colorCategorias,
-  }) : this.colorBanner = colorBanner ?? const Color(0xFF39A3EF);
+  }) : colorBanner = colorBanner ?? const Color(0xFF39A3EF);
 
   final Color? colorInicio;
   final Color? colorOrdenes;
@@ -76,7 +74,7 @@ class _AgregarBannerWidgetState extends State<AgregarBannerWidget> {
                     model: _model.menuEscritorioModel,
                     updateCallback: () => setState(() {}),
                     updateOnChange: true,
-                    child: MenuEscritorioWidget(),
+                    child: const MenuEscritorioWidget(),
                   ),
                 ],
               ),
@@ -87,7 +85,7 @@ class _AgregarBannerWidgetState extends State<AgregarBannerWidget> {
                     wrapWithModel(
                       model: _model.topEscritorioModel,
                       updateCallback: () => setState(() {}),
-                      child: TopEscritorioWidget(),
+                      child: const TopEscritorioWidget(),
                     ),
                     Expanded(
                       child: Row(
@@ -96,7 +94,7 @@ class _AgregarBannerWidgetState extends State<AgregarBannerWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 20.0, 20.0, 10.0, 20.0),
                             child: SingleChildScrollView(
                               primary: false,
@@ -104,7 +102,7 @@ class _AgregarBannerWidgetState extends State<AgregarBannerWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 20.0),
                                     child: Material(
                                       color: Colors.transparent,
@@ -125,10 +123,10 @@ class _AgregarBannerWidgetState extends State<AgregarBannerWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   -1.0, -1.0),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         20.0, 20.0, 0.0, 20.0),
                                                 child: Text(
@@ -151,7 +149,7 @@ class _AgregarBannerWidgetState extends State<AgregarBannerWidget> {
                                                   MainAxisAlignment.spaceEvenly,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 10.0, 0.0, 20.0),
                                                   child: FFButtonWidget(
@@ -161,7 +159,7 @@ class _AgregarBannerWidgetState extends State<AgregarBannerWidget> {
                                                         extra: <String,
                                                             dynamic>{
                                                           kTransitionInfoKey:
-                                                              TransitionInfo(
+                                                              const TransitionInfo(
                                                             hasTransition: true,
                                                             transitionType:
                                                                 PageTransitionType
@@ -177,20 +175,20 @@ class _AgregarBannerWidgetState extends State<AgregarBannerWidget> {
                                                     options: FFButtonOptions(
                                                       height: 40.0,
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   24.0,
                                                                   0.0,
                                                                   24.0,
                                                                   0.0),
                                                       iconPadding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
                                                                   0.0,
                                                                   0.0),
-                                                      color: Color(0xFFF99C48),
+                                                      color: const Color(0xFFF99C48),
                                                       textStyle:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -204,7 +202,7 @@ class _AgregarBannerWidgetState extends State<AgregarBannerWidget> {
                                                                     0.0,
                                                               ),
                                                       elevation: 3.0,
-                                                      borderSide: BorderSide(
+                                                      borderSide: const BorderSide(
                                                         color:
                                                             Colors.transparent,
                                                         width: 1.0,
@@ -216,7 +214,7 @@ class _AgregarBannerWidgetState extends State<AgregarBannerWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 10.0, 0.0, 20.0),
                                                   child: FFButtonWidget(
@@ -226,7 +224,7 @@ class _AgregarBannerWidgetState extends State<AgregarBannerWidget> {
                                                         extra: <String,
                                                             dynamic>{
                                                           kTransitionInfoKey:
-                                                              TransitionInfo(
+                                                              const TransitionInfo(
                                                             hasTransition: true,
                                                             transitionType:
                                                                 PageTransitionType
@@ -242,20 +240,20 @@ class _AgregarBannerWidgetState extends State<AgregarBannerWidget> {
                                                     options: FFButtonOptions(
                                                       height: 40.0,
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   24.0,
                                                                   0.0,
                                                                   24.0,
                                                                   0.0),
                                                       iconPadding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
                                                                   0.0,
                                                                   0.0),
-                                                      color: Color(0xFFF99C48),
+                                                      color: const Color(0xFFF99C48),
                                                       textStyle:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -269,7 +267,7 @@ class _AgregarBannerWidgetState extends State<AgregarBannerWidget> {
                                                                     0.0,
                                                               ),
                                                       elevation: 3.0,
-                                                      borderSide: BorderSide(
+                                                      borderSide: const BorderSide(
                                                         color:
                                                             Colors.transparent,
                                                         width: 1.0,

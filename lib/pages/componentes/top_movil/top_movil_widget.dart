@@ -3,8 +3,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/componentes/perfil_setting/perfil_setting_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'top_movil_model.dart';
 export 'top_movil_model.dart';
 
@@ -48,7 +46,7 @@ class _TopMovilWidgetState extends State<TopMovilWidget> {
         color: FlutterFlowTheme.of(context).secondaryBackground,
       ),
       child: Padding(
-        padding: EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(20.0),
         child: Row(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -61,7 +59,7 @@ class _TopMovilWidgetState extends State<TopMovilWidget> {
               onTap: () async {
                 Scaffold.of(context).openDrawer();
               },
-              child: Icon(
+              child: const Icon(
                 Icons.menu,
                 color: Colors.black,
                 size: 30.0,
@@ -92,7 +90,7 @@ class _TopMovilWidgetState extends State<TopMovilWidget> {
                       builder: (context) {
                         return Padding(
                           padding: MediaQuery.viewInsetsOf(context),
-                          child: PerfilSettingWidget(),
+                          child: const PerfilSettingWidget(),
                         );
                       },
                     ).then((value) => safeSetState(() {}));
@@ -101,14 +99,14 @@ class _TopMovilWidgetState extends State<TopMovilWidget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 0.0, 10.0, 0.0),
                         child: AuthUserStreamWidget(
                           builder: (context) => Container(
                             width: 50.0,
                             height: 50.0,
                             clipBehavior: Clip.antiAlias,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               shape: BoxShape.circle,
                             ),
                             child: Image.network(

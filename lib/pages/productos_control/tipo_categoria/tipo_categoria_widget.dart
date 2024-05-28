@@ -1,10 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'tipo_categoria_model.dart';
 export 'tipo_categoria_model.dart';
 
@@ -13,8 +10,8 @@ class TipoCategoriaWidget extends StatefulWidget {
     super.key,
     Color? colorInicio,
     String? nombre,
-  })  : this.colorInicio = colorInicio ?? const Color(0xFFE6A5E5),
-        this.nombre = nombre ?? 'Inicio';
+  })  : colorInicio = colorInicio ?? const Color(0xFFE6A5E5),
+        nombre = nombre ?? 'Inicio';
 
   final Color colorInicio;
   final String nombre;
@@ -88,11 +85,11 @@ class _TipoCategoriaWidgetState extends State<TipoCategoriaWidget> {
                                                 Flexible(
                                                   child: Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             -1.0, -1.0),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   20.0,
                                                                   20.0,
@@ -152,16 +149,16 @@ class _TipoCategoriaWidgetState extends State<TipoCategoriaWidget> {
                                             ),
                                             Flexible(
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, -1.0),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(10.0, 20.0,
                                                           10.0, 20.0),
                                                   child: GridView(
                                                     padding: EdgeInsets.zero,
                                                     gridDelegate:
-                                                        SliverGridDelegateWithFixedCrossAxisCount(
+                                                        const SliverGridDelegateWithFixedCrossAxisCount(
                                                       crossAxisCount: 2,
                                                       crossAxisSpacing: 10.0,
                                                       mainAxisSpacing: 10.0,
@@ -173,7 +170,7 @@ class _TipoCategoriaWidgetState extends State<TipoCategoriaWidget> {
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     10.0,
@@ -194,7 +191,7 @@ class _TipoCategoriaWidgetState extends State<TipoCategoriaWidget> {
                                                               extra: <String,
                                                                   dynamic>{
                                                                 kTransitionInfoKey:
-                                                                    TransitionInfo(
+                                                                    const TransitionInfo(
                                                                   hasTransition:
                                                                       true,
                                                                   transitionType:
@@ -228,11 +225,11 @@ class _TipoCategoriaWidgetState extends State<TipoCategoriaWidget> {
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         0.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           20.0,
                                                                           10.0,
@@ -267,7 +264,7 @@ class _TipoCategoriaWidgetState extends State<TipoCategoriaWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     10.0,
@@ -288,7 +285,7 @@ class _TipoCategoriaWidgetState extends State<TipoCategoriaWidget> {
                                                               extra: <String,
                                                                   dynamic>{
                                                                 kTransitionInfoKey:
-                                                                    TransitionInfo(
+                                                                    const TransitionInfo(
                                                                   hasTransition:
                                                                       true,
                                                                   transitionType:
@@ -322,11 +319,11 @@ class _TipoCategoriaWidgetState extends State<TipoCategoriaWidget> {
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         0.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           20.0,
                                                                           10.0,
@@ -364,7 +361,7 @@ class _TipoCategoriaWidgetState extends State<TipoCategoriaWidget> {
                                                 ),
                                               ),
                                             ),
-                                          ].addToEnd(SizedBox(height: 20.0)),
+                                          ].addToEnd(const SizedBox(height: 20.0)),
                                         ),
                                       ),
                                     ],
@@ -386,7 +383,7 @@ class _TipoCategoriaWidgetState extends State<TipoCategoriaWidget> {
               ))
                 Flexible(
                   child: Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8.0),
                       child: Image.asset(

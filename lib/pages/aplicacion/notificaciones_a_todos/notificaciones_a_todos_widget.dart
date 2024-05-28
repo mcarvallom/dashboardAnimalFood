@@ -1,14 +1,10 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'notificaciones_a_todos_model.dart';
 export 'notificaciones_a_todos_model.dart';
 
@@ -72,9 +68,9 @@ class _NotificacionesATodosWidgetState
                         children: [
                           Flexible(
                             child: Align(
-                              alignment: AlignmentDirectional(-1.0, -1.0),
+                              alignment: const AlignmentDirectional(-1.0, -1.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     20.0, 20.0, 0.0, 10.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -118,7 +114,7 @@ class _NotificacionesATodosWidgetState
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 20.0, 0.0, 20.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -128,7 +124,7 @@ class _NotificacionesATodosWidgetState
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 10.0, 0.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -149,12 +145,12 @@ class _NotificacionesATodosWidgetState
                                                 ),
                                           ),
                                           Container(
-                                            decoration: BoxDecoration(),
+                                            decoration: const BoxDecoration(),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 10.0, 0.0, 0.0),
-                                              child: Container(
+                                              child: SizedBox(
                                                 width: 300.0,
                                                 child: TextFormField(
                                                   controller:
@@ -164,7 +160,7 @@ class _NotificacionesATodosWidgetState
                                                   onChanged: (_) =>
                                                       EasyDebounce.debounce(
                                                     '_model.textController1',
-                                                    Duration(milliseconds: 200),
+                                                    const Duration(milliseconds: 200),
                                                     () => setState(() {}),
                                                   ),
                                                   autofocus: true,
@@ -195,7 +191,7 @@ class _NotificacionesATodosWidgetState
                                                         ),
                                                     enabledBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: BorderSide(
+                                                      borderSide: const BorderSide(
                                                         color:
                                                             Color(0xFF00AC67),
                                                         width: 1.0,
@@ -206,7 +202,7 @@ class _NotificacionesATodosWidgetState
                                                     ),
                                                     focusedBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: BorderSide(
+                                                      borderSide: const BorderSide(
                                                         color:
                                                             Color(0xFF00AC67),
                                                         width: 1.0,
@@ -266,7 +262,7 @@ class _NotificacionesATodosWidgetState
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 10.0, 0.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -287,12 +283,12 @@ class _NotificacionesATodosWidgetState
                                                 ),
                                           ),
                                           Container(
-                                            decoration: BoxDecoration(),
+                                            decoration: const BoxDecoration(),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 10.0, 0.0, 0.0),
-                                              child: Container(
+                                              child: SizedBox(
                                                 width: 300.0,
                                                 child: TextFormField(
                                                   controller:
@@ -302,7 +298,7 @@ class _NotificacionesATodosWidgetState
                                                   onChanged: (_) =>
                                                       EasyDebounce.debounce(
                                                     '_model.textController2',
-                                                    Duration(milliseconds: 200),
+                                                    const Duration(milliseconds: 200),
                                                     () => setState(() {}),
                                                   ),
                                                   autofocus: true,
@@ -333,7 +329,7 @@ class _NotificacionesATodosWidgetState
                                                         ),
                                                     enabledBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: BorderSide(
+                                                      borderSide: const BorderSide(
                                                         color:
                                                             Color(0xFF00AC67),
                                                         width: 1.0,
@@ -344,7 +340,7 @@ class _NotificacionesATodosWidgetState
                                                     ),
                                                     focusedBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: BorderSide(
+                                                      borderSide: const BorderSide(
                                                         color:
                                                             Color(0xFF00AC67),
                                                         width: 1.0,
@@ -406,16 +402,16 @@ class _NotificacionesATodosWidgetState
                                     ),
                                     Align(
                                       alignment:
-                                          AlignmentDirectional(-1.0, 0.0),
+                                          const AlignmentDirectional(-1.0, 0.0),
                                       child: Container(
                                         width: 300.0,
-                                        decoration: BoxDecoration(),
+                                        decoration: const BoxDecoration(),
                                         child: Align(
                                           alignment:
-                                              AlignmentDirectional(-1.0, 0.0),
+                                              const AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 10.0, 0.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -430,7 +426,7 @@ class _NotificacionesATodosWidgetState
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   20.0,
@@ -476,11 +472,11 @@ class _NotificacionesATodosWidgetState
                                                                       .primaryBackground,
                                                                 ),
                                                               ),
-                                                              duration: Duration(
+                                                              duration: const Duration(
                                                                   milliseconds:
                                                                       4000),
                                                               backgroundColor:
-                                                                  Color(
+                                                                  const Color(
                                                                       0xFF00B235),
                                                             ),
                                                           );
@@ -490,21 +486,21 @@ class _NotificacionesATodosWidgetState
                                                             FFButtonOptions(
                                                           height: 40.0,
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       24.0,
                                                                       0.0,
                                                                       24.0,
                                                                       0.0),
                                                           iconPadding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
                                                                       0.0,
                                                                       0.0),
                                                           color:
-                                                              Color(0xFF00AC67),
+                                                              const Color(0xFF00AC67),
                                                           textStyle:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -519,7 +515,7 @@ class _NotificacionesATodosWidgetState
                                                                   ),
                                                           elevation: 3.0,
                                                           borderSide:
-                                                              BorderSide(
+                                                              const BorderSide(
                                                             color: Colors
                                                                 .transparent,
                                                             width: 1.0,
@@ -547,7 +543,7 @@ class _NotificacionesATodosWidgetState
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 20.0, 0.0, 20.0),
                                       child: Text(
                                         'Previsualización:',
@@ -564,7 +560,7 @@ class _NotificacionesATodosWidgetState
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           5.0, 0.0, 5.0, 0.0),
                                       child: ClipRRect(
                                         borderRadius:
@@ -586,13 +582,13 @@ class _NotificacionesATodosWidgetState
                                           ),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     40.0, 90.0, 40.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.min,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 10.0, 0.0, 0.0),
                                                   child: Material(
@@ -611,13 +607,13 @@ class _NotificacionesATodosWidgetState
                                                           1.0,
                                                       decoration: BoxDecoration(
                                                         color:
-                                                            Color(0xFF2A292E),
+                                                            const Color(0xFF2A292E),
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(15.0),
                                                       ),
                                                       child: Padding(
-                                                        padding: EdgeInsets.all(
+                                                        padding: const EdgeInsets.all(
                                                             10.0),
                                                         child: Column(
                                                           mainAxisSize:
@@ -651,7 +647,7 @@ class _NotificacionesATodosWidgetState
                                                                       child:
                                                                           Padding(
                                                                         padding:
-                                                                            EdgeInsets.all(5.0),
+                                                                            const EdgeInsets.all(5.0),
                                                                         child: Image
                                                                             .asset(
                                                                           'assets/images/logo_animalfood.png',
@@ -665,7 +661,7 @@ class _NotificacionesATodosWidgetState
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           10.0,
                                                                           0.0,
                                                                           0.0,
@@ -687,7 +683,7 @@ class _NotificacionesATodosWidgetState
                                                                   ],
                                                                 ),
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10.0,
                                                                           0.0,
@@ -716,7 +712,7 @@ class _NotificacionesATodosWidgetState
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           10.0,
@@ -752,7 +748,7 @@ class _NotificacionesATodosWidgetState
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           10.0,
@@ -819,7 +815,7 @@ class _NotificacionesATodosWidgetState
                 tablet: false,
               ))
                 Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(8.0),
                     child: Image.asset(

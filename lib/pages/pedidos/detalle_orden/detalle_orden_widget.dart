@@ -6,13 +6,9 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/aplicacion/ver_comprobante_transferencia/ver_comprobante_transferencia_widget.dart';
 import '/pages/componentes/top_movil/top_movil_widget.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:local_auth/local_auth.dart';
-import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'detalle_orden_model.dart';
 export 'detalle_orden_model.dart';
@@ -79,7 +75,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                   builder: (context, snapshot) {
                     // Customize what your widget looks like when it's loading.
                     if (!snapshot.hasData) {
-                      return Center(
+                      return const Center(
                         child: SizedBox(
                           width: 50.0,
                           height: 50.0,
@@ -101,16 +97,16 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Expanded(
                                   child: Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 30.0, 0.0, 20.0),
                                       child: Image.asset(
                                         'assets/images/logo_animalfood.png',
@@ -124,7 +120,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 30.0, 0.0, 10.0),
                             child: Text(
                               'Menú',
@@ -137,7 +133,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 10.0, 10.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -152,7 +148,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                   'Inicio',
                                   queryParameters: {
                                     'colorInicio': serializeParam(
-                                      Color(0xFFE6A5E5),
+                                      const Color(0xFFE6A5E5),
                                       ParamType.Color,
                                     ),
                                     'nombre': serializeParam(
@@ -161,7 +157,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                     ),
                                   }.withoutNulls,
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    kTransitionInfoKey: const TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -175,7 +171,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -187,7 +183,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                         size: 24.0,
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           'Inicio',
@@ -208,7 +204,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 10.0, 10.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -225,7 +221,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                     ),
                                   }.withoutNulls,
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    kTransitionInfoKey: const TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -242,23 +238,23 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                   width: MediaQuery.sizeOf(context).width * 1.0,
                                   height: 60.0,
                                   decoration: BoxDecoration(
-                                    color: Color(0xFFEAC04A),
+                                    color: const Color(0xFFEAC04A),
                                     borderRadius: BorderRadius.circular(10.0),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
-                                        FaIcon(
+                                        const FaIcon(
                                           FontAwesomeIcons.shoppingBag,
                                           color: Colors.white,
                                           size: 24.0,
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             'Órdenes',
@@ -281,7 +277,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 10.0, 10.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -293,7 +289,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                   'productos',
                                   queryParameters: {
                                     'colorProductos': serializeParam(
-                                      Color(0xFFE6A5E5),
+                                      const Color(0xFFE6A5E5),
                                       ParamType.Color,
                                     ),
                                     'nombre': serializeParam(
@@ -302,7 +298,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                     ),
                                   }.withoutNulls,
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    kTransitionInfoKey: const TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -316,7 +312,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -328,7 +324,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                         size: 24.0,
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           'Productos',
@@ -349,7 +345,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 10.0, 10.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -360,7 +356,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                 context.pushNamed(
                                   'tipoCategoria',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    kTransitionInfoKey: const TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -374,7 +370,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -386,7 +382,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                         size: 24.0,
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           'Categorías',
@@ -410,7 +406,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 10.0, 10.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -421,7 +417,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                 context.pushNamed(
                                   'Marcas',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    kTransitionInfoKey: const TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -435,7 +431,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -447,7 +443,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                         size: 24.0,
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           'Marcas',
@@ -468,7 +464,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 10.0, 10.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -480,7 +476,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                   'empleados',
                                   queryParameters: {
                                     'colorEmpleados': serializeParam(
-                                      Color(0xFFE6A5E5),
+                                      const Color(0xFFE6A5E5),
                                       ParamType.Color,
                                     ),
                                     'nombre': serializeParam(
@@ -489,7 +485,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                     ),
                                   }.withoutNulls,
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    kTransitionInfoKey: const TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -503,7 +499,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -515,7 +511,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                         size: 24.0,
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           'Empleados',
@@ -536,7 +532,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 10.0, 10.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -548,7 +544,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                   'clientes',
                                   queryParameters: {
                                     'colorClientes': serializeParam(
-                                      Color(0xFFE6A5E5),
+                                      const Color(0xFFE6A5E5),
                                       ParamType.Color,
                                     ),
                                     'nombre': serializeParam(
@@ -557,7 +553,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                     ),
                                   }.withoutNulls,
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    kTransitionInfoKey: const TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -571,7 +567,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -583,7 +579,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                         size: 24.0,
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           'Clientes',
@@ -607,7 +603,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 10.0, 10.0, 0.0),
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
@@ -616,7 +612,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -628,7 +624,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                       size: 24.0,
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         'Ajustes de la tienda',
@@ -647,7 +643,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                               ),
                             ),
                           ),
-                        ].addToStart(SizedBox(height: 70.0)),
+                        ].addToStart(const SizedBox(height: 70.0)),
                       ),
                     );
                   },
@@ -663,10 +659,10 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
             children: [
               Flexible(
                 child: Container(
-                  constraints: BoxConstraints(
+                  constraints: const BoxConstraints(
                     maxWidth: 767.0,
                   ),
-                  decoration: BoxDecoration(),
+                  decoration: const BoxDecoration(),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
@@ -678,18 +674,18 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                             builder: (context) => wrapWithModel(
                               model: _model.topMovilModel,
                               updateCallback: () => setState(() {}),
-                              child: TopMovilWidget(),
+                              child: const TopMovilWidget(),
                             ),
                           ),
                         Container(
-                          decoration: BoxDecoration(),
+                          decoration: const BoxDecoration(),
                           child: SingleChildScrollView(
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 20.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -719,7 +715,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                               borderRadius:
                                                   BorderRadius.circular(10.0),
                                             ),
-                                            child: Icon(
+                                            child: const Icon(
                                               Icons.chevron_left,
                                               color: Colors.black,
                                               size: 40.0,
@@ -728,7 +724,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           'Detalle Pedido',
@@ -736,7 +732,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                               .headlineMedium
                                               .override(
                                                 fontFamily: 'Outfit',
-                                                color: Color(0xFF1F1F1F),
+                                                color: const Color(0xFF1F1F1F),
                                                 fontSize: 22.0,
                                                 letterSpacing: 0.0,
                                               ),
@@ -746,7 +742,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 10.0, 0.0, 0.0),
                                   child: Text(
                                     'A continuación se muestra el detalle de su orden.',
@@ -760,9 +756,9 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                   ),
                                 ),
                                 Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 12.0, 10.0, 24.0),
                                     child: StreamBuilder<OrderRecord>(
                                       stream: OrderRecord.getDocument(
@@ -770,7 +766,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                       builder: (context, snapshot) {
                                         // Customize what your widget looks like when it's loading.
                                         if (!snapshot.hasData) {
-                                          return Center(
+                                          return const Center(
                                             child: SizedBox(
                                               width: 50.0,
                                               height: 50.0,
@@ -800,7 +796,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                 borderRadius:
                                                     BorderRadius.circular(8.0),
                                                 border: Border.all(
-                                                  color: Color(0xFF00AC67),
+                                                  color: const Color(0xFF00AC67),
                                                   width: 2.0,
                                                 ),
                                               ),
@@ -813,11 +809,11 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                     children: [
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 -1.0, -1.0),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       20.0,
                                                                       20.0,
@@ -843,11 +839,11 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                           .hasIsPagado())
                                                         Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   -1.0, 0.0),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         20.0,
                                                                         12.0,
@@ -866,12 +862,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                   if (columnOrderRecord
                                                                           .isPagado ==
                                                                       true) {
-                                                                    return Color(
+                                                                    return const Color(
                                                                         0x9100AC67);
                                                                   } else if (columnOrderRecord
                                                                           .isPagado ==
                                                                       false) {
-                                                                    return Color(
+                                                                    return const Color(
                                                                         0x8DFF5963);
                                                                   } else {
                                                                     return Colors
@@ -907,11 +903,11 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         0.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           12.0,
                                                                           0.0,
@@ -953,11 +949,11 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                         ),
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 -1.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       20.0,
                                                                       0.0,
@@ -970,7 +966,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                     .textScaler,
                                                             text: TextSpan(
                                                               children: [
-                                                                TextSpan(
+                                                                const TextSpan(
                                                                   text:
                                                                       'Orden: ',
                                                                   style:
@@ -1013,11 +1009,11 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                         children: [
                                                           Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     -1.0, -1.0),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           20.0,
                                                                           10.0,
@@ -1046,11 +1042,11 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                               .hasCodigoOrden())
                                                             Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       -1.0,
                                                                       -1.0),
                                                               child: Padding(
-                                                                padding: EdgeInsetsDirectional
+                                                                padding: const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         10.0,
                                                                         10.0,
@@ -1087,11 +1083,11 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                           children: [
                                                             Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       -1.0,
                                                                       -1.0),
                                                               child: Padding(
-                                                                padding: EdgeInsetsDirectional
+                                                                padding: const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         20.0,
                                                                         10.0,
@@ -1117,11 +1113,11 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                             ),
                                                             Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       -1.0,
                                                                       -1.0),
                                                               child: Padding(
-                                                                padding: EdgeInsetsDirectional
+                                                                padding: const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         10.0,
                                                                         10.0,
@@ -1154,11 +1150,11 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                         children: [
                                                           Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     -1.0, -1.0),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           20.0,
                                                                           10.0,
@@ -1185,11 +1181,11 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                           ),
                                                           Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     -1.0, -1.0),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10.0,
                                                                           10.0,
@@ -1223,11 +1219,11 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                         children: [
                                                           Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     -1.0, -1.0),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           20.0,
                                                                           10.0,
@@ -1254,11 +1250,11 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                           ),
                                                           Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     -1.0, -1.0),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10.0,
                                                                           10.0,
@@ -1292,11 +1288,11 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                         children: [
                                                           Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     -1.0, -1.0),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           20.0,
                                                                           10.0,
@@ -1323,11 +1319,11 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                           ),
                                                           Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     -1.0, -1.0),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10.0,
                                                                           10.0,
@@ -1363,11 +1359,11 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                           children: [
                                                             Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       -1.0,
                                                                       -1.0),
                                                               child: Padding(
-                                                                padding: EdgeInsetsDirectional
+                                                                padding: const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         20.0,
                                                                         10.0,
@@ -1394,11 +1390,11 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                             Flexible(
                                                               child: Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         -1.0,
                                                                         -1.0),
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10.0,
                                                                           10.0,
@@ -1445,11 +1441,11 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                         children: [
                                                           Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     -1.0, -1.0),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           20.0,
                                                                           10.0,
@@ -1476,11 +1472,11 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                           ),
                                                           Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     -1.0, -1.0),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10.0,
                                                                           10.0,
@@ -1521,7 +1517,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                             // Customize what your widget looks like when it's loading.
                                                             if (!snapshot
                                                                 .hasData) {
-                                                              return Center(
+                                                              return const Center(
                                                                 child: SizedBox(
                                                                   width: 50.0,
                                                                   height: 50.0,
@@ -1549,12 +1545,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                               children: [
                                                                 Align(
                                                                   alignment:
-                                                                      AlignmentDirectional(
+                                                                      const AlignmentDirectional(
                                                                           -1.0,
                                                                           -1.0),
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             20.0,
                                                                             10.0,
@@ -1581,12 +1577,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                 Flexible(
                                                                   child: Align(
                                                                     alignment:
-                                                                        AlignmentDirectional(
+                                                                        const AlignmentDirectional(
                                                                             -1.0,
                                                                             -1.0),
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           10.0,
                                                                           10.0,
                                                                           0.0,
@@ -1616,11 +1612,11 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                         ),
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 -1.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       20.0,
                                                                       12.0,
@@ -1654,12 +1650,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                   } else if (columnOrderRecord
                                                                           .status ==
                                                                       'Preparando envío') {
-                                                                    return Color(
+                                                                    return const Color(
                                                                         0xFF39D2C0);
                                                                   } else if (columnOrderRecord
                                                                           .status ==
                                                                       'En camino') {
-                                                                    return Color(
+                                                                    return const Color(
                                                                         0xFFF76631);
                                                                   } else if (columnOrderRecord
                                                                           .status ==
@@ -1695,10 +1691,10 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                             ),
                                                             child: Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               child: Padding(
-                                                                padding: EdgeInsetsDirectional
+                                                                padding: const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         12.0,
                                                                         0.0,
@@ -1720,10 +1716,10 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                             return FlutterFlowTheme.of(context).tertiary;
                                                                           } else if (columnOrderRecord.status ==
                                                                               'Preparando envío') {
-                                                                            return Color(0xFF39D2C0);
+                                                                            return const Color(0xFF39D2C0);
                                                                           } else if (columnOrderRecord.status ==
                                                                               'En camino') {
-                                                                            return Color(0xFFF76631);
+                                                                            return const Color(0xFFF76631);
                                                                           } else if (columnOrderRecord.status ==
                                                                               'Entregado') {
                                                                             return FlutterFlowTheme.of(context).success;
@@ -1756,11 +1752,11 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                           'Fallo en la entrega')
                                                         Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   -1.0, 0.0),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         20.0,
                                                                         12.0,
@@ -1801,7 +1797,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                         widget
                                                                             .detalleOrden,
                                                                     kTransitionInfoKey:
-                                                                        TransitionInfo(
+                                                                        const TransitionInfo(
                                                                       hasTransition:
                                                                           true,
                                                                       transitionType:
@@ -1836,12 +1832,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                 ),
                                                                 child: Align(
                                                                   alignment:
-                                                                      AlignmentDirectional(
+                                                                      const AlignmentDirectional(
                                                                           0.0,
                                                                           0.0),
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             12.0,
                                                                             0.0,
@@ -1873,11 +1869,11 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                           .hasComprobantePagoTransferencia())
                                                         Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   -1.0, 0.0),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         20.0,
                                                                         12.0,
@@ -1945,19 +1941,19 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                               12.0),
                                                                   border: Border
                                                                       .all(
-                                                                    color: Color(
+                                                                    color: const Color(
                                                                         0xFF00AC67),
                                                                     width: 2.0,
                                                                   ),
                                                                 ),
                                                                 child: Align(
                                                                   alignment:
-                                                                      AlignmentDirectional(
+                                                                      const AlignmentDirectional(
                                                                           0.0,
                                                                           0.0),
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             10.0,
                                                                             0.0,
@@ -1972,7 +1968,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                             fontFamily:
                                                                                 'Readex Pro',
                                                                             color:
-                                                                                Color(0xFF00AC67),
+                                                                                const Color(0xFF00AC67),
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             fontWeight:
@@ -1992,7 +1988,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                           false)
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       20.0,
                                                                       10.0,
@@ -2021,7 +2017,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                     // Customize what your widget looks like when it's loading.
                                                                     if (!snapshot
                                                                         .hasData) {
-                                                                      return Center(
+                                                                      return const Center(
                                                                         child:
                                                                             SizedBox(
                                                                           width:
@@ -2080,14 +2076,14 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                                 BorderRadius.circular(8.0),
                                                                             border:
                                                                                 Border.all(
-                                                                              color: Color(0xFF00AC67),
+                                                                              color: const Color(0xFF00AC67),
                                                                               width: 1.0,
                                                                             ),
                                                                           ),
                                                                           child:
                                                                               Padding(
                                                                             padding:
-                                                                                EdgeInsets.all(10.0),
+                                                                                const EdgeInsets.all(10.0),
                                                                             child:
                                                                                 Row(
                                                                               mainAxisSize: MainAxisSize.max,
@@ -2100,7 +2096,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                                       ),
                                                                                 ),
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                                                                                   child: FaIcon(
                                                                                     FontAwesomeIcons.whatsapp,
                                                                                     color: FlutterFlowTheme.of(context).success,
@@ -2126,7 +2122,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                     // Customize what your widget looks like when it's loading.
                                                                     if (!snapshot
                                                                         .hasData) {
-                                                                      return Center(
+                                                                      return const Center(
                                                                         child:
                                                                             SizedBox(
                                                                           width:
@@ -2191,14 +2187,14 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                                 BorderRadius.circular(8.0),
                                                                             border:
                                                                                 Border.all(
-                                                                              color: Color(0xFF00AC67),
+                                                                              color: const Color(0xFF00AC67),
                                                                               width: 1.0,
                                                                             ),
                                                                           ),
                                                                           child:
                                                                               Padding(
                                                                             padding:
-                                                                                EdgeInsets.all(10.0),
+                                                                                const EdgeInsets.all(10.0),
                                                                             child:
                                                                                 Row(
                                                                               mainAxisSize: MainAxisSize.max,
@@ -2211,7 +2207,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                                       ),
                                                                                 ),
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                                                                                   child: Icon(
                                                                                     Icons.phone_enabled_rounded,
                                                                                     color: FlutterFlowTheme.of(context).success,
@@ -2236,11 +2232,11 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                         children: [
                                                           Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     -1.0, -1.0),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           20.0,
                                                                           10.0,
@@ -2267,11 +2263,11 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                           ),
                                                           Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     -1.0, -1.0),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10.0,
                                                                           10.0,
@@ -2310,7 +2306,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     20.0,
                                                                     0.0,
@@ -2325,11 +2321,11 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                           children: [
                                                             Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       -1.0,
                                                                       -1.0),
                                                               child: Padding(
-                                                                padding: EdgeInsetsDirectional
+                                                                padding: const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         10.0,
@@ -2355,7 +2351,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           10.0,
@@ -2393,7 +2389,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                       .max,
                                                               children: [
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           20.0,
                                                                           0.0,
@@ -2410,7 +2406,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                       // Customize what your widget looks like when it's loading.
                                                                       if (!snapshot
                                                                           .hasData) {
-                                                                        return Center(
+                                                                        return const Center(
                                                                           child:
                                                                               SizedBox(
                                                                             width:
@@ -2435,10 +2431,10 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                         children: [
                                                                           Align(
                                                                             alignment:
-                                                                                AlignmentDirectional(-1.0, -1.0),
+                                                                                const AlignmentDirectional(-1.0, -1.0),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
                                                                               child: Text(
                                                                                 'Nombre Cliente:',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -2452,10 +2448,10 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                           ),
                                                                           Align(
                                                                             alignment:
-                                                                                AlignmentDirectional(-1.0, -1.0),
+                                                                                const AlignmentDirectional(-1.0, -1.0),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 0.0, 10.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 0.0, 10.0),
                                                                               child: Text(
                                                                                 '${columnOrderRecord.name} ${columnOrderRecord.apellido}',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -2473,7 +2469,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           20.0,
                                                                           0.0,
@@ -2490,7 +2486,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                       // Customize what your widget looks like when it's loading.
                                                                       if (!snapshot
                                                                           .hasData) {
-                                                                        return Center(
+                                                                        return const Center(
                                                                           child:
                                                                               SizedBox(
                                                                             width:
@@ -2515,10 +2511,10 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                         children: [
                                                                           Align(
                                                                             alignment:
-                                                                                AlignmentDirectional(-1.0, -1.0),
+                                                                                const AlignmentDirectional(-1.0, -1.0),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
                                                                               child: Text(
                                                                                 'Rut:',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -2532,10 +2528,10 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                           ),
                                                                           Align(
                                                                             alignment:
-                                                                                AlignmentDirectional(-1.0, -1.0),
+                                                                                const AlignmentDirectional(-1.0, -1.0),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 0.0, 10.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 0.0, 10.0),
                                                                               child: Text(
                                                                                 '${columnOrderRecord.runPagador.toString()}-${columnOrderRecord.dvPagador}',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -2558,12 +2554,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                           .max,
                                                                   children: [
                                                                     Align(
-                                                                      alignment: AlignmentDirectional(
+                                                                      alignment: const AlignmentDirectional(
                                                                           -1.0,
                                                                           -1.0),
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             20.0,
                                                                             10.0,
                                                                             0.0,
@@ -2583,12 +2579,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                       ),
                                                                     ),
                                                                     Align(
-                                                                      alignment: AlignmentDirectional(
+                                                                      alignment: const AlignmentDirectional(
                                                                           -1.0,
                                                                           -1.0),
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             10.0,
                                                                             10.0,
                                                                             0.0,
@@ -2625,12 +2621,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                           .max,
                                                                   children: [
                                                                     Align(
-                                                                      alignment: AlignmentDirectional(
+                                                                      alignment: const AlignmentDirectional(
                                                                           -1.0,
                                                                           -1.0),
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             20.0,
                                                                             10.0,
                                                                             0.0,
@@ -2652,12 +2648,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                     Flexible(
                                                                       child:
                                                                           Align(
-                                                                        alignment: AlignmentDirectional(
+                                                                        alignment: const AlignmentDirectional(
                                                                             -1.0,
                                                                             -1.0),
                                                                         child:
                                                                             Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               10.0,
                                                                               10.0,
                                                                               0.0,
@@ -2683,12 +2679,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                           .max,
                                                                   children: [
                                                                     Align(
-                                                                      alignment: AlignmentDirectional(
+                                                                      alignment: const AlignmentDirectional(
                                                                           -1.0,
                                                                           -1.0),
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             20.0,
                                                                             10.0,
                                                                             0.0,
@@ -2710,12 +2706,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                     Flexible(
                                                                       child:
                                                                           Align(
-                                                                        alignment: AlignmentDirectional(
+                                                                        alignment: const AlignmentDirectional(
                                                                             -1.0,
                                                                             -1.0),
                                                                         child:
                                                                             Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               10.0,
                                                                               10.0,
                                                                               0.0,
@@ -2746,7 +2742,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                     // Customize what your widget looks like when it's loading.
                                                                     if (!snapshot
                                                                         .hasData) {
-                                                                      return Center(
+                                                                      return const Center(
                                                                         child:
                                                                             SizedBox(
                                                                           width:
@@ -2772,12 +2768,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                               .max,
                                                                       children: [
                                                                         Align(
-                                                                          alignment: AlignmentDirectional(
+                                                                          alignment: const AlignmentDirectional(
                                                                               -1.0,
                                                                               -1.0),
                                                                           child:
                                                                               Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 20.0,
                                                                                 10.0,
                                                                                 0.0,
@@ -2798,10 +2794,10 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                           child:
                                                                               Align(
                                                                             alignment:
-                                                                                AlignmentDirectional(-1.0, -1.0),
+                                                                                const AlignmentDirectional(-1.0, -1.0),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 0.0, 10.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 0.0, 10.0),
                                                                               child: Text(
                                                                                 columnOrderRecord.numeroTelefonoEnvio.toString(),
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -2824,12 +2820,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                           .max,
                                                                   children: [
                                                                     Align(
-                                                                      alignment: AlignmentDirectional(
+                                                                      alignment: const AlignmentDirectional(
                                                                           -1.0,
                                                                           -1.0),
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             20.0,
                                                                             10.0,
                                                                             0.0,
@@ -2849,12 +2845,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                       ),
                                                                     ),
                                                                     Align(
-                                                                      alignment: AlignmentDirectional(
+                                                                      alignment: const AlignmentDirectional(
                                                                           -1.0,
                                                                           -1.0),
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             10.0,
                                                                             10.0,
                                                                             0.0,
@@ -2882,12 +2878,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                           .max,
                                                                   children: [
                                                                     Align(
-                                                                      alignment: AlignmentDirectional(
+                                                                      alignment: const AlignmentDirectional(
                                                                           -1.0,
                                                                           -1.0),
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             20.0,
                                                                             10.0,
                                                                             0.0,
@@ -2907,12 +2903,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                       ),
                                                                     ),
                                                                     Align(
-                                                                      alignment: AlignmentDirectional(
+                                                                      alignment: const AlignmentDirectional(
                                                                           -1.0,
                                                                           -1.0),
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             10.0,
                                                                             10.0,
                                                                             0.0,
@@ -2940,12 +2936,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                           .max,
                                                                   children: [
                                                                     Align(
-                                                                      alignment: AlignmentDirectional(
+                                                                      alignment: const AlignmentDirectional(
                                                                           -1.0,
                                                                           -1.0),
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             20.0,
                                                                             10.0,
                                                                             0.0,
@@ -2965,12 +2961,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                       ),
                                                                     ),
                                                                     Align(
-                                                                      alignment: AlignmentDirectional(
+                                                                      alignment: const AlignmentDirectional(
                                                                           -1.0,
                                                                           -1.0),
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             10.0,
                                                                             10.0,
                                                                             0.0,
@@ -3006,12 +3002,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                           .max,
                                                                   children: [
                                                                     Align(
-                                                                      alignment: AlignmentDirectional(
+                                                                      alignment: const AlignmentDirectional(
                                                                           -1.0,
                                                                           -1.0),
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             20.0,
                                                                             10.0,
                                                                             0.0,
@@ -3031,12 +3027,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                       ),
                                                                     ),
                                                                     Align(
-                                                                      alignment: AlignmentDirectional(
+                                                                      alignment: const AlignmentDirectional(
                                                                           -1.0,
                                                                           -1.0),
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             10.0,
                                                                             10.0,
                                                                             0.0,
@@ -3069,12 +3065,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                 ),
                                                                 Align(
                                                                   alignment:
-                                                                      AlignmentDirectional(
+                                                                      const AlignmentDirectional(
                                                                           -1.0,
                                                                           0.0),
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             20.0,
                                                                             0.0,
@@ -3102,7 +3098,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                           .max,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           20.0,
                                                                           0.0,
                                                                           0.0,
@@ -3117,7 +3113,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                           // Customize what your widget looks like when it's loading.
                                                                           if (!snapshot
                                                                               .hasData) {
-                                                                            return Center(
+                                                                            return const Center(
                                                                               child: SizedBox(
                                                                                 width: 50.0,
                                                                                 height: 50.0,
@@ -3136,9 +3132,9 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                                 MainAxisSize.max,
                                                                             children: [
                                                                               Align(
-                                                                                alignment: AlignmentDirectional(-1.0, -1.0),
+                                                                                alignment: const AlignmentDirectional(-1.0, -1.0),
                                                                                 child: Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
                                                                                   child: Text(
                                                                                     'Nombre:',
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -3151,9 +3147,9 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                                 ),
                                                                               ),
                                                                               Align(
-                                                                                alignment: AlignmentDirectional(-1.0, -1.0),
+                                                                                alignment: const AlignmentDirectional(-1.0, -1.0),
                                                                                 child: Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 0.0, 10.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 0.0, 10.0),
                                                                                   child: Text(
                                                                                     '${columnOrderRecord.nombrePagador} ${columnOrderRecord.apellidoPagador}',
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -3171,7 +3167,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           20.0,
                                                                           0.0,
                                                                           0.0,
@@ -3183,10 +3179,10 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                         children: [
                                                                           Align(
                                                                             alignment:
-                                                                                AlignmentDirectional(-1.0, -1.0),
+                                                                                const AlignmentDirectional(-1.0, -1.0),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
                                                                               child: Text(
                                                                                 'Rut:',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -3200,10 +3196,10 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                           ),
                                                                           Align(
                                                                             alignment:
-                                                                                AlignmentDirectional(-1.0, -1.0),
+                                                                                const AlignmentDirectional(-1.0, -1.0),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 0.0, 10.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 0.0, 10.0),
                                                                               child: Text(
                                                                                 '${formatNumber(
                                                                                   columnOrderRecord.runPagador,
@@ -3228,12 +3224,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                               .max,
                                                                       children: [
                                                                         Align(
-                                                                          alignment: AlignmentDirectional(
+                                                                          alignment: const AlignmentDirectional(
                                                                               -1.0,
                                                                               -1.0),
                                                                           child:
                                                                               Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 20.0,
                                                                                 10.0,
                                                                                 0.0,
@@ -3254,10 +3250,10 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                           child:
                                                                               Align(
                                                                             alignment:
-                                                                                AlignmentDirectional(-1.0, -1.0),
+                                                                                const AlignmentDirectional(-1.0, -1.0),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 0.0, 10.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 0.0, 10.0),
                                                                               child: Text(
                                                                                 columnOrderRecord.direccionPagador,
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -3278,12 +3274,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                               .max,
                                                                       children: [
                                                                         Align(
-                                                                          alignment: AlignmentDirectional(
+                                                                          alignment: const AlignmentDirectional(
                                                                               -1.0,
                                                                               -1.0),
                                                                           child:
                                                                               Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 20.0,
                                                                                 10.0,
                                                                                 0.0,
@@ -3304,10 +3300,10 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                           child:
                                                                               Align(
                                                                             alignment:
-                                                                                AlignmentDirectional(-1.0, -1.0),
+                                                                                const AlignmentDirectional(-1.0, -1.0),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 0.0, 10.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 0.0, 10.0),
                                                                               child: Text(
                                                                                 columnOrderRecord.email,
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -3328,12 +3324,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                               .max,
                                                                       children: [
                                                                         Align(
-                                                                          alignment: AlignmentDirectional(
+                                                                          alignment: const AlignmentDirectional(
                                                                               -1.0,
                                                                               -1.0),
                                                                           child:
                                                                               Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 20.0,
                                                                                 10.0,
                                                                                 0.0,
@@ -3351,12 +3347,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                           ),
                                                                         ),
                                                                         Align(
-                                                                          alignment: AlignmentDirectional(
+                                                                          alignment: const AlignmentDirectional(
                                                                               -1.0,
                                                                               -1.0),
                                                                           child:
                                                                               Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 10.0,
                                                                                 10.0,
                                                                                 0.0,
@@ -3381,12 +3377,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                               .max,
                                                                       children: [
                                                                         Align(
-                                                                          alignment: AlignmentDirectional(
+                                                                          alignment: const AlignmentDirectional(
                                                                               -1.0,
                                                                               -1.0),
                                                                           child:
                                                                               Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 20.0,
                                                                                 10.0,
                                                                                 0.0,
@@ -3404,12 +3400,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                           ),
                                                                         ),
                                                                         Align(
-                                                                          alignment: AlignmentDirectional(
+                                                                          alignment: const AlignmentDirectional(
                                                                               -1.0,
                                                                               -1.0),
                                                                           child:
                                                                               Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 10.0,
                                                                                 10.0,
                                                                                 0.0,
@@ -3434,12 +3430,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                               .max,
                                                                       children: [
                                                                         Align(
-                                                                          alignment: AlignmentDirectional(
+                                                                          alignment: const AlignmentDirectional(
                                                                               -1.0,
                                                                               -1.0),
                                                                           child:
                                                                               Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 20.0,
                                                                                 10.0,
                                                                                 0.0,
@@ -3457,12 +3453,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                           ),
                                                                         ),
                                                                         Align(
-                                                                          alignment: AlignmentDirectional(
+                                                                          alignment: const AlignmentDirectional(
                                                                               -1.0,
                                                                               -1.0),
                                                                           child:
                                                                               Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 10.0,
                                                                                 10.0,
                                                                                 0.0,
@@ -3487,12 +3483,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                               .max,
                                                                       children: [
                                                                         Align(
-                                                                          alignment: AlignmentDirectional(
+                                                                          alignment: const AlignmentDirectional(
                                                                               -1.0,
                                                                               -1.0),
                                                                           child:
                                                                               Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 20.0,
                                                                                 10.0,
                                                                                 0.0,
@@ -3510,12 +3506,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                           ),
                                                                         ),
                                                                         Align(
-                                                                          alignment: AlignmentDirectional(
+                                                                          alignment: const AlignmentDirectional(
                                                                               -1.0,
                                                                               -1.0),
                                                                           child:
                                                                               Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 10.0,
                                                                                 10.0,
                                                                                 0.0,
@@ -3534,7 +3530,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                         ),
                                                                       ],
                                                                     ),
-                                                                    Divider(
+                                                                    const Divider(
                                                                       thickness:
                                                                           1.0,
                                                                       color: Color(
@@ -3544,12 +3540,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                 ),
                                                                 Align(
                                                                   alignment:
-                                                                      AlignmentDirectional(
+                                                                      const AlignmentDirectional(
                                                                           -1.0,
                                                                           0.0),
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             20.0,
                                                                             0.0,
@@ -3577,7 +3573,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                           .max,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           20.0,
                                                                           0.0,
                                                                           0.0,
@@ -3592,7 +3588,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                           // Customize what your widget looks like when it's loading.
                                                                           if (!snapshot
                                                                               .hasData) {
-                                                                            return Center(
+                                                                            return const Center(
                                                                               child: SizedBox(
                                                                                 width: 50.0,
                                                                                 height: 50.0,
@@ -3611,9 +3607,9 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                                 MainAxisSize.max,
                                                                             children: [
                                                                               Align(
-                                                                                alignment: AlignmentDirectional(-1.0, -1.0),
+                                                                                alignment: const AlignmentDirectional(-1.0, -1.0),
                                                                                 child: Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
                                                                                   child: Text(
                                                                                     'Nombre Cliente:',
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -3626,9 +3622,9 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                                 ),
                                                                               ),
                                                                               Align(
-                                                                                alignment: AlignmentDirectional(-1.0, -1.0),
+                                                                                alignment: const AlignmentDirectional(-1.0, -1.0),
                                                                                 child: Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 0.0, 10.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 0.0, 10.0),
                                                                                   child: Text(
                                                                                     '${columnOrderRecord.name} ${columnOrderRecord.apellido}',
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -3646,7 +3642,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           20.0,
                                                                           0.0,
                                                                           0.0,
@@ -3658,10 +3654,10 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                         children: [
                                                                           Align(
                                                                             alignment:
-                                                                                AlignmentDirectional(-1.0, -1.0),
+                                                                                const AlignmentDirectional(-1.0, -1.0),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
                                                                               child: Text(
                                                                                 'Rut Cliente:',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -3675,10 +3671,10 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                           ),
                                                                           Align(
                                                                             alignment:
-                                                                                AlignmentDirectional(-1.0, -1.0),
+                                                                                const AlignmentDirectional(-1.0, -1.0),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 0.0, 10.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 0.0, 10.0),
                                                                               child: Text(
                                                                                 '${formatNumber(
                                                                                   columnOrderRecord.runEnvio,
@@ -3698,7 +3694,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           20.0,
                                                                           0.0,
                                                                           0.0,
@@ -3713,7 +3709,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                           // Customize what your widget looks like when it's loading.
                                                                           if (!snapshot
                                                                               .hasData) {
-                                                                            return Center(
+                                                                            return const Center(
                                                                               child: SizedBox(
                                                                                 width: 50.0,
                                                                                 height: 50.0,
@@ -3732,9 +3728,9 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                                 MainAxisSize.max,
                                                                             children: [
                                                                               Align(
-                                                                                alignment: AlignmentDirectional(-1.0, -1.0),
+                                                                                alignment: const AlignmentDirectional(-1.0, -1.0),
                                                                                 child: Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
                                                                                   child: Text(
                                                                                     'Número telefono:',
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -3747,9 +3743,9 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                                 ),
                                                                               ),
                                                                               Align(
-                                                                                alignment: AlignmentDirectional(-1.0, -1.0),
+                                                                                alignment: const AlignmentDirectional(-1.0, -1.0),
                                                                                 child: Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 0.0, 10.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 0.0, 10.0),
                                                                                   child: Text(
                                                                                     rowUserRecord.phoneNumber,
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -3772,12 +3768,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                               .max,
                                                                       children: [
                                                                         Align(
-                                                                          alignment: AlignmentDirectional(
+                                                                          alignment: const AlignmentDirectional(
                                                                               -1.0,
                                                                               -1.0),
                                                                           child:
                                                                               Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 20.0,
                                                                                 10.0,
                                                                                 0.0,
@@ -3798,10 +3794,10 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                           child:
                                                                               Align(
                                                                             alignment:
-                                                                                AlignmentDirectional(-1.0, -1.0),
+                                                                                const AlignmentDirectional(-1.0, -1.0),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 0.0, 10.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 0.0, 10.0),
                                                                               child: Text(
                                                                                 columnOrderRecord.direccionEnvio,
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -3822,12 +3818,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                               .max,
                                                                       children: [
                                                                         Align(
-                                                                          alignment: AlignmentDirectional(
+                                                                          alignment: const AlignmentDirectional(
                                                                               -1.0,
                                                                               -1.0),
                                                                           child:
                                                                               Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 20.0,
                                                                                 10.0,
                                                                                 0.0,
@@ -3848,10 +3844,10 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                           child:
                                                                               Align(
                                                                             alignment:
-                                                                                AlignmentDirectional(-1.0, -1.0),
+                                                                                const AlignmentDirectional(-1.0, -1.0),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 0.0, 10.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 0.0, 10.0),
                                                                               child: Text(
                                                                                 columnOrderRecord.emailEnvio,
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -3872,12 +3868,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                               .max,
                                                                       children: [
                                                                         Align(
-                                                                          alignment: AlignmentDirectional(
+                                                                          alignment: const AlignmentDirectional(
                                                                               -1.0,
                                                                               -1.0),
                                                                           child:
                                                                               Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 20.0,
                                                                                 10.0,
                                                                                 0.0,
@@ -3895,12 +3891,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                           ),
                                                                         ),
                                                                         Align(
-                                                                          alignment: AlignmentDirectional(
+                                                                          alignment: const AlignmentDirectional(
                                                                               -1.0,
                                                                               -1.0),
                                                                           child:
                                                                               Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 10.0,
                                                                                 10.0,
                                                                                 0.0,
@@ -3925,12 +3921,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                               .max,
                                                                       children: [
                                                                         Align(
-                                                                          alignment: AlignmentDirectional(
+                                                                          alignment: const AlignmentDirectional(
                                                                               -1.0,
                                                                               -1.0),
                                                                           child:
                                                                               Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 20.0,
                                                                                 10.0,
                                                                                 0.0,
@@ -3948,12 +3944,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                           ),
                                                                         ),
                                                                         Align(
-                                                                          alignment: AlignmentDirectional(
+                                                                          alignment: const AlignmentDirectional(
                                                                               -1.0,
                                                                               -1.0),
                                                                           child:
                                                                               Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 10.0,
                                                                                 10.0,
                                                                                 0.0,
@@ -3978,12 +3974,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                               .max,
                                                                       children: [
                                                                         Align(
-                                                                          alignment: AlignmentDirectional(
+                                                                          alignment: const AlignmentDirectional(
                                                                               -1.0,
                                                                               -1.0),
                                                                           child:
                                                                               Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 20.0,
                                                                                 10.0,
                                                                                 0.0,
@@ -4001,12 +3997,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                           ),
                                                                         ),
                                                                         Align(
-                                                                          alignment: AlignmentDirectional(
+                                                                          alignment: const AlignmentDirectional(
                                                                               -1.0,
                                                                               -1.0),
                                                                           child:
                                                                               Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 10.0,
                                                                                 10.0,
                                                                                 0.0,
@@ -4031,12 +4027,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                               .max,
                                                                       children: [
                                                                         Align(
-                                                                          alignment: AlignmentDirectional(
+                                                                          alignment: const AlignmentDirectional(
                                                                               -1.0,
                                                                               -1.0),
                                                                           child:
                                                                               Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 20.0,
                                                                                 10.0,
                                                                                 0.0,
@@ -4054,12 +4050,12 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                           ),
                                                                         ),
                                                                         Align(
-                                                                          alignment: AlignmentDirectional(
+                                                                          alignment: const AlignmentDirectional(
                                                                               -1.0,
                                                                               -1.0),
                                                                           child:
                                                                               Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 10.0,
                                                                                 10.0,
                                                                                 0.0,
@@ -4087,7 +4083,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     20.0,
                                                                     0.0,
@@ -4102,7 +4098,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                             return ListView
                                                                 .builder(
                                                               padding:
-                                                                  EdgeInsets
+                                                                  const EdgeInsets
                                                                       .fromLTRB(
                                                                 0,
                                                                 0,
@@ -4131,7 +4127,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                     // Customize what your widget looks like when it's loading.
                                                                     if (!snapshot
                                                                         .hasData) {
-                                                                      return Center(
+                                                                      return const Center(
                                                                         child:
                                                                             SizedBox(
                                                                           width:
@@ -4162,7 +4158,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                           crossAxisAlignment:
                                                                               CrossAxisAlignment.start,
                                                                           children: [
-                                                                            Divider(
+                                                                            const Divider(
                                                                               thickness: 1.0,
                                                                               color: Color(0x80000000),
                                                                             ),
@@ -4170,7 +4166,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
                                                                                   child: Text(
                                                                                     'Nombre producto:',
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -4183,7 +4179,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                                 ),
                                                                                 Flexible(
                                                                                   child: Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 0.0, 10.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 0.0, 10.0),
                                                                                     child: Text(
                                                                                       columnSelectedItemsRecord.name,
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -4203,7 +4199,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                                 builder: (context, snapshot) {
                                                                                   // Customize what your widget looks like when it's loading.
                                                                                   if (!snapshot.hasData) {
-                                                                                    return Center(
+                                                                                    return const Center(
                                                                                       child: SizedBox(
                                                                                         width: 50.0,
                                                                                         height: 50.0,
@@ -4220,7 +4216,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     children: [
                                                                                       Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
                                                                                         child: Text(
                                                                                           'Variación:',
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -4233,7 +4229,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                                       ),
                                                                                       Flexible(
                                                                                         child: Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 0.0, 10.0),
+                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 0.0, 10.0),
                                                                                           child: Text(
                                                                                             rowVariacionRecord.tamanio,
                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -4253,7 +4249,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
                                                                                   child: Text(
                                                                                     'Precio:',
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -4265,7 +4261,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                                   ),
                                                                                 ),
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 0.0, 10.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 0.0, 10.0),
                                                                                   child: Text(
                                                                                     formatNumber(
                                                                                       columnSelectedItemsRecord.price,
@@ -4287,7 +4283,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
                                                                                   child: Text(
                                                                                     'Cantidad:',
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -4299,7 +4295,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                                   ),
                                                                                 ),
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 0.0, 10.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 0.0, 10.0),
                                                                                   child: Text(
                                                                                     columnSelectedItemsRecord.cantidad.toString(),
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -4316,7 +4312,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
                                                                                   child: Text(
                                                                                     'Subtotal:',
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -4328,7 +4324,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                                   ),
                                                                                 ),
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 0.0, 10.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 0.0, 10.0),
                                                                                   child: Text(
                                                                                     formatNumber(
                                                                                       columnSelectedItemsRecord.subTotal,
@@ -4371,7 +4367,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                         ?.adminGeneral,
                                                     false))
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 30.0, 0.0, 0.0),
                                                 child: AuthUserStreamWidget(
@@ -4386,21 +4382,21 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                 builder:
                                                                     (alertDialogContext) {
                                                                   return AlertDialog(
-                                                                    content: Text(
+                                                                    content: const Text(
                                                                         '¿Deseas eliminar esta orden?'),
                                                                     actions: [
                                                                       TextButton(
                                                                         onPressed: () => Navigator.pop(
                                                                             alertDialogContext,
                                                                             false),
-                                                                        child: Text(
+                                                                        child: const Text(
                                                                             'Cancelar'),
                                                                       ),
                                                                       TextButton(
                                                                         onPressed: () => Navigator.pop(
                                                                             alertDialogContext,
                                                                             true),
-                                                                        child: Text(
+                                                                        child: const Text(
                                                                             'Confirmar'),
                                                                       ),
                                                                     ],
@@ -4409,29 +4405,30 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                               ) ??
                                                               false;
                                                       if (confirmDialogResponse) {
-                                                        final _localAuth =
+                                                        final localAuth =
                                                             LocalAuthentication();
                                                         bool
-                                                            _isBiometricSupported =
-                                                            await _localAuth
+                                                            isBiometricSupported =
+                                                            await localAuth
                                                                 .isDeviceSupported();
 
-                                                        if (_isBiometricSupported) {
+                                                        if (isBiometricSupported) {
                                                           _model.biometric =
-                                                              await _localAuth
+                                                              await localAuth
                                                                   .authenticate(
                                                                       localizedReason:
                                                                           'Antes de eliminar confirmar con tus datos biométricos.');
                                                           setState(() {});
                                                         }
 
-                                                        if (_model.biometric!) {
+                                                        if (_model.biometric) {
                                                           await widget
                                                               .detalleOrden!
                                                               .reference
                                                               .delete();
                                                           Navigator.pop(
                                                               context);
+                                                          context.safePop();
                                                         }
                                                       }
 
@@ -4445,14 +4442,14 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                           1.0,
                                                       height: 40.0,
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   24.0,
                                                                   10.0,
                                                                   24.0,
                                                                   10.0),
                                                       iconPadding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -4475,7 +4472,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                                                     0.0,
                                                               ),
                                                       elevation: 3.0,
-                                                      borderSide: BorderSide(
+                                                      borderSide: const BorderSide(
                                                         color:
                                                             Colors.transparent,
                                                         width: 1.0,
@@ -4494,8 +4491,8 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
                                   ),
                                 ),
                               ]
-                                  .addToStart(SizedBox(height: 10.0))
-                                  .addToEnd(SizedBox(height: 30.0)),
+                                  .addToStart(const SizedBox(height: 10.0))
+                                  .addToEnd(const SizedBox(height: 30.0)),
                             ),
                           ),
                         ),
@@ -4511,7 +4508,7 @@ class _DetalleOrdenWidgetState extends State<DetalleOrdenWidget> {
               ))
                 Flexible(
                   child: Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8.0),
                       child: Image.asset(

@@ -1,27 +1,15 @@
-import '/auth/firebase_auth/auth_util.dart';
-import '/backend/backend.dart';
-import '/backend/firebase_storage/storage.dart';
-import '/flutter_flow/flutter_flow_drop_down.dart';
-import '/flutter_flow/flutter_flow_expanded_image_view.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import '/flutter_flow/upload_data.dart';
-import '/pages/componentes/crear_variacion/crear_variacion_widget.dart';
-import '/pages/componentes/modificar_variacion/modificar_variacion_widget.dart';
 import 'editar_productos_widget.dart' show EditarProductosWidget;
-import 'package:auto_size_text/auto_size_text.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:page_transition/page_transition.dart';
-import 'package:provider/provider.dart';
 
 class EditarProductosModel extends FlutterFlowModel<EditarProductosWidget> {
   ///  State fields for stateful widgets in this component.
+
+  bool isDataUploading = false;
+  FFUploadedFile uploadedLocalFile =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl = '';
 
   // State field(s) for txtNombre widget.
   FocusNode? txtNombreFocusNode;
@@ -37,13 +25,6 @@ class EditarProductosModel extends FlutterFlowModel<EditarProductosWidget> {
   TextEditingController? txtCodeBarraTextController;
   String? Function(BuildContext, String?)? txtCodeBarraTextControllerValidator;
   var escanearP = '';
-  // State field(s) for txtTamanio widget.
-  FocusNode? txtTamanioFocusNode;
-  TextEditingController? txtTamanioTextController;
-  String? Function(BuildContext, String?)? txtTamanioTextControllerValidator;
-  // State field(s) for DropDown widget.
-  String? dropDownValue1;
-  FormFieldController<String>? dropDownValueController1;
   // State field(s) for txtIndicacionesyContraindicaciones widget.
   FocusNode? txtIndicacionesyContraindicacionesFocusNode;
   TextEditingController? txtIndicacionesyContraindicacionesTextController;
@@ -65,8 +46,8 @@ class EditarProductosModel extends FlutterFlowModel<EditarProductosWidget> {
       txtPrecaucionesTextControllerValidator;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode1;
-  TextEditingController? textController9;
-  String? Function(BuildContext, String?)? textController9Validator;
+  TextEditingController? textController8;
+  String? Function(BuildContext, String?)? textController8Validator;
   // State field(s) for txtIngredientes widget.
   FocusNode? txtIngredientesFocusNode;
   TextEditingController? txtIngredientesTextController;
@@ -74,8 +55,8 @@ class EditarProductosModel extends FlutterFlowModel<EditarProductosWidget> {
       txtIngredientesTextControllerValidator;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode2;
-  TextEditingController? textController11;
-  String? Function(BuildContext, String?)? textController11Validator;
+  TextEditingController? textController10;
+  String? Function(BuildContext, String?)? textController10Validator;
   // State field(s) for TxtRebaja widget.
   FocusNode? txtRebajaFocusNode;
   TextEditingController? txtRebajaTextController;
@@ -86,20 +67,15 @@ class EditarProductosModel extends FlutterFlowModel<EditarProductosWidget> {
   String? Function(BuildContext, String?)? txtMarcaTextControllerValidator;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode3;
-  TextEditingController? textController14;
-  String? Function(BuildContext, String?)? textController14Validator;
+  TextEditingController? textController13;
+  String? Function(BuildContext, String?)? textController13Validator;
   // State field(s) for Switch widget.
   bool? switchValue1;
   // State field(s) for Switch widget.
   bool? switchValue2;
-  bool isDataUploading = false;
-  FFUploadedFile uploadedLocalFile =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl = '';
-
   // State field(s) for DropDown widget.
-  String? dropDownValue2;
-  FormFieldController<String>? dropDownValueController2;
+  String? dropDownValue;
+  FormFieldController<String>? dropDownValueController;
   // State field(s) for etiquetaProducto widget.
   FocusNode? etiquetaProductoFocusNode;
   TextEditingController? etiquetaProductoTextController;
@@ -120,9 +96,6 @@ class EditarProductosModel extends FlutterFlowModel<EditarProductosWidget> {
     txtCodeBarraFocusNode?.dispose();
     txtCodeBarraTextController?.dispose();
 
-    txtTamanioFocusNode?.dispose();
-    txtTamanioTextController?.dispose();
-
     txtIndicacionesyContraindicacionesFocusNode?.dispose();
     txtIndicacionesyContraindicacionesTextController?.dispose();
 
@@ -136,13 +109,13 @@ class EditarProductosModel extends FlutterFlowModel<EditarProductosWidget> {
     txtPrecaucionesTextController?.dispose();
 
     textFieldFocusNode1?.dispose();
-    textController9?.dispose();
+    textController8?.dispose();
 
     txtIngredientesFocusNode?.dispose();
     txtIngredientesTextController?.dispose();
 
     textFieldFocusNode2?.dispose();
-    textController11?.dispose();
+    textController10?.dispose();
 
     txtRebajaFocusNode?.dispose();
     txtRebajaTextController?.dispose();
@@ -151,7 +124,7 @@ class EditarProductosModel extends FlutterFlowModel<EditarProductosWidget> {
     txtMarcaTextController?.dispose();
 
     textFieldFocusNode3?.dispose();
-    textController14?.dispose();
+    textController13?.dispose();
 
     etiquetaProductoFocusNode?.dispose();
     etiquetaProductoTextController?.dispose();

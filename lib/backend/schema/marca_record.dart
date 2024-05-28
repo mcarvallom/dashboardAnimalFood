@@ -3,23 +3,16 @@ import 'dart:async';
 import 'package:collection/collection.dart';
 
 import '/backend/schema/util/firestore_util.dart';
-import '/backend/schema/util/schema_util.dart';
 
 import 'index.dart';
-import '/flutter_flow/flutter_flow_util.dart';
 
 class MarcaRecord extends FirestoreRecord {
   MarcaRecord._(
-    DocumentReference reference,
-    Map<String, dynamic> data,
-  ) : super(reference, data) {
+    super.reference,
+    super.data,
+  ) {
     _initializeFields();
   }
-
-  // "categoria" field.
-  List<DocumentReference>? _categoria;
-  List<DocumentReference> get categoria => _categoria ?? const [];
-  bool hasCategoria() => _categoria != null;
 
   // "imagen" field.
   String? _imagen;
@@ -51,14 +44,19 @@ class MarcaRecord extends FirestoreRecord {
   String get sobrelaMarca => _sobrelaMarca ?? '';
   bool hasSobrelaMarca() => _sobrelaMarca != null;
 
+  // "categoria" field.
+  List<String>? _categoria;
+  List<String> get categoria => _categoria ?? const [];
+  bool hasCategoria() => _categoria != null;
+
   void _initializeFields() {
-    _categoria = getDataList(snapshotData['categoria']);
     _imagen = snapshotData['imagen'] as String?;
     _nombreMarca = snapshotData['nombreMarca'] as String?;
     _destacado = snapshotData['destacado'] as bool?;
     _carrusel = getDataList(snapshotData['carrusel']);
     _imagenDetalle = snapshotData['imagenDetalle'] as String?;
     _sobrelaMarca = snapshotData['sobrelaMarca'] as String?;
+    _categoria = getDataList(snapshotData['categoria']);
   }
 
   static CollectionReference get collection =>
@@ -120,24 +118,24 @@ class MarcaRecordDocumentEquality implements Equality<MarcaRecord> {
   @override
   bool equals(MarcaRecord? e1, MarcaRecord? e2) {
     const listEquality = ListEquality();
-    return listEquality.equals(e1?.categoria, e2?.categoria) &&
-        e1?.imagen == e2?.imagen &&
+    return e1?.imagen == e2?.imagen &&
         e1?.nombreMarca == e2?.nombreMarca &&
         e1?.destacado == e2?.destacado &&
         listEquality.equals(e1?.carrusel, e2?.carrusel) &&
         e1?.imagenDetalle == e2?.imagenDetalle &&
-        e1?.sobrelaMarca == e2?.sobrelaMarca;
+        e1?.sobrelaMarca == e2?.sobrelaMarca &&
+        listEquality.equals(e1?.categoria, e2?.categoria);
   }
 
   @override
   int hash(MarcaRecord? e) => const ListEquality().hash([
-        e?.categoria,
         e?.imagen,
         e?.nombreMarca,
         e?.destacado,
         e?.carrusel,
         e?.imagenDetalle,
-        e?.sobrelaMarca
+        e?.sobrelaMarca,
+        e?.categoria
       ]);
 
   @override

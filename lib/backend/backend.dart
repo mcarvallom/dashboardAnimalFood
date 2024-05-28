@@ -25,9 +25,11 @@ import 'schema/evidencia_entrega_fallida_record.dart';
 import 'schema/preguntas_frecuentes_record.dart';
 import 'schema/variacion_record.dart';
 import 'schema/notificaciones_record.dart';
+import 'schema/blog_record.dart';
+import 'schema/soporte_record.dart';
 
 export 'dart:async' show StreamSubscription;
-export 'package:cloud_firestore/cloud_firestore.dart';
+export 'package:cloud_firestore/cloud_firestore.dart' hide Order;
 export 'package:firebase_core/firebase_core.dart';
 export 'schema/index.dart';
 export 'schema/util/firestore_util.dart';
@@ -53,6 +55,8 @@ export 'schema/evidencia_entrega_fallida_record.dart';
 export 'schema/preguntas_frecuentes_record.dart';
 export 'schema/variacion_record.dart';
 export 'schema/notificaciones_record.dart';
+export 'schema/blog_record.dart';
+export 'schema/soporte_record.dart';
 
 /// Functions to query TiendaRecords (as a Stream and as a Future).
 Future<int> queryTiendaRecordCount({
@@ -798,6 +802,80 @@ Future<List<NotificacionesRecord>> queryNotificacionesRecordOnce({
       singleRecord: singleRecord,
     );
 
+/// Functions to query BlogRecords (as a Stream and as a Future).
+Future<int> queryBlogRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      BlogRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<BlogRecord>> queryBlogRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      BlogRecord.collection,
+      BlogRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<BlogRecord>> queryBlogRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      BlogRecord.collection,
+      BlogRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query SoporteRecords (as a Stream and as a Future).
+Future<int> querySoporteRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      SoporteRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<SoporteRecord>> querySoporteRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      SoporteRecord.collection,
+      SoporteRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<SoporteRecord>> querySoporteRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      SoporteRecord.collection,
+      SoporteRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
 Future<int> queryCollectionCount(
   Query collection, {
   Query Function(Query)? queryBuilder,
@@ -917,7 +995,7 @@ Future<FFFirestorePage<T>> queryCollectionPage<T>(
   } else {
     docSnapshot = await query.get();
   }
-  final getDocs = (QuerySnapshot s) => s.docs
+  getDocs(QuerySnapshot s) => s.docs
       .map(
         (d) => safeGet(
           () => recordBuilder(d),

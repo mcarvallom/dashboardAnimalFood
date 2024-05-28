@@ -20,7 +20,7 @@ Future<void> sendNotificationaTodos(String mensaje, String titulo) async {
     "app_id": appId,
     "contents": {"en": mensaje, "es": mensaje},
     "headings": {"en": titulo, "es": titulo},
-    "app_url": "animalfoodapp://animalfoodapp.com/Notificaciones",
+    "app_url": "app://animalfoodchile.cl/Notificaciones",
     "included_segments": ["Total Subscriptions"]
   };
   final http.Response response = await http.post(

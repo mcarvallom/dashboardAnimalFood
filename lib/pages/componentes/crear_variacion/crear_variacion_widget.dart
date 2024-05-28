@@ -1,15 +1,11 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'crear_variacion_model.dart';
 export 'crear_variacion_model.dart';
 
@@ -74,7 +70,7 @@ class _CrearVariacionWidgetState extends State<CrearVariacionWidget> {
         mainAxisSize: MainAxisSize.min,
         children: [
           MasonryGridView.builder(
-            gridDelegate: SliverSimpleGridDelegateWithFixedCrossAxisCount(
+            gridDelegate: const SliverSimpleGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
             ),
             crossAxisSpacing: 10.0,
@@ -85,7 +81,7 @@ class _CrearVariacionWidgetState extends State<CrearVariacionWidget> {
               return [
                 () => Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                       child: TextFormField(
                         controller: _model.txtNameTextController,
                         focusNode: _model.txtNameFocusNode,
@@ -104,14 +100,14 @@ class _CrearVariacionWidgetState extends State<CrearVariacionWidget> {
                                     letterSpacing: 0.0,
                                   ),
                           enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Color(0xFF00AC67),
                               width: 2.0,
                             ),
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Color(0xFF00AC67),
                               width: 2.0,
                             ),
@@ -142,7 +138,7 @@ class _CrearVariacionWidgetState extends State<CrearVariacionWidget> {
                     ),
                 () => Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                       child: TextFormField(
                         controller: _model.txtStockTextController,
                         focusNode: _model.txtStockFocusNode,
@@ -161,14 +157,14 @@ class _CrearVariacionWidgetState extends State<CrearVariacionWidget> {
                                     letterSpacing: 0.0,
                                   ),
                           enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Color(0xFF00AC67),
                               width: 2.0,
                             ),
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Color(0xFF00AC67),
                               width: 2.0,
                             ),
@@ -199,7 +195,7 @@ class _CrearVariacionWidgetState extends State<CrearVariacionWidget> {
                     ),
                 () => Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                       child: TextFormField(
                         controller: _model.txtPrecioTextController,
                         focusNode: _model.txtPrecioFocusNode,
@@ -218,14 +214,14 @@ class _CrearVariacionWidgetState extends State<CrearVariacionWidget> {
                                     letterSpacing: 0.0,
                                   ),
                           enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Color(0xFF00AC67),
                               width: 2.0,
                             ),
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Color(0xFF00AC67),
                               width: 2.0,
                             ),
@@ -257,7 +253,7 @@ class _CrearVariacionWidgetState extends State<CrearVariacionWidget> {
                     ),
                 () => Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                       child: TextFormField(
                         controller: _model.txtRebajaTextController,
                         focusNode: _model.txtRebajaFocusNode,
@@ -276,14 +272,14 @@ class _CrearVariacionWidgetState extends State<CrearVariacionWidget> {
                                     letterSpacing: 0.0,
                                   ),
                           enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Color(0xFF00AC67),
                               width: 2.0,
                             ),
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Color(0xFF00AC67),
                               width: 2.0,
                             ),
@@ -317,7 +313,7 @@ class _CrearVariacionWidgetState extends State<CrearVariacionWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 8.0, 0.0),
                           child: TextFormField(
                             controller: _model.txtCodigoBarraTextController,
@@ -339,14 +335,14 @@ class _CrearVariacionWidgetState extends State<CrearVariacionWidget> {
                                     letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Color(0xFF00AC67),
                                   width: 2.0,
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
                               ),
                               focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Color(0xFF00AC67),
                                   width: 2.0,
                                 ),
@@ -379,7 +375,7 @@ class _CrearVariacionWidgetState extends State<CrearVariacionWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 5.0, 0.0, 0.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -397,7 +393,7 @@ class _CrearVariacionWidgetState extends State<CrearVariacionWidget> {
 
                               setState(() {
                                 _model.txtCodigoBarraTextController?.text =
-                                    _model.escanearProducto1!;
+                                    _model.escanearProducto1;
                               });
 
                               setState(() {});
@@ -412,7 +408,7 @@ class _CrearVariacionWidgetState extends State<CrearVariacionWidget> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: FaIcon(
                                       FontAwesomeIcons.barcode,
                                       color: FlutterFlowTheme.of(context)
@@ -439,7 +435,7 @@ class _CrearVariacionWidgetState extends State<CrearVariacionWidget> {
                     ),
                 () => Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           await VariacionRecord.createDoc(widget.producto!)
@@ -459,11 +455,11 @@ class _CrearVariacionWidgetState extends State<CrearVariacionWidget> {
                         text: 'Agregar',
                         options: FFButtonOptions(
                           height: 40.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: Color(0xFF00B235),
+                          color: const Color(0xFF00B235),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Readex Pro',
@@ -471,7 +467,7 @@ class _CrearVariacionWidgetState extends State<CrearVariacionWidget> {
                                     letterSpacing: 0.0,
                                   ),
                           elevation: 3.0,
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),
@@ -482,7 +478,7 @@ class _CrearVariacionWidgetState extends State<CrearVariacionWidget> {
               ][index]();
             },
           ),
-        ].addToStart(SizedBox(height: 20.0)).addToEnd(SizedBox(height: 20.0)),
+        ].addToStart(const SizedBox(height: 20.0)).addToEnd(const SizedBox(height: 20.0)),
       ),
     );
   }

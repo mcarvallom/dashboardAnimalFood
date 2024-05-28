@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -6,11 +5,8 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/custom_code/actions/index.dart' as actions;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'notificaciones_a_usuario_model.dart';
 export 'notificaciones_a_usuario_model.dart';
 
@@ -74,9 +70,9 @@ class _NotificacionesAUsuarioWidgetState
                         children: [
                           Flexible(
                             child: Align(
-                              alignment: AlignmentDirectional(-1.0, -1.0),
+                              alignment: const AlignmentDirectional(-1.0, -1.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     20.0, 20.0, 0.0, 10.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -120,7 +116,7 @@ class _NotificacionesAUsuarioWidgetState
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 20.0, 0.0, 20.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -130,7 +126,7 @@ class _NotificacionesAUsuarioWidgetState
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 10.0, 0.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -151,12 +147,12 @@ class _NotificacionesAUsuarioWidgetState
                                                 ),
                                           ),
                                           Container(
-                                            decoration: BoxDecoration(),
+                                            decoration: const BoxDecoration(),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 10.0, 0.0, 0.0),
-                                              child: Container(
+                                              child: SizedBox(
                                                 width: 300.0,
                                                 child: TextFormField(
                                                   controller:
@@ -166,7 +162,7 @@ class _NotificacionesAUsuarioWidgetState
                                                   onChanged: (_) =>
                                                       EasyDebounce.debounce(
                                                     '_model.textController1',
-                                                    Duration(milliseconds: 200),
+                                                    const Duration(milliseconds: 200),
                                                     () => setState(() {}),
                                                   ),
                                                   autofocus: true,
@@ -197,7 +193,7 @@ class _NotificacionesAUsuarioWidgetState
                                                         ),
                                                     enabledBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: BorderSide(
+                                                      borderSide: const BorderSide(
                                                         color:
                                                             Color(0xFF00AC67),
                                                         width: 1.0,
@@ -208,7 +204,7 @@ class _NotificacionesAUsuarioWidgetState
                                                     ),
                                                     focusedBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: BorderSide(
+                                                      borderSide: const BorderSide(
                                                         color:
                                                             Color(0xFF00AC67),
                                                         width: 1.0,
@@ -268,7 +264,7 @@ class _NotificacionesAUsuarioWidgetState
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 10.0, 0.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -289,12 +285,12 @@ class _NotificacionesAUsuarioWidgetState
                                                 ),
                                           ),
                                           Container(
-                                            decoration: BoxDecoration(),
+                                            decoration: const BoxDecoration(),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 10.0, 0.0, 0.0),
-                                              child: Container(
+                                              child: SizedBox(
                                                 width: 300.0,
                                                 child: TextFormField(
                                                   controller:
@@ -304,7 +300,7 @@ class _NotificacionesAUsuarioWidgetState
                                                   onChanged: (_) =>
                                                       EasyDebounce.debounce(
                                                     '_model.textController2',
-                                                    Duration(milliseconds: 200),
+                                                    const Duration(milliseconds: 200),
                                                     () => setState(() {}),
                                                   ),
                                                   autofocus: true,
@@ -335,7 +331,7 @@ class _NotificacionesAUsuarioWidgetState
                                                         ),
                                                     enabledBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: BorderSide(
+                                                      borderSide: const BorderSide(
                                                         color:
                                                             Color(0xFF00AC67),
                                                         width: 1.0,
@@ -346,7 +342,7 @@ class _NotificacionesAUsuarioWidgetState
                                                     ),
                                                     focusedBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: BorderSide(
+                                                      borderSide: const BorderSide(
                                                         color:
                                                             Color(0xFF00AC67),
                                                         width: 1.0,
@@ -411,7 +407,7 @@ class _NotificacionesAUsuarioWidgetState
                                       builder: (context, snapshot) {
                                         // Customize what your widget looks like when it's loading.
                                         if (!snapshot.hasData) {
-                                          return Center(
+                                          return const Center(
                                             child: SizedBox(
                                               width: 50.0,
                                               height: 50.0,
@@ -429,10 +425,10 @@ class _NotificacionesAUsuarioWidgetState
                                             containerUserRecordList =
                                             snapshot.data!;
                                         return Container(
-                                          decoration: BoxDecoration(),
+                                          decoration: const BoxDecoration(),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 10.0, 0.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -456,7 +452,7 @@ class _NotificacionesAUsuarioWidgetState
                                                       ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 10.0, 0.0, 10.0),
                                                   child: FlutterFlowDropDown<
@@ -523,11 +519,11 @@ class _NotificacionesAUsuarioWidgetState
                                                     fillColor: Colors.white,
                                                     elevation: 2.0,
                                                     borderColor:
-                                                        Color(0xFF00AC67),
+                                                        const Color(0xFF00AC67),
                                                     borderWidth: 1.0,
                                                     borderRadius: 8.0,
                                                     margin:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 4.0,
                                                                 16.0, 4.0),
                                                     hidesUnderline: true,
@@ -543,7 +539,7 @@ class _NotificacionesAUsuarioWidgetState
                                     ),
                                     Align(
                                       alignment:
-                                          AlignmentDirectional(-1.0, 0.0),
+                                          const AlignmentDirectional(-1.0, 0.0),
                                       child: StreamBuilder<List<UserRecord>>(
                                         stream: queryUserRecord(
                                           queryBuilder: (userRecord) =>
@@ -556,7 +552,7 @@ class _NotificacionesAUsuarioWidgetState
                                         builder: (context, snapshot) {
                                           // Customize what your widget looks like when it's loading.
                                           if (!snapshot.hasData) {
-                                            return Center(
+                                            return const Center(
                                               child: SizedBox(
                                                 width: 50.0,
                                                 height: 50.0,
@@ -585,12 +581,12 @@ class _NotificacionesAUsuarioWidgetState
                                                   : null;
                                           return Container(
                                             width: 300.0,
-                                            decoration: BoxDecoration(),
+                                            decoration: const BoxDecoration(),
                                             child: Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 10.0, 0.0, 0.0),
                                                 child: Column(
@@ -687,7 +683,7 @@ class _NotificacionesAUsuarioWidgetState
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       20.0,
@@ -714,7 +710,7 @@ class _NotificacionesAUsuarioWidgetState
                                                                   .set(
                                                                       createNotificacionesRecordData(
                                                                     user: containerUserRecord
-                                                                        ?.reference,
+                                                                        .reference,
                                                                     titulo: _model
                                                                         .textController1
                                                                         .text,
@@ -738,11 +734,11 @@ class _NotificacionesAUsuarioWidgetState
                                                                           .primaryBackground,
                                                                     ),
                                                                   ),
-                                                                  duration: Duration(
+                                                                  duration: const Duration(
                                                                       milliseconds:
                                                                           4000),
                                                                   backgroundColor:
-                                                                      Color(
+                                                                      const Color(
                                                                           0xFF00B235),
                                                                 ),
                                                               );
@@ -752,20 +748,20 @@ class _NotificacionesAUsuarioWidgetState
                                                                 FFButtonOptions(
                                                               height: 40.0,
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           24.0,
                                                                           0.0,
                                                                           24.0,
                                                                           0.0),
                                                               iconPadding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
                                                                           0.0),
-                                                              color: Color(
+                                                              color: const Color(
                                                                   0xFF00AC67),
                                                               textStyle:
                                                                   FlutterFlowTheme.of(
@@ -781,7 +777,7 @@ class _NotificacionesAUsuarioWidgetState
                                                                       ),
                                                               elevation: 3.0,
                                                               borderSide:
-                                                                  BorderSide(
+                                                                  const BorderSide(
                                                                 color: Colors
                                                                     .transparent,
                                                                 width: 1.0,
@@ -811,7 +807,7 @@ class _NotificacionesAUsuarioWidgetState
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 20.0, 0.0, 20.0),
                                       child: Text(
                                         'Previsualización:',
@@ -828,7 +824,7 @@ class _NotificacionesAUsuarioWidgetState
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           5.0, 0.0, 5.0, 0.0),
                                       child: ClipRRect(
                                         borderRadius:
@@ -850,13 +846,13 @@ class _NotificacionesAUsuarioWidgetState
                                           ),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     40.0, 90.0, 40.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.min,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 10.0, 0.0, 0.0),
                                                   child: Material(
@@ -875,13 +871,13 @@ class _NotificacionesAUsuarioWidgetState
                                                           1.0,
                                                       decoration: BoxDecoration(
                                                         color:
-                                                            Color(0xFF2A292E),
+                                                            const Color(0xFF2A292E),
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(15.0),
                                                       ),
                                                       child: Padding(
-                                                        padding: EdgeInsets.all(
+                                                        padding: const EdgeInsets.all(
                                                             10.0),
                                                         child: Column(
                                                           mainAxisSize:
@@ -915,7 +911,7 @@ class _NotificacionesAUsuarioWidgetState
                                                                       child:
                                                                           Padding(
                                                                         padding:
-                                                                            EdgeInsets.all(5.0),
+                                                                            const EdgeInsets.all(5.0),
                                                                         child: Image
                                                                             .asset(
                                                                           'assets/images/logo_animalfood.png',
@@ -929,7 +925,7 @@ class _NotificacionesAUsuarioWidgetState
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           10.0,
                                                                           0.0,
                                                                           0.0,
@@ -951,7 +947,7 @@ class _NotificacionesAUsuarioWidgetState
                                                                   ],
                                                                 ),
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10.0,
                                                                           0.0,
@@ -980,7 +976,7 @@ class _NotificacionesAUsuarioWidgetState
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           10.0,
@@ -1016,12 +1012,12 @@ class _NotificacionesAUsuarioWidgetState
                                                             ),
                                                             Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       -1.0,
                                                                       0.0),
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             10.0,
@@ -1082,7 +1078,7 @@ class _NotificacionesAUsuarioWidgetState
                 tablet: false,
               ))
                 Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(8.0),
                     child: Image.asset(

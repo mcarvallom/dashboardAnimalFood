@@ -1,13 +1,10 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/componentes/top_escritorio/top_escritorio_widget.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'sitio_web_model.dart';
 export 'sitio_web_model.dart';
 
@@ -16,8 +13,8 @@ class SitioWebWidget extends StatefulWidget {
     super.key,
     Color? colorInicio,
     String? nombre,
-  })  : this.colorInicio = colorInicio ?? const Color(0xFFE6A5E5),
-        this.nombre = nombre ?? 'Inicio';
+  })  : colorInicio = colorInicio ?? const Color(0xFFE6A5E5),
+        nombre = nombre ?? 'Inicio';
 
   final Color colorInicio;
   final String nombre;
@@ -65,7 +62,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                   wrapWithModel(
                     model: _model.topEscritorioModel,
                     updateCallback: () => setState(() {}),
-                    child: TopEscritorioWidget(),
+                    child: const TopEscritorioWidget(),
                   ),
                   Expanded(
                     child: Row(
@@ -78,7 +75,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                             children: [
                               Expanded(
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       20.0, 0.0, 20.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -91,16 +88,16 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                           children: [
                                             Flexible(
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(0.0, 20.0, 10.0,
                                                           20.0),
                                                   child: GridView(
                                                     padding: EdgeInsets.zero,
                                                     gridDelegate:
-                                                        SliverGridDelegateWithFixedCrossAxisCount(
+                                                        const SliverGridDelegateWithFixedCrossAxisCount(
                                                       crossAxisCount: 5,
                                                       crossAxisSpacing: 10.0,
                                                       mainAxisSpacing: 10.0,
@@ -112,7 +109,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     10.0,
@@ -133,7 +130,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                               extra: <String,
                                                                   dynamic>{
                                                                 kTransitionInfoKey:
-                                                                    TransitionInfo(
+                                                                    const TransitionInfo(
                                                                   hasTransition:
                                                                       true,
                                                                   transitionType:
@@ -166,7 +163,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                             20.0),
                                                               ),
                                                               child: Padding(
-                                                                padding: EdgeInsetsDirectional
+                                                                padding: const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         20.0,
@@ -182,7 +179,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                     // Customize what your widget looks like when it's loading.
                                                                     if (!snapshot
                                                                         .hasData) {
-                                                                      return Center(
+                                                                      return const Center(
                                                                         child:
                                                                             SizedBox(
                                                                           width:
@@ -216,14 +213,14 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                           height:
                                                                               60.0,
                                                                           decoration:
-                                                                              BoxDecoration(
+                                                                              const BoxDecoration(
                                                                             color:
                                                                                 Color(0xFFEAC04A),
                                                                             shape:
                                                                                 BoxShape.circle,
                                                                           ),
                                                                           child:
-                                                                              Align(
+                                                                              const Align(
                                                                             alignment:
                                                                                 AlignmentDirectional(0.0, 0.0),
                                                                             child:
@@ -235,7 +232,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                           ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               10.0,
                                                                               0.0,
@@ -254,7 +251,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                           ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               5.0,
                                                                               0.0,
@@ -266,7 +263,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                                 TextAlign.center,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Readex Pro',
-                                                                                  color: Color(0xFF8E8E8E),
+                                                                                  color: const Color(0xFF8E8E8E),
                                                                                   letterSpacing: 0.0,
                                                                                 ),
                                                                             minFontSize:
@@ -284,7 +281,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     10.0,
@@ -305,7 +302,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                               extra: <String,
                                                                   dynamic>{
                                                                 kTransitionInfoKey:
-                                                                    TransitionInfo(
+                                                                    const TransitionInfo(
                                                                   hasTransition:
                                                                       true,
                                                                   transitionType:
@@ -338,7 +335,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                             20.0),
                                                               ),
                                                               child: Padding(
-                                                                padding: EdgeInsetsDirectional
+                                                                padding: const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         20.0,
@@ -354,7 +351,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                     // Customize what your widget looks like when it's loading.
                                                                     if (!snapshot
                                                                         .hasData) {
-                                                                      return Center(
+                                                                      return const Center(
                                                                         child:
                                                                             SizedBox(
                                                                           width:
@@ -388,14 +385,14 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                           height:
                                                                               60.0,
                                                                           decoration:
-                                                                              BoxDecoration(
+                                                                              const BoxDecoration(
                                                                             color:
                                                                                 Color(0xFF399E45),
                                                                             shape:
                                                                                 BoxShape.circle,
                                                                           ),
                                                                           child:
-                                                                              Align(
+                                                                              const Align(
                                                                             alignment:
                                                                                 AlignmentDirectional(0.0, 0.0),
                                                                             child:
@@ -407,7 +404,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                           ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               10.0,
                                                                               0.0,
@@ -426,7 +423,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                           ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               5.0,
                                                                               0.0,
@@ -438,7 +435,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                                 TextAlign.center,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Readex Pro',
-                                                                                  color: Color(0xFF8E8E8E),
+                                                                                  color: const Color(0xFF8E8E8E),
                                                                                   letterSpacing: 0.0,
                                                                                 ),
                                                                             minFontSize:
@@ -456,7 +453,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     10.0,
@@ -477,7 +474,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                               extra: <String,
                                                                   dynamic>{
                                                                 kTransitionInfoKey:
-                                                                    TransitionInfo(
+                                                                    const TransitionInfo(
                                                                   hasTransition:
                                                                       true,
                                                                   transitionType:
@@ -510,7 +507,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                             20.0),
                                                               ),
                                                               child: Padding(
-                                                                padding: EdgeInsetsDirectional
+                                                                padding: const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         20.0,
@@ -526,7 +523,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                     // Customize what your widget looks like when it's loading.
                                                                     if (!snapshot
                                                                         .hasData) {
-                                                                      return Center(
+                                                                      return const Center(
                                                                         child:
                                                                             SizedBox(
                                                                           width:
@@ -567,7 +564,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                                 BoxShape.circle,
                                                                           ),
                                                                           child:
-                                                                              Align(
+                                                                              const Align(
                                                                             alignment:
                                                                                 AlignmentDirectional(0.0, 0.0),
                                                                             child:
@@ -579,7 +576,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                           ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               10.0,
                                                                               0.0,
@@ -598,7 +595,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                           ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               5.0,
                                                                               0.0,
@@ -610,7 +607,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                                 TextAlign.center,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Readex Pro',
-                                                                                  color: Color(0xFF8E8E8E),
+                                                                                  color: const Color(0xFF8E8E8E),
                                                                                   letterSpacing: 0.0,
                                                                                 ),
                                                                             minFontSize:
@@ -628,7 +625,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     10.0,
@@ -649,7 +646,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                               extra: <String,
                                                                   dynamic>{
                                                                 kTransitionInfoKey:
-                                                                    TransitionInfo(
+                                                                    const TransitionInfo(
                                                                   hasTransition:
                                                                       true,
                                                                   transitionType:
@@ -682,7 +679,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                             20.0),
                                                               ),
                                                               child: Padding(
-                                                                padding: EdgeInsetsDirectional
+                                                                padding: const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         20.0,
@@ -698,7 +695,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                     // Customize what your widget looks like when it's loading.
                                                                     if (!snapshot
                                                                         .hasData) {
-                                                                      return Center(
+                                                                      return const Center(
                                                                         child:
                                                                             SizedBox(
                                                                           width:
@@ -739,7 +736,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                                 BoxShape.circle,
                                                                           ),
                                                                           child:
-                                                                              Align(
+                                                                              const Align(
                                                                             alignment:
                                                                                 AlignmentDirectional(0.0, 0.0),
                                                                             child:
@@ -751,7 +748,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                           ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               10.0,
                                                                               0.0,
@@ -770,7 +767,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                           ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               5.0,
                                                                               0.0,
@@ -782,7 +779,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                                 TextAlign.center,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Readex Pro',
-                                                                                  color: Color(0xFF8E8E8E),
+                                                                                  color: const Color(0xFF8E8E8E),
                                                                                   letterSpacing: 0.0,
                                                                                 ),
                                                                             minFontSize:
@@ -800,7 +797,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     10.0,
@@ -821,7 +818,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                               extra: <String,
                                                                   dynamic>{
                                                                 kTransitionInfoKey:
-                                                                    TransitionInfo(
+                                                                    const TransitionInfo(
                                                                   hasTransition:
                                                                       true,
                                                                   transitionType:
@@ -854,7 +851,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                             20.0),
                                                               ),
                                                               child: Padding(
-                                                                padding: EdgeInsetsDirectional
+                                                                padding: const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         20.0,
@@ -878,7 +875,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                     // Customize what your widget looks like when it's loading.
                                                                     if (!snapshot
                                                                         .hasData) {
-                                                                      return Center(
+                                                                      return const Center(
                                                                         child:
                                                                             SizedBox(
                                                                           width:
@@ -912,14 +909,14 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                           height:
                                                                               60.0,
                                                                           decoration:
-                                                                              BoxDecoration(
+                                                                              const BoxDecoration(
                                                                             color:
                                                                                 Color(0xFFFF59FC),
                                                                             shape:
                                                                                 BoxShape.circle,
                                                                           ),
                                                                           child:
-                                                                              Align(
+                                                                              const Align(
                                                                             alignment:
                                                                                 AlignmentDirectional(0.0, 0.0),
                                                                             child:
@@ -931,7 +928,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                           ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               10.0,
                                                                               0.0,
@@ -950,7 +947,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                           ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               5.0,
                                                                               0.0,
@@ -962,7 +959,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                                 TextAlign.center,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Readex Pro',
-                                                                                  color: Color(0xFF8E8E8E),
+                                                                                  color: const Color(0xFF8E8E8E),
                                                                                   letterSpacing: 0.0,
                                                                                 ),
                                                                             minFontSize:
@@ -980,7 +977,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     10.0,
@@ -1001,7 +998,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                               extra: <String,
                                                                   dynamic>{
                                                                 kTransitionInfoKey:
-                                                                    TransitionInfo(
+                                                                    const TransitionInfo(
                                                                   hasTransition:
                                                                       true,
                                                                   transitionType:
@@ -1034,7 +1031,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                             20.0),
                                                               ),
                                                               child: Padding(
-                                                                padding: EdgeInsetsDirectional
+                                                                padding: const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         20.0,
@@ -1072,7 +1069,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                     // Customize what your widget looks like when it's loading.
                                                                     if (!snapshot
                                                                         .hasData) {
-                                                                      return Center(
+                                                                      return const Center(
                                                                         child:
                                                                             SizedBox(
                                                                           width:
@@ -1113,7 +1110,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                                 BoxShape.circle,
                                                                           ),
                                                                           child:
-                                                                              Align(
+                                                                              const Align(
                                                                             alignment:
                                                                                 AlignmentDirectional(0.0, 0.0),
                                                                             child:
@@ -1125,7 +1122,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                           ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               10.0,
                                                                               0.0,
@@ -1144,7 +1141,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                           ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               5.0,
                                                                               0.0,
@@ -1156,7 +1153,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                                 TextAlign.center,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Readex Pro',
-                                                                                  color: Color(0xFF8E8E8E),
+                                                                                  color: const Color(0xFF8E8E8E),
                                                                                   letterSpacing: 0.0,
                                                                                 ),
                                                                             minFontSize:
@@ -1174,7 +1171,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     10.0,
@@ -1195,7 +1192,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                               extra: <String,
                                                                   dynamic>{
                                                                 kTransitionInfoKey:
-                                                                    TransitionInfo(
+                                                                    const TransitionInfo(
                                                                   hasTransition:
                                                                       true,
                                                                   transitionType:
@@ -1228,7 +1225,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                             20.0),
                                                               ),
                                                               child: Padding(
-                                                                padding: EdgeInsetsDirectional
+                                                                padding: const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         20.0,
@@ -1248,14 +1245,14 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                       height:
                                                                           60.0,
                                                                       decoration:
-                                                                          BoxDecoration(
+                                                                          const BoxDecoration(
                                                                         color: Color(
                                                                             0xFFB3CF40),
                                                                         shape: BoxShape
                                                                             .circle,
                                                                       ),
                                                                       child:
-                                                                          Align(
+                                                                          const Align(
                                                                         alignment: AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
@@ -1271,7 +1268,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           10.0,
                                                                           0.0,
@@ -1300,7 +1297,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     10.0,
@@ -1330,7 +1327,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                             ),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           20.0,
@@ -1349,14 +1346,14 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                     height:
                                                                         60.0,
                                                                     decoration:
-                                                                        BoxDecoration(
+                                                                        const BoxDecoration(
                                                                       color: Color(
                                                                           0xFFFF8159),
                                                                       shape: BoxShape
                                                                           .circle,
                                                                     ),
                                                                     child:
-                                                                        Align(
+                                                                        const Align(
                                                                       alignment:
                                                                           AlignmentDirectional(
                                                                               0.0,
@@ -1373,7 +1370,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                     ),
                                                                   ),
                                                                   Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             10.0,
@@ -1406,7 +1403,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     10.0,
@@ -1436,7 +1433,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                             ),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           20.0,
@@ -1455,14 +1452,14 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                     height:
                                                                         60.0,
                                                                     decoration:
-                                                                        BoxDecoration(
+                                                                        const BoxDecoration(
                                                                       color: Color(
                                                                           0xFFFF8159),
                                                                       shape: BoxShape
                                                                           .circle,
                                                                     ),
                                                                     child:
-                                                                        Align(
+                                                                        const Align(
                                                                       alignment:
                                                                           AlignmentDirectional(
                                                                               0.0,
@@ -1479,7 +1476,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                     ),
                                                                   ),
                                                                   Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             10.0,
@@ -1512,7 +1509,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     10.0,
@@ -1542,7 +1539,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                             ),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           20.0,
@@ -1561,14 +1558,14 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                     height:
                                                                         60.0,
                                                                     decoration:
-                                                                        BoxDecoration(
+                                                                        const BoxDecoration(
                                                                       color: Color(
                                                                           0xFF175641),
                                                                       shape: BoxShape
                                                                           .circle,
                                                                     ),
                                                                     child:
-                                                                        Align(
+                                                                        const Align(
                                                                       alignment:
                                                                           AlignmentDirectional(
                                                                               0.0,
@@ -1585,7 +1582,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                     ),
                                                                   ),
                                                                   Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             10.0,
@@ -1621,7 +1618,7 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                 ),
                                               ),
                                             ),
-                                          ].addToEnd(SizedBox(height: 20.0)),
+                                          ].addToEnd(const SizedBox(height: 20.0)),
                                         ),
                                       ),
                                     ],

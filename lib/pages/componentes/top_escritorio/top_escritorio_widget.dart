@@ -4,8 +4,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/componentes/perfil_setting/perfil_setting_widget.dart';
 import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'top_escritorio_model.dart';
 export 'top_escritorio_model.dart';
 
@@ -58,7 +56,7 @@ class _TopEscritorioWidgetState extends State<TopEscritorioWidget> {
                 color: FlutterFlowTheme.of(context).secondaryBackground,
               ),
               child: Padding(
-                padding: EdgeInsets.all(20.0),
+                padding: const EdgeInsets.all(20.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -75,7 +73,7 @@ class _TopEscritorioWidgetState extends State<TopEscritorioWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               10.0, 0.0, 10.0, 0.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -86,7 +84,7 @@ class _TopEscritorioWidgetState extends State<TopEscritorioWidget> {
                               context.pushNamed(
                                 'agregarProducto',
                                 extra: <String, dynamic>{
-                                  kTransitionInfoKey: TransitionInfo(
+                                  kTransitionInfoKey: const TransitionInfo(
                                     hasTransition: true,
                                     transitionType: PageTransitionType.fade,
                                   ),
@@ -98,13 +96,13 @@ class _TopEscritorioWidgetState extends State<TopEscritorioWidget> {
                               child: Container(
                                 height: 50.0,
                                 decoration: BoxDecoration(
-                                  color: Color(0xFF00AC67),
+                                  color: const Color(0xFF00AC67),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 child: Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 0.0),
                                     child: Text(
                                       'Agregar Producto',
@@ -135,12 +133,12 @@ class _TopEscritorioWidgetState extends State<TopEscritorioWidget> {
                                 context: context,
                                 isGlobal: false,
                                 avoidOverflow: false,
-                                targetAnchor: AlignmentDirectional(-0.5, 1.0)
+                                targetAnchor: const AlignmentDirectional(-0.5, 1.0)
                                     .resolve(Directionality.of(context)),
-                                followerAnchor: AlignmentDirectional(0.0, -1.0)
+                                followerAnchor: const AlignmentDirectional(0.0, -1.0)
                                     .resolve(Directionality.of(context)),
                                 builder: (dialogContext) {
-                                  return Material(
+                                  return const Material(
                                     color: Colors.transparent,
                                     child: PerfilSettingWidget(),
                                   );
@@ -151,14 +149,14 @@ class _TopEscritorioWidgetState extends State<TopEscritorioWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 10.0, 0.0),
                                   child: AuthUserStreamWidget(
                                     builder: (context) => Container(
                                       width: 50.0,
                                       height: 50.0,
                                       clipBehavior: Clip.antiAlias,
-                                      decoration: BoxDecoration(
+                                      decoration: const BoxDecoration(
                                         shape: BoxShape.circle,
                                       ),
                                       child: Image.network(
@@ -182,7 +180,7 @@ class _TopEscritorioWidgetState extends State<TopEscritorioWidget> {
                                         ),
                                   ),
                                 ),
-                                Icon(
+                                const Icon(
                                   Icons.keyboard_arrow_down_outlined,
                                   color: Colors.white,
                                   size: 30.0,

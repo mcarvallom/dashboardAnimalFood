@@ -4,16 +4,11 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/pages/componentes/opciones_pedido_delivery/opciones_pedido_delivery_widget.dart';
 import '/custom_code/actions/index.dart' as actions;
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'pedidos_delivery_model.dart';
 export 'pedidos_delivery_model.dart';
 
@@ -68,20 +63,20 @@ class _PedidosDeliveryWidgetState extends State<PedidosDeliveryWidget> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(10.0, 20.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(10.0, 20.0, 0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                         child: Text(
                           'Pedidos delivery',
                           style: FlutterFlowTheme.of(context)
                               .headlineMedium
                               .override(
                                 fontFamily: 'Outfit',
-                                color: Color(0xFF1F1F1F),
+                                color: const Color(0xFF1F1F1F),
                                 fontSize: 22.0,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w500,
@@ -92,7 +87,7 @@ class _PedidosDeliveryWidgetState extends State<PedidosDeliveryWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(20.0, 4.0, 20.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(20.0, 4.0, 20.0, 0.0),
                   child: Text(
                     'A continuación se muestran los pedidos más recientes',
                     textAlign: TextAlign.start,
@@ -105,7 +100,7 @@ class _PedidosDeliveryWidgetState extends State<PedidosDeliveryWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 0.0, 0.0),
                   child: Text(
                     'Filtros',
                     textAlign: TextAlign.start,
@@ -119,9 +114,9 @@ class _PedidosDeliveryWidgetState extends State<PedidosDeliveryWidget> {
                 ),
                 Flexible(
                   child: Padding(
-                    padding: EdgeInsets.all(10.0),
+                    padding: const EdgeInsets.all(10.0),
                     child: FlutterFlowChoiceChips(
-                      options: [
+                      options: const [
                         ChipData('Preparando envío'),
                         ChipData('En camino'),
                         ChipData('Fallo en la entrega')
@@ -129,7 +124,7 @@ class _PedidosDeliveryWidgetState extends State<PedidosDeliveryWidget> {
                       onChanged: (val) =>
                           setState(() => _model.choiceChipsValues = val),
                       selectedChipStyle: ChipStyle(
-                        backgroundColor: Color(0xFF00AC67),
+                        backgroundColor: const Color(0xFF00AC67),
                         textStyle:
                             FlutterFlowTheme.of(context).bodyMedium.override(
                                   fontFamily: 'Readex Pro',
@@ -144,7 +139,7 @@ class _PedidosDeliveryWidgetState extends State<PedidosDeliveryWidget> {
                         borderRadius: BorderRadius.circular(16.0),
                       ),
                       unselectedChipStyle: ChipStyle(
-                        backgroundColor: Color(0xFF5CFFBD),
+                        backgroundColor: const Color(0xFF5CFFBD),
                         textStyle: FlutterFlowTheme.of(context)
                             .bodyMedium
                             .override(
@@ -173,7 +168,7 @@ class _PedidosDeliveryWidgetState extends State<PedidosDeliveryWidget> {
                 ),
                 Flexible(
                   child: Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: StreamBuilder<List<OrderRecord>>(
                       stream: queryOrderRecord(
                         queryBuilder: (orderRecord) => orderRecord
@@ -183,7 +178,7 @@ class _PedidosDeliveryWidgetState extends State<PedidosDeliveryWidget> {
                       builder: (context, snapshot) {
                         // Customize what your widget looks like when it's loading.
                         if (!snapshot.hasData) {
-                          return Center(
+                          return const Center(
                             child: SizedBox(
                               width: 50.0,
                               height: 50.0,
@@ -206,7 +201,7 @@ class _PedidosDeliveryWidgetState extends State<PedidosDeliveryWidget> {
                               final columnOrderRecord =
                                   columnOrderRecordList[columnIndex];
                               return Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -231,7 +226,7 @@ class _PedidosDeliveryWidgetState extends State<PedidosDeliveryWidget> {
                                         }.withoutNulls,
                                         extra: <String, dynamic>{
                                           'detalleOrden': columnOrderRecord,
-                                          kTransitionInfoKey: TransitionInfo(
+                                          kTransitionInfoKey: const TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.fade,
@@ -242,7 +237,7 @@ class _PedidosDeliveryWidgetState extends State<PedidosDeliveryWidget> {
                                   },
                                   child: Container(
                                     width: double.infinity,
-                                    constraints: BoxConstraints(
+                                    constraints: const BoxConstraints(
                                       maxWidth: 570.0,
                                     ),
                                     decoration: BoxDecoration(
@@ -256,7 +251,7 @@ class _PedidosDeliveryWidgetState extends State<PedidosDeliveryWidget> {
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 12.0, 0.0, 12.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -265,7 +260,7 @@ class _PedidosDeliveryWidgetState extends State<PedidosDeliveryWidget> {
                                         children: [
                                           Flexible(
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 12.0, 0.0),
                                               child: Column(
@@ -339,7 +334,7 @@ class _PedidosDeliveryWidgetState extends State<PedidosDeliveryWidget> {
                                                         (context, snapshot) {
                                                       // Customize what your widget looks like when it's loading.
                                                       if (!snapshot.hasData) {
-                                                        return Center(
+                                                        return const Center(
                                                           child: SizedBox(
                                                             width: 50.0,
                                                             height: 50.0,
@@ -359,14 +354,14 @@ class _PedidosDeliveryWidgetState extends State<PedidosDeliveryWidget> {
                                                           snapshot.data!;
                                                       return Container(
                                                         decoration:
-                                                            BoxDecoration(),
+                                                            const BoxDecoration(),
                                                         child: Row(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           4.0,
@@ -391,7 +386,7 @@ class _PedidosDeliveryWidgetState extends State<PedidosDeliveryWidget> {
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           5.0,
                                                                           4.0,
@@ -421,7 +416,7 @@ class _PedidosDeliveryWidgetState extends State<PedidosDeliveryWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 4.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -453,7 +448,7 @@ class _PedidosDeliveryWidgetState extends State<PedidosDeliveryWidget> {
                                           ),
                                           Flexible(
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 5.0, 0.0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
@@ -551,7 +546,7 @@ class _PedidosDeliveryWidgetState extends State<PedidosDeliveryWidget> {
                                                       'En proceso')
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   12.0,
@@ -569,18 +564,18 @@ class _PedidosDeliveryWidgetState extends State<PedidosDeliveryWidget> {
                                                                   .circular(
                                                                       12.0),
                                                           border: Border.all(
-                                                            color: Color(
+                                                            color: const Color(
                                                                 0xFFEE8B60),
                                                             width: 2.0,
                                                           ),
                                                         ),
                                                         child: Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         12.0,
                                                                         0.0,
@@ -613,7 +608,7 @@ class _PedidosDeliveryWidgetState extends State<PedidosDeliveryWidget> {
                                                       'En camino')
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   12.0,
@@ -631,18 +626,18 @@ class _PedidosDeliveryWidgetState extends State<PedidosDeliveryWidget> {
                                                                   .circular(
                                                                       12.0),
                                                           border: Border.all(
-                                                            color: Color(
+                                                            color: const Color(
                                                                 0xFFF76631),
                                                             width: 2.0,
                                                           ),
                                                         ),
                                                         child: Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         12.0,
                                                                         0.0,
@@ -656,7 +651,7 @@ class _PedidosDeliveryWidgetState extends State<PedidosDeliveryWidget> {
                                                                   .override(
                                                                     fontFamily:
                                                                         'Readex Pro',
-                                                                    color: Color(
+                                                                    color: const Color(
                                                                         0xFFF76631),
                                                                     letterSpacing:
                                                                         0.0,
@@ -674,7 +669,7 @@ class _PedidosDeliveryWidgetState extends State<PedidosDeliveryWidget> {
                                                       'Entregado')
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   12.0,
@@ -700,11 +695,11 @@ class _PedidosDeliveryWidgetState extends State<PedidosDeliveryWidget> {
                                                         ),
                                                         child: Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         12.0,
                                                                         0.0,
@@ -737,7 +732,7 @@ class _PedidosDeliveryWidgetState extends State<PedidosDeliveryWidget> {
                                                       'Pendiente de pago')
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   12.0,
@@ -755,18 +750,18 @@ class _PedidosDeliveryWidgetState extends State<PedidosDeliveryWidget> {
                                                                   .circular(
                                                                       12.0),
                                                           border: Border.all(
-                                                            color: Color(
+                                                            color: const Color(
                                                                 0xFFFF5963),
                                                             width: 2.0,
                                                           ),
                                                         ),
                                                         child: Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         12.0,
                                                                         0.0,
@@ -780,7 +775,7 @@ class _PedidosDeliveryWidgetState extends State<PedidosDeliveryWidget> {
                                                                   .override(
                                                                     fontFamily:
                                                                         'Readex Pro',
-                                                                    color: Color(
+                                                                    color: const Color(
                                                                         0xFFFF5963),
                                                                     letterSpacing:
                                                                         0.0,
@@ -798,7 +793,7 @@ class _PedidosDeliveryWidgetState extends State<PedidosDeliveryWidget> {
                                                       'Fallo en la entrega')
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   12.0,
@@ -824,11 +819,11 @@ class _PedidosDeliveryWidgetState extends State<PedidosDeliveryWidget> {
                                                         ),
                                                         child: Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         12.0,
                                                                         0.0,
@@ -861,7 +856,7 @@ class _PedidosDeliveryWidgetState extends State<PedidosDeliveryWidget> {
                                                       'Reembolsado')
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   12.0,
@@ -887,11 +882,11 @@ class _PedidosDeliveryWidgetState extends State<PedidosDeliveryWidget> {
                                                         ),
                                                         child: Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         12.0,
                                                                         0.0,
@@ -924,7 +919,7 @@ class _PedidosDeliveryWidgetState extends State<PedidosDeliveryWidget> {
                                                       'Preparando envío')
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   12.0,
@@ -952,17 +947,17 @@ class _PedidosDeliveryWidgetState extends State<PedidosDeliveryWidget> {
                                                                           (alertDialogContext) {
                                                                         return AlertDialog(
                                                                           title:
-                                                                              Text('Viaje'),
+                                                                              const Text('Viaje'),
                                                                           content:
-                                                                              Text('¿Deseas aceptar el viaje?'),
+                                                                              const Text('¿Deseas aceptar el viaje?'),
                                                                           actions: [
                                                                             TextButton(
                                                                               onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                              child: Text('Cancelar'),
+                                                                              child: const Text('Cancelar'),
                                                                             ),
                                                                             TextButton(
                                                                               onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                              child: Text('Confirmar'),
+                                                                              child: const Text('Confirmar'),
                                                                             ),
                                                                           ],
                                                                         );
@@ -1019,18 +1014,18 @@ class _PedidosDeliveryWidgetState extends State<PedidosDeliveryWidget> {
                                                                     .circular(
                                                                         12.0),
                                                             border: Border.all(
-                                                              color: Color(
+                                                              color: const Color(
                                                                   0xFF39D2C0),
                                                               width: 2.0,
                                                             ),
                                                           ),
                                                           child: Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           5.0,
                                                                           0.0,
@@ -1044,7 +1039,7 @@ class _PedidosDeliveryWidgetState extends State<PedidosDeliveryWidget> {
                                                                     .override(
                                                                       fontFamily:
                                                                           'Readex Pro',
-                                                                      color: Color(
+                                                                      color: const Color(
                                                                           0xFF39D2C0),
                                                                       letterSpacing:
                                                                           0.0,
@@ -1069,9 +1064,9 @@ class _PedidosDeliveryWidgetState extends State<PedidosDeliveryWidget> {
                                 ),
                               );
                             })
-                                    .divide(SizedBox(height: 12.0))
-                                    .addToStart(SizedBox(height: 15.0))
-                                    .addToEnd(SizedBox(height: 30.0)),
+                                    .divide(const SizedBox(height: 12.0))
+                                    .addToStart(const SizedBox(height: 15.0))
+                                    .addToEnd(const SizedBox(height: 30.0)),
                           ),
                         );
                       },
@@ -1079,8 +1074,8 @@ class _PedidosDeliveryWidgetState extends State<PedidosDeliveryWidget> {
                   ),
                 ),
               ]
-                  .addToStart(SizedBox(height: 1.0))
-                  .addToEnd(SizedBox(height: 30.0)),
+                  .addToStart(const SizedBox(height: 1.0))
+                  .addToEnd(const SizedBox(height: 30.0)),
             ),
           ),
         ),

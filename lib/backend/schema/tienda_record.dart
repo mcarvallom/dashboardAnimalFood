@@ -3,16 +3,15 @@ import 'dart:async';
 import 'package:collection/collection.dart';
 
 import '/backend/schema/util/firestore_util.dart';
-import '/backend/schema/util/schema_util.dart';
 
 import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 class TiendaRecord extends FirestoreRecord {
   TiendaRecord._(
-    DocumentReference reference,
-    Map<String, dynamic> data,
-  ) : super(reference, data) {
+    super.reference,
+    super.data,
+  ) {
     _initializeFields();
   }
 
@@ -66,6 +65,22 @@ class TiendaRecord extends FirestoreRecord {
   String get portadaPagCategoria => _portadaPagCategoria ?? '';
   bool hasPortadaPagCategoria() => _portadaPagCategoria != null;
 
+  // "locales" field.
+  List<String>? _locales;
+  List<String> get locales => _locales ?? const [];
+  bool hasLocales() => _locales != null;
+
+  // "reportesDiarios" field.
+  List<VentasDiariasStruct>? _reportesDiarios;
+  List<VentasDiariasStruct> get reportesDiarios => _reportesDiarios ?? const [];
+  bool hasReportesDiarios() => _reportesDiarios != null;
+
+  // "reporteVentas" field.
+  List<VentasDiariasFechaStruct>? _reporteVentas;
+  List<VentasDiariasFechaStruct> get reporteVentas =>
+      _reporteVentas ?? const [];
+  bool hasReporteVentas() => _reporteVentas != null;
+
   void _initializeFields() {
     _horaDeApertura = snapshotData['hora_de_apertura'] as DateTime?;
     _horaDeCierre = snapshotData['hora_de_cierre'] as DateTime?;
@@ -77,6 +92,15 @@ class TiendaRecord extends FirestoreRecord {
     _totalGanancias = castToType<double>(snapshotData['totalGanancias']);
     _portadaPerfil = snapshotData['portadaPerfil'] as String?;
     _portadaPagCategoria = snapshotData['portadaPagCategoria'] as String?;
+    _locales = getDataList(snapshotData['locales']);
+    _reportesDiarios = getStructList(
+      snapshotData['reportesDiarios'],
+      VentasDiariasStruct.fromMap,
+    );
+    _reporteVentas = getStructList(
+      snapshotData['reporteVentas'],
+      VentasDiariasFechaStruct.fromMap,
+    );
   }
 
   static CollectionReference get collection =>
@@ -147,6 +171,7 @@ class TiendaRecordDocumentEquality implements Equality<TiendaRecord> {
 
   @override
   bool equals(TiendaRecord? e1, TiendaRecord? e2) {
+    const listEquality = ListEquality();
     return e1?.horaDeApertura == e2?.horaDeApertura &&
         e1?.horaDeCierre == e2?.horaDeCierre &&
         e1?.horaInicioAlmuerzo == e2?.horaInicioAlmuerzo &&
@@ -156,7 +181,10 @@ class TiendaRecordDocumentEquality implements Equality<TiendaRecord> {
         e1?.ubicacion == e2?.ubicacion &&
         e1?.totalGanancias == e2?.totalGanancias &&
         e1?.portadaPerfil == e2?.portadaPerfil &&
-        e1?.portadaPagCategoria == e2?.portadaPagCategoria;
+        e1?.portadaPagCategoria == e2?.portadaPagCategoria &&
+        listEquality.equals(e1?.locales, e2?.locales) &&
+        listEquality.equals(e1?.reportesDiarios, e2?.reportesDiarios) &&
+        listEquality.equals(e1?.reporteVentas, e2?.reporteVentas);
   }
 
   @override
@@ -170,7 +198,10 @@ class TiendaRecordDocumentEquality implements Equality<TiendaRecord> {
         e?.ubicacion,
         e?.totalGanancias,
         e?.portadaPerfil,
-        e?.portadaPagCategoria
+        e?.portadaPagCategoria,
+        e?.locales,
+        e?.reportesDiarios,
+        e?.reporteVentas
       ]);
 
   @override

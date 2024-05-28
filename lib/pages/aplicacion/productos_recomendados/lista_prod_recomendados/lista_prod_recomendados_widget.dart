@@ -4,8 +4,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/componentes/top_escritorio/top_escritorio_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'lista_prod_recomendados_model.dart';
 export 'lista_prod_recomendados_model.dart';
 
@@ -14,8 +12,8 @@ class ListaProdRecomendadosWidget extends StatefulWidget {
     super.key,
     Color? colorInicio,
     String? nombre,
-  })  : this.colorInicio = colorInicio ?? const Color(0xFFE6A5E5),
-        this.nombre = nombre ?? 'Inicio';
+  })  : colorInicio = colorInicio ?? const Color(0xFFE6A5E5),
+        nombre = nombre ?? 'Inicio';
 
   final Color colorInicio;
   final String nombre;
@@ -68,7 +66,7 @@ class _ListaProdRecomendadosWidgetState
                       wrapWithModel(
                         model: _model.topEscritorioModel,
                         updateCallback: () => setState(() {}),
-                        child: TopEscritorioWidget(),
+                        child: const TopEscritorioWidget(),
                       ),
                       Row(
                         mainAxisSize: MainAxisSize.max,
@@ -76,9 +74,9 @@ class _ListaProdRecomendadosWidgetState
                         children: [
                           Flexible(
                             child: Align(
-                              alignment: AlignmentDirectional(-1.0, -1.0),
+                              alignment: const AlignmentDirectional(-1.0, -1.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     20.0, 20.0, 0.0, 10.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -120,13 +118,13 @@ class _ListaProdRecomendadosWidgetState
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
                                       context.pushNamed(
                                         'agregarProdRecomendado',
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: TransitionInfo(
+                                          kTransitionInfoKey: const TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.fade,
@@ -137,12 +135,12 @@ class _ListaProdRecomendadosWidgetState
                                     text: 'Agregar',
                                     options: FFButtonOptions(
                                       height: 40.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           24.0, 0.0, 24.0, 0.0),
                                       iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
+                                          const EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
-                                      color: Color(0xFFFF8159),
+                                      color: const Color(0xFFFF8159),
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
@@ -151,7 +149,7 @@ class _ListaProdRecomendadosWidgetState
                                             letterSpacing: 0.0,
                                           ),
                                       elevation: 3.0,
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),
@@ -165,13 +163,13 @@ class _ListaProdRecomendadosWidgetState
                         ],
                       ),
                       Padding(
-                        padding: EdgeInsets.all(10.0),
+                        padding: const EdgeInsets.all(10.0),
                         child: StreamBuilder<List<RecomendadoRecord>>(
                           stream: queryRecomendadoRecord(),
                           builder: (context, snapshot) {
                             // Customize what your widget looks like when it's loading.
                             if (!snapshot.hasData) {
-                              return Center(
+                              return const Center(
                                 child: SizedBox(
                                   width: 50.0,
                                   height: 50.0,
@@ -194,7 +192,7 @@ class _ListaProdRecomendadosWidgetState
                                   final columnRecomendadoRecord =
                                       columnRecomendadoRecordList[columnIndex];
                                   return Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: Material(
                                       color: Colors.transparent,
@@ -234,7 +232,7 @@ class _ListaProdRecomendadosWidgetState
                                                           .imagen,
                                                     ).image,
                                                   ),
-                                                  boxShadow: [
+                                                  boxShadow: const [
                                                     BoxShadow(
                                                       blurRadius: 10.0,
                                                       color: Color(0x33FFFFFF),
@@ -247,7 +245,7 @@ class _ListaProdRecomendadosWidgetState
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsets.all(10.0),
+                                                padding: const EdgeInsets.all(10.0),
                                                 child: Column(
                                                   mainAxisSize:
                                                       MainAxisSize.min,
@@ -258,7 +256,7 @@ class _ListaProdRecomendadosWidgetState
                                                       children: [
                                                         Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   -1.0, 0.0),
                                                           child: Material(
                                                             color: Colors
@@ -284,7 +282,7 @@ class _ListaProdRecomendadosWidgetState
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             8.0,
                                                                             5.0,
@@ -312,11 +310,11 @@ class _ListaProdRecomendadosWidgetState
                                                     ),
                                                     Align(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               -1.0, 0.0),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     10.0,
@@ -340,11 +338,11 @@ class _ListaProdRecomendadosWidgetState
                                                     ),
                                                     Align(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               -1.0, 0.0),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     10.0,
@@ -375,7 +373,7 @@ class _ListaProdRecomendadosWidgetState
                                                         Container(
                                                           decoration:
                                                               BoxDecoration(
-                                                            color: Color(
+                                                            color: const Color(
                                                                 0xFFF98831),
                                                             borderRadius:
                                                                 BorderRadius
@@ -384,11 +382,11 @@ class _ListaProdRecomendadosWidgetState
                                                           ),
                                                           child: Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     -1.0, 0.0),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           8.0,
                                                                           5.0,
@@ -422,10 +420,10 @@ class _ListaProdRecomendadosWidgetState
                                                 ),
                                               ),
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     1.0, -1.0),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(0.0, 10.0, 10.0,
                                                           10.0),
                                                   child: InkWell(
@@ -446,23 +444,23 @@ class _ListaProdRecomendadosWidgetState
                                                                 builder:
                                                                     (alertDialogContext) {
                                                                   return AlertDialog(
-                                                                    title: Text(
+                                                                    title: const Text(
                                                                         'Alerta'),
-                                                                    content: Text(
+                                                                    content: const Text(
                                                                         '¿Estas de acuerdo en eliminar esto?'),
                                                                     actions: [
                                                                       TextButton(
                                                                         onPressed: () => Navigator.pop(
                                                                             alertDialogContext,
                                                                             false),
-                                                                        child: Text(
+                                                                        child: const Text(
                                                                             'Cancelar'),
                                                                       ),
                                                                       TextButton(
                                                                         onPressed: () => Navigator.pop(
                                                                             alertDialogContext,
                                                                             true),
-                                                                        child: Text(
+                                                                        child: const Text(
                                                                             'Confirmar'),
                                                                       ),
                                                                     ],

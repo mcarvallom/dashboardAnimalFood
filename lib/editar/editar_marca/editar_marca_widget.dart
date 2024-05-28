@@ -1,19 +1,16 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
+import '/flutter_flow/flutter_flow_checkbox_group.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
 import '/pages/componentes/top_movil/top_movil_widget.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:page_transition/page_transition.dart';
-import 'package:provider/provider.dart';
 import 'editar_marca_model.dart';
 export 'editar_marca_model.dart';
 
@@ -62,7 +59,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
         if (!snapshot.hasData) {
           return Scaffold(
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-            body: Center(
+            body: const Center(
               child: SizedBox(
                 width: 50.0,
                 height: 50.0,
@@ -98,7 +95,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                   builder: (context, snapshot) {
                     // Customize what your widget looks like when it's loading.
                     if (!snapshot.hasData) {
-                      return Center(
+                      return const Center(
                         child: SizedBox(
                           width: 50.0,
                           height: 50.0,
@@ -120,16 +117,16 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Expanded(
                                   child: Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 30.0, 0.0, 20.0),
                                       child: Image.asset(
                                         'assets/images/logo_animalfood.png',
@@ -143,7 +140,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 30.0, 0.0, 10.0),
                             child: Text(
                               'Menú',
@@ -156,7 +153,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 10.0, 10.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -171,7 +168,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                   'Inicio',
                                   queryParameters: {
                                     'colorInicio': serializeParam(
-                                      Color(0xFFE6A5E5),
+                                      const Color(0xFFE6A5E5),
                                       ParamType.Color,
                                     ),
                                     'nombre': serializeParam(
@@ -180,7 +177,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                     ),
                                   }.withoutNulls,
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    kTransitionInfoKey: const TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -194,7 +191,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -206,7 +203,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                         size: 24.0,
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           'Inicio',
@@ -227,7 +224,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 10.0, 10.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -239,7 +236,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                   'ordenes',
                                   queryParameters: {
                                     'colorOrdenes': serializeParam(
-                                      Color(0xFFE6A5E5),
+                                      const Color(0xFFE6A5E5),
                                       ParamType.Color,
                                     ),
                                     'nombre': serializeParam(
@@ -248,7 +245,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                     ),
                                   }.withoutNulls,
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    kTransitionInfoKey: const TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -262,7 +259,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -274,7 +271,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                         size: 24.0,
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           'Órdenes',
@@ -295,7 +292,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 10.0, 10.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -307,7 +304,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                   'productos',
                                   queryParameters: {
                                     'colorProductos': serializeParam(
-                                      Color(0xFFE6A5E5),
+                                      const Color(0xFFE6A5E5),
                                       ParamType.Color,
                                     ),
                                     'nombre': serializeParam(
@@ -316,7 +313,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                     ),
                                   }.withoutNulls,
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    kTransitionInfoKey: const TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -330,7 +327,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -342,7 +339,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                         size: 24.0,
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           'Productos',
@@ -363,7 +360,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 10.0, 10.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -374,7 +371,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                 context.pushNamed(
                                   'tipoCategoria',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    kTransitionInfoKey: const TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -388,7 +385,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -400,7 +397,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                         size: 24.0,
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           'Categorías',
@@ -424,7 +421,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 10.0, 10.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -435,7 +432,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                 context.pushNamed(
                                   'Marcas',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    kTransitionInfoKey: const TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -457,19 +454,19 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                     borderRadius: BorderRadius.circular(10.0),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
-                                        FaIcon(
+                                        const FaIcon(
                                           FontAwesomeIcons.dog,
                                           color: Colors.white,
                                           size: 24.0,
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             'Marcas',
@@ -492,7 +489,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 10.0, 10.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -509,7 +506,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                     ),
                                   }.withoutNulls,
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    kTransitionInfoKey: const TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -523,7 +520,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -535,7 +532,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                         size: 24.0,
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           'Empleados',
@@ -556,7 +553,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 10.0, 10.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -573,7 +570,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                     ),
                                   }.withoutNulls,
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    kTransitionInfoKey: const TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -587,7 +584,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -599,7 +596,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                         size: 24.0,
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           'Clientes',
@@ -623,7 +620,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 10.0, 10.0, 0.0),
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
@@ -632,7 +629,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -644,7 +641,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                       size: 24.0,
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         'Ajustes de la tienda',
@@ -663,7 +660,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                               ),
                             ),
                           ),
-                        ].addToStart(SizedBox(height: 70.0)),
+                        ].addToStart(const SizedBox(height: 70.0)),
                       ),
                     );
                   },
@@ -689,18 +686,18 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                             wrapWithModel(
                               model: _model.topMovilModel,
                               updateCallback: () => setState(() {}),
-                              child: TopMovilWidget(),
+                              child: const TopMovilWidget(),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   20.0, 0.0, 20.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Align(
-                                    alignment: AlignmentDirectional(-1.0, -1.0),
+                                    alignment: const AlignmentDirectional(-1.0, -1.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 20.0, 0.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -746,10 +743,10 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Align(
-                                            alignment: AlignmentDirectional(
+                                            alignment: const AlignmentDirectional(
                                                 -1.0, -1.0),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       20.0, 20.0, 0.0, 20.0),
                                               child: Text(
@@ -774,7 +771,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           20.0, 0.0, 20.0, 0.0),
                                                   child: TextFormField(
@@ -820,7 +817,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                                               ),
                                                       enabledBorder:
                                                           OutlineInputBorder(
-                                                        borderSide: BorderSide(
+                                                        borderSide: const BorderSide(
                                                           color:
                                                               Color(0xFF00AC67),
                                                           width: 1.0,
@@ -831,7 +828,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                                       ),
                                                       focusedBorder:
                                                           OutlineInputBorder(
-                                                        borderSide: BorderSide(
+                                                        borderSide: const BorderSide(
                                                           color:
                                                               Color(0xFF00AC67),
                                                           width: 1.0,
@@ -890,10 +887,10 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     -1.0, -1.0),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(20.0, 20.0, 0.0,
                                                           20.0),
                                                   child: Text(
@@ -911,7 +908,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         20.0, 0.0, 20.0, 0.0),
                                                 child: TextFormField(
@@ -952,7 +949,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                                         ),
                                                     enabledBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: BorderSide(
+                                                      borderSide: const BorderSide(
                                                         color:
                                                             Color(0xFF00AC67),
                                                         width: 1.0,
@@ -963,7 +960,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                                     ),
                                                     focusedBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: BorderSide(
+                                                      borderSide: const BorderSide(
                                                         color:
                                                             Color(0xFF00AC67),
                                                         width: 1.0,
@@ -1019,10 +1016,81 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     -1.0, -1.0),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(20.0, 20.0, 0.0,
+                                                          20.0),
+                                                  child: Text(
+                                                    'Categoría',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          fontSize: 20.0,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
+                                                ),
+                                              ),
+                                              FlutterFlowCheckboxGroup(
+                                                options: const [
+                                                  'Salud e Higiene',
+                                                  'Perros',
+                                                  'Gatos',
+                                                  'Aseo/Hogar',
+                                                  'Otro'
+                                                ],
+                                                onChanged: (val) => setState(() =>
+                                                    _model.checkboxGroupValues =
+                                                        val),
+                                                controller: _model
+                                                        .checkboxGroupValueController ??=
+                                                    FormFieldController<
+                                                        List<String>>(
+                                                  editarMarcaMarcaRecord
+                                                      .categoria,
+                                                ),
+                                                activeColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .verdeApp,
+                                                checkColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .info,
+                                                checkboxBorderColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                itemPadding:
+                                                    const EdgeInsetsDirectional
+                                                        .fromSTEB(16.0, 0.0,
+                                                            16.0, 0.0),
+                                                checkboxBorderRadius:
+                                                    BorderRadius.circular(4.0),
+                                                initialized: _model
+                                                        .checkboxGroupValues !=
+                                                    null,
+                                              ),
+                                            ],
+                                          ),
+                                          Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Align(
+                                                alignment: const AlignmentDirectional(
+                                                    -1.0, -1.0),
+                                                child: Padding(
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(20.0, 20.0, 0.0,
                                                           20.0),
                                                   child: Text(
@@ -1051,7 +1119,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                                               editarMarcaMarcaRecord
                                                                   .carrusel
                                                                   .toList();
-                                                          return Container(
+                                                          return SizedBox(
                                                             width:
                                                                 double.infinity,
                                                             height: 180.0,
@@ -1086,7 +1154,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                                                     ),
                                                                     Align(
                                                                       alignment:
-                                                                          AlignmentDirectional(
+                                                                          const AlignmentDirectional(
                                                                               1.0,
                                                                               -1.0),
                                                                       child:
@@ -1145,10 +1213,12 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                                                       CarouselController(),
                                                               options:
                                                                   CarouselOptions(
-                                                                initialPage: min(
-                                                                    1,
-                                                                    carrusel.length -
-                                                                        1),
+                                                                initialPage: max(
+                                                                    0,
+                                                                    min(
+                                                                        1,
+                                                                        carrusel.length -
+                                                                            1)),
                                                                 viewportFraction:
                                                                     1.0,
                                                                 disableCenter:
@@ -1175,7 +1245,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                                   Flexible(
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   10.0,
                                                                   0.0,
@@ -1283,21 +1353,21 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                                             FFButtonOptions(
                                                           height: 40.0,
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       24.0,
                                                                       0.0,
                                                                       24.0,
                                                                       0.0),
                                                           iconPadding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
                                                                       0.0,
                                                                       0.0),
                                                           color:
-                                                              Color(0xFF00AC67),
+                                                              const Color(0xFF00AC67),
                                                           textStyle:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -1312,7 +1382,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                                                   ),
                                                           elevation: 3.0,
                                                           borderSide:
-                                                              BorderSide(
+                                                              const BorderSide(
                                                             color: Colors
                                                                 .transparent,
                                                             width: 1.0,
@@ -1333,10 +1403,10 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     -1.0, -1.0),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(20.0, 20.0, 0.0,
                                                           20.0),
                                                   child: Text(
@@ -1375,7 +1445,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                                           ),
                                                         Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   1.0, -1.0),
                                                           child: InkWell(
                                                             splashColor: Colors
@@ -1429,7 +1499,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                                   Flexible(
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   10.0,
                                                                   0.0,
@@ -1530,21 +1600,21 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                                             FFButtonOptions(
                                                           height: 40.0,
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       24.0,
                                                                       0.0,
                                                                       24.0,
                                                                       0.0),
                                                           iconPadding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
                                                                       0.0,
                                                                       0.0),
                                                           color:
-                                                              Color(0xFF00AC67),
+                                                              const Color(0xFF00AC67),
                                                           textStyle:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -1559,7 +1629,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                                                   ),
                                                           elevation: 3.0,
                                                           borderSide:
-                                                              BorderSide(
+                                                              const BorderSide(
                                                             color: Colors
                                                                 .transparent,
                                                             width: 1.0,
@@ -1578,13 +1648,13 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 20.0, 10.0, 20.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.min,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 20.0),
                                                   child: Material(
@@ -1621,11 +1691,11 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                                             children: [
                                                               Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         0.0,
                                                                         -1.0),
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           20.0,
@@ -1652,7 +1722,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                                           Stack(
                                                             children: [
                                                               Padding(
-                                                                padding: EdgeInsetsDirectional
+                                                                padding: const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         10.0,
                                                                         0.0,
@@ -1722,11 +1792,11 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                                               ),
                                                               Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         1.0,
                                                                         -1.0),
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           10.0,
@@ -1789,7 +1859,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         20.0,
@@ -1887,20 +1957,20 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                                               options:
                                                                   FFButtonOptions(
                                                                 height: 40.0,
-                                                                padding: EdgeInsetsDirectional
+                                                                padding: const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         24.0,
                                                                         0.0,
                                                                         24.0,
                                                                         0.0),
                                                                 iconPadding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
                                                                             0.0),
-                                                                color: Color(
+                                                                color: const Color(
                                                                     0xFF00AC67),
                                                                 textStyle: FlutterFlowTheme.of(
                                                                         context)
@@ -1917,7 +1987,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                                                     ),
                                                                 elevation: 3.0,
                                                                 borderSide:
-                                                                    BorderSide(
+                                                                    const BorderSide(
                                                                   color: Colors
                                                                       .transparent,
                                                                   width: 1.0,
@@ -1935,7 +2005,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 20.0),
                                                   child: Material(
@@ -1969,7 +2039,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                                           // Customize what your widget looks like when it's loading.
                                                           if (!snapshot
                                                               .hasData) {
-                                                            return Center(
+                                                            return const Center(
                                                               child: SizedBox(
                                                                 width: 50.0,
                                                                 height: 50.0,
@@ -2005,7 +2075,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                                                         .max,
                                                                 children: [
                                                                   Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             20.0,
                                                                             0.0,
@@ -2023,12 +2093,12 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                                                   ),
                                                                   Align(
                                                                     alignment:
-                                                                        AlignmentDirectional(
+                                                                        const AlignmentDirectional(
                                                                             -1.0,
                                                                             -1.0),
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           10.0,
                                                                           20.0,
                                                                           0.0,
@@ -2063,17 +2133,22 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
 
                                                                   await widget
                                                                       .marca!
-                                                                      .update(
-                                                                          createMarcaRecordData(
-                                                                    nombreMarca:
-                                                                        _model
-                                                                            .textController1
-                                                                            .text,
-                                                                    sobrelaMarca:
-                                                                        _model
-                                                                            .txtSobrelaMarcaTextController
-                                                                            .text,
-                                                                  ));
+                                                                      .update({
+                                                                    ...createMarcaRecordData(
+                                                                      nombreMarca: _model
+                                                                          .textController1
+                                                                          .text,
+                                                                      sobrelaMarca: _model
+                                                                          .txtSobrelaMarcaTextController
+                                                                          .text,
+                                                                    ),
+                                                                    ...mapToFirestore(
+                                                                      {
+                                                                        'categoria':
+                                                                            _model.checkboxGroupValues,
+                                                                      },
+                                                                    ),
+                                                                  });
                                                                   setState(() {
                                                                     _model
                                                                         .textController1
@@ -2101,7 +2176,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                         ),
                                                                       ),
-                                                                      duration: Duration(
+                                                                      duration: const Duration(
                                                                           milliseconds:
                                                                               4000),
                                                                       backgroundColor:
@@ -2119,19 +2194,19 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                                                 options:
                                                                     FFButtonOptions(
                                                                   height: 40.0,
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           24.0,
                                                                           0.0,
                                                                           24.0,
                                                                           0.0),
-                                                                  iconPadding: EdgeInsetsDirectional
+                                                                  iconPadding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
                                                                           0.0),
-                                                                  color: Color(
+                                                                  color: const Color(
                                                                       0xFF00AC67),
                                                                   textStyle: FlutterFlowTheme.of(
                                                                           context)
@@ -2147,7 +2222,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                                                   elevation:
                                                                       3.0,
                                                                   borderSide:
-                                                                      BorderSide(
+                                                                      const BorderSide(
                                                                     color: Colors
                                                                         .transparent,
                                                                     width: 1.0,
@@ -2172,7 +2247,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                                       ),
                                     ],
                                   ),
-                                ].addToEnd(SizedBox(height: 30.0)),
+                                ].addToEnd(const SizedBox(height: 30.0)),
                               ),
                             ),
                           ],
@@ -2186,7 +2261,7 @@ class _EditarMarcaWidgetState extends State<EditarMarcaWidget> {
                     tablet: false,
                   ))
                     Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(8.0),
                         child: Image.asset(

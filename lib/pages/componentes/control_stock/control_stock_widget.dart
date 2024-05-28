@@ -1,15 +1,12 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_count_controller.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/componentes/variacion_stock/variacion_stock_widget.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'control_stock_model.dart';
 export 'control_stock_model.dart';
@@ -68,18 +65,18 @@ class _ControlStockWidgetState extends State<ControlStockWidget> {
     context.watch<FFAppState>();
 
     return Align(
-      alignment: AlignmentDirectional(0.0, 0.0),
+      alignment: const AlignmentDirectional(0.0, 0.0),
       child: Container(
-        decoration: BoxDecoration(),
+        decoration: const BoxDecoration(),
         child: Builder(
           builder: (context) {
             if (_model.variacion != null) {
               return Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 20.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 20.0),
                 child: Builder(
                   builder: (context) {
                     final stocks =
-                        widget.variaciones?.map((e) => e).toList()?.toList() ??
+                        widget.variaciones?.map((e) => e).toList().toList() ??
                             [];
                     return ListView.separated(
                       padding: EdgeInsets.zero,
@@ -87,7 +84,7 @@ class _ControlStockWidgetState extends State<ControlStockWidget> {
                       shrinkWrap: true,
                       scrollDirection: Axis.vertical,
                       itemCount: stocks.length,
-                      separatorBuilder: (_, __) => SizedBox(height: 20.0),
+                      separatorBuilder: (_, __) => const SizedBox(height: 20.0),
                       itemBuilder: (context, stocksIndex) {
                         final stocksItem = stocks[stocksIndex];
                         return Row(
@@ -95,14 +92,14 @@ class _ControlStockWidgetState extends State<ControlStockWidget> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 20.0, 0.0),
                               child: StreamBuilder<VariacionRecord>(
                                 stream: VariacionRecord.getDocument(stocksItem),
                                 builder: (context, snapshot) {
                                   // Customize what your widget looks like when it's loading.
                                   if (!snapshot.hasData) {
-                                    return Center(
+                                    return const Center(
                                       child: SizedBox(
                                         width: 50.0,
                                         height: 50.0,
@@ -133,7 +130,7 @@ class _ControlStockWidgetState extends State<ControlStockWidget> {
                               builder: (context, snapshot) {
                                 // Customize what your widget looks like when it's loading.
                                 if (!snapshot.hasData) {
-                                  return Center(
+                                  return const Center(
                                     child: SizedBox(
                                       width: 50.0,
                                       height: 50.0,
@@ -174,7 +171,7 @@ class _ControlStockWidgetState extends State<ControlStockWidget> {
                     builder: (context, snapshot) {
                       // Customize what your widget looks like when it's loading.
                       if (!snapshot.hasData) {
-                        return Center(
+                        return const Center(
                           child: SizedBox(
                             width: 50.0,
                             height: 50.0,
@@ -211,7 +208,7 @@ class _ControlStockWidgetState extends State<ControlStockWidget> {
                           incrementIconBuilder: (enabled) => FaIcon(
                             FontAwesomeIcons.plus,
                             color: enabled
-                                ? Color(0xFFFF8159)
+                                ? const Color(0xFFFF8159)
                                 : FlutterFlowTheme.of(context).alternate,
                             size: 20.0,
                           ),

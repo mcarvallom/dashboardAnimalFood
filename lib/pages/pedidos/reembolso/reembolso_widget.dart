@@ -1,14 +1,11 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/componentes/reembolsar_pago/reembolsar_pago_widget.dart';
 import '/pages/componentes/top_escritorio/top_escritorio_widget.dart';
 import '/pages/componentes/top_movil/top_movil_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'reembolso_model.dart';
 export 'reembolso_model.dart';
 
@@ -23,7 +20,7 @@ class ReembolsoWidget extends StatefulWidget {
     this.colorBanner,
     this.colorAjustes,
     Color? colorCategorias,
-  }) : this.colorCategorias = colorCategorias ?? const Color(0xFF39A3EF);
+  }) : colorCategorias = colorCategorias ?? const Color(0xFF39A3EF);
 
   final Color? colorInicio;
   final Color? colorOrdenes;
@@ -76,7 +73,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
             builder: (context, snapshot) {
               // Customize what your widget looks like when it's loading.
               if (!snapshot.hasData) {
-                return Center(
+                return const Center(
                   child: SizedBox(
                     width: 50.0,
                     height: 50.0,
@@ -98,16 +95,16 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Expanded(
                             child: Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 30.0, 0.0, 20.0),
                                 child: Image.asset(
                                   'assets/images/logo_animalfood.png',
@@ -122,7 +119,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(10.0, 30.0, 0.0, 10.0),
+                          const EdgeInsetsDirectional.fromSTEB(10.0, 30.0, 0.0, 10.0),
                       child: Text(
                         'Menú',
                         style: FlutterFlowTheme.of(context).bodyLarge.override(
@@ -133,7 +130,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -147,7 +144,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                             'Inicio',
                             queryParameters: {
                               'colorInicio': serializeParam(
-                                Color(0xFFE6A5E5),
+                                const Color(0xFFE6A5E5),
                                 ParamType.Color,
                               ),
                               'nombre': serializeParam(
@@ -156,7 +153,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                               ),
                             }.withoutNulls,
                             extra: <String, dynamic>{
-                              kTransitionInfoKey: TransitionInfo(
+                              kTransitionInfoKey: const TransitionInfo(
                                 hasTransition: true,
                                 transitionType: PageTransitionType.fade,
                               ),
@@ -170,7 +167,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 0.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -182,7 +179,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                   size: 24.0,
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     'Inicio',
@@ -204,7 +201,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -220,7 +217,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                               ),
                             }.withoutNulls,
                             extra: <String, dynamic>{
-                              kTransitionInfoKey: TransitionInfo(
+                              kTransitionInfoKey: const TransitionInfo(
                                 hasTransition: true,
                                 transitionType: PageTransitionType.fade,
                               ),
@@ -234,7 +231,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 0.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -246,7 +243,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                   size: 24.0,
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     'Órdenes',
@@ -270,7 +267,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -281,7 +278,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                             'productos',
                             queryParameters: {
                               'colorProductos': serializeParam(
-                                Color(0xFFE6A5E5),
+                                const Color(0xFFE6A5E5),
                                 ParamType.Color,
                               ),
                               'nombre': serializeParam(
@@ -290,7 +287,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                               ),
                             }.withoutNulls,
                             extra: <String, dynamic>{
-                              kTransitionInfoKey: TransitionInfo(
+                              kTransitionInfoKey: const TransitionInfo(
                                 hasTransition: true,
                                 transitionType: PageTransitionType.fade,
                               ),
@@ -304,7 +301,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 0.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -316,7 +313,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                   size: 24.0,
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     'Productos',
@@ -338,7 +335,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -348,7 +345,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                           context.pushNamed(
                             'tipoCategoria',
                             extra: <String, dynamic>{
-                              kTransitionInfoKey: TransitionInfo(
+                              kTransitionInfoKey: const TransitionInfo(
                                 hasTransition: true,
                                 transitionType: PageTransitionType.fade,
                               ),
@@ -362,7 +359,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 0.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -374,7 +371,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                   size: 24.0,
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     'Categorías',
@@ -398,7 +395,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -408,7 +405,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                           context.pushNamed(
                             'Marcas',
                             extra: <String, dynamic>{
-                              kTransitionInfoKey: TransitionInfo(
+                              kTransitionInfoKey: const TransitionInfo(
                                 hasTransition: true,
                                 transitionType: PageTransitionType.fade,
                               ),
@@ -422,7 +419,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 0.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -434,7 +431,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                   size: 24.0,
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     'Marcas',
@@ -456,7 +453,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -467,7 +464,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                             'empleados',
                             queryParameters: {
                               'colorEmpleados': serializeParam(
-                                Color(0xFFE6A5E5),
+                                const Color(0xFFE6A5E5),
                                 ParamType.Color,
                               ),
                               'nombre': serializeParam(
@@ -476,7 +473,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                               ),
                             }.withoutNulls,
                             extra: <String, dynamic>{
-                              kTransitionInfoKey: TransitionInfo(
+                              kTransitionInfoKey: const TransitionInfo(
                                 hasTransition: true,
                                 transitionType: PageTransitionType.fade,
                               ),
@@ -490,7 +487,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 0.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -502,7 +499,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                   size: 24.0,
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     'Empleados',
@@ -524,7 +521,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -535,7 +532,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                             'clientes',
                             queryParameters: {
                               'colorClientes': serializeParam(
-                                Color(0xFFE6A5E5),
+                                const Color(0xFFE6A5E5),
                                 ParamType.Color,
                               ),
                               'nombre': serializeParam(
@@ -544,7 +541,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                               ),
                             }.withoutNulls,
                             extra: <String, dynamic>{
-                              kTransitionInfoKey: TransitionInfo(
+                              kTransitionInfoKey: const TransitionInfo(
                                 hasTransition: true,
                                 transitionType: PageTransitionType.fade,
                               ),
@@ -558,7 +555,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 0.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -570,7 +567,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                   size: 24.0,
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     'Clientes',
@@ -594,7 +591,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                       child: Material(
                         color: Colors.transparent,
                         elevation: 3.0,
@@ -605,22 +602,22 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                           width: MediaQuery.sizeOf(context).width * 1.0,
                           height: 60.0,
                           decoration: BoxDecoration(
-                            color: Color(0xFFB3CF40),
+                            color: const Color(0xFFB3CF40),
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 0.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
-                                Icon(
+                                const Icon(
                                   Icons.settings,
                                   color: Colors.white,
                                   size: 24.0,
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     'Tienda',
@@ -642,8 +639,8 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                       ),
                     ),
                   ]
-                      .addToStart(SizedBox(height: 70.0))
-                      .addToEnd(SizedBox(height: 70.0)),
+                      .addToStart(const SizedBox(height: 70.0))
+                      .addToEnd(const SizedBox(height: 70.0)),
                 ),
               );
             },
@@ -690,7 +687,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                     builder: (context, snapshot) {
                                       // Customize what your widget looks like when it's loading.
                                       if (!snapshot.hasData) {
-                                        return Center(
+                                        return const Center(
                                           child: SizedBox(
                                             width: 50.0,
                                             height: 50.0,
@@ -717,7 +714,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                               CrossAxisAlignment.start,
                                           children: [
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.min,
@@ -727,11 +724,11 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                                   Expanded(
                                                     child: Align(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     30.0,
@@ -749,7 +746,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 30.0, 0.0, 10.0),
                                               child: Text(
@@ -765,7 +762,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 10.0, 10.0, 0.0),
                                               child: InkWell(
@@ -784,7 +781,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                                     queryParameters: {
                                                       'colorInicio':
                                                           serializeParam(
-                                                        Color(0xFFE6A5E5),
+                                                        const Color(0xFFE6A5E5),
                                                         ParamType.Color,
                                                       ),
                                                       'nombre': serializeParam(
@@ -794,7 +791,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                                     }.withoutNulls,
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
-                                                          TransitionInfo(
+                                                          const TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType
@@ -816,7 +813,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(10.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Row(
@@ -832,7 +829,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       10.0,
                                                                       0.0,
@@ -863,7 +860,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 10.0, 10.0, 0.0),
                                               child: InkWell(
@@ -883,7 +880,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                                     }.withoutNulls,
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
-                                                          TransitionInfo(
+                                                          const TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType
@@ -905,7 +902,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(10.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Row(
@@ -922,7 +919,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       10.0,
                                                                       0.0,
@@ -956,7 +953,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 10.0, 10.0, 0.0),
                                               child: InkWell(
@@ -971,7 +968,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                                     queryParameters: {
                                                       'colorProductos':
                                                           serializeParam(
-                                                        Color(0xFFE6A5E5),
+                                                        const Color(0xFFE6A5E5),
                                                         ParamType.Color,
                                                       ),
                                                       'nombre': serializeParam(
@@ -981,7 +978,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                                     }.withoutNulls,
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
-                                                          TransitionInfo(
+                                                          const TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType
@@ -1003,7 +1000,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(10.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Row(
@@ -1020,7 +1017,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       10.0,
                                                                       0.0,
@@ -1051,7 +1048,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 10.0, 10.0, 0.0),
                                               child: InkWell(
@@ -1071,7 +1068,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                                     }.withoutNulls,
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
-                                                          TransitionInfo(
+                                                          const TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType
@@ -1093,7 +1090,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(10.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Row(
@@ -1109,7 +1106,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       10.0,
                                                                       0.0,
@@ -1143,7 +1140,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 10.0, 10.0, 0.0),
                                               child: InkWell(
@@ -1157,7 +1154,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                                     'agregarMarca',
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
-                                                          TransitionInfo(
+                                                          const TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType
@@ -1179,7 +1176,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(10.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Row(
@@ -1195,7 +1192,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       10.0,
                                                                       0.0,
@@ -1226,7 +1223,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 10.0, 10.0, 0.0),
                                               child: InkWell(
@@ -1241,7 +1238,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                                     queryParameters: {
                                                       'colorEmpleados':
                                                           serializeParam(
-                                                        Color(0xFFE6A5E5),
+                                                        const Color(0xFFE6A5E5),
                                                         ParamType.Color,
                                                       ),
                                                       'nombre': serializeParam(
@@ -1251,7 +1248,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                                     }.withoutNulls,
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
-                                                          TransitionInfo(
+                                                          const TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType
@@ -1273,7 +1270,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(10.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Row(
@@ -1289,7 +1286,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       10.0,
                                                                       0.0,
@@ -1320,7 +1317,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 10.0, 10.0, 0.0),
                                               child: InkWell(
@@ -1335,7 +1332,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                                     queryParameters: {
                                                       'colorClientes':
                                                           serializeParam(
-                                                        Color(0xFFE6A5E5),
+                                                        const Color(0xFFE6A5E5),
                                                         ParamType.Color,
                                                       ),
                                                       'nombre': serializeParam(
@@ -1345,7 +1342,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                                     }.withoutNulls,
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
-                                                          TransitionInfo(
+                                                          const TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType
@@ -1367,7 +1364,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(10.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Row(
@@ -1383,7 +1380,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       10.0,
                                                                       0.0,
@@ -1417,7 +1414,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 10.0, 10.0, 0.0),
                                               child: Material(
@@ -1435,28 +1432,28 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                                           1.0,
                                                   height: 60.0,
                                                   decoration: BoxDecoration(
-                                                    color: Color(0xFFB3CF40),
+                                                    color: const Color(0xFFB3CF40),
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             10.0),
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(10.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
                                                       children: [
-                                                        Icon(
+                                                        const Icon(
                                                           Icons.settings,
                                                           color: Colors.white,
                                                           size: 24.0,
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       10.0,
                                                                       0.0,
@@ -1506,7 +1503,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                             wrapWithModel(
                               model: _model.topEscritorioModel,
                               updateCallback: () => setState(() {}),
-                              child: TopEscritorioWidget(),
+                              child: const TopEscritorioWidget(),
                             ),
                             Flexible(
                               child: Row(
@@ -1519,7 +1516,7 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                                     child: wrapWithModel(
                                       model: _model.reembolsarPagoModel1,
                                       updateCallback: () => setState(() {}),
-                                      child: ReembolsarPagoWidget(),
+                                      child: const ReembolsarPagoWidget(),
                                     ),
                                   ),
                                 ],
@@ -1549,23 +1546,23 @@ class _ReembolsoWidgetState extends State<ReembolsoWidget> {
                         wrapWithModel(
                           model: _model.topMovilModel,
                           updateCallback: () => setState(() {}),
-                          child: TopMovilWidget(),
+                          child: const TopMovilWidget(),
                         ),
                         Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 20.0, 10.0, 20.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Container(
-                                    decoration: BoxDecoration(),
+                                    decoration: const BoxDecoration(),
                                     child: wrapWithModel(
                                       model: _model.reembolsarPagoModel2,
                                       updateCallback: () => setState(() {}),
-                                      child: ReembolsarPagoWidget(),
+                                      child: const ReembolsarPagoWidget(),
                                     ),
                                   ),
                                 ],

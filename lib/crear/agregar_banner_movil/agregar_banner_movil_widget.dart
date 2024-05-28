@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -9,10 +8,7 @@ import '/flutter_flow/upload_data.dart';
 import '/pages/componentes/menu_escritorio/menu_escritorio_widget.dart';
 import '/pages/componentes/top_escritorio/top_escritorio_widget.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'agregar_banner_movil_model.dart';
 export 'agregar_banner_movil_model.dart';
 
@@ -27,7 +23,7 @@ class AgregarBannerMovilWidget extends StatefulWidget {
     Color? colorBanner,
     this.colorAjustes,
     this.colorCategorias,
-  }) : this.colorBanner = colorBanner ?? const Color(0xFF39A3EF);
+  }) : colorBanner = colorBanner ?? const Color(0xFF39A3EF);
 
   final Color? colorInicio;
   final Color? colorOrdenes;
@@ -84,7 +80,7 @@ class _AgregarBannerMovilWidgetState extends State<AgregarBannerMovilWidget> {
                     model: _model.menuEscritorioModel,
                     updateCallback: () => setState(() {}),
                     updateOnChange: true,
-                    child: MenuEscritorioWidget(),
+                    child: const MenuEscritorioWidget(),
                   ),
                 ],
               ),
@@ -95,7 +91,7 @@ class _AgregarBannerMovilWidgetState extends State<AgregarBannerMovilWidget> {
                     wrapWithModel(
                       model: _model.topEscritorioModel,
                       updateCallback: () => setState(() {}),
-                      child: TopEscritorioWidget(),
+                      child: const TopEscritorioWidget(),
                     ),
                     Expanded(
                       child: Row(
@@ -104,7 +100,7 @@ class _AgregarBannerMovilWidgetState extends State<AgregarBannerMovilWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 20.0, 20.0, 10.0, 20.0),
                             child: SingleChildScrollView(
                               primary: false,
@@ -112,7 +108,7 @@ class _AgregarBannerMovilWidgetState extends State<AgregarBannerMovilWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 20.0),
                                     child: Material(
                                       color: Colors.transparent,
@@ -133,7 +129,7 @@ class _AgregarBannerMovilWidgetState extends State<AgregarBannerMovilWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 10.0, 0.0, 10.0),
                                               child: StreamBuilder<
@@ -149,7 +145,7 @@ class _AgregarBannerMovilWidgetState extends State<AgregarBannerMovilWidget> {
                                                 builder: (context, snapshot) {
                                                   // Customize what your widget looks like when it's loading.
                                                   if (!snapshot.hasData) {
-                                                    return Center(
+                                                    return const Center(
                                                       child: SizedBox(
                                                         width: 50.0,
                                                         height: 50.0,
@@ -167,7 +163,7 @@ class _AgregarBannerMovilWidgetState extends State<AgregarBannerMovilWidget> {
                                                   List<BannersRecord>
                                                       carouselBannersRecordList =
                                                       snapshot.data!;
-                                                  return Container(
+                                                  return SizedBox(
                                                     width: double.infinity,
                                                     height: 280.0,
                                                     child:
@@ -182,9 +178,9 @@ class _AgregarBannerMovilWidgetState extends State<AgregarBannerMovilWidget> {
                                                                 carouselIndex];
                                                         return Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
-                                                          child: Container(
+                                                          child: SizedBox(
                                                             width: 500.0,
                                                             child: Stack(
                                                               children: [
@@ -207,7 +203,7 @@ class _AgregarBannerMovilWidgetState extends State<AgregarBannerMovilWidget> {
                                                                 ),
                                                                 Align(
                                                                   alignment:
-                                                                      AlignmentDirectional(
+                                                                      const AlignmentDirectional(
                                                                           0.95,
                                                                           -0.9),
                                                                   child:
@@ -247,11 +243,13 @@ class _AgregarBannerMovilWidgetState extends State<AgregarBannerMovilWidget> {
                                                               .carouselController ??=
                                                           CarouselController(),
                                                       options: CarouselOptions(
-                                                        initialPage: min(
-                                                            1,
-                                                            carouselBannersRecordList
-                                                                    .length -
-                                                                1),
+                                                        initialPage: max(
+                                                            0,
+                                                            min(
+                                                                1,
+                                                                carouselBannersRecordList
+                                                                        .length -
+                                                                    1)),
                                                         viewportFraction: 0.8,
                                                         disableCenter: true,
                                                         enlargeCenterPage: true,
@@ -262,11 +260,11 @@ class _AgregarBannerMovilWidgetState extends State<AgregarBannerMovilWidget> {
                                                             Axis.horizontal,
                                                         autoPlay: true,
                                                         autoPlayAnimationDuration:
-                                                            Duration(
+                                                            const Duration(
                                                                 milliseconds:
                                                                     1000),
                                                         autoPlayInterval:
-                                                            Duration(
+                                                            const Duration(
                                                                 milliseconds:
                                                                     (1000 +
                                                                         2000)),
@@ -285,10 +283,10 @@ class _AgregarBannerMovilWidgetState extends State<AgregarBannerMovilWidget> {
                                               ),
                                             ),
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   -1.0, -1.0),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         20.0, 20.0, 0.0, 20.0),
                                                 child: Text(
@@ -306,7 +304,7 @@ class _AgregarBannerMovilWidgetState extends State<AgregarBannerMovilWidget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 10.0, 0.0, 20.0),
                                               child: FFButtonWidget(
@@ -393,14 +391,14 @@ class _AgregarBannerMovilWidgetState extends State<AgregarBannerMovilWidget> {
                                                 text: 'Subir Imagen',
                                                 options: FFButtonOptions(
                                                   height: 40.0,
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           24.0, 0.0, 24.0, 0.0),
                                                   iconPadding:
-                                                      EdgeInsetsDirectional
+                                                      const EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
                                                               0.0, 0.0),
-                                                  color: Color(0xFFF99C48),
+                                                  color: const Color(0xFFF99C48),
                                                   textStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
@@ -412,7 +410,7 @@ class _AgregarBannerMovilWidgetState extends State<AgregarBannerMovilWidget> {
                                                             letterSpacing: 0.0,
                                                           ),
                                                   elevation: 3.0,
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Colors.transparent,
                                                     width: 1.0,
                                                   ),
@@ -432,7 +430,7 @@ class _AgregarBannerMovilWidgetState extends State<AgregarBannerMovilWidget> {
                                                 fit: BoxFit.cover,
                                               ),
                                             ),
-                                          ].addToEnd(SizedBox(height: 30.0)),
+                                          ].addToEnd(const SizedBox(height: 30.0)),
                                         ),
                                       ),
                                     ),
@@ -443,13 +441,13 @@ class _AgregarBannerMovilWidgetState extends State<AgregarBannerMovilWidget> {
                           ),
                           Flexible(
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 20.0, 20.0, 20.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 20.0),
                                     child: Material(
                                       color: Colors.transparent,
@@ -475,7 +473,7 @@ class _AgregarBannerMovilWidgetState extends State<AgregarBannerMovilWidget> {
                                           builder: (context, snapshot) {
                                             // Customize what your widget looks like when it's loading.
                                             if (!snapshot.hasData) {
-                                              return Center(
+                                              return const Center(
                                                 child: SizedBox(
                                                   width: 50.0,
                                                   height: 50.0,
@@ -508,7 +506,7 @@ class _AgregarBannerMovilWidgetState extends State<AgregarBannerMovilWidget> {
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   20.0,
                                                                   0.0,
@@ -526,11 +524,11 @@ class _AgregarBannerMovilWidgetState extends State<AgregarBannerMovilWidget> {
                                                     Flexible(
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 -1.0, -1.0),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       10.0,
                                                                       20.0,
@@ -582,14 +580,14 @@ class _AgregarBannerMovilWidgetState extends State<AgregarBannerMovilWidget> {
                                                   options: FFButtonOptions(
                                                     height: 40.0,
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(24.0, 0.0,
                                                                 24.0, 0.0),
                                                     iconPadding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
-                                                    color: Color(0xFF39A3EF),
+                                                    color: const Color(0xFF39A3EF),
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .titleSmall
@@ -600,7 +598,7 @@ class _AgregarBannerMovilWidgetState extends State<AgregarBannerMovilWidget> {
                                                           letterSpacing: 0.0,
                                                         ),
                                                     elevation: 3.0,
-                                                    borderSide: BorderSide(
+                                                    borderSide: const BorderSide(
                                                       color: Colors.transparent,
                                                       width: 1.0,
                                                     ),

@@ -3,9 +3,7 @@ import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'elegir_variacion_model.dart';
 export 'elegir_variacion_model.dart';
@@ -57,7 +55,7 @@ class _ElegirVariacionWidgetState extends State<ElegirVariacionWidget> {
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
-          return Center(
+          return const Center(
             child: SizedBox(
               width: 50.0,
               height: 50.0,
@@ -71,7 +69,7 @@ class _ElegirVariacionWidgetState extends State<ElegirVariacionWidget> {
         }
         List<VariacionRecord> containerVariacionRecordList = snapshot.data!;
         return Container(
-          decoration: BoxDecoration(),
+          decoration: const BoxDecoration(),
           child: FlutterFlowDropDown<String>(
             controller: _model.dropDownValueController ??=
                 FormFieldController<String>(null),
@@ -106,7 +104,7 @@ class _ElegirVariacionWidgetState extends State<ElegirVariacionWidget> {
             borderColor: FlutterFlowTheme.of(context).verdeApp,
             borderWidth: 1.0,
             borderRadius: 8.0,
-            margin: EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
+            margin: const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
             hidesUnderline: true,
             isOverButton: true,
             isSearchable: false,

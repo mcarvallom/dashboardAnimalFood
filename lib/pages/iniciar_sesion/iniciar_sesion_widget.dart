@@ -4,8 +4,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter/scheduler.dart';
 import 'iniciar_sesion_model.dart';
 export 'iniciar_sesion_model.dart';
 
@@ -25,6 +24,21 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => IniciarSesionModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      if (loggedIn) {
+        context.goNamed(
+          'Inicio',
+          extra: <String, dynamic>{
+            kTransitionInfoKey: const TransitionInfo(
+              hasTransition: true,
+              transitionType: PageTransitionType.fade,
+            ),
+          },
+        );
+      }
+    });
 
     _model.emailAddressLoginnTextController ??= TextEditingController();
     _model.emailAddressLoginnFocusNode ??= FocusNode();
@@ -50,7 +64,7 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Color(0xFF14181B),
+        backgroundColor: const Color(0xFF14181B),
         body: Container(
           width: MediaQuery.sizeOf(context).width * 1.0,
           height: MediaQuery.sizeOf(context).height * 1.0,
@@ -58,7 +72,7 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
             color: Colors.white,
             image: DecorationImage(
               fit: BoxFit.cover,
-              alignment: AlignmentDirectional(0.0, 0.6),
+              alignment: const AlignmentDirectional(0.0, 0.6),
               image: Image.network(
                 'https://images.unsplash.com/photo-1529472119196-cb724127a98e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxfHxkb2dzfGVufDB8fHx8MTcwMDQ1MDYwNXww&ixlib=rb-4.0.3&q=85',
               ).image,
@@ -67,7 +81,7 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
           child: Container(
             width: 100.0,
             height: MediaQuery.sizeOf(context).height * 1.0,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Color(0x4E5CFFBD),
             ),
             child: Column(
@@ -76,7 +90,7 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                 Flexible(
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -102,7 +116,7 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 16.0, 0.0, 0.0),
                                     child: Material(
                                       color: Colors.transparent,
@@ -148,7 +162,7 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                                                   fontWeight: FontWeight.normal,
                                                 ),
                                             enabledBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0xFF00AC67),
                                                 width: 1.0,
                                               ),
@@ -156,7 +170,7 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                                                   BorderRadius.circular(8.0),
                                             ),
                                             focusedBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0xFF00AC67),
                                                 width: 1.0,
                                               ),
@@ -187,7 +201,7 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                                             filled: true,
                                             fillColor: Colors.white,
                                             contentPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     20.0, 24.0, 20.0, 24.0),
                                           ),
                                           style: FlutterFlowTheme.of(context)
@@ -208,7 +222,7 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 16.0, 0.0, 0.0),
                                     child: Material(
                                       color: Colors.transparent,
@@ -254,7 +268,7 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                                               context.mounted,
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
-                                                    TransitionInfo(
+                                                    const TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType.fade,
@@ -292,7 +306,7 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                                                   fontWeight: FontWeight.normal,
                                                 ),
                                             enabledBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0xFF00AC67),
                                                 width: 1.0,
                                               ),
@@ -300,7 +314,7 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                                                   BorderRadius.circular(8.0),
                                             ),
                                             focusedBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Color(0xFF00AC67),
                                                 width: 1.0,
                                               ),
@@ -331,7 +345,7 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                                             filled: true,
                                             fillColor: Colors.white,
                                             contentPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     20.0, 24.0, 20.0, 24.0),
                                             suffixIcon: InkWell(
                                               onTap: () => setState(
@@ -347,7 +361,7 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                                                     ? Icons.visibility_outlined
                                                     : Icons
                                                         .visibility_off_outlined,
-                                                color: Color(0xFF95A1AC),
+                                                color: const Color(0xFF95A1AC),
                                                 size: 20.0,
                                               ),
                                             ),
@@ -368,7 +382,7 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 24.0, 0.0, 0.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
@@ -395,7 +409,7 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                                           'conosininiciosesion',
                                           context.mounted,
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: TransitionInfo(
+                                            kTransitionInfoKey: const TransitionInfo(
                                               hasTransition: true,
                                               transitionType:
                                                   PageTransitionType.fade,
@@ -408,10 +422,10 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                                       text: 'Entrar',
                                       options: FFButtonOptions(
                                         height: 40.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             20.0, 10.0, 20.0, 10.0),
-                                        iconPadding: EdgeInsets.all(10.0),
-                                        color: Color(0xFF00AC67),
+                                        iconPadding: const EdgeInsets.all(10.0),
+                                        color: const Color(0xFF00AC67),
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
@@ -424,7 +438,7 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                                               fontWeight: FontWeight.normal,
                                             ),
                                         elevation: 10.0,
-                                        borderSide: BorderSide(
+                                        borderSide: const BorderSide(
                                           color: Colors.transparent,
                                           width: 0.0,
                                         ),
@@ -434,10 +448,10 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 20.0, 0.0, 0.0),
                                     child: Container(
-                                      decoration: BoxDecoration(),
+                                      decoration: const BoxDecoration(),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.min,
                                         mainAxisAlignment:
@@ -450,11 +464,11 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                                             },
                                             text: 'Olvidaste tu clave?',
                                             options: FFButtonOptions(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              iconPadding: EdgeInsetsDirectional
+                                              iconPadding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color: Color(0x0039D2C0),
+                                              color: const Color(0x0039D2C0),
                                               textStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .titleMedium
@@ -465,7 +479,7 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                               elevation: 0.0,
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Colors.transparent,
                                                 width: 1.0,
                                               ),
@@ -473,7 +487,7 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 0.0, 0.0, 0.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
@@ -488,7 +502,7 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                                                     .isEmpty) {
                                                   ScaffoldMessenger.of(context)
                                                       .showSnackBar(
-                                                    SnackBar(
+                                                    const SnackBar(
                                                       content: Text(
                                                         'Email required!',
                                                       ),
@@ -536,7 +550,7 @@ class _IniciarSesionWidgetState extends State<IniciarSesionWidget> {
                         ))
                           Flexible(
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   40.0, 0.0, 40.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,

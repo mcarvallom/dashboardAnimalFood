@@ -3,11 +3,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/componentes/status_pedido/status_pedido_widget.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'opciones_orden_movil_model.dart';
 export 'opciones_orden_movil_model.dart';
 
@@ -59,7 +56,7 @@ class _OpcionesOrdenMovilWidgetState extends State<OpcionesOrdenMovilWidget> {
     return Material(
       color: Colors.transparent,
       elevation: 4.0,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(0.0),
           bottomRight: Radius.circular(0.0),
@@ -75,7 +72,7 @@ class _OpcionesOrdenMovilWidgetState extends State<OpcionesOrdenMovilWidget> {
         ),
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
-          borderRadius: BorderRadius.only(
+          borderRadius: const BorderRadius.only(
             bottomLeft: Radius.circular(0.0),
             bottomRight: Radius.circular(0.0),
             topLeft: Radius.circular(30.0),
@@ -83,7 +80,7 @@ class _OpcionesOrdenMovilWidgetState extends State<OpcionesOrdenMovilWidget> {
           ),
         ),
         child: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(10.0, 30.0, 10.0, 40.0),
+          padding: const EdgeInsetsDirectional.fromSTEB(10.0, 30.0, 10.0, 40.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -96,7 +93,7 @@ class _OpcionesOrdenMovilWidgetState extends State<OpcionesOrdenMovilWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                 child: InkWell(
                   splashColor: Colors.transparent,
                   focusColor: Colors.transparent,
@@ -118,7 +115,7 @@ class _OpcionesOrdenMovilWidgetState extends State<OpcionesOrdenMovilWidget> {
                       }.withoutNulls,
                       extra: <String, dynamic>{
                         'detalleOrden': widget.parameter3,
-                        kTransitionInfoKey: TransitionInfo(
+                        kTransitionInfoKey: const TransitionInfo(
                           hasTransition: true,
                           transitionType: PageTransitionType.fade,
                         ),
@@ -143,7 +140,7 @@ class _OpcionesOrdenMovilWidgetState extends State<OpcionesOrdenMovilWidget> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: AutoSizeText(
                               'Ver orden',
                               style: FlutterFlowTheme.of(context)
@@ -155,7 +152,7 @@ class _OpcionesOrdenMovilWidgetState extends State<OpcionesOrdenMovilWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 0.0, 10.0, 0.0),
                             child: Container(
                               width: 30.0,
@@ -163,7 +160,7 @@ class _OpcionesOrdenMovilWidgetState extends State<OpcionesOrdenMovilWidget> {
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
-                              child: Align(
+                              child: const Align(
                                 alignment: AlignmentDirectional(0.0, 0.0),
                                 child: FaIcon(
                                   FontAwesomeIcons.eye,

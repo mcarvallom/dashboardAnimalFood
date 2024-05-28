@@ -1,23 +1,15 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
 import '/backend/push_notifications/push_notifications_handler.dart'
     show PushNotificationsHandler;
 import '/index.dart';
-import '/main.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/lat_lng.dart';
-import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'serialization_util.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -82,19 +74,20 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) => appStateNotifier.loggedIn
-          ? ConosininiciosesionWidget()
-          : IniciarSesionWidget(),
+          ? const ConosininiciosesionWidget()
+          : const PantallaWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.loggedIn
-              ? ConosininiciosesionWidget()
-              : IniciarSesionWidget(),
+              ? const ConosininiciosesionWidget()
+              : const PantallaWidget(),
         ),
         FFRoute(
           name: 'Inicio',
           path: '/inicio',
+          requireAuth: true,
           builder: (context, params) => InicioWidget(
             colorInicio: params.getParam(
               'colorInicio',
@@ -123,12 +116,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'iniciarSesion',
           path: '/iniciarSesion',
-          builder: (context, params) => IniciarSesionWidget(),
+          builder: (context, params) => const IniciarSesionWidget(),
         ),
         FFRoute(
           name: 'conosininiciosesion',
           path: '/conosininiciosesion',
-          builder: (context, params) => ConosininiciosesionWidget(),
+          builder: (context, params) => const ConosininiciosesionWidget(),
         ),
         FFRoute(
           name: 'productos',
@@ -286,8 +279,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             listaProducto: params.getParam<DocumentReference>(
               'listaProducto',
               ParamType.DocumentReference,
-              true,
-              ['selectedItems'],
+              isList: true,
+              collectionNamePath: ['selectedItems'],
             ),
           ),
         ),
@@ -436,7 +429,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'notificacionesAUsuario',
           path: '/notificacionesAUsuario',
-          builder: (context, params) => NotificacionesAUsuarioWidget(),
+          builder: (context, params) => const NotificacionesAUsuarioWidget(),
         ),
         FFRoute(
           name: 'agregarMarca',
@@ -479,7 +472,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'PreguntasFrecuentes',
           path: '/preguntasFrecuentes',
-          builder: (context, params) => PreguntasFrecuentesWidget(),
+          builder: (context, params) => const PreguntasFrecuentesWidget(),
         ),
         FFRoute(
           name: 'Aplicacion',
@@ -558,20 +551,20 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             categoria: params.getParam(
               'categoria',
               ParamType.DocumentReference,
-              false,
-              ['categoriaPadre'],
+              isList: false,
+              collectionNamePath: ['categoriaPadre'],
             ),
           ),
         ),
         FFRoute(
           name: 'EditarPortadaPerfil',
           path: '/editarPortadaPerfil',
-          builder: (context, params) => EditarPortadaPerfilWidget(),
+          builder: (context, params) => const EditarPortadaPerfilWidget(),
         ),
         FFRoute(
           name: 'EditarPagCategoria',
           path: '/editarPagCategoria',
-          builder: (context, params) => EditarPagCategoriaWidget(),
+          builder: (context, params) => const EditarPagCategoriaWidget(),
         ),
         FFRoute(
           name: 'evidenciaEntregaFallida',
@@ -587,8 +580,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             usuario: params.getParam(
               'usuario',
               ParamType.DocumentReference,
-              false,
-              ['user'],
+              isList: false,
+              collectionNamePath: ['user'],
             ),
           ),
         ),
@@ -675,7 +668,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'notificacionesATodos',
           path: '/notificacionesATodos',
-          builder: (context, params) => NotificacionesATodosWidget(),
+          builder: (context, params) => const NotificacionesATodosWidget(),
         ),
         FFRoute(
           name: 'Categorias',
@@ -746,7 +739,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'pedidosDelivery',
           path: '/pedidosDelivery',
-          builder: (context, params) => PedidosDeliveryWidget(),
+          builder: (context, params) => const PedidosDeliveryWidget(),
         ),
         FFRoute(
           name: 'infoPerfil',
@@ -755,8 +748,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             perfil: params.getParam(
               'perfil',
               ParamType.DocumentReference,
-              false,
-              ['user'],
+              isList: false,
+              collectionNamePath: ['user'],
             ),
           ),
         ),
@@ -767,20 +760,97 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             marca: params.getParam(
               'marca',
               ParamType.DocumentReference,
-              false,
-              ['marca'],
+              isList: false,
+              collectionNamePath: ['marca'],
             ),
           ),
         ),
         FFRoute(
           name: 'marcarEntradaSalida',
           path: '/marcarEntradaSalida',
-          builder: (context, params) => MarcarEntradaSalidaWidget(),
+          builder: (context, params) => const MarcarEntradaSalidaWidget(),
         ),
         FFRoute(
           name: 'crearOrden',
           path: '/crearOrden',
-          builder: (context, params) => CrearOrdenWidget(),
+          builder: (context, params) => const CrearOrdenWidget(),
+        ),
+        FFRoute(
+          name: 'Blog',
+          path: '/blog',
+          builder: (context, params) => const BlogWidget(),
+        ),
+        FFRoute(
+          name: 'crearBlog',
+          path: '/crearBlog',
+          builder: (context, params) => const CrearBlogWidget(),
+        ),
+        FFRoute(
+          name: 'Soporte',
+          path: '/soporte',
+          requireAuth: true,
+          builder: (context, params) => const SoporteWidget(),
+        ),
+        FFRoute(
+          name: 'pantalla',
+          path: '/pantalla',
+          builder: (context, params) => const PantallaWidget(),
+        ),
+        FFRoute(
+          name: 'listaDeMensajes',
+          path: '/listaDeMensajes',
+          builder: (context, params) => const ListaDeMensajesWidget(),
+        ),
+        FFRoute(
+          name: 'VerTicket',
+          path: '/verTicket',
+          builder: (context, params) => VerTicketWidget(
+            soporte: params.getParam(
+              'soporte',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['soporte'],
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'misTickets',
+          path: '/misTickets',
+          builder: (context, params) => const MisTicketsWidget(),
+        ),
+        FFRoute(
+          name: 'VerMiTicket',
+          path: '/verMiTicket',
+          builder: (context, params) => VerMiTicketWidget(
+            soporte: params.getParam(
+              'soporte',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['soporte'],
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'registrarVentas',
+          path: '/registrarVentas',
+          builder: (context, params) => const RegistrarVentasWidget(),
+        ),
+        FFRoute(
+          name: 'ventasDiarias',
+          path: '/ventasDiarias',
+          builder: (context, params) => const VentasDiariasWidget(),
+        ),
+        FFRoute(
+          name: 'detalleReporteVenta',
+          path: '/detalleReporteVenta',
+          builder: (context, params) => DetalleReporteVentaWidget(
+            detalleVenta: params.getParam(
+              'detalleVenta',
+              ParamType.DataStruct,
+              isList: false,
+              structBuilder: VentasDiariasFechaStruct.fromSerializableMap,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -876,7 +946,7 @@ class FFParameters {
   // present is the special extra parameter reserved for the transition info.
   bool get isEmpty =>
       state.allParams.isEmpty ||
-      (state.extraMap.length == 1 &&
+      (state.allParams.length == 1 &&
           state.extraMap.containsKey(kTransitionInfoKey));
   bool isAsyncParam(MapEntry<String, dynamic> param) =>
       asyncParams.containsKey(param.key) && param.value is String;
@@ -897,11 +967,11 @@ class FFParameters {
 
   dynamic getParam<T>(
     String paramName,
-    ParamType type, [
+    ParamType type, {
     bool isList = false,
     List<String>? collectionNamePath,
     StructBuilder<T>? structBuilder,
-  ]) {
+  }) {
     if (futureParamValues.containsKey(paramName)) {
       return futureParamValues[paramName];
     }
@@ -953,7 +1023,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/iniciarSesion';
+            return '/pantalla';
           }
           return null;
         },
@@ -968,12 +1038,12 @@ class FFRoute {
               : builder(context, ffParams);
           final child = appStateNotifier.loading
               ? Container(
-                  color: Colors.white,
+                  color: Colors.transparent,
                   child: Center(
                     child: Image.asset(
-                      'assets/images/logo_animalfood.png',
-                      width: MediaQuery.sizeOf(context).width * 0.4,
-                      fit: BoxFit.cover,
+                      'assets/images/inicioApp.gif',
+                      width: MediaQuery.sizeOf(context).width * 0.5,
+                      fit: BoxFit.contain,
                     ),
                   ),
                 )
@@ -1019,7 +1089,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {
@@ -1040,4 +1110,14 @@ class RootPageContext {
         value: RootPageContext(true, errorRoute),
         child: child,
       );
+}
+
+extension GoRouterLocationExtension on GoRouter {
+  String getCurrentLocation() {
+    final RouteMatch lastMatch = routerDelegate.currentConfiguration.last;
+    final RouteMatchList matchList = lastMatch is ImperativeRouteMatch
+        ? lastMatch.matches
+        : routerDelegate.currentConfiguration;
+    return matchList.uri.toString();
+  }
 }

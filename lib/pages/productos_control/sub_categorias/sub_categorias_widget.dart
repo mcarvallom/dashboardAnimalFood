@@ -7,8 +7,6 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'sub_categorias_model.dart';
 export 'sub_categorias_model.dart';
 
@@ -17,7 +15,7 @@ class SubCategoriasWidget extends StatefulWidget {
     super.key,
     Color? colorCategorias,
     this.nombre,
-  }) : this.colorCategorias = colorCategorias ?? const Color(0xFFE6A5E5);
+  }) : colorCategorias = colorCategorias ?? const Color(0xFFE6A5E5);
 
   final Color colorCategorias;
   final String? nombre;
@@ -70,7 +68,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
               builder: (context, snapshot) {
                 // Customize what your widget looks like when it's loading.
                 if (!snapshot.hasData) {
-                  return Center(
+                  return const Center(
                     child: SizedBox(
                       width: 50.0,
                       height: 50.0,
@@ -92,16 +90,16 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Expanded(
                               child: Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 30.0, 0.0, 20.0),
                                   child: Image.asset(
                                     'assets/images/logo_animalfood.png',
@@ -115,7 +113,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 30.0, 0.0, 10.0),
                         child: Text(
                           'Menú',
@@ -127,7 +125,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -142,7 +140,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                               'Inicio',
                               queryParameters: {
                                 'colorInicio': serializeParam(
-                                  Color(0xFFE6A5E5),
+                                  const Color(0xFFE6A5E5),
                                   ParamType.Color,
                                 ),
                                 'nombre': serializeParam(
@@ -151,7 +149,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                                 ),
                               }.withoutNulls,
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                 ),
@@ -165,7 +163,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -177,7 +175,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                                     size: 24.0,
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Inicio',
@@ -198,7 +196,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -210,7 +208,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                               'ordenes',
                               queryParameters: {
                                 'colorOrdenes': serializeParam(
-                                  Color(0xFFE6A5E5),
+                                  const Color(0xFFE6A5E5),
                                   ParamType.Color,
                                 ),
                                 'nombre': serializeParam(
@@ -219,7 +217,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                                 ),
                               }.withoutNulls,
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                 ),
@@ -233,7 +231,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -245,7 +243,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                                     size: 24.0,
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Órdenes',
@@ -266,7 +264,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -278,7 +276,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                               'productos',
                               queryParameters: {
                                 'colorProductos': serializeParam(
-                                  Color(0xFFE6A5E5),
+                                  const Color(0xFFE6A5E5),
                                   ParamType.Color,
                                 ),
                                 'nombre': serializeParam(
@@ -287,7 +285,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                                 ),
                               }.withoutNulls,
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                 ),
@@ -301,7 +299,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -313,7 +311,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                                     size: 24.0,
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Productos',
@@ -334,7 +332,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -345,7 +343,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                             context.pushNamed(
                               'tipoCategoria',
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                 ),
@@ -366,18 +364,18 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
-                                    Icon(
+                                    const Icon(
                                       Icons.list,
                                       color: Colors.white,
                                       size: 24.0,
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         'Categorías',
@@ -400,7 +398,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -411,7 +409,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                             context.pushNamed(
                               'Marcas',
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                 ),
@@ -425,7 +423,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -437,7 +435,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                                     size: 24.0,
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Marcas',
@@ -458,7 +456,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -470,7 +468,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                               'empleados',
                               queryParameters: {
                                 'colorEmpleados': serializeParam(
-                                  Color(0xFFE6A5E5),
+                                  const Color(0xFFE6A5E5),
                                   ParamType.Color,
                                 ),
                                 'nombre': serializeParam(
@@ -479,7 +477,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                                 ),
                               }.withoutNulls,
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                 ),
@@ -493,7 +491,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -505,7 +503,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                                     size: 24.0,
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Empleados',
@@ -526,7 +524,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -538,7 +536,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                               'clientes',
                               queryParameters: {
                                 'colorClientes': serializeParam(
-                                  Color(0xFFE6A5E5),
+                                  const Color(0xFFE6A5E5),
                                   ParamType.Color,
                                 ),
                                 'nombre': serializeParam(
@@ -547,7 +545,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                                 ),
                               }.withoutNulls,
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                 ),
@@ -561,7 +559,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -573,7 +571,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                                     size: 24.0,
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Clientes',
@@ -596,7 +594,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: Container(
                           width: MediaQuery.sizeOf(context).width * 1.0,
@@ -605,7 +603,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 0.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -617,7 +615,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                                   size: 24.0,
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     'Ajustes de la tienda',
@@ -636,7 +634,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                           ),
                         ),
                       ),
-                    ].addToStart(SizedBox(height: 70.0)),
+                    ].addToStart(const SizedBox(height: 70.0)),
                   ),
                 );
               },
@@ -655,10 +653,10 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                     wrapWithModel(
                       model: _model.topMovilModel,
                       updateCallback: () => setState(() {}),
-                      child: TopMovilWidget(),
+                      child: const TopMovilWidget(),
                     ),
                     Padding(
-                      padding: EdgeInsets.all(10.0),
+                      padding: const EdgeInsets.all(10.0),
                       child: SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(
@@ -666,7 +664,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 10.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
@@ -677,7 +675,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                                   context.pushNamed(
                                     'agregarCategoria',
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: TransitionInfo(
+                                      kTransitionInfoKey: const TransitionInfo(
                                         hasTransition: true,
                                         transitionType: PageTransitionType.fade,
                                       ),
@@ -689,13 +687,13 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                                   child: Container(
                                     height: 50.0,
                                     decoration: BoxDecoration(
-                                      color: Color(0xFF00AC67),
+                                      color: const Color(0xFF00AC67),
                                       borderRadius: BorderRadius.circular(10.0),
                                     ),
                                     child: Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 10.0, 0.0),
                                         child: Text(
                                           'Agregar Sub-Categoría (etiqueta)',
@@ -729,7 +727,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                           builder: (context, snapshot) {
                             // Customize what your widget looks like when it's loading.
                             if (!snapshot.hasData) {
-                              return Center(
+                              return const Center(
                                 child: SizedBox(
                                   width: 50.0,
                                   height: 50.0,
@@ -743,7 +741,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                             }
                             List<CategoryRecord> dataTableCategoryRecordList =
                                 snapshot.data!;
-                            return Container(
+                            return SizedBox(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: MediaQuery.sizeOf(context).height * 0.7,
                               child: DataTable2(
@@ -753,7 +751,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                                       softWrap: true,
                                       child: Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Text(
                                           'Sub-Categoría',
                                           style: FlutterFlowTheme.of(context)
@@ -774,7 +772,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                                       softWrap: true,
                                       child: Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Text(
                                           'Acción',
                                           style: FlutterFlowTheme.of(context)
@@ -797,9 +795,9 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                                         [
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(0.0, 0.0),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 10.0, 0.0, 10.0),
                                               child: AutoSizeText(
@@ -818,9 +816,9 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                                           ),
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(0.0, 0.0),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 0.0, 10.0),
                                               child: FFButtonWidget(
@@ -831,7 +829,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                                                             builder:
                                                                 (alertDialogContext) {
                                                               return AlertDialog(
-                                                                content: Text(
+                                                                content: const Text(
                                                                     '¿Desea eliminar esta categoría?'),
                                                                 actions: [
                                                                   TextButton(
@@ -839,7 +837,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                                                                         Navigator.pop(
                                                                             alertDialogContext,
                                                                             false),
-                                                                    child: Text(
+                                                                    child: const Text(
                                                                         'Cancelar'),
                                                                   ),
                                                                   TextButton(
@@ -847,7 +845,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                                                                         Navigator.pop(
                                                                             alertDialogContext,
                                                                             true),
-                                                                    child: Text(
+                                                                    child: const Text(
                                                                         'Confirmar'),
                                                                   ),
                                                                 ],
@@ -866,11 +864,11 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                                                 text: 'Eliminar',
                                                 options: FFButtonOptions(
                                                   height: 30.0,
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           24.0, 0.0, 24.0, 0.0),
                                                   iconPadding:
-                                                      EdgeInsetsDirectional
+                                                      const EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
                                                               0.0, 0.0),
                                                   color: FlutterFlowTheme.of(
@@ -887,7 +885,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                                                             letterSpacing: 0.0,
                                                           ),
                                                   elevation: 3.0,
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Colors.transparent,
                                                     width: 1.0,
                                                   ),
@@ -910,7 +908,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                                       .primaryBackground,
                                 ),
                                 dataRowHeight: 60.0,
-                                border: TableBorder(
+                                border: const TableBorder(
                                   borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(0.0),
                                     bottomRight: Radius.circular(0.0),
@@ -927,7 +925,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
                         ),
                       ],
                     ),
-                  ].addToEnd(SizedBox(height: 40.0)),
+                  ].addToEnd(const SizedBox(height: 40.0)),
                 ),
               ),
               if (responsiveVisibility(
@@ -937,7 +935,7 @@ class _SubCategoriasWidgetState extends State<SubCategoriasWidget> {
               ))
                 Flexible(
                   child: Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8.0),
                       child: Image.asset(

@@ -3,8 +3,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'menu_escritorio_model.dart';
 export 'menu_escritorio_model.dart';
 
@@ -77,7 +75,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
         builder: (context, snapshot) {
           // Customize what your widget looks like when it's loading.
           if (!snapshot.hasData) {
-            return Center(
+            return const Center(
               child: SizedBox(
                 width: 50.0,
                 height: 50.0,
@@ -99,16 +97,16 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Expanded(
                         child: Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 30.0, 0.0, 20.0),
                             child: Image.asset(
                               'assets/images/logo_animalfood.png',
@@ -123,7 +121,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                 ),
                 Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(10.0, 30.0, 0.0, 10.0),
+                      const EdgeInsetsDirectional.fromSTEB(10.0, 30.0, 0.0, 10.0),
                   child: Text(
                     'Menú',
                     style: FlutterFlowTheme.of(context).bodyLarge.override(
@@ -134,7 +132,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                 ),
                 Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                      const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -148,7 +146,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                         'Inicio',
                         queryParameters: {
                           'colorInicio': serializeParam(
-                            Color(0xFFE6A5E5),
+                            const Color(0xFFE6A5E5),
                             ParamType.Color,
                           ),
                           'nombre': serializeParam(
@@ -157,7 +155,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                           ),
                         }.withoutNulls,
                         extra: <String, dynamic>{
-                          kTransitionInfoKey: TransitionInfo(
+                          kTransitionInfoKey: const TransitionInfo(
                             hasTransition: true,
                             transitionType: PageTransitionType.fade,
                           ),
@@ -170,7 +168,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                       decoration: BoxDecoration(
                         color: valueOrDefault<Color>(
                           widget.nombre == 'Inicio'
-                              ? Color(0xFFE6A5E5)
+                              ? const Color(0xFFE6A5E5)
                               : Colors.white,
                           Colors.white,
                         ),
@@ -178,7 +176,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                       ),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -193,7 +191,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                               size: 24.0,
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'Inicio',
@@ -221,7 +219,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                 ),
                 Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                      const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -232,7 +230,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                         'ordenes',
                         queryParameters: {
                           'colorOrdenes': serializeParam(
-                            Color(0xFFE6A5E5),
+                            const Color(0xFFE6A5E5),
                             ParamType.Color,
                           ),
                           'nombre': serializeParam(
@@ -241,7 +239,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                           ),
                         }.withoutNulls,
                         extra: <String, dynamic>{
-                          kTransitionInfoKey: TransitionInfo(
+                          kTransitionInfoKey: const TransitionInfo(
                             hasTransition: true,
                             transitionType: PageTransitionType.fade,
                           ),
@@ -254,7 +252,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                       decoration: BoxDecoration(
                         color: valueOrDefault<Color>(
                           widget.nombre == 'Órdenes'
-                              ? Color(0xFFE6A5E5)
+                              ? const Color(0xFFE6A5E5)
                               : Colors.white,
                           Colors.white,
                         ),
@@ -262,7 +260,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                       ),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -277,7 +275,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                               size: 24.0,
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'Órdenes',
@@ -305,7 +303,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                 ),
                 Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                      const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -316,7 +314,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                         'productos',
                         queryParameters: {
                           'colorProductos': serializeParam(
-                            Color(0xFFE6A5E5),
+                            const Color(0xFFE6A5E5),
                             ParamType.Color,
                           ),
                           'nombre': serializeParam(
@@ -325,7 +323,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                           ),
                         }.withoutNulls,
                         extra: <String, dynamic>{
-                          kTransitionInfoKey: TransitionInfo(
+                          kTransitionInfoKey: const TransitionInfo(
                             hasTransition: true,
                             transitionType: PageTransitionType.fade,
                           ),
@@ -338,7 +336,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                       decoration: BoxDecoration(
                         color: valueOrDefault<Color>(
                           widget.nombre == 'Productos'
-                              ? Color(0xFFE6A5E5)
+                              ? const Color(0xFFE6A5E5)
                               : Colors.white,
                           Colors.white,
                         ),
@@ -346,7 +344,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                       ),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -361,7 +359,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                               size: 24.0,
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'Productos',
@@ -389,7 +387,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                 ),
                 Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                      const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -400,7 +398,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                         'Sub-categorias',
                         queryParameters: {
                           'colorCategorias': serializeParam(
-                            Color(0xFFE6A5E5),
+                            const Color(0xFFE6A5E5),
                             ParamType.Color,
                           ),
                           'nombre': serializeParam(
@@ -409,7 +407,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                           ),
                         }.withoutNulls,
                         extra: <String, dynamic>{
-                          kTransitionInfoKey: TransitionInfo(
+                          kTransitionInfoKey: const TransitionInfo(
                             hasTransition: true,
                             transitionType: PageTransitionType.fade,
                           ),
@@ -422,7 +420,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                       decoration: BoxDecoration(
                         color: valueOrDefault<Color>(
                           widget.nombre == 'Categorías'
-                              ? Color(0xFFE6A5E5)
+                              ? const Color(0xFFE6A5E5)
                               : Colors.white,
                           Colors.white,
                         ),
@@ -430,7 +428,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                       ),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -445,7 +443,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                               size: 24.0,
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'Categorías',
@@ -473,7 +471,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                 ),
                 Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                      const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -483,7 +481,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                       context.pushNamed(
                         'agregarMarca',
                         extra: <String, dynamic>{
-                          kTransitionInfoKey: TransitionInfo(
+                          kTransitionInfoKey: const TransitionInfo(
                             hasTransition: true,
                             transitionType: PageTransitionType.fade,
                           ),
@@ -499,7 +497,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                       ),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -509,7 +507,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                               size: 24.0,
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'Marcas',
@@ -531,7 +529,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                 ),
                 Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                      const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -542,7 +540,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                         'empleados',
                         queryParameters: {
                           'colorEmpleados': serializeParam(
-                            Color(0xFFE6A5E5),
+                            const Color(0xFFE6A5E5),
                             ParamType.Color,
                           ),
                           'nombre': serializeParam(
@@ -558,7 +556,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                       decoration: BoxDecoration(
                         color: valueOrDefault<Color>(
                           widget.nombre == 'Empleados'
-                              ? Color(0xFFE6A5E5)
+                              ? const Color(0xFFE6A5E5)
                               : Colors.white,
                           Colors.white,
                         ),
@@ -566,7 +564,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                       ),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -581,7 +579,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                               size: 24.0,
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'Empleados',
@@ -609,7 +607,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                 ),
                 Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                      const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -620,7 +618,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                         'clientes',
                         queryParameters: {
                           'colorClientes': serializeParam(
-                            Color(0xFFE6A5E5),
+                            const Color(0xFFE6A5E5),
                             ParamType.Color,
                           ),
                           'nombre': serializeParam(
@@ -636,7 +634,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                       decoration: BoxDecoration(
                         color: valueOrDefault<Color>(
                           widget.nombre == 'Clientes'
-                              ? Color(0xFFE6A5E5)
+                              ? const Color(0xFFE6A5E5)
                               : Colors.white,
                           Colors.white,
                         ),
@@ -644,7 +642,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                       ),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -659,7 +657,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                               size: 24.0,
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'Clientes',
@@ -687,14 +685,14 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                 ),
                 Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                      const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                   child: Container(
                     width: MediaQuery.sizeOf(context).width * 1.0,
                     height: 60.0,
                     decoration: BoxDecoration(
                       color: valueOrDefault<Color>(
                         widget.nombre == 'Ajustes de la tienda'
-                            ? Color(0xFFE6A5E5)
+                            ? const Color(0xFFE6A5E5)
                             : Colors.white,
                         Colors.white,
                       ),
@@ -702,7 +700,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                     ),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -717,7 +715,7 @@ class _MenuEscritorioWidgetState extends State<MenuEscritorioWidget> {
                             size: 24.0,
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'Ajustes de la tienda',

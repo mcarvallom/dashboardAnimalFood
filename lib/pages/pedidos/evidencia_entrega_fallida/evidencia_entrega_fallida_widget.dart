@@ -2,14 +2,9 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/componentes/top_movil/top_movil_widget.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:page_transition/page_transition.dart';
-import 'package:provider/provider.dart';
 import 'evidencia_entrega_fallida_model.dart';
 export 'evidencia_entrega_fallida_model.dart';
 
@@ -70,7 +65,7 @@ class _EvidenciaEntregaFallidaWidgetState
         if (!snapshot.hasData) {
           return Scaffold(
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-            body: Center(
+            body: const Center(
               child: SizedBox(
                 width: 50.0,
                 height: 50.0,
@@ -116,7 +111,7 @@ class _EvidenciaEntregaFallidaWidgetState
                   builder: (context, snapshot) {
                     // Customize what your widget looks like when it's loading.
                     if (!snapshot.hasData) {
-                      return Center(
+                      return const Center(
                         child: SizedBox(
                           width: 50.0,
                           height: 50.0,
@@ -138,16 +133,16 @@ class _EvidenciaEntregaFallidaWidgetState
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Expanded(
                                   child: Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 30.0, 0.0, 20.0),
                                       child: Image.asset(
                                         'assets/images/logo_animalfood.png',
@@ -161,7 +156,7 @@ class _EvidenciaEntregaFallidaWidgetState
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 30.0, 0.0, 10.0),
                             child: Text(
                               'Menú',
@@ -174,7 +169,7 @@ class _EvidenciaEntregaFallidaWidgetState
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 10.0, 10.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -189,7 +184,7 @@ class _EvidenciaEntregaFallidaWidgetState
                                   'Inicio',
                                   queryParameters: {
                                     'colorInicio': serializeParam(
-                                      Color(0xFFE6A5E5),
+                                      const Color(0xFFE6A5E5),
                                       ParamType.Color,
                                     ),
                                     'nombre': serializeParam(
@@ -198,7 +193,7 @@ class _EvidenciaEntregaFallidaWidgetState
                                     ),
                                   }.withoutNulls,
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    kTransitionInfoKey: const TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -212,7 +207,7 @@ class _EvidenciaEntregaFallidaWidgetState
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -224,7 +219,7 @@ class _EvidenciaEntregaFallidaWidgetState
                                         size: 24.0,
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           'Inicio',
@@ -245,7 +240,7 @@ class _EvidenciaEntregaFallidaWidgetState
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 10.0, 10.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -262,7 +257,7 @@ class _EvidenciaEntregaFallidaWidgetState
                                     ),
                                   }.withoutNulls,
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    kTransitionInfoKey: const TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -279,23 +274,23 @@ class _EvidenciaEntregaFallidaWidgetState
                                   width: MediaQuery.sizeOf(context).width * 1.0,
                                   height: 60.0,
                                   decoration: BoxDecoration(
-                                    color: Color(0xFFEAC04A),
+                                    color: const Color(0xFFEAC04A),
                                     borderRadius: BorderRadius.circular(10.0),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
-                                        FaIcon(
+                                        const FaIcon(
                                           FontAwesomeIcons.shoppingBag,
                                           color: Colors.white,
                                           size: 24.0,
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             'Órdenes',
@@ -318,7 +313,7 @@ class _EvidenciaEntregaFallidaWidgetState
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 10.0, 10.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -330,7 +325,7 @@ class _EvidenciaEntregaFallidaWidgetState
                                   'productos',
                                   queryParameters: {
                                     'colorProductos': serializeParam(
-                                      Color(0xFFE6A5E5),
+                                      const Color(0xFFE6A5E5),
                                       ParamType.Color,
                                     ),
                                     'nombre': serializeParam(
@@ -339,7 +334,7 @@ class _EvidenciaEntregaFallidaWidgetState
                                     ),
                                   }.withoutNulls,
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    kTransitionInfoKey: const TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -353,7 +348,7 @@ class _EvidenciaEntregaFallidaWidgetState
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -365,7 +360,7 @@ class _EvidenciaEntregaFallidaWidgetState
                                         size: 24.0,
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           'Productos',
@@ -386,7 +381,7 @@ class _EvidenciaEntregaFallidaWidgetState
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 10.0, 10.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -397,7 +392,7 @@ class _EvidenciaEntregaFallidaWidgetState
                                 context.pushNamed(
                                   'tipoCategoria',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    kTransitionInfoKey: const TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -411,7 +406,7 @@ class _EvidenciaEntregaFallidaWidgetState
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -423,7 +418,7 @@ class _EvidenciaEntregaFallidaWidgetState
                                         size: 24.0,
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           'Categorías',
@@ -447,7 +442,7 @@ class _EvidenciaEntregaFallidaWidgetState
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 10.0, 10.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -458,7 +453,7 @@ class _EvidenciaEntregaFallidaWidgetState
                                 context.pushNamed(
                                   'Marcas',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    kTransitionInfoKey: const TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -472,7 +467,7 @@ class _EvidenciaEntregaFallidaWidgetState
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -484,7 +479,7 @@ class _EvidenciaEntregaFallidaWidgetState
                                         size: 24.0,
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           'Marcas',
@@ -505,7 +500,7 @@ class _EvidenciaEntregaFallidaWidgetState
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 10.0, 10.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -517,7 +512,7 @@ class _EvidenciaEntregaFallidaWidgetState
                                   'empleados',
                                   queryParameters: {
                                     'colorEmpleados': serializeParam(
-                                      Color(0xFFE6A5E5),
+                                      const Color(0xFFE6A5E5),
                                       ParamType.Color,
                                     ),
                                     'nombre': serializeParam(
@@ -526,7 +521,7 @@ class _EvidenciaEntregaFallidaWidgetState
                                     ),
                                   }.withoutNulls,
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    kTransitionInfoKey: const TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -540,7 +535,7 @@ class _EvidenciaEntregaFallidaWidgetState
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -552,7 +547,7 @@ class _EvidenciaEntregaFallidaWidgetState
                                         size: 24.0,
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           'Empleados',
@@ -573,7 +568,7 @@ class _EvidenciaEntregaFallidaWidgetState
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 10.0, 10.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -585,7 +580,7 @@ class _EvidenciaEntregaFallidaWidgetState
                                   'clientes',
                                   queryParameters: {
                                     'colorClientes': serializeParam(
-                                      Color(0xFFE6A5E5),
+                                      const Color(0xFFE6A5E5),
                                       ParamType.Color,
                                     ),
                                     'nombre': serializeParam(
@@ -594,7 +589,7 @@ class _EvidenciaEntregaFallidaWidgetState
                                     ),
                                   }.withoutNulls,
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    kTransitionInfoKey: const TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -608,7 +603,7 @@ class _EvidenciaEntregaFallidaWidgetState
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -620,7 +615,7 @@ class _EvidenciaEntregaFallidaWidgetState
                                         size: 24.0,
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           'Clientes',
@@ -644,7 +639,7 @@ class _EvidenciaEntregaFallidaWidgetState
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 10.0, 10.0, 0.0),
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
@@ -653,7 +648,7 @@ class _EvidenciaEntregaFallidaWidgetState
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -665,7 +660,7 @@ class _EvidenciaEntregaFallidaWidgetState
                                       size: 24.0,
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         'Ajustes de la tienda',
@@ -684,7 +679,7 @@ class _EvidenciaEntregaFallidaWidgetState
                               ),
                             ),
                           ),
-                        ].addToStart(SizedBox(height: 70.0)),
+                        ].addToStart(const SizedBox(height: 70.0)),
                       ),
                     );
                   },
@@ -704,7 +699,7 @@ class _EvidenciaEntregaFallidaWidgetState
                         wrapWithModel(
                           model: _model.topMovilModel,
                           updateCallback: () => setState(() {}),
-                          child: TopMovilWidget(),
+                          child: const TopMovilWidget(),
                         ),
                         Container(
                           width: MediaQuery.sizeOf(context).width * 1.0,
@@ -718,7 +713,7 @@ class _EvidenciaEntregaFallidaWidgetState
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 20.0, 16.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -726,10 +721,10 @@ class _EvidenciaEntregaFallidaWidgetState
                                     children: [
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(-1.0, 0.0),
+                                            const AlignmentDirectional(-1.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 10.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
@@ -757,7 +752,7 @@ class _EvidenciaEntregaFallidaWidgetState
                                                       BorderRadius.circular(
                                                           10.0),
                                                 ),
-                                                child: Icon(
+                                                child: const Icon(
                                                   Icons.chevron_left,
                                                   color: Colors.black,
                                                   size: 40.0,
@@ -769,14 +764,14 @@ class _EvidenciaEntregaFallidaWidgetState
                                       ),
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(-1.0, 0.0),
+                                            const AlignmentDirectional(-1.0, 0.0),
                                         child: Text(
                                           'Evidencia',
                                           style: FlutterFlowTheme.of(context)
                                               .headlineMedium
                                               .override(
                                                 fontFamily: 'Outfit',
-                                                color: Color(0xFF1F1F1F),
+                                                color: const Color(0xFF1F1F1F),
                                                 fontSize: 22.0,
                                                 letterSpacing: 0.0,
                                               ),
@@ -786,21 +781,21 @@ class _EvidenciaEntregaFallidaWidgetState
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 20.0, 16.0, 20.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(-1.0, 0.0),
+                                            const AlignmentDirectional(-1.0, 0.0),
                                         child: Text(
                                           '¿Qué pasa si vinieron a dejar mi pedido y no estaba?',
                                           style: FlutterFlowTheme.of(context)
                                               .headlineMedium
                                               .override(
                                                 fontFamily: 'Outfit',
-                                                color: Color(0xFF1F1F1F),
+                                                color: const Color(0xFF1F1F1F),
                                                 fontSize: 22.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w500,
@@ -809,10 +804,10 @@ class _EvidenciaEntregaFallidaWidgetState
                                       ),
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(-1.0, 0.0),
+                                            const AlignmentDirectional(-1.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 20.0, 0.0, 0.0),
                                           child: Text(
                                             'Luego de haberse comunicado el repartidor con el cliente y no hubiera respuesta, este se retirará sacando fotos al domicilio o a las llamadas para respaldar de que se cumplió con la entrega. luego de ello se agendará nuevamente para el dia siguiente dependiendo del sector de despacho.',
@@ -821,7 +816,7 @@ class _EvidenciaEntregaFallidaWidgetState
                                                 .headlineMedium
                                                 .override(
                                                   fontFamily: 'Outfit',
-                                                  color: Color(0xFF1F1F1F),
+                                                  color: const Color(0xFF1F1F1F),
                                                   fontSize: 16.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.normal,
@@ -830,13 +825,13 @@ class _EvidenciaEntregaFallidaWidgetState
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 20.0, 0.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Text(
                                                 'Evidencia domicilio',
@@ -846,7 +841,7 @@ class _EvidenciaEntregaFallidaWidgetState
                                                         .override(
                                                           fontFamily: 'Outfit',
                                                           color:
-                                                              Color(0xFF1F1F1F),
+                                                              const Color(0xFF1F1F1F),
                                                           fontSize: 18.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -855,7 +850,7 @@ class _EvidenciaEntregaFallidaWidgetState
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 10.0, 0.0, 10.0),
                                               child: InkWell(
@@ -873,13 +868,13 @@ class _EvidenciaEntregaFallidaWidgetState
                                                       child:
                                                           FlutterFlowExpandedImageView(
                                                         image: Image.network(
-                                                          evidenciaEntregaFallidaEvidenciaEntregaFallidaRecord!
+                                                          evidenciaEntregaFallidaEvidenciaEntregaFallidaRecord
                                                               .fotoDomicilio,
                                                           fit: BoxFit.contain,
                                                         ),
                                                         allowRotation: false,
                                                         tag:
-                                                            evidenciaEntregaFallidaEvidenciaEntregaFallidaRecord!
+                                                            evidenciaEntregaFallidaEvidenciaEntregaFallidaRecord
                                                                 .fotoDomicilio,
                                                         useHeroAnimation: true,
                                                       ),
@@ -897,7 +892,7 @@ class _EvidenciaEntregaFallidaWidgetState
                                                         BorderRadius.circular(
                                                             8.0),
                                                     child: Image.network(
-                                                      evidenciaEntregaFallidaEvidenciaEntregaFallidaRecord!
+                                                      evidenciaEntregaFallidaEvidenciaEntregaFallidaRecord
                                                           .fotoDomicilio,
                                                       width: 300.0,
                                                       height: 200.0,
@@ -915,7 +910,7 @@ class _EvidenciaEntregaFallidaWidgetState
                                         children: [
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
+                                                const AlignmentDirectional(-1.0, 0.0),
                                             child: Text(
                                               'Evidencia comunicación',
                                               style: FlutterFlowTheme.of(
@@ -923,7 +918,7 @@ class _EvidenciaEntregaFallidaWidgetState
                                                   .headlineMedium
                                                   .override(
                                                     fontFamily: 'Outfit',
-                                                    color: Color(0xFF1F1F1F),
+                                                    color: const Color(0xFF1F1F1F),
                                                     fontSize: 18.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
@@ -932,7 +927,7 @@ class _EvidenciaEntregaFallidaWidgetState
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 10.0, 0.0, 10.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
@@ -949,13 +944,13 @@ class _EvidenciaEntregaFallidaWidgetState
                                                     child:
                                                         FlutterFlowExpandedImageView(
                                                       image: Image.network(
-                                                        evidenciaEntregaFallidaEvidenciaEntregaFallidaRecord!
+                                                        evidenciaEntregaFallidaEvidenciaEntregaFallidaRecord
                                                             .fotoConversacion,
                                                         fit: BoxFit.contain,
                                                       ),
                                                       allowRotation: false,
                                                       tag:
-                                                          evidenciaEntregaFallidaEvidenciaEntregaFallidaRecord!
+                                                          evidenciaEntregaFallidaEvidenciaEntregaFallidaRecord
                                                               .fotoConversacion,
                                                       useHeroAnimation: true,
                                                     ),
@@ -964,7 +959,7 @@ class _EvidenciaEntregaFallidaWidgetState
                                               },
                                               child: Hero(
                                                 tag:
-                                                    evidenciaEntregaFallidaEvidenciaEntregaFallidaRecord!
+                                                    evidenciaEntregaFallidaEvidenciaEntregaFallidaRecord
                                                         .fotoConversacion,
                                                 transitionOnUserGestures: true,
                                                 child: ClipRRect(
@@ -972,7 +967,7 @@ class _EvidenciaEntregaFallidaWidgetState
                                                       BorderRadius.circular(
                                                           8.0),
                                                   child: Image.network(
-                                                    evidenciaEntregaFallidaEvidenciaEntregaFallidaRecord!
+                                                    evidenciaEntregaFallidaEvidenciaEntregaFallidaRecord
                                                         .fotoConversacion,
                                                     width: 300.0,
                                                     height: 200.0,
@@ -986,12 +981,12 @@ class _EvidenciaEntregaFallidaWidgetState
                                       ),
                                       StreamBuilder<UserRecord>(
                                         stream: UserRecord.getDocument(
-                                            evidenciaEntregaFallidaEvidenciaEntregaFallidaRecord!
+                                            evidenciaEntregaFallidaEvidenciaEntregaFallidaRecord
                                                 .repartidor!),
                                         builder: (context, snapshot) {
                                           // Customize what your widget looks like when it's loading.
                                           if (!snapshot.hasData) {
-                                            return Center(
+                                            return const Center(
                                               child: SizedBox(
                                                 width: 50.0,
                                                 height: 50.0,
@@ -1013,7 +1008,7 @@ class _EvidenciaEntregaFallidaWidgetState
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     -1.0, 0.0),
                                                 child: Text(
                                                   'Repartidor:',
@@ -1023,7 +1018,7 @@ class _EvidenciaEntregaFallidaWidgetState
                                                       .override(
                                                         fontFamily: 'Outfit',
                                                         color:
-                                                            Color(0xFF1F1F1F),
+                                                            const Color(0xFF1F1F1F),
                                                         fontSize: 18.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -1034,11 +1029,11 @@ class _EvidenciaEntregaFallidaWidgetState
                                               Flexible(
                                                 child: Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           -1.0, 0.0),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(10.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -1049,7 +1044,7 @@ class _EvidenciaEntregaFallidaWidgetState
                                                           .override(
                                                             fontFamily:
                                                                 'Outfit',
-                                                            color: Color(
+                                                            color: const Color(
                                                                 0xFF1F1F1F),
                                                             fontSize: 18.0,
                                                             letterSpacing: 0.0,

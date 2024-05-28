@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -6,9 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'reembolsar_pago_model.dart';
 export 'reembolsar_pago_model.dart';
@@ -52,7 +49,7 @@ class _ReembolsarPagoWidgetState extends State<ReembolsarPagoWidget> {
     context.watch<FFAppState>();
 
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 10.0, 20.0),
+      padding: const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 10.0, 20.0),
       child: SingleChildScrollView(
         primary: false,
         child: Column(
@@ -60,7 +57,7 @@ class _ReembolsarPagoWidgetState extends State<ReembolsarPagoWidget> {
           children: [
             Flexible(
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                 child: Material(
                   color: Colors.transparent,
                   elevation: 2.0,
@@ -77,9 +74,9 @@ class _ReembolsarPagoWidgetState extends State<ReembolsarPagoWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Align(
-                          alignment: AlignmentDirectional(-1.0, -1.0),
+                          alignment: const AlignmentDirectional(-1.0, -1.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 20.0, 20.0, 0.0, 20.0),
                             child: Text(
                               'id del pago',
@@ -100,7 +97,7 @@ class _ReembolsarPagoWidgetState extends State<ReembolsarPagoWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     20.0, 0.0, 20.0, 0.0),
                                 child: TextFormField(
                                   controller: _model.textController,
@@ -126,14 +123,14 @@ class _ReembolsarPagoWidgetState extends State<ReembolsarPagoWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                     enabledBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Color(0xFF00AC67),
                                         width: 1.0,
                                       ),
                                       borderRadius: BorderRadius.circular(10.0),
                                     ),
                                     focusedBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Color(0xFF00AC67),
                                         width: 1.0,
                                       ),
@@ -180,7 +177,7 @@ class _ReembolsarPagoWidgetState extends State<ReembolsarPagoWidget> {
                           builder: (context, snapshot) {
                             // Customize what your widget looks like when it's loading.
                             if (!snapshot.hasData) {
-                              return Center(
+                              return const Center(
                                 child: SizedBox(
                                   width: 50.0,
                                   height: 50.0,
@@ -203,9 +200,9 @@ class _ReembolsarPagoWidgetState extends State<ReembolsarPagoWidget> {
                                     ? containerOrderRecordList.first
                                     : null;
                             return Container(
-                              decoration: BoxDecoration(),
+                              decoration: const BoxDecoration(),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 0.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
@@ -219,7 +216,7 @@ class _ReembolsarPagoWidgetState extends State<ReembolsarPagoWidget> {
                                               context: context,
                                               builder: (alertDialogContext) {
                                                 return AlertDialog(
-                                                  title: Text('¡Atención!'),
+                                                  title: const Text('¡Atención!'),
                                                   content: Text(
                                                       '¿Deseas reembolsar el pago con id ${_model.textController.text}?'),
                                                   actions: [
@@ -228,14 +225,14 @@ class _ReembolsarPagoWidgetState extends State<ReembolsarPagoWidget> {
                                                           Navigator.pop(
                                                               alertDialogContext,
                                                               false),
-                                                      child: Text('Cancelar'),
+                                                      child: const Text('Cancelar'),
                                                     ),
                                                     TextButton(
                                                       onPressed: () =>
                                                           Navigator.pop(
                                                               alertDialogContext,
                                                               true),
-                                                      child: Text('Confirmar'),
+                                                      child: const Text('Confirmar'),
                                                     ),
                                                   ],
                                                 );
@@ -251,14 +248,14 @@ class _ReembolsarPagoWidgetState extends State<ReembolsarPagoWidget> {
                                         FFAppState().seed = functions.seed();
                                         FFAppState().nonce = functions.nonce();
                                       });
-                                      _model.tranKey = await actions.tranKey(
+                                      _model.tranKey = actions.tranKey(
                                         '7ffbb7bf1f7361b1200b2e8d74e1d76f',
                                         'SnZP3D63n3I9dH9O',
                                         FFAppState().seed,
                                         FFAppState().nonce,
                                       );
                                       _model.nonceEncriptado =
-                                          await actions.nonceEncriptado(
+                                          actions.nonceEncriptado(
                                         FFAppState().nonce,
                                       );
                                       _model.apiReembolso =
@@ -277,7 +274,7 @@ class _ReembolsarPagoWidgetState extends State<ReembolsarPagoWidget> {
                                           context: context,
                                           builder: (alertDialogContext) {
                                             return AlertDialog(
-                                              title: Text('Mensaje'),
+                                              title: const Text('Mensaje'),
                                               content: Text(getJsonField(
                                                 (_model.apiReembolso
                                                         ?.jsonBody ??
@@ -289,7 +286,7 @@ class _ReembolsarPagoWidgetState extends State<ReembolsarPagoWidget> {
                                                   onPressed: () =>
                                                       Navigator.pop(
                                                           alertDialogContext),
-                                                  child: Text('Ok'),
+                                                  child: const Text('Ok'),
                                                 ),
                                               ],
                                             );
@@ -311,11 +308,11 @@ class _ReembolsarPagoWidgetState extends State<ReembolsarPagoWidget> {
                                   text: 'Generar reembolso',
                                   options: FFButtonOptions(
                                     height: 40.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         24.0, 0.0, 24.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    color: Color(0xFF39A3EF),
+                                    color: const Color(0xFF39A3EF),
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
@@ -324,7 +321,7 @@ class _ReembolsarPagoWidgetState extends State<ReembolsarPagoWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -335,7 +332,7 @@ class _ReembolsarPagoWidgetState extends State<ReembolsarPagoWidget> {
                             );
                           },
                         ),
-                      ].addToEnd(SizedBox(height: 30.0)),
+                      ].addToEnd(const SizedBox(height: 30.0)),
                     ),
                   ),
                 ),

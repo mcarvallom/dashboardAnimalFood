@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -6,10 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/custom_code/actions/index.dart' as actions;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'status_pedido_model.dart';
 export 'status_pedido_model.dart';
 
@@ -58,7 +54,7 @@ class _StatusPedidoWidgetState extends State<StatusPedidoWidget> {
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
-          return Center(
+          return const Center(
             child: SizedBox(
               width: 50.0,
               height: 50.0,
@@ -72,13 +68,13 @@ class _StatusPedidoWidgetState extends State<StatusPedidoWidget> {
         }
         final containerOrderRecord = snapshot.data!;
         return Container(
-          decoration: BoxDecoration(),
+          decoration: const BoxDecoration(),
           child: StreamBuilder<UserRecord>(
             stream: UserRecord.getDocument(containerOrderRecord.cliente!),
             builder: (context, snapshot) {
               // Customize what your widget looks like when it's loading.
               if (!snapshot.hasData) {
-                return Center(
+                return const Center(
                   child: SizedBox(
                     width: 50.0,
                     height: 50.0,
@@ -92,13 +88,13 @@ class _StatusPedidoWidgetState extends State<StatusPedidoWidget> {
               }
               final containerUserRecord = snapshot.data!;
               return Container(
-                decoration: BoxDecoration(),
+                decoration: const BoxDecoration(),
                 child: FlutterFlowDropDown<String>(
                   controller: _model.dropDownValueController ??=
                       FormFieldController<String>(
                     _model.dropDownValue ??= widget.status,
                   ),
-                  options: [
+                  options: const [
                     'En proceso',
                     'Preparando envío',
                     'En camino',
@@ -108,7 +104,7 @@ class _StatusPedidoWidgetState extends State<StatusPedidoWidget> {
                   ],
                   onChanged: (val) async {
                     setState(() => _model.dropDownValue = val);
-                    var _shouldSetState = false;
+                    var shouldSetState = false;
 
                     await widget.parameter2!.update(createOrderRecordData(
                       status: _model.dropDownValue,
@@ -121,7 +117,7 @@ class _StatusPedidoWidgetState extends State<StatusPedidoWidget> {
                         plantilla: '7d3d1566-60c9-4c0e-b30a-b9b64a133971',
                         titulo: 'Preparando envío',
                       );
-                      _shouldSetState = true;
+                      shouldSetState = true;
                       await actions.sendNotificationEstadoPedido(
                         'Preparando envío',
                         'Estado pedido',
@@ -139,7 +135,7 @@ class _StatusPedidoWidgetState extends State<StatusPedidoWidget> {
                         plantilla: '50e39307-ab15-4664-a99f-7c66a4903c1b',
                         titulo: 'En camino',
                       );
-                      _shouldSetState = true;
+                      shouldSetState = true;
                       await actions.sendNotificationEstadoPedido(
                         'En camino',
                         'Estado pedido',
@@ -157,7 +153,7 @@ class _StatusPedidoWidgetState extends State<StatusPedidoWidget> {
                         plantilla: '8cb0fb7b-9216-493c-a0a8-12ca2b632cdd',
                         titulo: 'Pedido entregado',
                       );
-                      _shouldSetState = true;
+                      shouldSetState = true;
                       await actions.sendNotificationEstadoPedido(
                         'Pedido entregado',
                         'Estado pedido',
@@ -175,18 +171,18 @@ class _StatusPedidoWidgetState extends State<StatusPedidoWidget> {
                         plantilla: '51e6d248-0887-4a52-a2db-5b4d7acc0989',
                         titulo: '¡Fallo en la entrega!',
                       );
-                      _shouldSetState = true;
+                      shouldSetState = true;
                       await actions.sendNotificationEstadoPedido(
                         'Fallo en la entrega',
                         'Estado pedido',
                         containerUserRecord.uid,
                       );
                     } else {
-                      if (_shouldSetState) setState(() {});
+                      if (shouldSetState) setState(() {});
                       return;
                     }
 
-                    if (_shouldSetState) setState(() {});
+                    if (shouldSetState) setState(() {});
                   },
                   width: MediaQuery.sizeOf(context).width * 1.0,
                   height: 40.0,
@@ -205,7 +201,7 @@ class _StatusPedidoWidgetState extends State<StatusPedidoWidget> {
                   borderColor: Colors.black,
                   borderWidth: 0.0,
                   borderRadius: 8.0,
-                  margin: EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
+                  margin: const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
                   hidesUnderline: true,
                   isSearchable: false,
                   isMultiSelect: false,

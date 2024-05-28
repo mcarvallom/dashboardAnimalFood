@@ -1,21 +1,16 @@
 import 'dart:async';
-import 'dart:convert';
 
 import 'serialization_util.dart';
 import '../backend.dart';
-import '../../flutter_flow/flutter_flow_theme.dart';
 import '../../flutter_flow/flutter_flow_util.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 
-import '../../index.dart';
-import '../../main.dart';
 
 final _handledMessageIds = <String?>{};
 
 class PushNotificationsHandler extends StatefulWidget {
-  const PushNotificationsHandler({Key? key, required this.child})
-      : super(key: key);
+  const PushNotificationsHandler({super.key, required this.child});
 
   final Widget child;
 
@@ -78,12 +73,12 @@ class _PushNotificationsHandlerState extends State<PushNotificationsHandler> {
   @override
   Widget build(BuildContext context) => _loading
       ? Container(
-          color: Colors.white,
+          color: Colors.transparent,
           child: Center(
             child: Image.asset(
-              'assets/images/logo_animalfood.png',
-              width: MediaQuery.sizeOf(context).width * 0.4,
-              fit: BoxFit.cover,
+              'assets/images/inicioApp.gif',
+              width: MediaQuery.sizeOf(context).width * 0.5,
+              fit: BoxFit.contain,
             ),
           ),
         )
@@ -106,7 +101,7 @@ class ParameterData {
       );
 
   static Future<ParameterData> Function(Map<String, dynamic>) none() =>
-      (data) async => ParameterData();
+      (data) async => const ParameterData();
 }
 
 final parametersBuilderMap =
@@ -353,6 +348,27 @@ final parametersBuilderMap =
       ),
   'marcarEntradaSalida': ParameterData.none(),
   'crearOrden': ParameterData.none(),
+  'Blog': ParameterData.none(),
+  'crearBlog': ParameterData.none(),
+  'Soporte': ParameterData.none(),
+  'pantalla': ParameterData.none(),
+  'listaDeMensajes': ParameterData.none(),
+  'VerTicket': (data) async => ParameterData(
+        allParams: {
+          'soporte': getParameter<DocumentReference>(data, 'soporte'),
+        },
+      ),
+  'misTickets': ParameterData.none(),
+  'VerMiTicket': (data) async => ParameterData(
+        allParams: {
+          'soporte': getParameter<DocumentReference>(data, 'soporte'),
+        },
+      ),
+  'registrarVentas': ParameterData.none(),
+  'ventasDiarias': ParameterData.none(),
+  'detalleReporteVenta': (data) async => const ParameterData(
+        allParams: {},
+      ),
 };
 
 Map<String, dynamic> getInitialParameterData(Map<String, dynamic> data) {

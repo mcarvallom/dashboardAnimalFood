@@ -1,11 +1,7 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'switch_admin_model.dart';
 export 'switch_admin_model.dart';
 
@@ -52,8 +48,8 @@ class _SwitchAdminWidgetState extends State<SwitchAdminWidget> {
     return Switch.adaptive(
       value: _model.switchValue ??= widget.switchAdmin!,
       onChanged: (newValue) async {
-        setState(() => _model.switchValue = newValue!);
-        if (newValue!) {
+        setState(() => _model.switchValue = newValue);
+        if (newValue) {
           await widget.usuario!.update(createUserRecordData(
             isAdmin: true,
           ));
@@ -63,7 +59,7 @@ class _SwitchAdminWidgetState extends State<SwitchAdminWidget> {
           ));
         }
       },
-      activeColor: Color(0xFF00AC67),
+      activeColor: const Color(0xFF00AC67),
       activeTrackColor: FlutterFlowTheme.of(context).accent1,
       inactiveTrackColor: FlutterFlowTheme.of(context).alternate,
       inactiveThumbColor: FlutterFlowTheme.of(context).secondaryText,
