@@ -806,10 +806,9 @@ class _SoporteWidgetState extends State<SoporteWidget> {
                                             }
                                           }
 
-                                          setState(() {
-                                            FFAppState().evidenciaSoporte =
-                                                _model.uploadedFileUrl;
-                                          });
+                                          FFAppState().evidenciaSoporte =
+                                              _model.uploadedFileUrl;
+                                          setState(() {});
                                           ScaffoldMessenger.of(context)
                                               .showSnackBar(
                                             SnackBar(

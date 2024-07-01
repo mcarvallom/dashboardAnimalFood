@@ -389,6 +389,12 @@ class _AgregarVariacionWidgetState extends State<AgregarVariacionWidget> {
                               setState(() {
                                 _model.txtCodigoBarraTextController?.text =
                                     _model.escanearProducto;
+                                _model.txtCodigoBarraTextController?.selection =
+                                    TextSelection.collapsed(
+                                        offset: _model
+                                            .txtCodigoBarraTextController!
+                                            .text
+                                            .length);
                               });
 
                               setState(() {});
@@ -433,19 +439,18 @@ class _AgregarVariacionWidgetState extends State<AgregarVariacionWidget> {
                           const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          setState(() {
-                            FFAppState().addToVariacion(VariacionStruct(
-                              tamanio: _model.txtNameTextController.text,
-                              stock: int.tryParse(
-                                  _model.txtStockTextController.text),
-                              codigoBarra:
-                                  _model.txtCodigoBarraTextController.text,
-                              precio: int.tryParse(
-                                  _model.txtPrecioTextController.text),
-                              rebaja: int.tryParse(
-                                  _model.txtRebajaTextController.text),
-                            ));
-                          });
+                          FFAppState().addToVariacion(VariacionStruct(
+                            tamanio: _model.txtNameTextController.text,
+                            stock: int.tryParse(
+                                _model.txtStockTextController.text),
+                            codigoBarra:
+                                _model.txtCodigoBarraTextController.text,
+                            precio: int.tryParse(
+                                _model.txtPrecioTextController.text),
+                            rebaja: int.tryParse(
+                                _model.txtRebajaTextController.text),
+                          ));
+                          setState(() {});
                           Navigator.pop(context);
                         },
                         text: 'Agregar',

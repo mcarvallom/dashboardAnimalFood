@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'serialization_util.dart';
 import '../backend.dart';
+import '../../flutter_flow/flutter_flow_theme.dart';
 import '../../flutter_flow/flutter_flow_util.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
@@ -73,11 +74,11 @@ class _PushNotificationsHandlerState extends State<PushNotificationsHandler> {
   @override
   Widget build(BuildContext context) => _loading
       ? Container(
-          color: Colors.transparent,
+          color: FlutterFlowTheme.of(context).secondaryBackground,
           child: Center(
             child: Image.asset(
-              'assets/images/inicioApp.gif',
-              width: MediaQuery.sizeOf(context).width * 0.5,
+              'assets/images/iconoApp.png',
+              width: MediaQuery.sizeOf(context).width * 0.4,
               fit: BoxFit.contain,
             ),
           ),
@@ -369,6 +370,12 @@ final parametersBuilderMap =
   'detalleReporteVenta': (data) async => const ParameterData(
         allParams: {},
       ),
+  'editarSubCategoria': (data) async => ParameterData(
+        allParams: {
+          'etiqueta': getParameter<DocumentReference>(data, 'etiqueta'),
+        },
+      ),
+  'crearordenPC': ParameterData.none(),
 };
 
 Map<String, dynamic> getInitialParameterData(Map<String, dynamic> data) {

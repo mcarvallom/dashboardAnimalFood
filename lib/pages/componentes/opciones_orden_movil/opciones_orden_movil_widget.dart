@@ -110,7 +110,7 @@ class _OpcionesOrdenMovilWidgetState extends State<OpcionesOrdenMovilWidget> {
                         'listaProducto': serializeParam(
                           widget.listaProductos,
                           ParamType.DocumentReference,
-                          true,
+                          isList: true,
                         ),
                       }.withoutNulls,
                       extra: <String, dynamic>{

@@ -221,7 +221,7 @@ class _PedidosDeliveryWidgetState extends State<PedidosDeliveryWidget> {
                                           'listaProducto': serializeParam(
                                             columnOrderRecord.selectedItems,
                                             ParamType.DocumentReference,
-                                            true,
+                                            isList: true,
                                           ),
                                         }.withoutNulls,
                                         extra: <String, dynamic>{
@@ -368,8 +368,8 @@ class _PedidosDeliveryWidgetState extends State<PedidosDeliveryWidget> {
                                                                           0.0,
                                                                           0.0),
                                                               child: Text(
-                                                                containerUserRecord
-                                                                    .displayName,
+                                                                columnOrderRecord
+                                                                    .name,
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyMedium

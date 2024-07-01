@@ -3,9 +3,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '/backend/schema/util/firestore_util.dart';
-import '/backend/schema/util/schema_util.dart';
 
-import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 class ProductoStruct extends FFFirebaseStruct {
@@ -25,26 +23,32 @@ class ProductoStruct extends FFFirebaseStruct {
   DocumentReference? _referencia;
   DocumentReference? get referencia => _referencia;
   set referencia(DocumentReference? val) => _referencia = val;
+
   bool hasReferencia() => _referencia != null;
 
   // "variacion" field.
   DocumentReference? _variacion;
   DocumentReference? get variacion => _variacion;
   set variacion(DocumentReference? val) => _variacion = val;
+
   bool hasVariacion() => _variacion != null;
 
   // "cantidad" field.
   int? _cantidad;
   int get cantidad => _cantidad ?? 0;
   set cantidad(int? val) => _cantidad = val;
-  void incrementCantidad(int amount) => _cantidad = cantidad + amount;
+
+  void incrementCantidad(int amount) => cantidad = cantidad + amount;
+
   bool hasCantidad() => _cantidad != null;
 
   // "subtotal" field.
   int? _subtotal;
   int get subtotal => _subtotal ?? 0;
   set subtotal(int? val) => _subtotal = val;
-  void incrementSubtotal(int amount) => _subtotal = subtotal + amount;
+
+  void incrementSubtotal(int amount) => subtotal = subtotal + amount;
+
   bool hasSubtotal() => _subtotal != null;
 
   static ProductoStruct fromMap(Map<String, dynamic> data) => ProductoStruct(

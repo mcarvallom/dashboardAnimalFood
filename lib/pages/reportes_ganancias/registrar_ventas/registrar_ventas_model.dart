@@ -33,6 +33,15 @@ class RegistrarVentasModel extends FlutterFlowModel<RegistrarVentasWidget> {
   TextEditingController? totalmaquinatxt1TextController;
   String? Function(BuildContext, String?)?
       totalmaquinatxt1TextControllerValidator;
+  String? _totalmaquinatxt1TextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Total máquina requerido';
+    }
+
+    return null;
+  }
+
   // State field(s) for codigoGetnettxt1 widget.
   FocusNode? codigoGetnettxt1FocusNode;
   TextEditingController? codigoGetnettxt1TextController;
@@ -43,6 +52,20 @@ class RegistrarVentasModel extends FlutterFlowModel<RegistrarVentasWidget> {
   TextEditingController? totalefectivotxt1TextController;
   String? Function(BuildContext, String?)?
       totalefectivotxt1TextControllerValidator;
+  String? _totalefectivotxt1TextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Total efectivo requerido';
+    }
+
+    return null;
+  }
+
+  // State field(s) for totalTransferenciatxt1 widget.
+  FocusNode? totalTransferenciatxt1FocusNode;
+  TextEditingController? totalTransferenciatxt1TextController;
+  String? Function(BuildContext, String?)?
+      totalTransferenciatxt1TextControllerValidator;
   // State field(s) for totalgastotxt1 widget.
   FocusNode? totalgastotxt1FocusNode;
   TextEditingController? totalgastotxt1TextController;
@@ -73,6 +96,15 @@ class RegistrarVentasModel extends FlutterFlowModel<RegistrarVentasWidget> {
   TextEditingController? totalmaquinatxt2TextController;
   String? Function(BuildContext, String?)?
       totalmaquinatxt2TextControllerValidator;
+  String? _totalmaquinatxt2TextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Total máquina requerido';
+    }
+
+    return null;
+  }
+
   // State field(s) for codigoGetnettxt2 widget.
   FocusNode? codigoGetnettxt2FocusNode;
   TextEditingController? codigoGetnettxt2TextController;
@@ -83,6 +115,20 @@ class RegistrarVentasModel extends FlutterFlowModel<RegistrarVentasWidget> {
   TextEditingController? totalefectivotxt2TextController;
   String? Function(BuildContext, String?)?
       totalefectivotxt2TextControllerValidator;
+  String? _totalefectivotxt2TextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Total efectivo requerido';
+    }
+
+    return null;
+  }
+
+  // State field(s) for totalTransferenciatxt2 widget.
+  FocusNode? totalTransferenciatxt2FocusNode;
+  TextEditingController? totalTransferenciatxt2TextController;
+  String? Function(BuildContext, String?)?
+      totalTransferenciatxt2TextControllerValidator;
   // State field(s) for totalGastotxt2 widget.
   FocusNode? totalGastotxt2FocusNode;
   TextEditingController? totalGastotxt2TextController;
@@ -105,7 +151,16 @@ class RegistrarVentasModel extends FlutterFlowModel<RegistrarVentasWidget> {
       totalPetroleotxt2TextController2Validator;
 
   @override
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    totalmaquinatxt1TextControllerValidator =
+        _totalmaquinatxt1TextControllerValidator;
+    totalefectivotxt1TextControllerValidator =
+        _totalefectivotxt1TextControllerValidator;
+    totalmaquinatxt2TextControllerValidator =
+        _totalmaquinatxt2TextControllerValidator;
+    totalefectivotxt2TextControllerValidator =
+        _totalefectivotxt2TextControllerValidator;
+  }
 
   @override
   void dispose() {
@@ -118,6 +173,9 @@ class RegistrarVentasModel extends FlutterFlowModel<RegistrarVentasWidget> {
 
     totalefectivotxt1FocusNode?.dispose();
     totalefectivotxt1TextController?.dispose();
+
+    totalTransferenciatxt1FocusNode?.dispose();
+    totalTransferenciatxt1TextController?.dispose();
 
     totalgastotxt1FocusNode?.dispose();
     totalgastotxt1TextController?.dispose();
@@ -139,6 +197,9 @@ class RegistrarVentasModel extends FlutterFlowModel<RegistrarVentasWidget> {
 
     totalefectivotxt2FocusNode?.dispose();
     totalefectivotxt2TextController?.dispose();
+
+    totalTransferenciatxt2FocusNode?.dispose();
+    totalTransferenciatxt2TextController?.dispose();
 
     totalGastotxt2FocusNode?.dispose();
     totalGastotxt2TextController?.dispose();

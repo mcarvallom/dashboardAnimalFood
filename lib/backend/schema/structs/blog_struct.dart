@@ -3,9 +3,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '/backend/schema/util/firestore_util.dart';
-import '/backend/schema/util/schema_util.dart';
 
-import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 class BlogStruct extends FFFirebaseStruct {
@@ -39,66 +37,77 @@ class BlogStruct extends FFFirebaseStruct {
   DateTime? _createdAt;
   DateTime? get createdAt => _createdAt;
   set createdAt(DateTime? val) => _createdAt = val;
+
   bool hasCreatedAt() => _createdAt != null;
 
   // "titulo" field.
   String? _titulo;
   String get titulo => _titulo ?? '';
   set titulo(String? val) => _titulo = val;
+
   bool hasTitulo() => _titulo != null;
 
   // "cuerpo" field.
   String? _cuerpo;
   String get cuerpo => _cuerpo ?? '';
   set cuerpo(String? val) => _cuerpo = val;
+
   bool hasCuerpo() => _cuerpo != null;
 
   // "imagen" field.
   String? _imagen;
   String get imagen => _imagen ?? '';
   set imagen(String? val) => _imagen = val;
+
   bool hasImagen() => _imagen != null;
 
   // "cuerpo2" field.
   String? _cuerpo2;
   String get cuerpo2 => _cuerpo2 ?? '';
   set cuerpo2(String? val) => _cuerpo2 = val;
+
   bool hasCuerpo2() => _cuerpo2 != null;
 
   // "imagen2" field.
   String? _imagen2;
   String get imagen2 => _imagen2 ?? '';
   set imagen2(String? val) => _imagen2 = val;
+
   bool hasImagen2() => _imagen2 != null;
 
   // "cuerpo3" field.
   String? _cuerpo3;
   String get cuerpo3 => _cuerpo3 ?? '';
   set cuerpo3(String? val) => _cuerpo3 = val;
+
   bool hasCuerpo3() => _cuerpo3 != null;
 
   // "imagen3" field.
   String? _imagen3;
   String get imagen3 => _imagen3 ?? '';
   set imagen3(String? val) => _imagen3 = val;
+
   bool hasImagen3() => _imagen3 != null;
 
   // "cuerpo4" field.
   String? _cuerpo4;
   String get cuerpo4 => _cuerpo4 ?? '';
   set cuerpo4(String? val) => _cuerpo4 = val;
+
   bool hasCuerpo4() => _cuerpo4 != null;
 
   // "imagen4" field.
   String? _imagen4;
   String get imagen4 => _imagen4 ?? '';
   set imagen4(String? val) => _imagen4 = val;
+
   bool hasImagen4() => _imagen4 != null;
 
   // "cuerpo5" field.
   String? _cuerpo5;
   String get cuerpo5 => _cuerpo5 ?? '';
   set cuerpo5(String? val) => _cuerpo5 = val;
+
   bool hasCuerpo5() => _cuerpo5 != null;
 
   static BlogStruct fromMap(Map<String, dynamic> data) => BlogStruct(

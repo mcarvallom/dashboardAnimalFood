@@ -45,9 +45,8 @@ class _ControlStockWidgetState extends State<ControlStockWidget> {
         parent: widget.producto,
         singleRecord: true,
       ).then((s) => s.firstOrNull);
-      setState(() {
-        FFAppState().productoStock = widget.producto;
-      });
+      FFAppState().productoStock = widget.producto;
+      setState(() {});
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));

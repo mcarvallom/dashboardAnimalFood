@@ -347,10 +347,9 @@ class _VerMiTicketWidgetState extends State<VerMiTicketWidget> {
                                             }
                                           }
 
-                                          setState(() {
-                                            _model.imagen =
-                                                _model.uploadedFileUrl;
-                                          });
+                                          _model.imagen =
+                                              _model.uploadedFileUrl;
+                                          setState(() {});
                                         },
                                         child: Icon(
                                           Icons.photo_outlined,
@@ -420,9 +419,8 @@ class _VerMiTicketWidgetState extends State<VerMiTicketWidget> {
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
-                                            setState(() {
-                                              _model.imagen = null;
-                                            });
+                                            _model.imagen = null;
+                                            setState(() {});
                                           },
                                           child: Material(
                                             color: Colors.transparent,

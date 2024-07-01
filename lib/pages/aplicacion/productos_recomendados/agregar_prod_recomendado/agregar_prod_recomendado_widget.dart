@@ -490,14 +490,13 @@ class _AgregarProdRecomendadoWidgetState
                                                       _model.buscarFocusNode!
                                                           .addListener(
                                                         () async {
-                                                          setState(() {
-                                                            FFAppState()
-                                                                    .producto =
-                                                                _model
-                                                                    .simpleSearchResults1
-                                                                    .first
-                                                                    .reference;
-                                                          });
+                                                          FFAppState()
+                                                                  .producto =
+                                                              _model
+                                                                  .simpleSearchResults1
+                                                                  .first
+                                                                  .reference;
+                                                          setState(() {});
                                                         },
                                                       );
                                                     }
@@ -538,26 +537,23 @@ class _AgregarProdRecomendadoWidgetState
                                                                         r.object)
                                                                     .toList();
                                                           });
-                                                          setState(() {
-                                                            FFAppState()
-                                                                    .producto =
-                                                                _model
-                                                                    .simpleSearchResults1
-                                                                    .first
-                                                                    .reference;
-                                                          });
-                                                        },
-                                                      ),
-                                                      onFieldSubmitted:
-                                                          (_) async {
-                                                        setState(() {
                                                           FFAppState()
                                                                   .producto =
                                                               _model
                                                                   .simpleSearchResults1
                                                                   .first
                                                                   .reference;
-                                                        });
+                                                          setState(() {});
+                                                        },
+                                                      ),
+                                                      onFieldSubmitted:
+                                                          (_) async {
+                                                        FFAppState().producto =
+                                                            _model
+                                                                .simpleSearchResults1
+                                                                .first
+                                                                .reference;
+                                                        setState(() {});
                                                       },
                                                       autofocus: false,
                                                       obscureText: false,
@@ -1514,14 +1510,13 @@ class _AgregarProdRecomendadoWidgetState
                                                           .buscarMovilFocusNode!
                                                           .addListener(
                                                         () async {
-                                                          setState(() {
-                                                            FFAppState()
-                                                                    .producto =
-                                                                _model
-                                                                    .simpleSearchResults2
-                                                                    .first
-                                                                    .reference;
-                                                          });
+                                                          FFAppState()
+                                                                  .producto =
+                                                              _model
+                                                                  .simpleSearchResults2
+                                                                  .first
+                                                                  .reference;
+                                                          setState(() {});
                                                         },
                                                       );
                                                     }
@@ -1563,26 +1558,23 @@ class _AgregarProdRecomendadoWidgetState
                                                                         r.object)
                                                                     .toList();
                                                           });
-                                                          setState(() {
-                                                            FFAppState()
-                                                                    .producto =
-                                                                _model
-                                                                    .simpleSearchResults2
-                                                                    .first
-                                                                    .reference;
-                                                          });
-                                                        },
-                                                      ),
-                                                      onFieldSubmitted:
-                                                          (_) async {
-                                                        setState(() {
                                                           FFAppState()
                                                                   .producto =
                                                               _model
                                                                   .simpleSearchResults2
                                                                   .first
                                                                   .reference;
-                                                        });
+                                                          setState(() {});
+                                                        },
+                                                      ),
+                                                      onFieldSubmitted:
+                                                          (_) async {
+                                                        FFAppState().producto =
+                                                            _model
+                                                                .simpleSearchResults2
+                                                                .first
+                                                                .reference;
+                                                        setState(() {});
                                                       },
                                                       autofocus: false,
                                                       obscureText: false,

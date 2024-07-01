@@ -77,15 +77,14 @@ class _ElegirVariacionWidgetState extends State<ElegirVariacionWidget> {
                 containerVariacionRecordList.map((e) => e.tamanio).toList(),
             onChanged: (val) async {
               setState(() => _model.dropDownValue = val);
-              setState(() {
-                FFAppState().variacionCrearOrden = containerVariacionRecordList
-                    .where((e) =>
-                        containerVariacionRecordList.first.tamanio ==
-                        _model.dropDownValue)
-                    .toList()
-                    .first
-                    .reference;
-              });
+              FFAppState().variacionCrearOrden = containerVariacionRecordList
+                  .where((e) =>
+                      containerVariacionRecordList.first.tamanio ==
+                      _model.dropDownValue)
+                  .toList()
+                  .first
+                  .reference;
+              setState(() {});
             },
             width: 300.0,
             height: 56.0,

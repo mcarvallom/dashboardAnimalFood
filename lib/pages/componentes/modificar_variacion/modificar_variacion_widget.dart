@@ -446,6 +446,13 @@ class _ModificarVariacionWidgetState extends State<ModificarVariacionWidget> {
                                   setState(() {
                                     _model.textFieldcodBarraTextController
                                         ?.text = _model.escanearProducto2;
+                                    _model.textFieldcodBarraTextController
+                                            ?.selection =
+                                        TextSelection.collapsed(
+                                            offset: _model
+                                                .textFieldcodBarraTextController!
+                                                .text
+                                                .length);
                                   });
 
                                   setState(() {});

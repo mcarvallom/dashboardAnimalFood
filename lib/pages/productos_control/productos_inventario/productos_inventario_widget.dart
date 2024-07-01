@@ -42,9 +42,8 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      setState(() {
-        FFAppState().busquedaActiva = false;
-      });
+      FFAppState().busquedaActiva = false;
+      setState(() {});
     });
 
     _model.textController1 ??= TextEditingController();
@@ -192,11 +191,10 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                                               r.object)
                                                                           .toList();
                                                                 });
-                                                                setState(() {
-                                                                  FFAppState()
-                                                                          .busquedaActiva =
-                                                                      true;
-                                                                });
+                                                                FFAppState()
+                                                                        .busquedaActiva =
+                                                                    true;
+                                                                setState(() {});
                                                               },
                                                             ),
                                                             autofocus: false,
@@ -1060,10 +1058,9 @@ class _ProductosInventarioWidgetState extends State<ProductosInventarioWidget> {
                                                           .map((r) => r.object)
                                                           .toList();
                                                 });
-                                                setState(() {
-                                                  FFAppState().busquedaActiva =
-                                                      true;
-                                                });
+                                                FFAppState().busquedaActiva =
+                                                    true;
+                                                setState(() {});
                                               },
                                             ),
                                             autofocus: false,

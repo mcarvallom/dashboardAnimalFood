@@ -58,318 +58,310 @@ class _StockPageWidgetState extends State<StockPageWidget> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Expanded(
-                  child: StreamBuilder<List<ProductoRecord>>(
-                    stream: queryProductoRecord(),
-                    builder: (context, snapshot) {
-                      // Customize what your widget looks like when it's loading.
-                      if (!snapshot.hasData) {
-                        return const Center(
-                          child: SizedBox(
-                            width: 50.0,
-                            height: 50.0,
-                            child: CircularProgressIndicator(
-                              valueColor: AlwaysStoppedAnimation<Color>(
-                                Color(0xFF00AC67),
+                  child: Container(
+                    decoration: const BoxDecoration(),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Expanded(
+                          child: StreamBuilder<List<ProductoRecord>>(
+                            stream: queryProductoRecord(),
+                            builder: (context, snapshot) {
+                              // Customize what your widget looks like when it's loading.
+                              if (!snapshot.hasData) {
+                                return const Center(
+                                  child: SizedBox(
+                                    width: 50.0,
+                                    height: 50.0,
+                                    child: CircularProgressIndicator(
+                                      valueColor: AlwaysStoppedAnimation<Color>(
+                                        Color(0xFF00AC67),
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              }
+                              List<ProductoRecord> containerProductoRecordList =
+                                  snapshot.data!;
+                              return Container(
+                                decoration: const BoxDecoration(),
+                                child: StreamBuilder<List<VariacionRecord>>(
+                                  stream: queryVariacionRecord(),
+                                  builder: (context, snapshot) {
+                                    // Customize what your widget looks like when it's loading.
+                                    if (!snapshot.hasData) {
+                                      return const Center(
+                                        child: SizedBox(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          child: CircularProgressIndicator(
+                                            valueColor:
+                                                AlwaysStoppedAnimation<Color>(
+                                              Color(0xFF00AC67),
+                                            ),
+                                          ),
+                                        ),
+                                      );
+                                    }
+                                    List<VariacionRecord>
+                                        containerVariacionRecordList =
+                                        snapshot.data!;
+                                    return Container(
+                                      decoration: const BoxDecoration(),
+                                      child: TextFormField(
+                                        controller:
+                                            _model.buscarProductoTextController,
+                                        focusNode:
+                                            _model.buscarProductoFocusNode,
+                                        onChanged: (_) => EasyDebounce.debounce(
+                                          '_model.buscarProductoTextController',
+                                          const Duration(milliseconds: 20),
+                                          () async {
+                                            safeSetState(() {
+                                              _model.simpleSearchResults =
+                                                  TextSearch(
+                                                containerProductoRecordList
+                                                    .map(
+                                                      (record) => TextSearchItem
+                                                          .fromTerms(record, [
+                                                        record.name,
+                                                        record.codigoBarras
+                                                      ]),
+                                                    )
+                                                    .toList(),
+                                              )
+                                                      .search(_model
+                                                          .buscarProductoTextController
+                                                          .text)
+                                                      .map((r) => r.object)
+                                                      .toList();
+                                            });
+                                          },
+                                        ),
+                                        autofocus: true,
+                                        obscureText: false,
+                                        decoration: InputDecoration(
+                                          labelText: 'Buscar producto...',
+                                          labelStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .labelMedium
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                letterSpacing: 0.0,
+                                              ),
+                                          hintStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .labelMedium
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                letterSpacing: 0.0,
+                                              ),
+                                          enabledBorder: OutlineInputBorder(
+                                            borderSide: const BorderSide(
+                                              color: Color(0xFF00AC67),
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(10.0),
+                                          ),
+                                          focusedBorder: OutlineInputBorder(
+                                            borderSide: const BorderSide(
+                                              color: Color(0xFF00AC67),
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(10.0),
+                                          ),
+                                          errorBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(10.0),
+                                          ),
+                                          focusedErrorBorder:
+                                              OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(10.0),
+                                          ),
+                                          prefixIcon: Icon(
+                                            Icons.search_outlined,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              letterSpacing: 0.0,
+                                            ),
+                                        validator: _model
+                                            .buscarProductoTextControllerValidator
+                                            .asValidator(context),
+                                      ),
+                                    );
+                                  },
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                        Align(
+                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              _model.escanear =
+                                  await FlutterBarcodeScanner.scanBarcode(
+                                '#C62828', // scanning line color
+                                'Cancelar', // cancel button text
+                                true, // whether to show the flash icon
+                                ScanMode.BARCODE,
+                              );
+
+                              _model.producto = await queryProductoRecordOnce(
+                                queryBuilder: (productoRecord) =>
+                                    productoRecord.where(
+                                  'codigoBarras',
+                                  isEqualTo: _model.escanear,
+                                ),
+                                singleRecord: true,
+                              ).then((s) => s.firstOrNull);
+                              _model.variacion = await queryVariacionRecordOnce(
+                                queryBuilder: (variacionRecord) =>
+                                    variacionRecord.where(
+                                  'codigoBarra',
+                                  isEqualTo: _model.escanear,
+                                ),
+                                singleRecord: true,
+                              ).then((s) => s.firstOrNull);
+                              if (_model.escanear ==
+                                  _model.producto?.codigoBarras) {
+                                setState(() {
+                                  _model.buscarProductoTextController?.text =
+                                      _model.producto!.name;
+                                  _model.buscarProductoTextController
+                                          ?.selection =
+                                      TextSelection.collapsed(
+                                          offset: _model
+                                              .buscarProductoTextController!
+                                              .text
+                                              .length);
+                                });
+                                await showModalBottomSheet(
+                                  isScrollControlled: true,
+                                  backgroundColor: Colors.transparent,
+                                  context: context,
+                                  builder: (context) {
+                                    return Padding(
+                                      padding: MediaQuery.viewInsetsOf(context),
+                                      child: ControlStockMovilWidget(
+                                        producto: _model.producto?.reference,
+                                      ),
+                                    );
+                                  },
+                                ).then((value) => safeSetState(() {}));
+                              } else if (_model.escanear ==
+                                  _model.variacion?.codigoBarra) {
+                                setState(() {
+                                  _model.buscarProductoTextController?.text =
+                                      _model.variacion!.codigoBarra;
+                                  _model.buscarProductoTextController
+                                          ?.selection =
+                                      TextSelection.collapsed(
+                                          offset: _model
+                                              .buscarProductoTextController!
+                                              .text
+                                              .length);
+                                });
+                                await showModalBottomSheet(
+                                  isScrollControlled: true,
+                                  backgroundColor: Colors.transparent,
+                                  context: context,
+                                  builder: (context) {
+                                    return Padding(
+                                      padding: MediaQuery.viewInsetsOf(context),
+                                      child: ControlStockMovilWidget(
+                                        producto:
+                                            _model.variacion?.parentReference,
+                                      ),
+                                    );
+                                  },
+                                ).then((value) => safeSetState(() {}));
+                              } else {
+                                await showDialog(
+                                  context: context,
+                                  builder: (alertDialogContext) {
+                                    return AlertDialog(
+                                      content: const Text('Producto no encontrado'),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () =>
+                                              Navigator.pop(alertDialogContext),
+                                          child: const Text('Ok'),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                );
+                              }
+
+                              setState(() {});
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                borderRadius: BorderRadius.circular(0.0),
+                              ),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  FaIcon(
+                                    FontAwesomeIcons.barcode,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                    size: 24.0,
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 5.0, 0.0, 0.0),
+                                    child: Text(
+                                      'Escanear',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Readex Pro',
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                           ),
-                        );
-                      }
-                      List<ProductoRecord> containerProductoRecordList =
-                          snapshot.data!;
-                      return Container(
-                        decoration: const BoxDecoration(),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Expanded(
-                              child: TextFormField(
-                                controller: _model.buscarProductoTextController,
-                                focusNode: _model.buscarProductoFocusNode,
-                                onChanged: (_) => EasyDebounce.debounce(
-                                  '_model.buscarProductoTextController',
-                                  const Duration(milliseconds: 2000),
-                                  () async {
-                                    safeSetState(() {
-                                      _model.simpleSearchResults = TextSearch(
-                                        containerProductoRecordList
-                                            .map(
-                                              (record) =>
-                                                  TextSearchItem.fromTerms(
-                                                      record, [
-                                                record.name,
-                                                record.codigoBarras
-                                              ]),
-                                            )
-                                            .toList(),
-                                      )
-                                          .search(_model
-                                              .buscarProductoTextController
-                                              .text)
-                                          .map((r) => r.object)
-                                          .toList();
-                                    });
-                                    _model.productos =
-                                        await queryProductoRecordOnce(
-                                      queryBuilder: (productoRecord) =>
-                                          productoRecord.where(
-                                        'codigoBarras',
-                                        isEqualTo: _model.escanear,
-                                      ),
-                                      singleRecord: true,
-                                    ).then((s) => s.firstOrNull);
-                                    _model.variaciones =
-                                        await queryVariacionRecordOnce(
-                                      queryBuilder: (variacionRecord) =>
-                                          variacionRecord.where(
-                                        'codigoBarra',
-                                        isEqualTo: _model.escanear,
-                                      ),
-                                      singleRecord: true,
-                                    ).then((s) => s.firstOrNull);
-                                    if (_model.simpleSearchResults.first
-                                            .codigoBarras ==
-                                        _model.productos?.codigoBarras) {
-                                      setState(() {
-                                        _model.buscarProductoTextController
-                                            ?.text = _model.productos!.name;
-                                      });
-                                    } else if (_model.simpleSearchResults.first
-                                            .codigoBarras ==
-                                        _model.variaciones?.codigoBarra) {
-                                      setState(() {
-                                        _model.buscarProductoTextController
-                                            ?.text = _model.productos!.name;
-                                      });
-                                    } else if (_model
-                                            .simpleSearchResults.first.name ==
-                                        _model.productos?.name) {
-                                      setState(() {
-                                        _model.buscarProductoTextController
-                                            ?.text = _model.productos!.name;
-                                      });
-                                    } else {
-                                      await showDialog(
-                                        context: context,
-                                        builder: (alertDialogContext) {
-                                          return AlertDialog(
-                                            content:
-                                                const Text('Producto no encontrado'),
-                                            actions: [
-                                              TextButton(
-                                                onPressed: () => Navigator.pop(
-                                                    alertDialogContext),
-                                                child: const Text('Ok'),
-                                              ),
-                                            ],
-                                          );
-                                        },
-                                      );
-                                    }
-
-                                    setState(() {});
-                                  },
-                                ),
-                                autofocus: false,
-                                obscureText: false,
-                                decoration: InputDecoration(
-                                  labelText: 'Buscar producto...',
-                                  labelStyle: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .override(
-                                        fontFamily: 'Readex Pro',
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        letterSpacing: 0.0,
-                                      ),
-                                  hintStyle: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .override(
-                                        fontFamily: 'Readex Pro',
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        letterSpacing: 0.0,
-                                      ),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                      color: Color(0xFF00AC67),
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(10.0),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                      color: Color(0xFF00AC67),
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(10.0),
-                                  ),
-                                  errorBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: FlutterFlowTheme.of(context).error,
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(10.0),
-                                  ),
-                                  focusedErrorBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: FlutterFlowTheme.of(context).error,
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(10.0),
-                                  ),
-                                  prefixIcon: Icon(
-                                    Icons.search_outlined,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                  ),
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Readex Pro',
-                                      letterSpacing: 0.0,
-                                    ),
-                                validator: _model
-                                    .buscarProductoTextControllerValidator
-                                    .asValidator(context),
-                              ),
-                            ),
-                            Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
-                              child: InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  _model.escanear =
-                                      await FlutterBarcodeScanner.scanBarcode(
-                                    '#C62828', // scanning line color
-                                    'Cancelar', // cancel button text
-                                    true, // whether to show the flash icon
-                                    ScanMode.BARCODE,
-                                  );
-
-                                  _model.producto =
-                                      await queryProductoRecordOnce(
-                                    queryBuilder: (productoRecord) =>
-                                        productoRecord.where(
-                                      'codigoBarras',
-                                      isEqualTo: _model.escanear,
-                                    ),
-                                    singleRecord: true,
-                                  ).then((s) => s.firstOrNull);
-                                  _model.variacion =
-                                      await queryVariacionRecordOnce(
-                                    queryBuilder: (variacionRecord) =>
-                                        variacionRecord.where(
-                                      'codigoBarra',
-                                      isEqualTo: _model.escanear,
-                                    ),
-                                    singleRecord: true,
-                                  ).then((s) => s.firstOrNull);
-                                  if (_model.escanear ==
-                                      _model.producto?.codigoBarras) {
-                                    setState(() {
-                                      _model.buscarProductoTextController
-                                          ?.text = _model.producto!.name;
-                                    });
-                                    await showModalBottomSheet(
-                                      isScrollControlled: true,
-                                      backgroundColor: Colors.transparent,
-                                      context: context,
-                                      builder: (context) {
-                                        return Padding(
-                                          padding:
-                                              MediaQuery.viewInsetsOf(context),
-                                          child: ControlStockMovilWidget(
-                                            producto:
-                                                _model.producto?.reference,
-                                          ),
-                                        );
-                                      },
-                                    ).then((value) => safeSetState(() {}));
-                                  } else if (_model.escanear ==
-                                      _model.variacion?.codigoBarra) {
-                                    setState(() {
-                                      _model.buscarProductoTextController
-                                              ?.text =
-                                          _model.variacion!.codigoBarra;
-                                    });
-                                    await showModalBottomSheet(
-                                      isScrollControlled: true,
-                                      backgroundColor: Colors.transparent,
-                                      context: context,
-                                      builder: (context) {
-                                        return Padding(
-                                          padding:
-                                              MediaQuery.viewInsetsOf(context),
-                                          child: ControlStockMovilWidget(
-                                            producto: _model
-                                                .variacion?.parentReference,
-                                          ),
-                                        );
-                                      },
-                                    ).then((value) => safeSetState(() {}));
-                                  } else {
-                                    await showDialog(
-                                      context: context,
-                                      builder: (alertDialogContext) {
-                                        return AlertDialog(
-                                          content:
-                                              const Text('Producto no encontrado'),
-                                          actions: [
-                                            TextButton(
-                                              onPressed: () => Navigator.pop(
-                                                  alertDialogContext),
-                                              child: const Text('Ok'),
-                                            ),
-                                          ],
-                                        );
-                                      },
-                                    );
-                                  }
-
-                                  setState(() {});
-                                },
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    borderRadius: BorderRadius.circular(0.0),
-                                  ),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      FaIcon(
-                                        FontAwesomeIcons.barcode,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        size: 24.0,
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 5.0, 0.0, 0.0),
-                                        child: Text(
-                                          'Escanear',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Readex Pro',
-                                                letterSpacing: 0.0,
-                                              ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ].divide(const SizedBox(width: 10.0)),
                         ),
-                      );
-                    },
+                      ].divide(const SizedBox(width: 10.0)),
+                    ),
                   ),
                 ),
               ],
@@ -383,9 +375,13 @@ class _StockPageWidgetState extends State<StockPageWidget> {
               children: [
                 StreamBuilder<List<ProductoRecord>>(
                   stream: queryProductoRecord(
-                    queryBuilder: (productoRecord) => productoRecord.whereIn(
-                        'name',
-                        _model.simpleSearchResults.map((e) => e.name).toList()),
+                    queryBuilder: (productoRecord) => productoRecord
+                        .whereIn(
+                            'name',
+                            _model.simpleSearchResults
+                                .map((e) => e.name)
+                                .toList())
+                        .orderBy('Marca'),
                   ),
                   builder: (context, snapshot) {
                     // Customize what your widget looks like when it's loading.
@@ -470,6 +466,7 @@ class _StockPageWidgetState extends State<StockPageWidget> {
                                         await showModalBottomSheet(
                                           isScrollControlled: true,
                                           backgroundColor: Colors.transparent,
+                                          useSafeArea: true,
                                           context: context,
                                           builder: (context) {
                                             return Padding(
@@ -513,11 +510,11 @@ class _StockPageWidgetState extends State<StockPageWidget> {
                                 ].map((c) => DataCell(c)).toList())
                             .map((e) => DataRow(cells: e))
                             .toList(),
-                        headingRowColor: MaterialStateProperty.all(
+                        headingRowColor: WidgetStateProperty.all(
                           FlutterFlowTheme.of(context).primaryBackground,
                         ),
                         headingRowHeight: 60.0,
-                        dataRowColor: MaterialStateProperty.all(
+                        dataRowColor: WidgetStateProperty.all(
                           FlutterFlowTheme.of(context).secondaryBackground,
                         ),
                         dataRowHeight: 60.0,

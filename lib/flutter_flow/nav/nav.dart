@@ -9,6 +9,7 @@ import '/auth/base_auth_user_provider.dart';
 import '/backend/push_notifications/push_notifications_handler.dart'
     show PushNotificationsHandler;
 import '/index.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 export 'package:go_router/go_router.dart';
@@ -851,6 +852,23 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               structBuilder: VentasDiariasFechaStruct.fromSerializableMap,
             ),
           ),
+        ),
+        FFRoute(
+          name: 'editarSubCategoria',
+          path: '/editarSubCategoria',
+          builder: (context, params) => EditarSubCategoriaWidget(
+            etiqueta: params.getParam(
+              'etiqueta',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['category'],
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'crearordenPC',
+          path: '/crearordenPC',
+          builder: (context, params) => const CrearordenPCWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -1038,11 +1056,11 @@ class FFRoute {
               : builder(context, ffParams);
           final child = appStateNotifier.loading
               ? Container(
-                  color: Colors.transparent,
+                  color: FlutterFlowTheme.of(context).secondaryBackground,
                   child: Center(
                     child: Image.asset(
-                      'assets/images/inicioApp.gif',
-                      width: MediaQuery.sizeOf(context).width * 0.5,
+                      'assets/images/iconoApp.png',
+                      width: MediaQuery.sizeOf(context).width * 0.4,
                       fit: BoxFit.contain,
                     ),
                   ),

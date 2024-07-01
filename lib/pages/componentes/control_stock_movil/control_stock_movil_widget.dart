@@ -40,9 +40,8 @@ class _ControlStockMovilWidgetState extends State<ControlStockMovilWidget> {
       _model.variedades = await queryVariacionRecordOnce(
         parent: widget.producto,
       );
-      setState(() {
-        FFAppState().productoStock = widget.producto;
-      });
+      FFAppState().productoStock = widget.producto;
+      setState(() {});
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -59,330 +58,337 @@ class _ControlStockMovilWidgetState extends State<ControlStockMovilWidget> {
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Flexible(
-          child: StreamBuilder<ProductoRecord>(
-            stream: ProductoRecord.getDocument(widget.producto!),
-            builder: (context, snapshot) {
-              // Customize what your widget looks like when it's loading.
-              if (!snapshot.hasData) {
-                return const Center(
-                  child: SizedBox(
-                    width: 50.0,
-                    height: 50.0,
-                    child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(
-                        Color(0xFF00AC67),
+    return SingleChildScrollView(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Flexible(
+            child: StreamBuilder<ProductoRecord>(
+              stream: ProductoRecord.getDocument(widget.producto!),
+              builder: (context, snapshot) {
+                // Customize what your widget looks like when it's loading.
+                if (!snapshot.hasData) {
+                  return const Center(
+                    child: SizedBox(
+                      width: 50.0,
+                      height: 50.0,
+                      child: CircularProgressIndicator(
+                        valueColor: AlwaysStoppedAnimation<Color>(
+                          Color(0xFF00AC67),
+                        ),
                       ),
                     ),
-                  ),
-                );
-              }
-              final containerProductoRecord = snapshot.data!;
-              return Material(
-                color: Colors.transparent,
-                elevation: 4.0,
-                shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(0.0),
-                    bottomRight: Radius.circular(0.0),
-                    topLeft: Radius.circular(30.0),
-                    topRight: Radius.circular(30.0),
-                  ),
-                ),
-                child: Container(
-                  width: MediaQuery.sizeOf(context).width * 1.0,
-                  decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).secondaryBackground,
-                    borderRadius: const BorderRadius.only(
+                  );
+                }
+                final containerProductoRecord = snapshot.data!;
+                return Material(
+                  color: Colors.transparent,
+                  elevation: 4.0,
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(0.0),
                       bottomRight: Radius.circular(0.0),
                       topLeft: Radius.circular(30.0),
                       topRight: Radius.circular(30.0),
                     ),
                   ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
-                        child: StreamBuilder<ProductoRecord>(
-                          stream: ProductoRecord.getDocument(widget.producto!),
-                          builder: (context, snapshot) {
-                            // Customize what your widget looks like when it's loading.
-                            if (!snapshot.hasData) {
-                              return const Center(
-                                child: SizedBox(
-                                  width: 50.0,
-                                  height: 50.0,
-                                  child: CircularProgressIndicator(
-                                    valueColor: AlwaysStoppedAnimation<Color>(
-                                      Color(0xFF00AC67),
+                  child: Container(
+                    width: MediaQuery.sizeOf(context).width * 1.0,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      borderRadius: const BorderRadius.only(
+                        bottomLeft: Radius.circular(0.0),
+                        bottomRight: Radius.circular(0.0),
+                        topLeft: Radius.circular(30.0),
+                        topRight: Radius.circular(30.0),
+                      ),
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 30.0, 0.0, 0.0),
+                          child: StreamBuilder<ProductoRecord>(
+                            stream:
+                                ProductoRecord.getDocument(widget.producto!),
+                            builder: (context, snapshot) {
+                              // Customize what your widget looks like when it's loading.
+                              if (!snapshot.hasData) {
+                                return const Center(
+                                  child: SizedBox(
+                                    width: 50.0,
+                                    height: 50.0,
+                                    child: CircularProgressIndicator(
+                                      valueColor: AlwaysStoppedAnimation<Color>(
+                                        Color(0xFF00AC67),
+                                      ),
                                     ),
                                   ),
+                                );
+                              }
+                              final imageProductoRecord = snapshot.data!;
+                              return ClipRRect(
+                                borderRadius: BorderRadius.circular(8.0),
+                                child: Image.network(
+                                  imageProductoRecord.image,
+                                  width: 300.0,
+                                  height: 200.0,
+                                  fit: BoxFit.contain,
                                 ),
                               );
-                            }
-                            final imageProductoRecord = snapshot.data!;
-                            return ClipRRect(
-                              borderRadius: BorderRadius.circular(8.0),
-                              child: Image.network(
-                                imageProductoRecord.image,
-                                width: 300.0,
-                                height: 200.0,
-                                fit: BoxFit.contain,
-                              ),
-                            );
-                          },
+                            },
+                          ),
                         ),
-                      ),
-                      Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 10.0, 0.0, 10.0),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                StreamBuilder<List<VariacionRecord>>(
-                                  stream: queryVariacionRecord(
-                                    parent: widget.producto,
-                                    singleRecord: true,
-                                  ),
-                                  builder: (context, snapshot) {
-                                    // Customize what your widget looks like when it's loading.
-                                    if (!snapshot.hasData) {
-                                      return const Center(
-                                        child: SizedBox(
-                                          width: 50.0,
-                                          height: 50.0,
-                                          child: CircularProgressIndicator(
-                                            valueColor:
-                                                AlwaysStoppedAnimation<Color>(
-                                              Color(0xFF00AC67),
+                        Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 10.0, 0.0, 10.0),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  StreamBuilder<List<VariacionRecord>>(
+                                    stream: queryVariacionRecord(
+                                      parent: widget.producto,
+                                      singleRecord: true,
+                                    ),
+                                    builder: (context, snapshot) {
+                                      // Customize what your widget looks like when it's loading.
+                                      if (!snapshot.hasData) {
+                                        return const Center(
+                                          child: SizedBox(
+                                            width: 50.0,
+                                            height: 50.0,
+                                            child: CircularProgressIndicator(
+                                              valueColor:
+                                                  AlwaysStoppedAnimation<Color>(
+                                                Color(0xFF00AC67),
+                                              ),
                                             ),
                                           ),
-                                        ),
-                                      );
-                                    }
-                                    List<VariacionRecord>
-                                        conditionalBuilderVariacionRecordList =
-                                        snapshot.data!;
-                                    final conditionalBuilderVariacionRecord =
-                                        conditionalBuilderVariacionRecordList
-                                                .isNotEmpty
-                                            ? conditionalBuilderVariacionRecordList
-                                                .first
-                                            : null;
-                                    return Builder(
-                                      builder: (context) {
-                                        if (conditionalBuilderVariacionRecord !=
-                                            null) {
-                                          return StreamBuilder<
-                                              List<VariacionRecord>>(
-                                            stream: queryVariacionRecord(
-                                              parent: widget.producto,
-                                            ),
-                                            builder: (context, snapshot) {
-                                              // Customize what your widget looks like when it's loading.
-                                              if (!snapshot.hasData) {
-                                                return const Center(
-                                                  child: SizedBox(
-                                                    width: 50.0,
-                                                    height: 50.0,
-                                                    child:
-                                                        CircularProgressIndicator(
-                                                      valueColor:
-                                                          AlwaysStoppedAnimation<
-                                                              Color>(
-                                                        Color(0xFF00AC67),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                );
-                                              }
-                                              List<VariacionRecord>
-                                                  columnVariacionRecordList =
-                                                  snapshot.data!;
-                                              return Column(
-                                                mainAxisSize: MainAxisSize.max,
-                                                children: List.generate(
-                                                    columnVariacionRecordList
-                                                        .length, (columnIndex) {
-                                                  final columnVariacionRecord =
-                                                      columnVariacionRecordList[
-                                                          columnIndex];
-                                                  return Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
-                                                    children: [
-                                                      Padding(
-                                                        padding:
-                                                            const EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    5.0,
-                                                                    0.0,
-                                                                    0.0),
-                                                        child: Text(
-                                                          '${columnVariacionRecord.tamanio}: ${columnVariacionRecord.rebaja > 0 ? formatNumber(
-                                                              columnVariacionRecord
-                                                                  .rebaja,
-                                                              formatType:
-                                                                  FormatType
-                                                                      .decimal,
-                                                              decimalType:
-                                                                  DecimalType
-                                                                      .commaDecimal,
-                                                              currency: '',
-                                                            ) : formatNumber(
-                                                              columnVariacionRecord
-                                                                  .precio,
-                                                              formatType:
-                                                                  FormatType
-                                                                      .decimal,
-                                                              decimalType:
-                                                                  DecimalType
-                                                                      .commaDecimal,
-                                                              currency: '',
-                                                            )}',
-                                                          textAlign:
-                                                              TextAlign.center,
-                                                          maxLines: 1,
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Readex Pro',
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
+                                        );
+                                      }
+                                      List<VariacionRecord>
+                                          conditionalBuilderVariacionRecordList =
+                                          snapshot.data!;
+                                      final conditionalBuilderVariacionRecord =
+                                          conditionalBuilderVariacionRecordList
+                                                  .isNotEmpty
+                                              ? conditionalBuilderVariacionRecordList
+                                                  .first
+                                              : null;
+                                      return Builder(
+                                        builder: (context) {
+                                          if (conditionalBuilderVariacionRecord !=
+                                              null) {
+                                            return StreamBuilder<
+                                                List<VariacionRecord>>(
+                                              stream: queryVariacionRecord(
+                                                parent: widget.producto,
+                                              ),
+                                              builder: (context, snapshot) {
+                                                // Customize what your widget looks like when it's loading.
+                                                if (!snapshot.hasData) {
+                                                  return const Center(
+                                                    child: SizedBox(
+                                                      width: 50.0,
+                                                      height: 50.0,
+                                                      child:
+                                                          CircularProgressIndicator(
+                                                        valueColor:
+                                                            AlwaysStoppedAnimation<
+                                                                Color>(
+                                                          Color(0xFF00AC67),
                                                         ),
                                                       ),
-                                                    ],
-                                                  );
-                                                }),
-                                              );
-                                            },
-                                          );
-                                        } else {
-                                          return Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 5.0, 0.0, 0.0),
-                                            child: Text(
-                                              containerProductoRecord.rebaja > 0
-                                                  ? formatNumber(
-                                                      containerProductoRecord
-                                                          .rebaja,
-                                                      formatType:
-                                                          FormatType.decimal,
-                                                      decimalType: DecimalType
-                                                          .commaDecimal,
-                                                      currency: '',
-                                                    )
-                                                  : formatNumber(
-                                                      containerProductoRecord
-                                                          .price,
-                                                      formatType:
-                                                          FormatType.decimal,
-                                                      decimalType: DecimalType
-                                                          .commaDecimal,
-                                                      currency: '',
                                                     ),
-                                              textAlign: TextAlign.center,
-                                              maxLines: 1,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Readex Pro',
-                                                        letterSpacing: 0.0,
+                                                  );
+                                                }
+                                                List<VariacionRecord>
+                                                    columnVariacionRecordList =
+                                                    snapshot.data!;
+                                                return Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: List.generate(
+                                                      columnVariacionRecordList
+                                                          .length,
+                                                      (columnIndex) {
+                                                    final columnVariacionRecord =
+                                                        columnVariacionRecordList[
+                                                            columnIndex];
+                                                    return Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .center,
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                              const EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      5.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          child: Text(
+                                                            '${columnVariacionRecord.tamanio}: ${columnVariacionRecord.rebaja > 0 ? formatNumber(
+                                                                columnVariacionRecord
+                                                                    .rebaja,
+                                                                formatType:
+                                                                    FormatType
+                                                                        .decimal,
+                                                                decimalType:
+                                                                    DecimalType
+                                                                        .commaDecimal,
+                                                                currency: '',
+                                                              ) : formatNumber(
+                                                                columnVariacionRecord
+                                                                    .precio,
+                                                                formatType:
+                                                                    FormatType
+                                                                        .decimal,
+                                                                decimalType:
+                                                                    DecimalType
+                                                                        .commaDecimal,
+                                                                currency: '',
+                                                              )}',
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                            maxLines: 1,
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Readex Pro',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    );
+                                                  }),
+                                                );
+                                              },
+                                            );
+                                          } else {
+                                            return Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 5.0, 0.0, 0.0),
+                                              child: Text(
+                                                containerProductoRecord.rebaja >
+                                                        0
+                                                    ? formatNumber(
+                                                        containerProductoRecord
+                                                            .rebaja,
+                                                        formatType:
+                                                            FormatType.decimal,
+                                                        decimalType: DecimalType
+                                                            .commaDecimal,
+                                                        currency: '',
+                                                      )
+                                                    : formatNumber(
+                                                        containerProductoRecord
+                                                            .price,
+                                                        formatType:
+                                                            FormatType.decimal,
+                                                        decimalType: DecimalType
+                                                            .commaDecimal,
+                                                        currency: '',
                                                       ),
+                                                textAlign: TextAlign.center,
+                                                maxLines: 1,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            );
+                                          }
+                                        },
+                                      );
+                                    },
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      10.0, 10.0, 10.0, 10.0),
+                                  child: ListView(
+                                    padding: EdgeInsets.zero,
+                                    primary: false,
+                                    shrinkWrap: true,
+                                    scrollDirection: Axis.vertical,
+                                    children: [
+                                      StreamBuilder<List<VariacionRecord>>(
+                                        stream: queryVariacionRecord(
+                                          parent: widget.producto,
+                                        ),
+                                        builder: (context, snapshot) {
+                                          // Customize what your widget looks like when it's loading.
+                                          if (!snapshot.hasData) {
+                                            return const Center(
+                                              child: SizedBox(
+                                                width: 50.0,
+                                                height: 50.0,
+                                                child:
+                                                    CircularProgressIndicator(
+                                                  valueColor:
+                                                      AlwaysStoppedAnimation<
+                                                          Color>(
+                                                    Color(0xFF00AC67),
+                                                  ),
+                                                ),
+                                              ),
+                                            );
+                                          }
+                                          List<VariacionRecord>
+                                              controlStockVariacionRecordList =
+                                              snapshot.data!;
+                                          return wrapWithModel(
+                                            model: _model.controlStockModel,
+                                            updateCallback: () =>
+                                                setState(() {}),
+                                            updateOnChange: true,
+                                            child: ControlStockWidget(
+                                              producto: widget.producto,
+                                              variaciones:
+                                                  controlStockVariacionRecordList
+                                                      .map((e) => e.reference)
+                                                      .toList(),
                                             ),
                                           );
-                                        }
-                                      },
-                                    );
-                                  },
+                                        },
+                                      ),
+                                    ].divide(const SizedBox(height: 10.0)),
+                                  ),
                                 ),
                               ],
                             ),
-                          ),
-                          Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 10.0, 10.0, 10.0),
-                                child: ListView(
-                                  padding: EdgeInsets.zero,
-                                  primary: false,
-                                  shrinkWrap: true,
-                                  scrollDirection: Axis.vertical,
-                                  children: [
-                                    StreamBuilder<List<VariacionRecord>>(
-                                      stream: queryVariacionRecord(
-                                        parent: widget.producto,
-                                      ),
-                                      builder: (context, snapshot) {
-                                        // Customize what your widget looks like when it's loading.
-                                        if (!snapshot.hasData) {
-                                          return const Center(
-                                            child: SizedBox(
-                                              width: 50.0,
-                                              height: 50.0,
-                                              child: CircularProgressIndicator(
-                                                valueColor:
-                                                    AlwaysStoppedAnimation<
-                                                        Color>(
-                                                  Color(0xFF00AC67),
-                                                ),
-                                              ),
-                                            ),
-                                          );
-                                        }
-                                        List<VariacionRecord>
-                                            controlStockVariacionRecordList =
-                                            snapshot.data!;
-                                        return wrapWithModel(
-                                          model: _model.controlStockModel,
-                                          updateCallback: () => setState(() {}),
-                                          updateOnChange: true,
-                                          child: ControlStockWidget(
-                                            producto: widget.producto,
-                                            variaciones:
-                                                controlStockVariacionRecordList
-                                                    .map((e) => e.reference)
-                                                    .toList(),
-                                          ),
-                                        );
-                                      },
-                                    ),
-                                  ].divide(const SizedBox(height: 10.0)),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ],
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              );
-            },
+                );
+              },
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

@@ -78,6 +78,8 @@ class _AgregarProductoComponentWidgetState
     _model.marcaProductoTextController ??= TextEditingController();
     _model.marcaProductoFocusNode ??= FocusNode();
 
+    _model.switchDestacadoValue = false;
+    _model.switchRecomendadoValue = false;
     _model.etiquetaProductoTextController ??= TextEditingController();
     _model.etiquetaProductoFocusNode ??= FocusNode();
 
@@ -678,8 +680,6 @@ class _AgregarProductoComponentWidgetState
                                                             'Readex Pro',
                                                         letterSpacing: 0.0,
                                                       ),
-                                                  maxLines: 20,
-                                                  minLines: 1,
                                                   validator: _model
                                                       .txtCodigoBarrasTextControllerValidator
                                                       .asValidator(context),
@@ -705,6 +705,13 @@ class _AgregarProductoComponentWidgetState
                                                     _model
                                                         .txtCodigoBarrasTextController
                                                         ?.text = _model.escanear;
+                                                    _model.txtCodigoBarrasTextController
+                                                            ?.selection =
+                                                        TextSelection.collapsed(
+                                                            offset: _model
+                                                                .txtCodigoBarrasTextController!
+                                                                .text
+                                                                .length);
                                                   });
 
                                                   setState(() {});
@@ -1972,8 +1979,7 @@ class _AgregarProductoComponentWidgetState
                                                                 0.0, 10.0),
                                                     child: Switch.adaptive(
                                                       value: _model
-                                                              .switchDestacadoValue ??=
-                                                          false,
+                                                          .switchDestacadoValue!,
                                                       onChanged:
                                                           (newValue) async {
                                                         setState(() => _model
@@ -2028,8 +2034,7 @@ class _AgregarProductoComponentWidgetState
                                                                 0.0, 10.0),
                                                     child: Switch.adaptive(
                                                       value: _model
-                                                              .switchRecomendadoValue ??=
-                                                          false,
+                                                          .switchRecomendadoValue!,
                                                       onChanged:
                                                           (newValue) async {
                                                         setState(() => _model
@@ -2319,13 +2324,12 @@ class _AgregarProductoComponentWidgetState
                                                       highlightColor:
                                                           Colors.transparent,
                                                       onTap: () async {
-                                                        setState(() {
-                                                          FFAppState()
-                                                              .addToEtiquetaProducto(
-                                                                  _model
-                                                                      .etiquetaProductoTextController
-                                                                      .text);
-                                                        });
+                                                        FFAppState()
+                                                            .addToEtiquetaProducto(
+                                                                _model
+                                                                    .etiquetaProductoTextController
+                                                                    .text);
+                                                        setState(() {});
                                                       },
                                                       child: Icon(
                                                         Icons.send,
@@ -2408,11 +2412,10 @@ class _AgregarProductoComponentWidgetState
                                                                   Colors
                                                                       .transparent,
                                                               onTap: () async {
-                                                                setState(() {
-                                                                  FFAppState()
-                                                                      .removeFromEtiquetaProducto(
-                                                                          etiquetasItem);
-                                                                });
+                                                                FFAppState()
+                                                                    .removeFromEtiquetaProducto(
+                                                                        etiquetasItem);
+                                                                setState(() {});
                                                               },
                                                               child: Icon(
                                                                 Icons.close,
@@ -2588,11 +2591,10 @@ class _AgregarProductoComponentWidgetState
                                                                       ) ??
                                                                       false;
                                                               if (confirmDialogResponse) {
-                                                                setState(() {
-                                                                  FFAppState()
-                                                                      .removeFromVariacion(
-                                                                          variacionItem);
-                                                                });
+                                                                FFAppState()
+                                                                    .removeFromVariacion(
+                                                                        variacionItem);
+                                                                setState(() {});
                                                               }
                                                             },
                                                             child: Icon(
@@ -2805,9 +2807,8 @@ class _AgregarProductoComponentWidgetState
                                               },
                                             ),
                                           }, productoRecordReference);
-                                          setState(() {
-                                            FFAppState().etiquetaProducto = [];
-                                          });
+                                          FFAppState().etiquetaProducto = [];
+                                          setState(() {});
                                           setState(() {
                                             _model.textController2?.clear();
                                             _model.precioOriginalTextController
@@ -2878,10 +2879,9 @@ class _AgregarProductoComponentWidgetState
                                                   .first
                                                   .codigoBarra,
                                             ));
-                                            setState(() {
-                                              FFAppState().removeFromVariacion(
-                                                  FFAppState().variacion.first);
-                                            });
+                                            FFAppState().removeFromVariacion(
+                                                FFAppState().variacion.first);
+                                            setState(() {});
                                           }
 
                                           setState(() {});

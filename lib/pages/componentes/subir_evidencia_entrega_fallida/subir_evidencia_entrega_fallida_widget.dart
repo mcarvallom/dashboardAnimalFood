@@ -449,6 +449,7 @@ class _SubirEvidenciaEntregaFallidaWidgetState
                                       '51e6d248-0887-4a52-a2db-5b4d7acc0989',
                                   titulo: 'Fallo en la entrega',
                                 );
+
                                 await actions.sendNotification(
                                   'Fallo en la entrega',
                                   'Estado pedido',

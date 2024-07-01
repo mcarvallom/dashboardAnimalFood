@@ -6,6 +6,7 @@ class VentasDiariasModel extends FlutterFlowModel<VentasDiariasWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  DateTime? datePicked;
 
   @override
   void initState(BuildContext context) {}

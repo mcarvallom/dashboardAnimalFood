@@ -49,9 +49,6 @@ class _AplicacionWidgetState extends State<AplicacionWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        drawer: const Drawer(
-          elevation: 16.0,
-        ),
         body: SafeArea(
           top: true,
           child: Row(
@@ -245,6 +242,8 @@ class _AplicacionWidgetState extends State<AplicacionWidget> {
                                                                         TextAlign
                                                                             .center,
                                                                     maxLines: 2,
+                                                                    minFontSize:
+                                                                        14.0,
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyMedium
@@ -256,8 +255,6 @@ class _AplicacionWidgetState extends State<AplicacionWidget> {
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
-                                                                    minFontSize:
-                                                                        14.0,
                                                                   ),
                                                                 ),
                                                               ),
@@ -339,6 +336,8 @@ class _AplicacionWidgetState extends State<AplicacionWidget> {
                                                                         TextAlign
                                                                             .center,
                                                                     maxLines: 3,
+                                                                    minFontSize:
+                                                                        14.0,
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyMedium
@@ -350,8 +349,6 @@ class _AplicacionWidgetState extends State<AplicacionWidget> {
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
-                                                                    minFontSize:
-                                                                        14.0,
                                                                   ),
                                                                 ),
                                                               ),
@@ -433,6 +430,8 @@ class _AplicacionWidgetState extends State<AplicacionWidget> {
                                                                         TextAlign
                                                                             .center,
                                                                     maxLines: 3,
+                                                                    minFontSize:
+                                                                        14.0,
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyMedium
@@ -444,8 +443,6 @@ class _AplicacionWidgetState extends State<AplicacionWidget> {
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
-                                                                    minFontSize:
-                                                                        14.0,
                                                                   ),
                                                                 ),
                                                               ),
@@ -527,6 +524,8 @@ class _AplicacionWidgetState extends State<AplicacionWidget> {
                                                                         TextAlign
                                                                             .center,
                                                                     maxLines: 3,
+                                                                    minFontSize:
+                                                                        14.0,
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyMedium
@@ -538,8 +537,6 @@ class _AplicacionWidgetState extends State<AplicacionWidget> {
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
-                                                                    minFontSize:
-                                                                        14.0,
                                                                   ),
                                                                 ),
                                                               ),
@@ -621,6 +618,8 @@ class _AplicacionWidgetState extends State<AplicacionWidget> {
                                                                         TextAlign
                                                                             .center,
                                                                     maxLines: 3,
+                                                                    minFontSize:
+                                                                        14.0,
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyMedium
@@ -632,8 +631,6 @@ class _AplicacionWidgetState extends State<AplicacionWidget> {
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
-                                                                    minFontSize:
-                                                                        14.0,
                                                                   ),
                                                                 ),
                                                               ),
@@ -715,6 +712,8 @@ class _AplicacionWidgetState extends State<AplicacionWidget> {
                                                                         TextAlign
                                                                             .center,
                                                                     maxLines: 3,
+                                                                    minFontSize:
+                                                                        14.0,
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyMedium
@@ -726,8 +725,6 @@ class _AplicacionWidgetState extends State<AplicacionWidget> {
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
-                                                                    minFontSize:
-                                                                        14.0,
                                                                   ),
                                                                 ),
                                                               ),

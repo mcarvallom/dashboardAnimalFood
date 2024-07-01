@@ -7,7 +7,7 @@ export '/pages/conosininiciosesion/conosininiciosesion_widget.dart'
     show ConosininiciosesionWidget;
 export '/pages/productos_control/productos/productos_widget.dart'
     show ProductosWidget;
-export '/pages/productos_control/sub_categorias/sub_categorias_widget.dart'
+export '/pages/aplicacion/categorias/sub_categorias/sub_categorias_widget.dart'
     show SubCategoriasWidget;
 export '/crear/agregar_producto/agregar_producto_widget.dart'
     show AgregarProductoWidget;
@@ -55,9 +55,9 @@ export '/pages/productos_control/productos_inventario/productos_inventario_widge
     show ProductosInventarioWidget;
 export '/pages/aplicacion/notificaciones_a_todos/notificaciones_a_todos_widget.dart'
     show NotificacionesATodosWidget;
-export '/pages/productos_control/categorias/categorias_widget.dart'
+export '/pages/aplicacion/categorias/categorias/categorias_widget.dart'
     show CategoriasWidget;
-export '/pages/productos_control/tipo_categoria/tipo_categoria_widget.dart'
+export '/pages/aplicacion/categorias/tipo_categoria/tipo_categoria_widget.dart'
     show TipoCategoriaWidget;
 export '/pages/productos_control/marcas/marcas_widget.dart' show MarcasWidget;
 export '/pages/pedidos/pedidos_delivery/pedidos_delivery_widget.dart'
@@ -87,3 +87,7 @@ export '/pages/reportes_ganancias/ventas_diarias/ventas_diarias_widget.dart'
     show VentasDiariasWidget;
 export '/pages/reportes_ganancias/detalle_reporte_venta/detalle_reporte_venta_widget.dart'
     show DetalleReporteVentaWidget;
+export '/editar/editar_sub_categoria/editar_sub_categoria_widget.dart'
+    show EditarSubCategoriaWidget;
+export '/pages/pedidos/crearorden_p_c/crearorden_p_c_widget.dart'
+    show CrearordenPCWidget;

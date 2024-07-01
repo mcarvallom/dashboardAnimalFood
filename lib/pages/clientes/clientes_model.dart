@@ -1,4 +1,5 @@
 import '/backend/backend.dart';
+import '/components/barra_menu_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/componentes/top_movil/top_movil_widget.dart';
 import 'clientes_widget.dart' show ClientesWidget;
@@ -16,11 +17,14 @@ class ClientesModel extends FlutterFlowModel<ClientesWidget> {
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
   List<UserRecord> simpleSearchResults = [];
+  // Model for barraMenu component.
+  late BarraMenuModel barraMenuModel;
 
   @override
   void initState(BuildContext context) {
     topMovilModel = createModel(context, () => TopMovilModel());
     dataTableShowLogs = false; // Disables noisy DataTable2 debug statements.
+    barraMenuModel = createModel(context, () => BarraMenuModel());
   }
 
   @override
@@ -29,5 +33,7 @@ class ClientesModel extends FlutterFlowModel<ClientesWidget> {
     topMovilModel.dispose();
     textFieldFocusNode?.dispose();
     textController?.dispose();
+
+    barraMenuModel.dispose();
   }
 }

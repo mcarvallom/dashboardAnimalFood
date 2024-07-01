@@ -7,7 +7,6 @@
 #include "generated_plugin_registrant.h"
 
 #include <cloud_firestore/cloud_firestore_plugin_c_api.h>
-#include <desktop_window/desktop_window_plugin.h>
 #include <directprint/directprint_plugin_c_api.h>
 #include <file_selector_windows/file_selector_windows.h>
 #include <firebase_auth/firebase_auth_plugin_c_api.h>
@@ -20,8 +19,6 @@
 void RegisterPlugins(flutter::PluginRegistry* registry) {
   CloudFirestorePluginCApiRegisterWithRegistrar(
       registry->GetRegistrarForPlugin("CloudFirestorePluginCApi"));
-  DesktopWindowPluginRegisterWithRegistrar(
-      registry->GetRegistrarForPlugin("DesktopWindowPlugin"));
   DirectprintPluginCApiRegisterWithRegistrar(
       registry->GetRegistrarForPlugin("DirectprintPluginCApi"));
   FileSelectorWindowsRegisterWithRegistrar(

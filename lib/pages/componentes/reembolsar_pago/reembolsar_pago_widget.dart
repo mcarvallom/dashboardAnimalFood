@@ -240,14 +240,12 @@ class _ReembolsarPagoWidgetState extends State<ReembolsarPagoWidget> {
                                             ) ??
                                             false;
                                     if (confirmDialogResponse) {
-                                      setState(() {
-                                        FFAppState().seed = '';
-                                        FFAppState().nonce = 0;
-                                      });
-                                      setState(() {
-                                        FFAppState().seed = functions.seed();
-                                        FFAppState().nonce = functions.nonce();
-                                      });
+                                      FFAppState().seed = '';
+                                      FFAppState().nonce = 0;
+                                      setState(() {});
+                                      FFAppState().seed = functions.seed();
+                                      FFAppState().nonce = functions.nonce();
+                                      setState(() {});
                                       _model.tranKey = actions.tranKey(
                                         '7ffbb7bf1f7361b1200b2e8d74e1d76f',
                                         'SnZP3D63n3I9dH9O',
@@ -268,6 +266,7 @@ class _ReembolsarPagoWidgetState extends State<ReembolsarPagoWidget> {
                                         internalReference:
                                             containerOrderRecord?.idPago,
                                       );
+
                                       if ((_model.apiReembolso?.succeeded ??
                                           true)) {
                                         await showDialog(
@@ -312,7 +311,8 @@ class _ReembolsarPagoWidgetState extends State<ReembolsarPagoWidget> {
                                         24.0, 0.0, 24.0, 0.0),
                                     iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    color: const Color(0xFF39A3EF),
+                                    color:
+                                        FlutterFlowTheme.of(context).verdeApp,
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(

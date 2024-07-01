@@ -21,7 +21,6 @@ void main() async {
   // Start initial custom actions code
   await actions.onesignalInitialise();
   await actions.lockOrientation();
-  await actions.tamanioPantalla();
   // End initial custom actions code
 
   final appState = FFAppState(); // Initialize FFAppState
@@ -51,12 +50,13 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   Locale? _locale;
-  ThemeMode _themeMode = ThemeMode.system;
 
-  late Stream<BaseAuthUser> userStream;
+  ThemeMode _themeMode = ThemeMode.system;
 
   late AppStateNotifier _appStateNotifier;
   late GoRouter _router;
+
+  late Stream<BaseAuthUser> userStream;
 
   final authUserSub = authenticatedUserStream.listen((_) {});
   final fcmTokenSub = fcmTokenUserStream.listen((_) {});
@@ -68,10 +68,12 @@ class _MyAppState extends State<MyApp> {
     _appStateNotifier = AppStateNotifier.instance;
     _router = createRouter(_appStateNotifier);
     userStream = dashboardAnimalFoodFirebaseUserStream()
-      ..listen((user) => _appStateNotifier.update(user));
+      ..listen((user) {
+        _appStateNotifier.update(user);
+      });
     jwtTokenStream.listen((_) {});
     Future.delayed(
-      const Duration(milliseconds: 4),
+      const Duration(milliseconds: 10),
       () => _appStateNotifier.stopShowingSplashImage(),
     );
   }
@@ -108,15 +110,15 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         brightness: Brightness.light,
         scrollbarTheme: ScrollbarThemeData(
-          thumbVisibility: MaterialStateProperty.all(true),
+          thumbVisibility: WidgetStateProperty.all(true),
           interactive: false,
-          thickness: MaterialStateProperty.all(5.0),
+          thickness: WidgetStateProperty.all(5.0),
           radius: const Radius.circular(10.0),
-          thumbColor: MaterialStateProperty.resolveWith((states) {
-            if (states.contains(MaterialState.dragged)) {
+          thumbColor: WidgetStateProperty.resolveWith((states) {
+            if (states.contains(WidgetState.dragged)) {
               return const Color(0xff00ac67);
             }
-            if (states.contains(MaterialState.hovered)) {
+            if (states.contains(WidgetState.hovered)) {
               return const Color(0xff00ac67);
             }
             return const Color(0xff00ac67);

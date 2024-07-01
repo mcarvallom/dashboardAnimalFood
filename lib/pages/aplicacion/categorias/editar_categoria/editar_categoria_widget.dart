@@ -520,12 +520,11 @@ class _EditarCategoriaWidgetState extends State<EditarCategoriaWidget> {
                                                   }
                                                 }
 
-                                                setState(() {
-                                                  FFAppState().imagenSubida =
-                                                      _model.uploadedFileUrl;
-                                                  FFAppState().isImagenSubida =
-                                                      true;
-                                                });
+                                                FFAppState().imagenSubida =
+                                                    _model.uploadedFileUrl;
+                                                FFAppState().isImagenSubida =
+                                                    true;
+                                                setState(() {});
                                               },
                                               text: 'Subir imagen',
                                               options: FFButtonOptions(
@@ -585,12 +584,10 @@ class _EditarCategoriaWidgetState extends State<EditarCategoriaWidget> {
                                                       : containerCategoriaPadreRecord
                                                           .imagen,
                                                 ));
-                                                setState(() {
-                                                  FFAppState().imagenSubida =
-                                                      '';
-                                                  FFAppState().isImagenSubida =
-                                                      false;
-                                                });
+                                                FFAppState().imagenSubida = '';
+                                                FFAppState().isImagenSubida =
+                                                    false;
+                                                setState(() {});
                                                 context.safePop();
                                               },
                                               text: 'Publicar',

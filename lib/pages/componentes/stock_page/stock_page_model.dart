@@ -13,10 +13,6 @@ class StockPageModel extends FlutterFlowModel<StockPageWidget> {
   String? Function(BuildContext, String?)?
       buscarProductoTextControllerValidator;
   List<ProductoRecord> simpleSearchResults = [];
-  // Stores action output result for [Firestore Query - Query a collection] action in buscarProducto widget.
-  ProductoRecord? productos;
-  // Stores action output result for [Firestore Query - Query a collection] action in buscarProducto widget.
-  VariacionRecord? variaciones;
   var escanear = '';
   // Stores action output result for [Firestore Query - Query a collection] action in Container widget.
   ProductoRecord? producto;

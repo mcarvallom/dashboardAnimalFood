@@ -5,14 +5,9 @@ import 'package:flutter/material.dart';
 
 class CrearProductoOrdenModel
     extends FlutterFlowModel<CrearProductoOrdenWidget> {
-  ///  Local state fields for this component.
-
-  DocumentReference? producto;
-
-  DocumentReference? variacion;
-
   ///  State fields for stateful widgets in this component.
 
+  final formKey = GlobalKey<FormState>();
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode1;
   TextEditingController? textController1;
@@ -22,25 +17,29 @@ class CrearProductoOrdenModel
   FocusNode? textFieldFocusNode2;
   TextEditingController? textController2;
   String? Function(BuildContext, String?)? textController2Validator;
-  // Stores action output result for [Backend Call - Read Document] action in Button widget.
-  ProductoRecord? productoRead;
-  // Stores action output result for [Backend Call - Read Document] action in Button widget.
-  VariacionRecord? variacionRead;
-  // Stores action output result for [Backend Call - Create Document] action in Button widget.
-  SelectedItemsRecord? selectedItemss;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode3;
-  TextEditingController? textController3;
-  String? Function(BuildContext, String?)? textController3Validator;
-  // Stores action output result for [Backend Call - Read Document] action in Button widget.
-  ProductoRecord? productoReadd;
-  // Stores action output result for [Backend Call - Read Document] action in Button widget.
-  VariacionRecord? variacionReadd;
-  // Stores action output result for [Backend Call - Create Document] action in Button widget.
-  SelectedItemsRecord? selectedItems;
+  String? _textController2Validator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Cantidad requerida';
+    }
+
+    return null;
+  }
+
+  // Stores action output result for [Backend Call - Read Document] action in productoVariacion widget.
+  ProductoRecord? productoCrearV;
+  // Stores action output result for [Backend Call - Read Document] action in productoVariacion widget.
+  VariacionRecord? variacionCrearV;
+  // Stores action output result for [Backend Call - Create Document] action in productoVariacion widget.
+  SelectedItemsRecord? selectedItemV;
+  // Stores action output result for [Backend Call - Read Document] action in productoVariacion widget.
+  ProductoRecord? productoCrear;
+  // Stores action output result for [Backend Call - Create Document] action in productoVariacion widget.
+  SelectedItemsRecord? selectedItem;
 
   @override
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    textController2Validator = _textController2Validator;
+  }
 
   @override
   void dispose() {
@@ -49,8 +48,5 @@ class CrearProductoOrdenModel
 
     textFieldFocusNode2?.dispose();
     textController2?.dispose();
-
-    textFieldFocusNode3?.dispose();
-    textController3?.dispose();
   }
 }

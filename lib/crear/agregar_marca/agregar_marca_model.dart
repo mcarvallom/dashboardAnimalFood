@@ -1,4 +1,5 @@
 import '/backend/backend.dart';
+import '/components/barra_menu_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/pages/componentes/top_movil/top_movil_widget.dart';
@@ -11,6 +12,8 @@ class AgregarMarcaModel extends FlutterFlowModel<AgregarMarcaWidget> {
 
   final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
+  // Model for barraMenu component.
+  late BarraMenuModel barraMenuModel;
   // Model for topMovil component.
   late TopMovilModel topMovilModel;
   // State field(s) for TextField widget.
@@ -23,11 +26,13 @@ class AgregarMarcaModel extends FlutterFlowModel<AgregarMarcaWidget> {
   String? Function(BuildContext, String?)?
       txtSobrelaMarcaTextControllerValidator;
   // State field(s) for CheckboxGroup widget.
-  List<String>? checkboxGroupValues;
   FormFieldController<List<String>>? checkboxGroupValueController;
+  List<String>? get checkboxGroupValues => checkboxGroupValueController?.value;
+  set checkboxGroupValues(List<String>? v) =>
+      checkboxGroupValueController?.value = v;
+
   // State field(s) for Carousel widget.
   CarouselController? carouselController;
-
   int carouselCurrentIndex = 1;
 
   bool isDataUploading1 = false;
@@ -50,12 +55,14 @@ class AgregarMarcaModel extends FlutterFlowModel<AgregarMarcaWidget> {
 
   @override
   void initState(BuildContext context) {
+    barraMenuModel = createModel(context, () => BarraMenuModel());
     topMovilModel = createModel(context, () => TopMovilModel());
   }
 
   @override
   void dispose() {
     unfocusNode.dispose();
+    barraMenuModel.dispose();
     topMovilModel.dispose();
     textFieldFocusNode?.dispose();
     textController1?.dispose();

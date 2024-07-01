@@ -272,12 +272,11 @@ class _EditarPagCategoriaWidgetState extends State<EditarPagCategoriaWidget> {
                                                 }
                                               }
 
-                                              setState(() {
-                                                FFAppState().imagenSubida =
-                                                    _model.uploadedFileUrl;
-                                                FFAppState().isImagenSubida =
-                                                    true;
-                                              });
+                                              FFAppState().imagenSubida =
+                                                  _model.uploadedFileUrl;
+                                              FFAppState().isImagenSubida =
+                                                  true;
+                                              setState(() {});
                                             },
                                             text: 'Subir imagen',
                                             options: FFButtonOptions(
@@ -323,11 +322,10 @@ class _EditarPagCategoriaWidgetState extends State<EditarPagCategoriaWidget> {
                                                     : containerTiendaRecord
                                                         .portadaPagCategoria,
                                               ));
-                                              setState(() {
-                                                FFAppState().imagenSubida = '';
-                                                FFAppState().isImagenSubida =
-                                                    false;
-                                              });
+                                              FFAppState().imagenSubida = '';
+                                              FFAppState().isImagenSubida =
+                                                  false;
+                                              setState(() {});
                                               context.safePop();
                                             },
                                             text: 'Publicar',

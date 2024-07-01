@@ -1,3 +1,4 @@
+import '/components/barra_menu_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/componentes/agregar_producto_component/agregar_producto_component_widget.dart';
 import '/pages/componentes/top_movil/top_movil_widget.dart';
@@ -9,6 +10,8 @@ class AgregarProductoModel extends FlutterFlowModel<AgregarProductoWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  // Model for barraMenu component.
+  late BarraMenuModel barraMenuModel;
   // Model for topMovil component.
   late TopMovilModel topMovilModel;
   // Model for topMovilVendedor component.
@@ -18,6 +21,7 @@ class AgregarProductoModel extends FlutterFlowModel<AgregarProductoWidget> {
 
   @override
   void initState(BuildContext context) {
+    barraMenuModel = createModel(context, () => BarraMenuModel());
     topMovilModel = createModel(context, () => TopMovilModel());
     topMovilVendedorModel = createModel(context, () => TopMovilVendedorModel());
     agregarProductoComponentModel =
@@ -27,6 +31,7 @@ class AgregarProductoModel extends FlutterFlowModel<AgregarProductoWidget> {
   @override
   void dispose() {
     unfocusNode.dispose();
+    barraMenuModel.dispose();
     topMovilModel.dispose();
     topMovilVendedorModel.dispose();
     agregarProductoComponentModel.dispose();

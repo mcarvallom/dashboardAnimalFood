@@ -33,6 +33,7 @@ class _SwitchAdminWidgetState extends State<SwitchAdminWidget> {
     super.initState();
     _model = createModel(context, () => SwitchAdminModel());
 
+    _model.switchValue = widget.switchAdmin!;
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -46,7 +47,7 @@ class _SwitchAdminWidgetState extends State<SwitchAdminWidget> {
   @override
   Widget build(BuildContext context) {
     return Switch.adaptive(
-      value: _model.switchValue ??= widget.switchAdmin!,
+      value: _model.switchValue!,
       onChanged: (newValue) async {
         setState(() => _model.switchValue = newValue);
         if (newValue) {

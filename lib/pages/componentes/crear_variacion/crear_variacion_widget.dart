@@ -394,6 +394,12 @@ class _CrearVariacionWidgetState extends State<CrearVariacionWidget> {
                               setState(() {
                                 _model.txtCodigoBarraTextController?.text =
                                     _model.escanearProducto1;
+                                _model.txtCodigoBarraTextController?.selection =
+                                    TextSelection.collapsed(
+                                        offset: _model
+                                            .txtCodigoBarraTextController!
+                                            .text
+                                            .length);
                               });
 
                               setState(() {});

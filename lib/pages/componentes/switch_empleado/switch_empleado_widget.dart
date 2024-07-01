@@ -33,6 +33,7 @@ class _SwitchEmpleadoWidgetState extends State<SwitchEmpleadoWidget> {
     super.initState();
     _model = createModel(context, () => SwitchEmpleadoModel());
 
+    _model.switchValue = widget.switchEmpleado!;
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -46,7 +47,7 @@ class _SwitchEmpleadoWidgetState extends State<SwitchEmpleadoWidget> {
   @override
   Widget build(BuildContext context) {
     return Switch.adaptive(
-      value: _model.switchValue ??= widget.switchEmpleado!,
+      value: _model.switchValue!,
       onChanged: (newValue) async {
         setState(() => _model.switchValue = newValue);
         if (newValue) {

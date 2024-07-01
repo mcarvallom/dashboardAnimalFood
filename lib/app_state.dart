@@ -59,26 +59,26 @@ class FFAppState extends ChangeNotifier {
   }
 
   void addToVariasImagenesProducto(String value) {
-    _variasImagenesProducto.add(value);
+    variasImagenesProducto.add(value);
   }
 
   void removeFromVariasImagenesProducto(String value) {
-    _variasImagenesProducto.remove(value);
+    variasImagenesProducto.remove(value);
   }
 
   void removeAtIndexFromVariasImagenesProducto(int index) {
-    _variasImagenesProducto.removeAt(index);
+    variasImagenesProducto.removeAt(index);
   }
 
   void updateVariasImagenesProductoAtIndex(
     int index,
     String Function(String) updateFn,
   ) {
-    _variasImagenesProducto[index] = updateFn(_variasImagenesProducto[index]);
+    variasImagenesProducto[index] = updateFn(_variasImagenesProducto[index]);
   }
 
   void insertAtIndexInVariasImagenesProducto(int index, String value) {
-    _variasImagenesProducto.insert(index, value);
+    variasImagenesProducto.insert(index, value);
   }
 
   String _imagenProducto = '';
@@ -94,26 +94,26 @@ class FFAppState extends ChangeNotifier {
   }
 
   void addToEtiquetaProducto(String value) {
-    _etiquetaProducto.add(value);
+    etiquetaProducto.add(value);
   }
 
   void removeFromEtiquetaProducto(String value) {
-    _etiquetaProducto.remove(value);
+    etiquetaProducto.remove(value);
   }
 
   void removeAtIndexFromEtiquetaProducto(int index) {
-    _etiquetaProducto.removeAt(index);
+    etiquetaProducto.removeAt(index);
   }
 
   void updateEtiquetaProductoAtIndex(
     int index,
     String Function(String) updateFn,
   ) {
-    _etiquetaProducto[index] = updateFn(_etiquetaProducto[index]);
+    etiquetaProducto[index] = updateFn(_etiquetaProducto[index]);
   }
 
   void insertAtIndexInEtiquetaProducto(int index, String value) {
-    _etiquetaProducto.insert(index, value);
+    etiquetaProducto.insert(index, value);
   }
 
   bool _busquedaActiva = false;
@@ -170,26 +170,26 @@ class FFAppState extends ChangeNotifier {
   }
 
   void addToProdAsociado(DocumentReference value) {
-    _prodAsociado.add(value);
+    prodAsociado.add(value);
   }
 
   void removeFromProdAsociado(DocumentReference value) {
-    _prodAsociado.remove(value);
+    prodAsociado.remove(value);
   }
 
   void removeAtIndexFromProdAsociado(int index) {
-    _prodAsociado.removeAt(index);
+    prodAsociado.removeAt(index);
   }
 
   void updateProdAsociadoAtIndex(
     int index,
     DocumentReference Function(DocumentReference) updateFn,
   ) {
-    _prodAsociado[index] = updateFn(_prodAsociado[index]);
+    prodAsociado[index] = updateFn(_prodAsociado[index]);
   }
 
   void insertAtIndexInProdAsociado(int index, DocumentReference value) {
-    _prodAsociado.insert(index, value);
+    prodAsociado.insert(index, value);
   }
 
   List<VariacionStruct> _variacion = [];
@@ -199,26 +199,26 @@ class FFAppState extends ChangeNotifier {
   }
 
   void addToVariacion(VariacionStruct value) {
-    _variacion.add(value);
+    variacion.add(value);
   }
 
   void removeFromVariacion(VariacionStruct value) {
-    _variacion.remove(value);
+    variacion.remove(value);
   }
 
   void removeAtIndexFromVariacion(int index) {
-    _variacion.removeAt(index);
+    variacion.removeAt(index);
   }
 
   void updateVariacionAtIndex(
     int index,
     VariacionStruct Function(VariacionStruct) updateFn,
   ) {
-    _variacion[index] = updateFn(_variacion[index]);
+    variacion[index] = updateFn(_variacion[index]);
   }
 
   void insertAtIndexInVariacion(int index, VariacionStruct value) {
-    _variacion.insert(index, value);
+    variacion.insert(index, value);
   }
 
   List<DocumentReference> _variacionesStock = [];
@@ -228,26 +228,26 @@ class FFAppState extends ChangeNotifier {
   }
 
   void addToVariacionesStock(DocumentReference value) {
-    _variacionesStock.add(value);
+    variacionesStock.add(value);
   }
 
   void removeFromVariacionesStock(DocumentReference value) {
-    _variacionesStock.remove(value);
+    variacionesStock.remove(value);
   }
 
   void removeAtIndexFromVariacionesStock(int index) {
-    _variacionesStock.removeAt(index);
+    variacionesStock.removeAt(index);
   }
 
   void updateVariacionesStockAtIndex(
     int index,
     DocumentReference Function(DocumentReference) updateFn,
   ) {
-    _variacionesStock[index] = updateFn(_variacionesStock[index]);
+    variacionesStock[index] = updateFn(_variacionesStock[index]);
   }
 
   void insertAtIndexInVariacionesStock(int index, DocumentReference value) {
-    _variacionesStock.insert(index, value);
+    variacionesStock.insert(index, value);
   }
 
   DocumentReference? _variacionStock;
@@ -275,26 +275,26 @@ class FFAppState extends ChangeNotifier {
   }
 
   void addToCarruselMarca(String value) {
-    _carruselMarca.add(value);
+    carruselMarca.add(value);
   }
 
   void removeFromCarruselMarca(String value) {
-    _carruselMarca.remove(value);
+    carruselMarca.remove(value);
   }
 
   void removeAtIndexFromCarruselMarca(int index) {
-    _carruselMarca.removeAt(index);
+    carruselMarca.removeAt(index);
   }
 
   void updateCarruselMarcaAtIndex(
     int index,
     String Function(String) updateFn,
   ) {
-    _carruselMarca[index] = updateFn(_carruselMarca[index]);
+    carruselMarca[index] = updateFn(_carruselMarca[index]);
   }
 
   void insertAtIndexInCarruselMarca(int index, String value) {
-    _carruselMarca.insert(index, value);
+    carruselMarca.insert(index, value);
   }
 
   DocumentReference? _variacionCrearOrden;
@@ -310,27 +310,27 @@ class FFAppState extends ChangeNotifier {
   }
 
   void addToSelectedItemCrearOrden(DocumentReference value) {
-    _selectedItemCrearOrden.add(value);
+    selectedItemCrearOrden.add(value);
   }
 
   void removeFromSelectedItemCrearOrden(DocumentReference value) {
-    _selectedItemCrearOrden.remove(value);
+    selectedItemCrearOrden.remove(value);
   }
 
   void removeAtIndexFromSelectedItemCrearOrden(int index) {
-    _selectedItemCrearOrden.removeAt(index);
+    selectedItemCrearOrden.removeAt(index);
   }
 
   void updateSelectedItemCrearOrdenAtIndex(
     int index,
     DocumentReference Function(DocumentReference) updateFn,
   ) {
-    _selectedItemCrearOrden[index] = updateFn(_selectedItemCrearOrden[index]);
+    selectedItemCrearOrden[index] = updateFn(_selectedItemCrearOrden[index]);
   }
 
   void insertAtIndexInSelectedItemCrearOrden(
       int index, DocumentReference value) {
-    _selectedItemCrearOrden.insert(index, value);
+    selectedItemCrearOrden.insert(index, value);
   }
 
   BlogStruct _blog = BlogStruct();
@@ -368,19 +368,19 @@ class FFAppState extends ChangeNotifier {
   }
 
   void addToReportes(VentasDiariasStruct value) {
-    _reportes.add(value);
+    reportes.add(value);
     secureStorage.setStringList(
         'ff_reportes', _reportes.map((x) => x.serialize()).toList());
   }
 
   void removeFromReportes(VentasDiariasStruct value) {
-    _reportes.remove(value);
+    reportes.remove(value);
     secureStorage.setStringList(
         'ff_reportes', _reportes.map((x) => x.serialize()).toList());
   }
 
   void removeAtIndexFromReportes(int index) {
-    _reportes.removeAt(index);
+    reportes.removeAt(index);
     secureStorage.setStringList(
         'ff_reportes', _reportes.map((x) => x.serialize()).toList());
   }
@@ -389,15 +389,62 @@ class FFAppState extends ChangeNotifier {
     int index,
     VentasDiariasStruct Function(VentasDiariasStruct) updateFn,
   ) {
-    _reportes[index] = updateFn(_reportes[index]);
+    reportes[index] = updateFn(_reportes[index]);
     secureStorage.setStringList(
         'ff_reportes', _reportes.map((x) => x.serialize()).toList());
   }
 
   void insertAtIndexInReportes(int index, VentasDiariasStruct value) {
-    _reportes.insert(index, value);
+    reportes.insert(index, value);
     secureStorage.setStringList(
         'ff_reportes', _reportes.map((x) => x.serialize()).toList());
+  }
+
+  bool _filtroFechaReporte = false;
+  bool get filtroFechaReporte => _filtroFechaReporte;
+  set filtroFechaReporte(bool value) {
+    _filtroFechaReporte = value;
+  }
+
+  List<SelectedItemStruct> _selectedItem = [];
+  List<SelectedItemStruct> get selectedItem => _selectedItem;
+  set selectedItem(List<SelectedItemStruct> value) {
+    _selectedItem = value;
+  }
+
+  void addToSelectedItem(SelectedItemStruct value) {
+    selectedItem.add(value);
+  }
+
+  void removeFromSelectedItem(SelectedItemStruct value) {
+    selectedItem.remove(value);
+  }
+
+  void removeAtIndexFromSelectedItem(int index) {
+    selectedItem.removeAt(index);
+  }
+
+  void updateSelectedItemAtIndex(
+    int index,
+    SelectedItemStruct Function(SelectedItemStruct) updateFn,
+  ) {
+    selectedItem[index] = updateFn(_selectedItem[index]);
+  }
+
+  void insertAtIndexInSelectedItem(int index, SelectedItemStruct value) {
+    selectedItem.insert(index, value);
+  }
+
+  String _nombrePagina = '';
+  String get nombrePagina => _nombrePagina;
+  set nombrePagina(String value) {
+    _nombrePagina = value;
+  }
+
+  double _subtotalPC = 0.0;
+  double get subtotalPC => _subtotalPC;
+  set subtotalPC(double value) {
+    _subtotalPC = value;
   }
 }
 

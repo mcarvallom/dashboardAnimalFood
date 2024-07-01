@@ -16,7 +16,6 @@ class AgregarBannerMovilModel
   late TopEscritorioModel topEscritorioModel;
   // State field(s) for Carousel widget.
   CarouselController? carouselController;
-
   int carouselCurrentIndex = 1;
 
   bool isDataUploading = false;

@@ -33,6 +33,7 @@ class _MarcaDestacadaWidgetState extends State<MarcaDestacadaWidget> {
     super.initState();
     _model = createModel(context, () => MarcaDestacadaModel());
 
+    _model.switchValue = widget.parameter1!;
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -46,7 +47,7 @@ class _MarcaDestacadaWidgetState extends State<MarcaDestacadaWidget> {
   @override
   Widget build(BuildContext context) {
     return Switch.adaptive(
-      value: _model.switchValue ??= widget.parameter1!,
+      value: _model.switchValue!,
       onChanged: (newValue) async {
         setState(() => _model.switchValue = newValue);
         if (newValue) {

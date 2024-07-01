@@ -19,6 +19,20 @@
       ]
     },
     {
+      "collectionGroup": "producto",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "name",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Marca",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
       "collectionGroup": "user",
       "queryScope": "COLLECTION",
       "fields": [

@@ -124,6 +124,12 @@ int? sumaGastos(
 int sumarTotales(
   int? monto1,
   int? monto2,
+  int? monto3,
 ) {
-  return monto1! + monto2!;
+  return monto1! + monto2! + monto3!;
+}
+
+double numeroNegativo(double numero) {
+  // convierte numero a numero negativo
+  return -numero;
 }

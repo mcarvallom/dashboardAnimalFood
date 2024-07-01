@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -31,10 +32,10 @@ class _RegistrarVentasWidgetState extends State<RegistrarVentasWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      setState(() {
-        FFAppState().deleteReportes();
-        FFAppState().reportes = [];
-      });
+      FFAppState().deleteReportes();
+      FFAppState().reportes = [];
+
+      setState(() {});
     });
 
     _model.totalmaquinatxt1TextController ??= TextEditingController();
@@ -45,6 +46,9 @@ class _RegistrarVentasWidgetState extends State<RegistrarVentasWidget> {
 
     _model.totalefectivotxt1TextController ??= TextEditingController();
     _model.totalefectivotxt1FocusNode ??= FocusNode();
+
+    _model.totalTransferenciatxt1TextController ??= TextEditingController();
+    _model.totalTransferenciatxt1FocusNode ??= FocusNode();
 
     _model.totalgastotxt1TextController ??= TextEditingController();
     _model.totalgastotxt1FocusNode ??= FocusNode();
@@ -66,6 +70,9 @@ class _RegistrarVentasWidgetState extends State<RegistrarVentasWidget> {
 
     _model.totalefectivotxt2TextController ??= TextEditingController();
     _model.totalefectivotxt2FocusNode ??= FocusNode();
+
+    _model.totalTransferenciatxt2TextController ??= TextEditingController();
+    _model.totalTransferenciatxt2FocusNode ??= FocusNode();
 
     _model.totalGastotxt2TextController ??= TextEditingController();
     _model.totalGastotxt2FocusNode ??= FocusNode();
@@ -295,13 +302,16 @@ class _RegistrarVentasWidgetState extends State<RegistrarVentasWidget> {
                                                     chipSpacing: 12.0,
                                                     rowSpacing: 12.0,
                                                     multiselect: false,
+                                                    initialized:
+                                                        _model.tienda1Value !=
+                                                            null,
                                                     alignment:
                                                         WrapAlignment.start,
                                                     controller: _model
                                                             .tienda1ValueController ??=
                                                         FormFieldController<
                                                             List<String>>(
-                                                      [],
+                                                      ['Reparto'],
                                                     ),
                                                     wrapped: true,
                                                   ),
@@ -574,6 +584,95 @@ class _RegistrarVentasWidgetState extends State<RegistrarVentasWidget> {
                                                   TextInputType.number,
                                               validator: _model
                                                   .totalefectivotxt1TextControllerValidator
+                                                  .asValidator(context),
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    8.0, 0.0, 8.0, 0.0),
+                                            child: TextFormField(
+                                              controller: _model
+                                                  .totalTransferenciatxt1TextController,
+                                              focusNode: _model
+                                                  .totalTransferenciatxt1FocusNode,
+                                              autofocus: true,
+                                              obscureText: false,
+                                              decoration: InputDecoration(
+                                                labelText:
+                                                    'Total transferencia...',
+                                                labelStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                hintStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                enabledBorder:
+                                                    OutlineInputBorder(
+                                                  borderSide: const BorderSide(
+                                                    color: Color(0xE400AC67),
+                                                    width: 2.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                ),
+                                                focusedBorder:
+                                                    OutlineInputBorder(
+                                                  borderSide: const BorderSide(
+                                                    color: Color(0xFF005835),
+                                                    width: 2.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                ),
+                                                errorBorder: OutlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .error,
+                                                    width: 2.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                ),
+                                                focusedErrorBorder:
+                                                    OutlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .error,
+                                                    width: 2.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                ),
+                                              ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                              keyboardType:
+                                                  TextInputType.number,
+                                              validator: _model
+                                                  .totalTransferenciatxt1TextControllerValidator
                                                   .asValidator(context),
                                             ),
                                           ),
@@ -1061,13 +1160,16 @@ class _RegistrarVentasWidgetState extends State<RegistrarVentasWidget> {
                                                     chipSpacing: 12.0,
                                                     rowSpacing: 12.0,
                                                     multiselect: false,
+                                                    initialized:
+                                                        _model.tienda2Value !=
+                                                            null,
                                                     alignment:
                                                         WrapAlignment.start,
                                                     controller: _model
                                                             .tienda2ValueController ??=
                                                         FormFieldController<
                                                             List<String>>(
-                                                      [],
+                                                      ['Marga Marga'],
                                                     ),
                                                     wrapped: true,
                                                   ),
@@ -1340,6 +1442,95 @@ class _RegistrarVentasWidgetState extends State<RegistrarVentasWidget> {
                                                   TextInputType.number,
                                               validator: _model
                                                   .totalefectivotxt2TextControllerValidator
+                                                  .asValidator(context),
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    8.0, 0.0, 8.0, 0.0),
+                                            child: TextFormField(
+                                              controller: _model
+                                                  .totalTransferenciatxt2TextController,
+                                              focusNode: _model
+                                                  .totalTransferenciatxt2FocusNode,
+                                              autofocus: true,
+                                              obscureText: false,
+                                              decoration: InputDecoration(
+                                                labelText:
+                                                    'Total transferencia...',
+                                                labelStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                hintStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                enabledBorder:
+                                                    OutlineInputBorder(
+                                                  borderSide: const BorderSide(
+                                                    color: Color(0xE400AC67),
+                                                    width: 2.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                ),
+                                                focusedBorder:
+                                                    OutlineInputBorder(
+                                                  borderSide: const BorderSide(
+                                                    color: Color(0xFF005835),
+                                                    width: 2.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                ),
+                                                errorBorder: OutlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .error,
+                                                    width: 2.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                ),
+                                                focusedErrorBorder:
+                                                    OutlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .error,
+                                                    width: 2.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                ),
+                                              ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                              keyboardType:
+                                                  TextInputType.number,
+                                              validator: _model
+                                                  .totalTransferenciatxt2TextControllerValidator
                                                   .asValidator(context),
                                             ),
                                           ),
@@ -1781,6 +1972,14 @@ class _RegistrarVentasWidgetState extends State<RegistrarVentasWidget> {
                           const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                       child: FFButtonWidget(
                         onPressed: () async {
+                          if (_model.formKey1.currentState == null ||
+                              !_model.formKey1.currentState!.validate()) {
+                            return;
+                          }
+                          if (_model.formKey2.currentState == null ||
+                              !_model.formKey2.currentState!.validate()) {
+                            return;
+                          }
                           var confirmDialogResponse = await showDialog<bool>(
                                 context: context,
                                 builder: (alertDialogContext) {
@@ -1805,88 +2004,90 @@ class _RegistrarVentasWidgetState extends State<RegistrarVentasWidget> {
                               ) ??
                               false;
                           if (confirmDialogResponse) {
-                            setState(() {
-                              FFAppState().addToReportes(VentasDiariasStruct(
-                                tienda: valueOrDefault<String>(
-                                  _model.tienda1Value,
-                                  'Reparto',
-                                ),
-                                fecha: getCurrentTimestamp,
-                                efectivo: valueOrDefault<int>(
-                                  int.tryParse(_model
-                                      .totalefectivotxt1TextController.text),
-                                  0,
-                                ),
-                                maquina: valueOrDefault<int>(
-                                  int.tryParse(_model
-                                      .totalmaquinatxt1TextController.text),
-                                  0,
-                                ),
-                                gastos: valueOrDefault<int>(
-                                  int.tryParse(
-                                      _model.totalgastotxt1TextController.text),
-                                  0,
-                                ),
-                                gastosDetalle:
-                                    _model.detalleGastotxt1TextController.text,
-                                peaje: valueOrDefault<int>(
-                                  int.tryParse(
-                                      _model.totalpeajetxt1TextController.text),
-                                  0,
-                                ),
-                                petroleo: valueOrDefault<int>(
-                                  int.tryParse(_model
-                                      .totalpetroleotxt1TextController.text),
-                                  0,
-                                ),
-                                codigoGetnet: valueOrDefault<int>(
-                                  int.tryParse(_model
-                                      .codigoGetnettxt1TextController.text),
-                                  0,
-                                ),
-                              ));
-                            });
-                            setState(() {
-                              FFAppState().addToReportes(VentasDiariasStruct(
-                                tienda: valueOrDefault<String>(
-                                  _model.tienda2Value,
-                                  'Marga Marga',
-                                ),
-                                fecha: getCurrentTimestamp,
-                                efectivo: valueOrDefault<int>(
-                                  int.tryParse(_model
-                                      .totalefectivotxt2TextController.text),
-                                  0,
-                                ),
-                                maquina: valueOrDefault<int>(
-                                  int.tryParse(_model
-                                      .totalmaquinatxt2TextController.text),
-                                  0,
-                                ),
-                                gastos: valueOrDefault<int>(
-                                  int.tryParse(
-                                      _model.totalGastotxt2TextController.text),
-                                  0,
-                                ),
-                                gastosDetalle: _model
-                                    .totalPetroleotxt2TextController1.text,
-                                peaje: valueOrDefault<int>(
-                                  int.tryParse(
-                                      _model.totalPeajetxt2TextController.text),
-                                  0,
-                                ),
-                                petroleo: valueOrDefault<int>(
-                                  int.tryParse(_model
-                                      .totalPetroleotxt2TextController2.text),
-                                  0,
-                                ),
-                                codigoGetnet: valueOrDefault<int>(
-                                  int.tryParse(_model
-                                      .codigoGetnettxt2TextController.text),
-                                  0,
-                                ),
-                              ));
-                            });
+                            FFAppState().addToReportes(VentasDiariasStruct(
+                              tienda: valueOrDefault<String>(
+                                _model.tienda1Value,
+                                'Reparto',
+                              ),
+                              fecha: getCurrentTimestamp,
+                              efectivo: valueOrDefault<int>(
+                                int.tryParse(_model
+                                    .totalefectivotxt1TextController.text),
+                                0,
+                              ),
+                              maquina: valueOrDefault<int>(
+                                int.tryParse(
+                                    _model.totalmaquinatxt1TextController.text),
+                                0,
+                              ),
+                              gastos: valueOrDefault<int>(
+                                int.tryParse(
+                                    _model.totalgastotxt1TextController.text),
+                                0,
+                              ),
+                              gastosDetalle:
+                                  _model.detalleGastotxt1TextController.text,
+                              peaje: valueOrDefault<int>(
+                                int.tryParse(
+                                    _model.totalpeajetxt1TextController.text),
+                                0,
+                              ),
+                              petroleo: valueOrDefault<int>(
+                                int.tryParse(_model
+                                    .totalpetroleotxt1TextController.text),
+                                0,
+                              ),
+                              codigoGetnet: valueOrDefault<int>(
+                                int.tryParse(
+                                    _model.codigoGetnettxt1TextController.text),
+                                0,
+                              ),
+                              transferencia: int.tryParse(_model
+                                  .totalTransferenciatxt1TextController.text),
+                            ));
+                            setState(() {});
+                            FFAppState().addToReportes(VentasDiariasStruct(
+                              tienda: valueOrDefault<String>(
+                                _model.tienda2Value,
+                                'Marga Marga',
+                              ),
+                              fecha: getCurrentTimestamp,
+                              efectivo: valueOrDefault<int>(
+                                int.tryParse(_model
+                                    .totalefectivotxt2TextController.text),
+                                0,
+                              ),
+                              maquina: valueOrDefault<int>(
+                                int.tryParse(
+                                    _model.totalmaquinatxt2TextController.text),
+                                0,
+                              ),
+                              gastos: valueOrDefault<int>(
+                                int.tryParse(
+                                    _model.totalGastotxt2TextController.text),
+                                0,
+                              ),
+                              gastosDetalle:
+                                  _model.totalPetroleotxt2TextController1.text,
+                              peaje: valueOrDefault<int>(
+                                int.tryParse(
+                                    _model.totalPeajetxt2TextController.text),
+                                0,
+                              ),
+                              petroleo: valueOrDefault<int>(
+                                int.tryParse(_model
+                                    .totalPetroleotxt2TextController2.text),
+                                0,
+                              ),
+                              codigoGetnet: valueOrDefault<int>(
+                                int.tryParse(
+                                    _model.codigoGetnettxt2TextController.text),
+                                0,
+                              ),
+                              transferencia: int.tryParse(_model
+                                  .totalTransferenciatxt2TextController.text),
+                            ));
+                            setState(() {});
 
                             await registrarVentasTiendaRecord!.reference
                                 .update({
@@ -1910,6 +2111,10 @@ class _RegistrarVentasWidgetState extends State<RegistrarVentasWidget> {
                                 },
                               ),
                             });
+                            await actions.sendNotificationReporte(
+                              '¡Tu reporte diario está listo!',
+                              'MqZHzBbr3BVB4u7dZ3AD6R9SAIk1',
+                            );
                             context.safePop();
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(

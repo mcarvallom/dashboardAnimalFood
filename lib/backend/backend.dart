@@ -27,6 +27,7 @@ import 'schema/variacion_record.dart';
 import 'schema/notificaciones_record.dart';
 import 'schema/blog_record.dart';
 import 'schema/soporte_record.dart';
+import 'schema/usuario_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart' hide Order;
@@ -57,6 +58,7 @@ export 'schema/variacion_record.dart';
 export 'schema/notificaciones_record.dart';
 export 'schema/blog_record.dart';
 export 'schema/soporte_record.dart';
+export 'schema/usuario_record.dart';
 
 /// Functions to query TiendaRecords (as a Stream and as a Future).
 Future<int> queryTiendaRecordCount({
@@ -871,6 +873,43 @@ Future<List<SoporteRecord>> querySoporteRecordOnce({
     queryCollectionOnce(
       SoporteRecord.collection,
       SoporteRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query UsuarioRecords (as a Stream and as a Future).
+Future<int> queryUsuarioRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      UsuarioRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<UsuarioRecord>> queryUsuarioRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      UsuarioRecord.collection,
+      UsuarioRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<UsuarioRecord>> queryUsuarioRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      UsuarioRecord.collection,
+      UsuarioRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,

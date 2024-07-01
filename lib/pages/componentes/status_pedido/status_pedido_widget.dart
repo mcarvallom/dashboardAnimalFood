@@ -117,6 +117,7 @@ class _StatusPedidoWidgetState extends State<StatusPedidoWidget> {
                         plantilla: '7d3d1566-60c9-4c0e-b30a-b9b64a133971',
                         titulo: 'Preparando envío',
                       );
+
                       shouldSetState = true;
                       await actions.sendNotificationEstadoPedido(
                         'Preparando envío',
@@ -135,6 +136,7 @@ class _StatusPedidoWidgetState extends State<StatusPedidoWidget> {
                         plantilla: '50e39307-ab15-4664-a99f-7c66a4903c1b',
                         titulo: 'En camino',
                       );
+
                       shouldSetState = true;
                       await actions.sendNotificationEstadoPedido(
                         'En camino',
@@ -153,6 +155,7 @@ class _StatusPedidoWidgetState extends State<StatusPedidoWidget> {
                         plantilla: '8cb0fb7b-9216-493c-a0a8-12ca2b632cdd',
                         titulo: 'Pedido entregado',
                       );
+
                       shouldSetState = true;
                       await actions.sendNotificationEstadoPedido(
                         'Pedido entregado',
@@ -171,6 +174,7 @@ class _StatusPedidoWidgetState extends State<StatusPedidoWidget> {
                         plantilla: '51e6d248-0887-4a52-a2db-5b4d7acc0989',
                         titulo: '¡Fallo en la entrega!',
                       );
+
                       shouldSetState = true;
                       await actions.sendNotificationEstadoPedido(
                         'Fallo en la entrega',

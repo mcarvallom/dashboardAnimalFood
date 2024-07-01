@@ -20,14 +20,18 @@ class VentasDiariasFechaStruct extends FFFirebaseStruct {
   List<VentasDiariasStruct>? _cuentasDiarias;
   List<VentasDiariasStruct> get cuentasDiarias => _cuentasDiarias ?? const [];
   set cuentasDiarias(List<VentasDiariasStruct>? val) => _cuentasDiarias = val;
-  void updateCuentasDiarias(Function(List<VentasDiariasStruct>) updateFn) =>
-      updateFn(_cuentasDiarias ??= []);
+
+  void updateCuentasDiarias(Function(List<VentasDiariasStruct>) updateFn) {
+    updateFn(_cuentasDiarias ??= []);
+  }
+
   bool hasCuentasDiarias() => _cuentasDiarias != null;
 
   // "fecha" field.
   DateTime? _fecha;
   DateTime? get fecha => _fecha;
   set fecha(DateTime? val) => _fecha = val;
+
   bool hasFecha() => _fecha != null;
 
   static VentasDiariasFechaStruct fromMap(Map<String, dynamic> data) =>
@@ -53,7 +57,7 @@ class VentasDiariasFechaStruct extends FFFirebaseStruct {
         'cuentasDiarias': serializeParam(
           _cuentasDiarias,
           ParamType.DataStruct,
-          true,
+          isList: true,
         ),
         'fecha': serializeParam(
           _fecha,

@@ -108,9 +108,8 @@ class _ProductosComponenteWidgetState extends State<ProductosComponenteWidget> {
                                           .map((r) => r.object)
                                           .toList();
                                     });
-                                    setState(() {
-                                      FFAppState().busquedaActiva = true;
-                                    });
+                                    FFAppState().busquedaActiva = true;
+                                    setState(() {});
                                   },
                                 ),
                                 autofocus: false,
@@ -299,7 +298,7 @@ class _ProductosComponenteWidgetState extends State<ProductosComponenteWidget> {
                         dataRowBuilder: (productosItem, productosIndex,
                                 selected, onSelectChanged) =>
                             DataRow(
-                          color: MaterialStateProperty.all(
+                          color: WidgetStateProperty.all(
                             productosIndex % 2 == 0
                                 ? FlutterFlowTheme.of(context)
                                     .secondaryBackground

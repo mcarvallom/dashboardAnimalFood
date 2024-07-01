@@ -3,9 +3,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '/backend/schema/util/firestore_util.dart';
-import '/backend/schema/util/schema_util.dart';
 
-import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 class VentasDiariasStruct extends FFFirebaseStruct {
@@ -19,6 +17,7 @@ class VentasDiariasStruct extends FFFirebaseStruct {
     int? peaje,
     int? petroleo,
     int? codigoGetnet,
+    int? transferencia,
     FirestoreUtilData firestoreUtilData = const FirestoreUtilData(),
   })  : _tienda = tienda,
         _fecha = fecha,
@@ -29,68 +28,94 @@ class VentasDiariasStruct extends FFFirebaseStruct {
         _peaje = peaje,
         _petroleo = petroleo,
         _codigoGetnet = codigoGetnet,
+        _transferencia = transferencia,
         super(firestoreUtilData);
 
   // "tienda" field.
   String? _tienda;
   String get tienda => _tienda ?? '';
   set tienda(String? val) => _tienda = val;
+
   bool hasTienda() => _tienda != null;
 
   // "fecha" field.
   DateTime? _fecha;
   DateTime? get fecha => _fecha;
   set fecha(DateTime? val) => _fecha = val;
+
   bool hasFecha() => _fecha != null;
 
   // "efectivo" field.
   int? _efectivo;
   int get efectivo => _efectivo ?? 0;
   set efectivo(int? val) => _efectivo = val;
-  void incrementEfectivo(int amount) => _efectivo = efectivo + amount;
+
+  void incrementEfectivo(int amount) => efectivo = efectivo + amount;
+
   bool hasEfectivo() => _efectivo != null;
 
   // "maquina" field.
   int? _maquina;
   int get maquina => _maquina ?? 0;
   set maquina(int? val) => _maquina = val;
-  void incrementMaquina(int amount) => _maquina = maquina + amount;
+
+  void incrementMaquina(int amount) => maquina = maquina + amount;
+
   bool hasMaquina() => _maquina != null;
 
   // "gastos" field.
   int? _gastos;
   int get gastos => _gastos ?? 0;
   set gastos(int? val) => _gastos = val;
-  void incrementGastos(int amount) => _gastos = gastos + amount;
+
+  void incrementGastos(int amount) => gastos = gastos + amount;
+
   bool hasGastos() => _gastos != null;
 
   // "gastosDetalle" field.
   String? _gastosDetalle;
   String get gastosDetalle => _gastosDetalle ?? '';
   set gastosDetalle(String? val) => _gastosDetalle = val;
+
   bool hasGastosDetalle() => _gastosDetalle != null;
 
   // "peaje" field.
   int? _peaje;
   int get peaje => _peaje ?? 0;
   set peaje(int? val) => _peaje = val;
-  void incrementPeaje(int amount) => _peaje = peaje + amount;
+
+  void incrementPeaje(int amount) => peaje = peaje + amount;
+
   bool hasPeaje() => _peaje != null;
 
   // "petroleo" field.
   int? _petroleo;
   int get petroleo => _petroleo ?? 0;
   set petroleo(int? val) => _petroleo = val;
-  void incrementPetroleo(int amount) => _petroleo = petroleo + amount;
+
+  void incrementPetroleo(int amount) => petroleo = petroleo + amount;
+
   bool hasPetroleo() => _petroleo != null;
 
   // "codigoGetnet" field.
   int? _codigoGetnet;
   int get codigoGetnet => _codigoGetnet ?? 0;
   set codigoGetnet(int? val) => _codigoGetnet = val;
+
   void incrementCodigoGetnet(int amount) =>
-      _codigoGetnet = codigoGetnet + amount;
+      codigoGetnet = codigoGetnet + amount;
+
   bool hasCodigoGetnet() => _codigoGetnet != null;
+
+  // "transferencia" field.
+  int? _transferencia;
+  int get transferencia => _transferencia ?? 0;
+  set transferencia(int? val) => _transferencia = val;
+
+  void incrementTransferencia(int amount) =>
+      transferencia = transferencia + amount;
+
+  bool hasTransferencia() => _transferencia != null;
 
   static VentasDiariasStruct fromMap(Map<String, dynamic> data) =>
       VentasDiariasStruct(
@@ -103,6 +128,7 @@ class VentasDiariasStruct extends FFFirebaseStruct {
         peaje: castToType<int>(data['peaje']),
         petroleo: castToType<int>(data['petroleo']),
         codigoGetnet: castToType<int>(data['codigoGetnet']),
+        transferencia: castToType<int>(data['transferencia']),
       );
 
   static VentasDiariasStruct? maybeFromMap(dynamic data) => data is Map
@@ -119,6 +145,7 @@ class VentasDiariasStruct extends FFFirebaseStruct {
         'peaje': _peaje,
         'petroleo': _petroleo,
         'codigoGetnet': _codigoGetnet,
+        'transferencia': _transferencia,
       }.withoutNulls;
 
   @override
@@ -157,6 +184,10 @@ class VentasDiariasStruct extends FFFirebaseStruct {
         ),
         'codigoGetnet': serializeParam(
           _codigoGetnet,
+          ParamType.int,
+        ),
+        'transferencia': serializeParam(
+          _transferencia,
           ParamType.int,
         ),
       }.withoutNulls;
@@ -208,6 +239,11 @@ class VentasDiariasStruct extends FFFirebaseStruct {
           ParamType.int,
           false,
         ),
+        transferencia: deserializeParam(
+          data['transferencia'],
+          ParamType.int,
+          false,
+        ),
       );
 
   @override
@@ -224,7 +260,8 @@ class VentasDiariasStruct extends FFFirebaseStruct {
         gastosDetalle == other.gastosDetalle &&
         peaje == other.peaje &&
         petroleo == other.petroleo &&
-        codigoGetnet == other.codigoGetnet;
+        codigoGetnet == other.codigoGetnet &&
+        transferencia == other.transferencia;
   }
 
   @override
@@ -237,7 +274,8 @@ class VentasDiariasStruct extends FFFirebaseStruct {
         gastosDetalle,
         peaje,
         petroleo,
-        codigoGetnet
+        codigoGetnet,
+        transferencia
       ]);
 }
 
@@ -251,6 +289,7 @@ VentasDiariasStruct createVentasDiariasStruct({
   int? peaje,
   int? petroleo,
   int? codigoGetnet,
+  int? transferencia,
   Map<String, dynamic> fieldValues = const {},
   bool clearUnsetFields = true,
   bool create = false,
@@ -266,6 +305,7 @@ VentasDiariasStruct createVentasDiariasStruct({
       peaje: peaje,
       petroleo: petroleo,
       codigoGetnet: codigoGetnet,
+      transferencia: transferencia,
       firestoreUtilData: FirestoreUtilData(
         clearUnsetFields: clearUnsetFields,
         create: create,

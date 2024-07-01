@@ -186,6 +186,7 @@ class _OpcionesPedidoDeliveryWidgetState
                                           '8cb0fb7b-9216-493c-a0a8-12ca2b632cdd',
                                       titulo: 'Pedido entregado',
                                     );
+
                                     await actions.sendNotification(
                                       'Pedido entregado',
                                       'Estado pedido',

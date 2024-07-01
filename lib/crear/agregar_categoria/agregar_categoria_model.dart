@@ -1,3 +1,4 @@
+import '/components/barra_menu_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/pages/componentes/top_movil/top_movil_widget.dart';
@@ -11,17 +12,28 @@ class AgregarCategoriaModel extends FlutterFlowModel<AgregarCategoriaWidget> {
   final formKey = GlobalKey<FormState>();
   // Model for topMovil component.
   late TopMovilModel topMovilModel;
+  bool isDataUploading = false;
+  FFUploadedFile uploadedLocalFile =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl = '';
+
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode;
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
   // State field(s) for CheckboxGroup widget.
-  List<String>? checkboxGroupValues;
   FormFieldController<List<String>>? checkboxGroupValueController;
+  List<String>? get checkboxGroupValues => checkboxGroupValueController?.value;
+  set checkboxGroupValues(List<String>? v) =>
+      checkboxGroupValueController?.value = v;
+
+  // Model for barraMenu component.
+  late BarraMenuModel barraMenuModel;
 
   @override
   void initState(BuildContext context) {
     topMovilModel = createModel(context, () => TopMovilModel());
+    barraMenuModel = createModel(context, () => BarraMenuModel());
   }
 
   @override
@@ -30,5 +42,7 @@ class AgregarCategoriaModel extends FlutterFlowModel<AgregarCategoriaWidget> {
     topMovilModel.dispose();
     textFieldFocusNode?.dispose();
     textController?.dispose();
+
+    barraMenuModel.dispose();
   }
 }

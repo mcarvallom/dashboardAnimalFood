@@ -3,9 +3,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '/backend/schema/util/firestore_util.dart';
-import '/backend/schema/util/schema_util.dart';
 
-import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 class SoporteStruct extends FFFirebaseStruct {
@@ -25,24 +23,28 @@ class SoporteStruct extends FFFirebaseStruct {
   String? _mensaje;
   String get mensaje => _mensaje ?? '';
   set mensaje(String? val) => _mensaje = val;
+
   bool hasMensaje() => _mensaje != null;
 
   // "fecha" field.
   DateTime? _fecha;
   DateTime? get fecha => _fecha;
   set fecha(DateTime? val) => _fecha = val;
+
   bool hasFecha() => _fecha != null;
 
   // "usuario" field.
   DocumentReference? _usuario;
   DocumentReference? get usuario => _usuario;
   set usuario(DocumentReference? val) => _usuario = val;
+
   bool hasUsuario() => _usuario != null;
 
   // "imagen" field.
   String? _imagen;
   String get imagen => _imagen ?? '';
   set imagen(String? val) => _imagen = val;
+
   bool hasImagen() => _imagen != null;
 
   static SoporteStruct fromMap(Map<String, dynamic> data) => SoporteStruct(

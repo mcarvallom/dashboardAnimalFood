@@ -3,9 +3,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '/backend/schema/util/firestore_util.dart';
-import '/backend/schema/util/schema_util.dart';
 
-import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 class VariacionStruct extends FFFirebaseStruct {
@@ -27,33 +25,41 @@ class VariacionStruct extends FFFirebaseStruct {
   String? _tamanio;
   String get tamanio => _tamanio ?? '';
   set tamanio(String? val) => _tamanio = val;
+
   bool hasTamanio() => _tamanio != null;
 
   // "stock" field.
   int? _stock;
   int get stock => _stock ?? 0;
   set stock(int? val) => _stock = val;
-  void incrementStock(int amount) => _stock = stock + amount;
+
+  void incrementStock(int amount) => stock = stock + amount;
+
   bool hasStock() => _stock != null;
 
   // "codigoBarra" field.
   String? _codigoBarra;
   String get codigoBarra => _codigoBarra ?? '';
   set codigoBarra(String? val) => _codigoBarra = val;
+
   bool hasCodigoBarra() => _codigoBarra != null;
 
   // "precio" field.
   int? _precio;
   int get precio => _precio ?? 0;
   set precio(int? val) => _precio = val;
-  void incrementPrecio(int amount) => _precio = precio + amount;
+
+  void incrementPrecio(int amount) => precio = precio + amount;
+
   bool hasPrecio() => _precio != null;
 
   // "rebaja" field.
   int? _rebaja;
   int get rebaja => _rebaja ?? 0;
   set rebaja(int? val) => _rebaja = val;
-  void incrementRebaja(int amount) => _rebaja = rebaja + amount;
+
+  void incrementRebaja(int amount) => rebaja = rebaja + amount;
+
   bool hasRebaja() => _rebaja != null;
 
   static VariacionStruct fromMap(Map<String, dynamic> data) => VariacionStruct(

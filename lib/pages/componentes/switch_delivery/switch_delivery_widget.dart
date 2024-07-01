@@ -33,6 +33,7 @@ class _SwitchDeliveryWidgetState extends State<SwitchDeliveryWidget> {
     super.initState();
     _model = createModel(context, () => SwitchDeliveryModel());
 
+    _model.switchValue = widget.switchDelivery!;
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -46,7 +47,7 @@ class _SwitchDeliveryWidgetState extends State<SwitchDeliveryWidget> {
   @override
   Widget build(BuildContext context) {
     return Switch.adaptive(
-      value: _model.switchValue ??= widget.switchDelivery!,
+      value: _model.switchValue!,
       onChanged: (newValue) async {
         setState(() => _model.switchValue = newValue);
         if (newValue) {

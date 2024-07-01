@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 
+import '/flutter_flow/flutter_flow_util.dart';
 import 'api_manager.dart';
 
 export 'api_manager.dart' show ApiCallResponse;
@@ -50,6 +51,7 @@ class ReembolsoCall {
       encodeBodyUtf8: true,
       decodeUtf8: true,
       cache: false,
+      isStreamingApi: false,
       alwaysAllowBody: false,
     );
   }
@@ -88,58 +90,68 @@ class EmailsCall {
       encodeBodyUtf8: false,
       decodeUtf8: false,
       cache: false,
+      isStreamingApi: false,
       alwaysAllowBody: false,
     );
   }
 }
 
-class SimpleFacturaCall {
+class BoletaSimpleFacturaCall {
   static Future<ApiCallResponse> call({
-    dynamic productosJson,
+    int? tipoDTE,
+    String? fchEmis = '',
+    String? fchVenc = '',
+    int? mntNeto,
+    double? iva,
+    double? mntTotal,
+    dynamic detalleJson,
   }) async {
-    final productos = _serializeJson(productosJson, true);
+    final detalle = _serializeJson(detalleJson, true);
     final ffApiRequestBody = '''
 {
   "credenciales": {
-    "rutEmisor": "76269769-6",
-    "rutContribuyente": "10422710-4",
-    "nombreSucursal": "Casa Matriz"
+    "rutEmisor": "77107173-2"
   },
-  "dte": {
-    "codigoTipoDte": 52,
-    "indicadorMontosNetos": false,
-    "formaPago": 1,
-    "descuentoGlobal": 0,
-    "fechaEmision": "2023-04-10",
-    "diasVencimiento": 30,
-    "tieneIvaTerceros": false,
-    "ivaTerceros": 0,
-    "ivaPropio": 0,
-    "productos": [
-      $productos
-    ],
-    "tieneReferencias": false,
-    "referencias": [
-      {
-        "codigoTipoDteReferencia": "33",
-        "folioReferencia": "1",
-        "fechaDteReferenciado": "2022-10-24",
-        "razonReferencia": "test1"
+  "Documento": {
+    "Encabezado": {
+      "IdDoc": {
+        "TipoDTE": $tipoDTE,
+        "FchEmis": "$fchEmis",
+        "FchVenc": "$fchVenc",
+        "IndServicio": 3
+      },
+      "Emisor": {
+        "RUTEmisor": "77107173-2",
+        "RznSocEmisor": "Comercial PET JJE Limitada",
+        "GiroEmisor": "AnimalFood",
+        "DirOrigen": "Marga Marga 1672 Lc. 3",
+        "CmnaOrigen": "Quilpue"
+      },
+      "Receptor": {
+        "RUTRecep": "66666666-6"
+      },
+      "Totales": {
+        "MntNeto": "$mntNeto",
+        "IVA": "$iva",
+        "MntTotal": "$mntTotal"
       }
-    ],
-    "rutTransporte": "17432554-5",
-    "patente": "ad6546",
-    "rutChofer": "17432554-5",
-    "nombreChofer": "Alex Roman",
-    "tipoTraslado": 1,
-    "tipoDespacho": 1
+    },
+    "Detalle": [
+      $detalle
+    ]
   }
 }''';
     return ApiManager.instance.makeApiCall(
-      callName: 'SimpleFactura',
-      apiUrl: 'https://api.simplefactura.cl/invoice',
+      callName: 'Boleta SimpleFactura',
+      apiUrl: 'https://api.simplefactura.cl/invoiceV2/animalfood',
       callType: ApiCallType.POST,
-      headers: {},
+      headers: {
+        'Transfer-Encoding': 'chunked',
+        'Content-Type': 'application/json; charset=utf-8',
+        'Server': 'Microsoft-IIS/10.0',
+        'X-Powered-By': 'ASP.NET',
+        'bWFyY29jYXJ2YWxsbzEzMDNAZ21haWwuY29t': 'TWNhcnZhbGxvMTMh',
+      },
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
@@ -147,6 +159,46 @@ class SimpleFacturaCall {
       encodeBodyUtf8: false,
       decodeUtf8: false,
       cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class ObtenerPDFSimpleFacturaCall {
+  static Future<ApiCallResponse> call({
+    int? folio,
+    int? codigoTipoDte,
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "credenciales": {
+    "rutEmisor": "77107173-2"
+  },
+  "dteReferenciadoExterno": {
+    "folio": $folio,
+    "codigoTipoDte": $codigoTipoDte,
+    "ambiente": 0
+  }
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'obtenerPDFSimpleFactura',
+      apiUrl: 'https://api.simplefactura.cl/getPdf',
+      callType: ApiCallType.POST,
+      headers: {
+        'Content-Type': 'application/json; charset=utf-8',
+        'Transfer-Encoding': 'chunked',
+        'Server': 'Microsoft-IIS/10.0',
+        'X-Powered-By': 'ASP.NET',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
       alwaysAllowBody: false,
     );
   }
@@ -168,10 +220,17 @@ class ApiPagingParams {
       'PagingParams(nextPageNumber: $nextPageNumber, numItems: $numItems, lastResponse: $lastResponse,)';
 }
 
+String _toEncodable(dynamic item) {
+  if (item is DocumentReference) {
+    return item.path;
+  }
+  return item;
+}
+
 String _serializeList(List? list) {
   list ??= <String>[];
   try {
-    return json.encode(list);
+    return json.encode(list, toEncodable: _toEncodable);
   } catch (_) {
     if (kDebugMode) {
       print("List serialization failed. Returning empty list.");
@@ -183,7 +242,7 @@ String _serializeList(List? list) {
 String _serializeJson(dynamic jsonVar, [bool isList = false]) {
   jsonVar ??= (isList ? [] : {});
   try {
-    return json.encode(jsonVar);
+    return json.encode(jsonVar, toEncodable: _toEncodable);
   } catch (_) {
     if (kDebugMode) {
       print("Json serialization failed. Returning empty json.");

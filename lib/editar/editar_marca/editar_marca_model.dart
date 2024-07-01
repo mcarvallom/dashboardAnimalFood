@@ -1,3 +1,4 @@
+import '/components/barra_menu_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/pages/componentes/top_movil/top_movil_widget.dart';
@@ -10,6 +11,8 @@ class EditarMarcaModel extends FlutterFlowModel<EditarMarcaWidget> {
 
   final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
+  // Model for barraMenu component.
+  late BarraMenuModel barraMenuModel;
   // Model for topMovil component.
   late TopMovilModel topMovilModel;
   // State field(s) for TextField widget.
@@ -22,11 +25,13 @@ class EditarMarcaModel extends FlutterFlowModel<EditarMarcaWidget> {
   String? Function(BuildContext, String?)?
       txtSobrelaMarcaTextControllerValidator;
   // State field(s) for CheckboxGroup widget.
-  List<String>? checkboxGroupValues;
   FormFieldController<List<String>>? checkboxGroupValueController;
+  List<String>? get checkboxGroupValues => checkboxGroupValueController?.value;
+  set checkboxGroupValues(List<String>? v) =>
+      checkboxGroupValueController?.value = v;
+
   // State field(s) for Carousel widget.
   CarouselController? carouselController;
-
   int carouselCurrentIndex = 1;
 
   bool isDataUploading1 = false;
@@ -46,12 +51,14 @@ class EditarMarcaModel extends FlutterFlowModel<EditarMarcaWidget> {
 
   @override
   void initState(BuildContext context) {
+    barraMenuModel = createModel(context, () => BarraMenuModel());
     topMovilModel = createModel(context, () => TopMovilModel());
   }
 
   @override
   void dispose() {
     unfocusNode.dispose();
+    barraMenuModel.dispose();
     topMovilModel.dispose();
     textFieldFocusNode?.dispose();
     textController1?.dispose();

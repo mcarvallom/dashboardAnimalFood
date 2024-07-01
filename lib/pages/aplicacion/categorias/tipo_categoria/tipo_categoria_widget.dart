@@ -242,6 +242,8 @@ class _TipoCategoriaWidgetState extends State<TipoCategoriaWidget> {
                                                                         TextAlign
                                                                             .center,
                                                                     maxLines: 2,
+                                                                    minFontSize:
+                                                                        14.0,
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyMedium
@@ -253,8 +255,6 @@ class _TipoCategoriaWidgetState extends State<TipoCategoriaWidget> {
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
-                                                                    minFontSize:
-                                                                        14.0,
                                                                   ),
                                                                 ),
                                                               ),
@@ -336,6 +336,8 @@ class _TipoCategoriaWidgetState extends State<TipoCategoriaWidget> {
                                                                         TextAlign
                                                                             .center,
                                                                     maxLines: 3,
+                                                                    minFontSize:
+                                                                        14.0,
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyMedium
@@ -347,8 +349,6 @@ class _TipoCategoriaWidgetState extends State<TipoCategoriaWidget> {
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
-                                                                    minFontSize:
-                                                                        14.0,
                                                                   ),
                                                                 ),
                                                               ),

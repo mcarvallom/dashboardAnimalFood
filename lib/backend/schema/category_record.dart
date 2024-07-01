@@ -5,6 +5,7 @@ import 'package:collection/collection.dart';
 import '/backend/schema/util/firestore_util.dart';
 
 import 'index.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 
 class CategoryRecord extends FirestoreRecord {
   CategoryRecord._(
@@ -24,9 +25,21 @@ class CategoryRecord extends FirestoreRecord {
   List<String> get categoriaPadre => _categoriaPadre ?? const [];
   bool hasCategoriaPadre() => _categoriaPadre != null;
 
+  // "nombreEtiqueta" field.
+  String? _nombreEtiqueta;
+  String get nombreEtiqueta => _nombreEtiqueta ?? '';
+  bool hasNombreEtiqueta() => _nombreEtiqueta != null;
+
+  // "imagen" field.
+  String? _imagen;
+  String get imagen => _imagen ?? '';
+  bool hasImagen() => _imagen != null;
+
   void _initializeFields() {
     _nombre = getDataList(snapshotData['nombre']);
     _categoriaPadre = getDataList(snapshotData['categoriaPadre']);
+    _nombreEtiqueta = snapshotData['nombreEtiqueta'] as String?;
+    _imagen = snapshotData['imagen'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -63,9 +76,15 @@ class CategoryRecord extends FirestoreRecord {
       reference.path.hashCode == other.reference.path.hashCode;
 }
 
-Map<String, dynamic> createCategoryRecordData() {
+Map<String, dynamic> createCategoryRecordData({
+  String? nombreEtiqueta,
+  String? imagen,
+}) {
   final firestoreData = mapToFirestore(
-    <String, dynamic>{}.withoutNulls,
+    <String, dynamic>{
+      'nombreEtiqueta': nombreEtiqueta,
+      'imagen': imagen,
+    }.withoutNulls,
   );
 
   return firestoreData;
@@ -78,12 +97,14 @@ class CategoryRecordDocumentEquality implements Equality<CategoryRecord> {
   bool equals(CategoryRecord? e1, CategoryRecord? e2) {
     const listEquality = ListEquality();
     return listEquality.equals(e1?.nombre, e2?.nombre) &&
-        listEquality.equals(e1?.categoriaPadre, e2?.categoriaPadre);
+        listEquality.equals(e1?.categoriaPadre, e2?.categoriaPadre) &&
+        e1?.nombreEtiqueta == e2?.nombreEtiqueta &&
+        e1?.imagen == e2?.imagen;
   }
 
   @override
-  int hash(CategoryRecord? e) =>
-      const ListEquality().hash([e?.nombre, e?.categoriaPadre]);
+  int hash(CategoryRecord? e) => const ListEquality()
+      .hash([e?.nombre, e?.categoriaPadre, e?.nombreEtiqueta, e?.imagen]);
 
   @override
   bool isValidKey(Object? o) => o is CategoryRecord;

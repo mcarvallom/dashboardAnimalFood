@@ -824,8 +824,6 @@ class _EditarProductosWidgetState extends State<EditarProductosWidget> {
                                               fontFamily: 'Readex Pro',
                                               letterSpacing: 0.0,
                                             ),
-                                        maxLines: null,
-                                        minLines: 1,
                                         validator: _model
                                             .txtCodeBarraTextControllerValidator
                                             .asValidator(context),
@@ -849,6 +847,13 @@ class _EditarProductosWidgetState extends State<EditarProductosWidget> {
                                         setState(() {
                                           _model.txtCodeBarraTextController
                                               ?.text = _model.escanearP;
+                                          _model.txtCodeBarraTextController
+                                                  ?.selection =
+                                              TextSelection.collapsed(
+                                                  offset: _model
+                                                      .txtCodeBarraTextController!
+                                                      .text
+                                                      .length);
                                         });
 
                                         setState(() {});

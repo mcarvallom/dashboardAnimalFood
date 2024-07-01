@@ -1,3 +1,4 @@
+import '/components/barra_menu_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/componentes/reembolsar_pago/reembolsar_pago_widget.dart';
 import '/pages/componentes/top_escritorio/top_escritorio_widget.dart';
@@ -17,6 +18,8 @@ class ReembolsoModel extends FlutterFlowModel<ReembolsoWidget> {
   late TopMovilModel topMovilModel;
   // Model for reembolsarPago component.
   late ReembolsarPagoModel reembolsarPagoModel2;
+  // Model for barraMenu component.
+  late BarraMenuModel barraMenuModel;
 
   @override
   void initState(BuildContext context) {
@@ -24,6 +27,7 @@ class ReembolsoModel extends FlutterFlowModel<ReembolsoWidget> {
     reembolsarPagoModel1 = createModel(context, () => ReembolsarPagoModel());
     topMovilModel = createModel(context, () => TopMovilModel());
     reembolsarPagoModel2 = createModel(context, () => ReembolsarPagoModel());
+    barraMenuModel = createModel(context, () => BarraMenuModel());
   }
 
   @override
@@ -33,5 +37,6 @@ class ReembolsoModel extends FlutterFlowModel<ReembolsoWidget> {
     reembolsarPagoModel1.dispose();
     topMovilModel.dispose();
     reembolsarPagoModel2.dispose();
+    barraMenuModel.dispose();
   }
 }

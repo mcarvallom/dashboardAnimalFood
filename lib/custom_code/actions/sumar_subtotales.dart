@@ -9,21 +9,24 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
-import 'package:desktop_window/desktop_window.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await tamanioPantalla();
-  runApp(MyApp());
+Future<double> sumarSubtotales(
+    List<DocumentReference> selectedItemsList) async {
+  double total = 0.0;
+
+  for (DocumentReference itemRef in selectedItemsList) {
+    DocumentSnapshot itemSnapshot = await itemRef.get();
+    Map<String, dynamic>? itemData =
+        itemSnapshot.data() as Map<String, dynamic>?;
+
+    if (itemData != null && itemData.containsKey('subTotal')) {
+      total += (itemData['subTotal'] as double?) ?? 0.0;
+    }
+  }
+
+  return total;
 }
 
-Future<void> tamanioPantalla() async {
-  // Establece el tamaño de la ventana
-  await DesktopWindow.setWindowSize(Size(479, 600));
-
-  // Establece el tamaño mínimo y máximo de la ventana
-  await DesktopWindow.setMinWindowSize(Size(479, 600));
-  await DesktopWindow.setMaxWindowSize(Size(479, 600));
-}
 // Set your action name, define your arguments and return parameter,
 // and then add the boilerplate code using the green button on the right!

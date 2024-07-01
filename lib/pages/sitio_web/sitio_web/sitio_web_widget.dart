@@ -242,12 +242,12 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                             'Órdenes',
                                                                             textAlign:
                                                                                 TextAlign.center,
+                                                                            minFontSize:
+                                                                                14.0,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Readex Pro',
                                                                                   letterSpacing: 0.0,
                                                                                 ),
-                                                                            minFontSize:
-                                                                                14.0,
                                                                           ),
                                                                         ),
                                                                         Padding(
@@ -261,13 +261,13 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                             columnCount.toString(),
                                                                             textAlign:
                                                                                 TextAlign.center,
+                                                                            minFontSize:
+                                                                                14.0,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Readex Pro',
                                                                                   color: const Color(0xFF8E8E8E),
                                                                                   letterSpacing: 0.0,
                                                                                 ),
-                                                                            minFontSize:
-                                                                                14.0,
                                                                           ),
                                                                         ),
                                                                       ],
@@ -414,12 +414,12 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                             'Productos',
                                                                             textAlign:
                                                                                 TextAlign.center,
+                                                                            minFontSize:
+                                                                                14.0,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Readex Pro',
                                                                                   letterSpacing: 0.0,
                                                                                 ),
-                                                                            minFontSize:
-                                                                                14.0,
                                                                           ),
                                                                         ),
                                                                         Padding(
@@ -433,13 +433,13 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                             columnCount.toString(),
                                                                             textAlign:
                                                                                 TextAlign.center,
+                                                                            minFontSize:
+                                                                                14.0,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Readex Pro',
                                                                                   color: const Color(0xFF8E8E8E),
                                                                                   letterSpacing: 0.0,
                                                                                 ),
-                                                                            minFontSize:
-                                                                                14.0,
                                                                           ),
                                                                         ),
                                                                       ],
@@ -586,12 +586,12 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                             'Categorías',
                                                                             textAlign:
                                                                                 TextAlign.center,
+                                                                            minFontSize:
+                                                                                14.0,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Readex Pro',
                                                                                   letterSpacing: 0.0,
                                                                                 ),
-                                                                            minFontSize:
-                                                                                14.0,
                                                                           ),
                                                                         ),
                                                                         Padding(
@@ -605,13 +605,13 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                             columnCount.toString(),
                                                                             textAlign:
                                                                                 TextAlign.center,
+                                                                            minFontSize:
+                                                                                14.0,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Readex Pro',
                                                                                   color: const Color(0xFF8E8E8E),
                                                                                   letterSpacing: 0.0,
                                                                                 ),
-                                                                            minFontSize:
-                                                                                14.0,
                                                                           ),
                                                                         ),
                                                                       ],
@@ -758,12 +758,12 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                             'Marcas',
                                                                             textAlign:
                                                                                 TextAlign.center,
+                                                                            minFontSize:
+                                                                                14.0,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Readex Pro',
                                                                                   letterSpacing: 0.0,
                                                                                 ),
-                                                                            minFontSize:
-                                                                                14.0,
                                                                           ),
                                                                         ),
                                                                         Padding(
@@ -777,13 +777,13 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                             columnCount.toString(),
                                                                             textAlign:
                                                                                 TextAlign.center,
+                                                                            minFontSize:
+                                                                                14.0,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Readex Pro',
                                                                                   color: const Color(0xFF8E8E8E),
                                                                                   letterSpacing: 0.0,
                                                                                 ),
-                                                                            minFontSize:
-                                                                                14.0,
                                                                           ),
                                                                         ),
                                                                       ],
@@ -938,12 +938,12 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                             'Empleados',
                                                                             textAlign:
                                                                                 TextAlign.center,
+                                                                            minFontSize:
+                                                                                14.0,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Readex Pro',
                                                                                   letterSpacing: 0.0,
                                                                                 ),
-                                                                            minFontSize:
-                                                                                14.0,
                                                                           ),
                                                                         ),
                                                                         Padding(
@@ -957,13 +957,13 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                             columnCount.toString(),
                                                                             textAlign:
                                                                                 TextAlign.center,
+                                                                            minFontSize:
+                                                                                14.0,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Readex Pro',
                                                                                   color: const Color(0xFF8E8E8E),
                                                                                   letterSpacing: 0.0,
                                                                                 ),
-                                                                            minFontSize:
-                                                                                14.0,
                                                                           ),
                                                                         ),
                                                                       ],
@@ -1132,12 +1132,12 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                             'Clientes',
                                                                             textAlign:
                                                                                 TextAlign.center,
+                                                                            minFontSize:
+                                                                                14.0,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Readex Pro',
                                                                                   letterSpacing: 0.0,
                                                                                 ),
-                                                                            minFontSize:
-                                                                                14.0,
                                                                           ),
                                                                         ),
                                                                         Padding(
@@ -1151,13 +1151,13 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                             columnCount.toString(),
                                                                             textAlign:
                                                                                 TextAlign.center,
+                                                                            minFontSize:
+                                                                                14.0,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Readex Pro',
                                                                                   color: const Color(0xFF8E8E8E),
                                                                                   letterSpacing: 0.0,
                                                                                 ),
-                                                                            minFontSize:
-                                                                                14.0,
                                                                           ),
                                                                         ),
                                                                       ],
@@ -1278,14 +1278,14 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                         'Preguntas Frecuentes',
                                                                         textAlign:
                                                                             TextAlign.center,
+                                                                        minFontSize:
+                                                                            14.0,
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
                                                                               fontFamily: 'Readex Pro',
                                                                               letterSpacing: 0.0,
                                                                             ),
-                                                                        minFontSize:
-                                                                            14.0,
                                                                       ),
                                                                     ),
                                                                   ],
@@ -1382,6 +1382,8 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                       textAlign:
                                                                           TextAlign
                                                                               .center,
+                                                                      minFontSize:
+                                                                          14.0,
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .bodyMedium
@@ -1391,8 +1393,6 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                             letterSpacing:
                                                                                 0.0,
                                                                           ),
-                                                                      minFontSize:
-                                                                          14.0,
                                                                     ),
                                                                   ),
                                                                 ],
@@ -1488,6 +1488,8 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                       textAlign:
                                                                           TextAlign
                                                                               .center,
+                                                                      minFontSize:
+                                                                          14.0,
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .bodyMedium
@@ -1497,8 +1499,6 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                             letterSpacing:
                                                                                 0.0,
                                                                           ),
-                                                                      minFontSize:
-                                                                          14.0,
                                                                     ),
                                                                   ),
                                                                 ],
@@ -1594,6 +1594,8 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                       textAlign:
                                                                           TextAlign
                                                                               .center,
+                                                                      minFontSize:
+                                                                          14.0,
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .bodyMedium
@@ -1603,8 +1605,6 @@ class _SitioWebWidgetState extends State<SitioWebWidget> {
                                                                             letterSpacing:
                                                                                 0.0,
                                                                           ),
-                                                                      minFontSize:
-                                                                          14.0,
                                                                     ),
                                                                   ),
                                                                 ],
