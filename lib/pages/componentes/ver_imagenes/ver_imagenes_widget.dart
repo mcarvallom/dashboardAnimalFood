@@ -2,11 +2,12 @@ import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_swipeable_stack.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'ver_imagenes_model.dart';
 export 'ver_imagenes_model.dart';
 
@@ -40,6 +41,12 @@ class _VerImagenesWidgetState extends State<VerImagenesWidget> {
     super.initState();
     _model = createModel(context, () => VerImagenesModel());
 
+    // On component load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      FFAppState().imgList = widget.img!.toList().cast<String>();
+      safeSetState(() {});
+    });
+
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -52,6 +59,8 @@ class _VerImagenesWidgetState extends State<VerImagenesWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return SingleChildScrollView(
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -131,9 +140,18 @@ class _VerImagenesWidgetState extends State<VerImagenesWidget> {
                               ) ??
                               false;
                           if (confirmDialogResponse) {
-                            await actions.descargarImagenes(
-                              widget.img!.toList(),
-                            );
+                            for (int loop1Index = 0;
+                                loop1Index < FFAppState().imgList.length;
+                                loop1Index++) {
+                              final currentLoop1Item =
+                                  FFAppState().imgList[loop1Index];
+                              await downloadFile(
+                                filename: 'img',
+                                url: currentLoop1Item,
+                              );
+                              FFAppState().removeFromImgList(currentLoop1Item);
+                              safeSetState(() {});
+                            }
                           }
                         },
                         child: Container(
