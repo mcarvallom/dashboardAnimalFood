@@ -2,9 +2,9 @@ import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_data_table.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/pages/clientes/componentes/crear_cliente/crear_cliente_widget.dart';
 import '/pages/clientes/componentes/opciones_cliente/opciones_cliente_widget.dart';
 import '/pages/clientes/componentes/sin_clientes/sin_clientes_widget.dart';
-import '/pages/productos/componentes/crear_producto/crear_producto_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
@@ -76,7 +76,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                           FocusScope.of(dialogContext).unfocus();
                           FocusManager.instance.primaryFocus?.unfocus();
                         },
-                        child: CrearProductoWidget(),
+                        child: CrearClienteWidget(),
                       ),
                     );
                   },
